@@ -153,5 +153,7 @@
                 ("A" "#+ascii: ")
                 ("i" "#+index: ?" "#+index: ?")
                 ("I" "#+include %file ?" "<include file=%file markup=\"?\">"))))
+  ;;hugo
+
 
 )

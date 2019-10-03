@@ -6,7 +6,8 @@
 
 (defun zclorgexport/init-ox-hugo()
   (use-package ox-hugo
-    :defer t
+    :ensure t
+    :after ox
     :init
     ))
 (defun zclorgexport/post-init-org()
