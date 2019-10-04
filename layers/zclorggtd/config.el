@@ -63,33 +63,14 @@
            entry (file+olp "~/Dropbox/zcl.space/content_org/telecommunication.org" "Telecommunication")
            (function org-hugo-new-subtree-post-capture-template)
            :clock-in t :clock-resume t)
-          ("l" "Hugo:Life"
-           entry (file+olp "~/Dropbox/zcl.space/content_org/life.org" "Life")
-           (function org-hugo-new-subtree-post-capture-template)
-           :clock-in t :clock-resume t)
-          ("o" "Hugo:Tools"
-           entry (file+olp "~/Dropbox/zcl.space/content_org/tools.org" "Tools")
-           (function org-hugo-new-subtree-post-capture-template)
-           :clock-in t :clock-resume t)
           ("p" "Hugo:Projects"
            entry (file+olp "~/Dropbox/zcl.space/content_org/projects.org" "Projects")
            (function org-hugo-new-subtree-project-capture-template)
            :clock-in t :clock-resume t)
-          ("i" "movie"
-           entry (file+olp "~/Dropbox/zcl.space/content_org/all-posts.org" "Movie")
-           (function org-hugo-new-subtree-post-capture-template)
-           :clock-in t :clock-resume t)
-          ;;;; ("w" "wordpress" entry (file+headline "~/Dropbox/base/zwork.org" "wordpress")"** TODO %? \n Added:%T\n" )
-          ;;;; ("n" "notes" entry (file "~/output/znotes/znotes-index.org")"* %?   :note:\n" :clock-in t :clock-resume t)
-          ;;;; ("c" "communication" entry (file "~/output/communication/communication-index.org")"* %?   :communication:\n" :clock-in t :clock-resume t)
           ("g" "my Log Time" entry (file+datetree "~/Dropbox/base/ztimelog.org" ) "** %T - %?  :timelog:" :clock-in t :clock-resume t)
           ("d" "diary" entry (file+datetree "~/Dropbox/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)
           ("x" "org-protocol" entry (file "~/Dropbox/base/zrefile.org")
            "* TODO Review %c \n Added:%T\n")
-          ;;;;	("m" "Meeting" entry (file+datetree "~/Dropbox/base/timelog.org") "** %T MEETING with %? :MEETING:"
-          ;;;;          :clock-in t :clock-resume t )
-          ;;;;	("p" "Phone call" entry (file+datetree "~/Dropbox/base/timelog.org") "** %T PHONE %? :PHONE:"
-          ;;;;          :clock-in t :clock-resume t)
           ))
 
 
