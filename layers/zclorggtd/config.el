@@ -43,32 +43,32 @@
 
   (setq org-treat-S-cursor-todo-selection-as-state-change nil)
 
-
   (setq org-capture-templates
         '(
           ("t" "todo" entry (file "~/Dropbox/base/zrefile.org")
            "* TODO %?  \n Added:%T\n"
            :clock-in t :clock-resume t)
           ;;("h" "Hugo post")
-          ("m" "Hugo:Math"
-           entry (file+olp "~/Dropbox/zcl.space/content_org/math.org" "Math")
-           (function org-hugo-new-subtree-post-capture-template)
-           ":math:"
+          ("v" "Hugo:Video"
+           entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Videos")
+           (function org-hugo-new-subtree-publication-capture-template)
            :clock-in t :clock-resume t)
-          ("c" "Hugo:Computer"
-           entry (file+olp "~/Dropbox/zcl.space/content_org/computer.org" "Computer")
-           (function org-hugo-new-subtree-post-capture-template)
+          ("p" "Hugo:Post"
+           entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Posts")
+           (function org-hugo-new-subtree-publication-capture-template)
            :clock-in t :clock-resume t)
-          ("e" "Hugo:Telecommunication"
-           entry (file+olp "~/Dropbox/zcl.space/content_org/telecommunication.org" "Telecommunication")
-           (function org-hugo-new-subtree-post-capture-template)
-           :clock-in t :clock-resume t)
-          ("p" "Hugo:Projects"
-           entry (file+olp "~/Dropbox/zcl.space/content_org/projects.org" "Projects")
+
+          ("j" "Hugo:Project"
+           entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Projects")
            (function org-hugo-new-subtree-project-capture-template)
            :clock-in t :clock-resume t)
-          ("g" "my Log Time" entry (file+datetree "~/Dropbox/base/ztimelog.org" ) "** %T - %?  :timelog:" :clock-in t :clock-resume t)
-          ("d" "diary" entry (file+datetree "~/Dropbox/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)
+          ("c" "Hugo:Course"
+           entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Courses")
+           (function org-hugo-new-subtree-project-capture-template)
+           :clock-in t :clock-resume t)
+
+          ;; ("g" "my Log Time" entry (file+datetree "~/Dropbox/base/ztimelog.org" ) "** %T - %?  :timelog:" :clock-in t :clock-resume t)
+          ;; ("d" "diary" entry (file+datetree "~/Dropbox/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)
           ("x" "org-protocol" entry (file "~/Dropbox/base/zrefile.org")
            "* TODO Review %c \n Added:%T\n")
           ))

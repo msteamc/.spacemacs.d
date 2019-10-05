@@ -443,58 +443,26 @@ When not restricted, skip project and sub-project tasks, habits, and project rel
         (when org-agenda-sticky
           (org-agenda-redo)))
     (widen)))
-
+;; Hugo mstemc
 (with-eval-after-load 'org-capture
 ;;;###autoload
-  (defun org-hugo-new-subtree-post-capture-template ()
+
+  (defun org-hugo-new-subtree-publication-capture-template ()
     "Returns `org-capture' template string for new Hugo post.
 See `org-capture-templates' for more information."
-    (let* (;; http://www.holgerschurig.de/en/emacs-blog-from-org-to-hugo/
-           (date (format-time-string (org-time-stamp-format  :inactive) (org-current-time)))
-           (title (read-from-minibuffer "Post Title: ")) ;Prompt to enter the post title
+    (let* ((title (read-from-minibuffer "Post Title: ")) ;Prompt to enter the post title
            (fname (org-hugo-slug title)))
       (mapconcat #'identity
                  `(
                    ,(concat "* TODO " title)
                    ":PROPERTIES:"
-                   ,(concat ":EXPORT_FILE_NAME: " fname)
-                   ,(concat ":EXPORT_DATE: " date) ;Enter current date and time
-                   ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
+                   ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
+                   ":EXPORT_FILE_NAME: index"
                    ":END:"
-                   "%?\n")          ;Place the cursor here finally
+                   "%?\n")                ;Place the cursor here finally
                  "\n")))
-  (defun org-hugo-new-subtree-project-capture-template ()
-    "Returns `org-capture' template string for new Hugo post.
-See `org-capture-templates' for more information."
-    (let* (;; http://www.holgerschurig.de/en/emacs-blog-from-org-to-hugo/
-           (date (format-time-string (org-time-stamp-format  :inactive) (org-current-time)))
-           (title (read-from-minibuffer "Post Title: ")) ;Prompt to enter the post title
-           (fname (org-hugo-slug title)))
-      (mapconcat #'identity
-                 `(
-                   ,(concat "* TODO " title)
-                   ":PROPERTIES:"
-                   ,(concat ":EXPORT_FILE_NAME: " fname)
-                   ,(concat ":EXPORT_DATE: " date) ;Enter current date and time
-                   ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":image_preview \"projects/project.jpg\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":header '((image . \"projects/project_header.jpg\") (caption . \"stay hungry, stay foolish\")) " )
-                   ":END:"
-                   "%?\n")          ;Place the cursor here finally
-                 "\n")))
-  ;; Do not cause auto Org->Hugo export to happen when saving captures
-  (defun modi/org-capture--remove-auto-org-to-hugo-export-maybe ()
-    "Function for `org-capture-before-finalize-hook'.
-Disable `org-hugo-export-wim-to-md-after-save'."
-    (setq org-hugo-allow-export-after-save nil))
 
-  (defun modi/org-capture--add-auto-org-to-hugo-export-maybe ()
-    "Function for `org-capture-after-finalize-hook'.
-Enable `org-hugo-export-wim-to-md-after-save'."
-    (setq org-hugo-allow-export-after-save t))
 
-  (add-hook 'org-capture-before-finalize-hook #'modi/org-capture--remove-auto-org-to-hugo-export-maybe)
-  (add-hook 'org-capture-after-finalize-hook #'modi/org-capture--add-auto-org-to-hugo-export-maybe)
   )
 
 ;;;;;;###autoload
