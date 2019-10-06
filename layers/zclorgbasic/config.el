@@ -26,8 +26,8 @@
               (linum-mode -1)
               ;; Set fill column to 79
               (setq fill-column 80)
-              (setq org-tags-column -80)
-              (setq org-agenda-tags-column 'auto)
+              (setq org-tags-column -60)
+              (setq org-agenda-tags-column -90)
               ;; Enable automatic line wrapping at fill column
               (auto-fill-mode t)
               (org-indent-mode t)))

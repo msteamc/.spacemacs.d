@@ -9,20 +9,17 @@
   (setq org-clock-idle-time 10)
 ;;;;;;;;orggtd;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;set up the org
-  (setq org-agenda-files (list "~/Dropbox/base/zlife.org"
-                               "~/Dropbox/base/zwork.org"
-                               "~/Dropbox/base/zrefile.org"
-                               "~/Dropbox/base/zdiary.org"
-                               "~/Dropbox/base/ztimelog.org"
+  (setq org-agenda-files (list "~/Dropbox/zorg/base/zlife.org"
+                               "~/Dropbox/zorg/base/zwork.org"
+                               "~/Dropbox/zorg/base/zrefile.org"
+                               "~/Dropbox/zorg/base/zdiary.org"
+                               "~/Dropbox/zorg/base/ztimelog.org"
+                               "~/Dropbox/mstemc_hugo/content_org/mstemc.org"
                              ))
   (setq org-refile-targets (quote (
-            ("~/Dropbox/base/zwork.org" :maxlevel . 6)
-            ("~/Dropbox/base/zlife.org" :maxlevel . 6)
-            ("~/Dropbox/zcl.space/content_org/math.org" :maxlevel . 6)
-            ("~/Dropbox/zcl.space/content_org/computer.org" :maxlevel . 6)
-            ("~/Dropbox/zcl.space/content_org/telecommunication.org" :maxlevel . 6)
-            ("~/Dropbox/zcl.space/content_org/life.org" :maxlevel . 6)
-            ("~/Dropbox/zcl.space/content_org/tools.org" :maxlevel . 6))))
+            ("~/Dropbox/zorg/base/zwork.org" :maxlevel . 6)
+            ("~/Dropbox/zorg/base/zlife.org" :maxlevel . 6)
+            ("~/Dropbox/zcl.space/content_org/mstemc.org" :maxlevel . 6))))
 
   (setq org-agenda-use-tag-inheritance t)
   (setq org-todo-keywords
@@ -45,7 +42,7 @@
 
   (setq org-capture-templates
         '(
-          ("t" "todo" entry (file "~/Dropbox/base/zrefile.org")
+          ("t" "todo" entry (file "~/Dropbox/zorg/base/zrefile.org")
            "* TODO %?  \n Added:%T\n"
            :clock-in t :clock-resume t)
           ;;("h" "Hugo post")
@@ -53,22 +50,22 @@
            entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Videos")
            (function org-hugo-new-subtree-video-capture-template)
            :clock-in t :clock-resume t)
-          ("p" "Hugo:Post"
+          ("b" "Hugo:Post"
            entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Posts")
            (function org-hugo-new-subtree-post-capture-template)
            :clock-in t :clock-resume t)
-          ("j" "Hugo:Project"
+          ("p" "Hugo:Project"
            entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Projects")
            (function org-hugo-new-subtree-project-capture-template)
            :clock-in t :clock-resume t)
           ("c" "Hugo:Course"
            entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Courses")
-           (function org-hugo-new-subtree-project-capture-template)
+           (function org-hugo-new-subtree-course-capture-template)
            :clock-in t :clock-resume t)
 
-          ;; ("g" "my Log Time" entry (file+datetree "~/Dropbox/base/ztimelog.org" ) "** %T - %?  :timelog:" :clock-in t :clock-resume t)
-          ;; ("d" "diary" entry (file+datetree "~/Dropbox/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)
-          ("x" "org-protocol" entry (file "~/Dropbox/base/zrefile.org")
+          ;; ("g" "my Log Time" entry (file+datetree "~/Dropbox/zorg/base/ztimelog.org" ) "** %T - %?  :timelog:" :clock-in t :clock-resume t)
+          ;; ("d" "diary" entry (file+datetree "~/Dropbox/zorg/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)
+          ("x" "org-protocol" entry (file "~/Dropbox/zorg/base/zrefile.org")
            "* TODO Review %c \n Added:%T\n")
           ))
 
@@ -118,7 +115,7 @@
                 ;;;;   (org-agenda-sorting-strategy
                 ;;;;    '(todo-state-down effort-up category-keep))))
                 ;;;; ("f" occur-tree "FIXME")
-                (" " "Agenda"
+                ("w" "Agenda"
                  ((agenda "" )
                   (tags "NOTES"
                         ((org-agenda-overriding-header "NOTES to Refile")
@@ -335,7 +332,7 @@
   (setq org-agenda-skip-timestamp-if-done t)
 
   (setq org-agenda-include-diary t)
-  (setq org-agenda-diary-file  "~/Dropbox/base/zdiary.org")
+  (setq org-agenda-diary-file  "~/Dropbox/zorg/base/zdiary.org")
 
   (setq org-agenda-insert-diary-extract-time t)
 
