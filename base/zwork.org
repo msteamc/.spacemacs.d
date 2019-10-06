@@ -1,0 +1,192 @@
+#+FILETAGS:WORK
+#+PROPERTY: Effort_ALL 0 0:10 0:20 0:30 1:00 2:00 4:00 6:00 8:00
+#+COLUMNS: %40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM
+
+* TODO MATH                                           :MATH:
+  :PROPERTIES:
+  :ID:       834d2d31-aa5e-49d3-ba47-089e1916949b
+  :END:
+   [2018-02-04 Sun 10:23]
+** DONE MA from Jinci Chen
+   SCHEDULED: <2017-12-23 Sat>
+   :PROPERTIES:
+   :ID:       9b5045d1-cdb4-4054-b8f8-019c58305ffd
+   :END:
+   :PROPERTIES:
+   :ID:       fe115658-9d8e-4358-8b2f-ddb9209cf304
+   :END:
+    Added:[2017-04-20 Thu 23:07]
+    Mathematical analysis from Jinci Chen on the Youtube
+** TODO meaning of the quadratic form
+ Added:<2018-04-30 Mon 19:45>
+* TODO COMMUNICATION                         :COMMUNICATION:
+  :PROPERTIES:
+  :ID:       9c6fca84-1b15-46f2-86e5-09e7e2e1a28e
+  :END:
+  [2018-02-04 Sun 10:23]
+** HOLD LTE-A simulator
+   :PROPERTIES:
+   :ID:       0bfb1159-ca05-4b83-9845-28adfbc9a6b4
+   :END:
+   :LOGBOOK:
+   - State "HOLD"       from "NEXT"       [2017-03-11 Sat 15:12] \\
+     hold on, because I focus on AI and ML
+   CLOCK: [2017-01-15 Sun 21:06]--[2017-01-15 Sun 21:07] =>  0:01
+   CLOCK: [2016-04-09 Sat 10:21]--[2016-04-09 Sat 17:14] =>  6:53
+   CLOCK: [2016-03-13 Sun 10:39]--[2016-03-13 Sun 15:41] =>  5:02
+   CLOCK: [2016-01-01 Fri 08:04]--[2016-01-01 Fri 08:06] =>  0:02
+   CLOCK: [2013-05-07 Tue 14:12]--[2013-05-07 Tue 18:41] =>  4:29
+   :END:
+** TODO EM matlab
+   :PROPERTIES:
+   :ID:       4ef34de2-579a-43a4-a826-03fb9a499c01
+   :END:
+* TODO COMPUTER                                   :COMPUTER:
+  :PROPERTIES:
+  :ID:       ca37c183-7418-4534-abf1-ad7fff3a87aa
+  :END:
+  [2018-02-04 Sun 10:23]
+** TODO OCW: Algorithms
+   :PROPERTIES:
+   :ID:       389427d6-a807-4e76-8501-c91b748607b8
+   :END:
+   :PROPERTIES:
+   :ID:       50243ac0-d1ef-4a06-a1fd-e963d62687e7
+   :END:
+    Added:[2017-04-04 Tue 22:49]
+** TODO OCW: Machine learning
+   :PROPERTIES:
+   :ID:       84dc9755-d145-4ea6-a52c-9b4bd2dbf985
+   :END:
+    Added:[2017-04-04 Tue 22:49]
+** NEXT learning elisp
+   :PROPERTIES:
+   :ID:       e5a8cf2a-8e4b-4bef-8d33-3a2dca53d8b1
+   :END:
+   :LOGBOOK:
+   CLOCK: [2018-02-04 Sun 18:12]--[2018-02-04 Sun 20:44] =>  2:32
+   :END:
+** HOLD Review [[http://alexott.net/en/fp/][Functional programming]]
+   :PROPERTIES:
+   :ID:       aea8226e-6f3f-4f67-a349-d2db3614b899
+   :END:
+   :LOGBOOK:
+   - State "HOLD"       from "NEXT"       [2017-10-14 Sat 10:18] \\
+     hold now and may be some day later
+   :END:
+ [2015-08-25 Tue 22:27]
+** TODO read MLAPP
+   :PROPERTIES:
+   :ID:       940fba2f-9ef6-4283-90d1-9c765a878fed
+   :END:
+    Added:[2017-02-23 Thu 21:58]
+** TODO read PRML
+   :PROPERTIES:
+   :ID:       e4006323-79e9-4f20-b156-e53fe2510c59
+   :END:
+    Added:[2017-02-23 Thu 21:58]
+** TODO read ESL
+   :PROPERTIES:
+   :ID:       96a5efd3-3bf1-4a83-8ba2-d0d936eed059
+   :END:
+   Added:[2017-02-23 Thu 22:00]
+** CANCELLED read All of Statistic                                  :CANCELLED:
+   CLOSED: [2017-03-11 Sat 15:13]
+   :LOGBOOK:
+   - State "CANCELLED"  from "TODO"       [2017-03-11 Sat 15:13] \\
+     我已经有更好的统计学入门书籍
+   :END:
+   Added:[2017-02-23 Thu 22:01]
+** TODO read BRML
+   :PROPERTIES:
+   :ID:       94bcb782-3410-4c92-9f6a-74889ed63a87
+   :END:
+    Added:[2017-02-23 Thu 21:57]
+** TODO MACHINE LEARNING
+   :PROPERTIES:
+   :ID:       e171a20e-efe0-42d1-8b65-b1e087968a2a
+   :END:
+   Added:<2017-10-11 Wed 19:40>
+*** NEXT matlab fminunc
+    :PROPERTIES:
+    :ID:       f99c27da-b80d-4529-a2f8-a9d58697b85c
+    :END:
+    :LOGBOOK:
+    CLOCK: [2018-02-04 Sun 17:40]--[2018-02-04 Sun 18:12] =>  0:32
+    :END:
+   Added:<2017-10-11 Wed 01:10>
+*** DONE NG:week 04
+    CLOSED: [2017-10-14 Sat 10:17]
+    :PROPERTIES:
+    :ID:       f11be83a-038b-4840-bfda-f6492694120c
+    :END:
+    :LOGBOOK:
+    - CLOSING NOTE [2017-10-14 Sat 10:17] \\
+      done with 100points
+    CLOCK: [2017-10-14 Sat 10:16]--[2017-10-14 Sat 10:17] =>  0:01
+    CLOCK: [2017-10-13 Fri 00:21]--[2017-10-14 Sat 10:16] => 33:55
+    CLOCK: [2017-10-13 Fri 00:20]--[2017-10-13 Fri 00:21] =>  0:01
+    CLOCK: [2017-10-11 Wed 20:37]--[2017-10-13 Fri 00:20] => 27:43
+    CLOCK: [2017-10-11 Wed 19:40]--[2017-10-11 Wed 20:04] =>  0:24
+    CLOCK: [2017-10-11 Wed 19:39]--[2017-10-11 Wed 19:40] =>  0:01
+    :END:
+   Added:<2017-10-11 Wed 19:35>
+*** DONE week 05
+    SCHEDULED: <2017-12-26 Tue>
+    :PROPERTIES:
+    :ID:       d6f37a39-fc0a-4a0a-b63b-40e602da38d3
+    :END:
+   Added:<2017-10-14 Sat 10:15>
+** TODO WFS and DFS
+   :PROPERTIES:
+   :ID:       cb3a3e81-33f5-4fab-8176-1eb524df39c1
+   :END:
+** DONE banana.org
+   CLOSED: [2017-10-14 Sat 10:34]
+   :PROPERTIES:
+   :ID:       4129a598-f9f5-4eb3-9041-7877fec6f24b
+   :END:
+   :LOGBOOK:
+   - CLOSING NOTE [2017-10-14 Sat 10:34] \\
+     post a blog banana.org
+   :END:
+  Added:<2017-10-13 Fri 00:20>
+** DONE fminunc.org
+   CLOSED: [2017-10-14 Sat 10:34]
+   :PROPERTIES:
+   :ID:       b11a2fe3-a22c-483d-a01e-f41c3cc12f9b
+   :END:
+   :LOGBOOK:
+   - CLOSING NOTE [2017-10-14 Sat 10:34] \\
+     done with a blog fminunc.org
+   :END:
+  Added:<2017-10-13 Fri 00:20>
+** NEXT python
+:LOGBOOK:
+CLOCK: [2018-05-04 Fri 21:58]--[2018-05-04 Fri 22:09] =>  0:11
+:END:
+ Added:<2018-05-04 Fri 21:57>
+* TODO TOOLS
+  :PROPERTIES:
+  :ID:       01c39ce7-b0d1-4406-a859-996de01cbe82
+  :END:
+  [2018-02-04 Sun 10:23]
+** DONE org as a word peocessor
+   CLOSED: [2018-02-23 Fri 19:40] SCHEDULED: <2018-01-11>
+   :PROPERTIES:
+   :ID:       54f421e4-759b-4fba-b461-03d49f3f5d91
+   :END:
+   :LOGBOOK:
+   - CLOSING NOTE [2018-02-23 Fri 19:40] \\
+     finish with an updated org config
+   :END:
+** DONE modify org-latex template
+ Added:<2018-02-09 Fri 21:11>
+* TODO HOBBY
+  :PROPERTIES:
+  :ID:       fe556f0a-eeee-418a-b5f8-f10b82884f4f
+  :END:
+  Added:[2016-01-05 Tue 21:56]
+** DONE 更新 Emacs 26.1
+SCHEDULED: <2018-04-27 周五>
+[2018-04-27 周五 09:02]

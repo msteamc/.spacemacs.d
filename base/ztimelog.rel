@@ -1,0 +1,24 @@
+;; RefTeX parse info file
+;; File: c:/Users/cliyh/AppData/Roaming/zorg/Dropbox/base/ztimelog.org
+;; User: cliyh ()
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "c:/Users/cliyh/AppData/Roaming/zorg/Dropbox/base/")
+
+(label-numbers)
+
+(bof "c:/Users/cliyh/AppData/Roaming/zorg/Dropbox/base/ztimelog.org")
+
+(eof "c:/Users/cliyh/AppData/Roaming/zorg/Dropbox/base/ztimelog.org")
+))
+

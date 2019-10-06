@@ -1,0 +1,181 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file c:/Users/cliyh/AppData/Roaming/zorg/Dropbox/base/zwork.org
+
+
+* Archived Tasks
+
+** DONE 注销 C-c c org-capture
+   CLOSED: [2016-01-01 Fri 06:55]
+   :PROPERTIES:
+   :ID:       21341475-d22f-4d89-a77c-2c51001030f2
+   :ARCHIVE_TIME: 2018-02-04 Sun 16:42
+   :ARCHIVE_FILE: ~/zorg/Dropbox/base/zwork.org
+   :ARCHIVE_OLPATH: hobby
+   :ARCHIVE_CATEGORY: zwork
+   :ARCHIVE_TODO: DONE
+   :ARCHIVE_ITAGS: WORK
+   :END:
+   :LOGBOOK:
+   - CLOSING NOTE [2016-01-01 Fri 06:55] \\
+     done
+   :END:
+
+Archived entries from file c:/Users/cliyh/AppData/Roaming/zorg/Dropbox/base/zwork.org
+
+** github
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2018-02-04 Sun 16:42
+   :ARCHIVE_FILE: ~/zorg/Dropbox/base/zwork.org
+   :ARCHIVE_OLPATH: hobby
+   :ARCHIVE_CATEGORY: zwork
+   :ARCHIVE_ITAGS: WORK
+   :END:
+   [2017-02-17 Fri 20:24]
+
+   git add .
+   git commit -m ""
+   git push -u origin master
+
+Archived entries from file c:/Users/cliyh/AppData/Roaming/zorg/Dropbox/base/zwork.org
+
+** DONE Review [[http://blog.csdn.net/skelking/article/details/41279657][Github 的一个免费编程书籍列表 CSDN.NET ]]
+   CLOSED: [2017-03-05 Sun 08:25]
+   :PROPERTIES:
+   :ID:       6bee8e84-a79d-41d0-bf86-3566dfa4c46d
+   :ARCHIVE_TIME: 2018-02-04 Sun 16:46
+   :ARCHIVE_FILE: ~/zorg/Dropbox/base/zwork.org
+   :ARCHIVE_OLPATH: COMPUTER
+   :ARCHIVE_CATEGORY: zwork
+   :ARCHIVE_TODO: DONE
+   :ARCHIVE_ITAGS: WORK
+   :END:
+	[2015-08-26 Wed 21:28]
+
+** DONE 写一篇关于 Turbo 编码的博
+   SCHEDULED: <2017-12-25 Mon>
+   :PROPERTIES:
+   :ID:       04cf2aff-a6a8-40d4-aa63-c67d55081ac1
+   :ARCHIVE_TIME: 2018-02-11 Sun 00:40
+   :ARCHIVE_FILE: ~/zorg/Dropbox/base/zwork.org
+   :ARCHIVE_OLPATH: COMMUNICATION
+   :ARCHIVE_CATEGORY: zwork
+   :ARCHIVE_TODO: DONE
+   :ARCHIVE_ITAGS: WORK COMMUNICATION
+   :END:
+   :LOGBOOK:
+   CLOCK: [2015-11-08 Sun 21:39]--[2015-11-08 Sun 21:50] =>  0:11
+   CLOCK: [2015-11-07 Sat 06:30]--[2015-11-07 Sat 06:52] =>  0:22
+   :END:
+    [2015-11-06 Fri 22:51]
+
+** DONE 写一篇关于 matlab mex API 的博文
+   CLOSED: [2015-11-14 Sat 11:07]
+   :PROPERTIES:
+   :ID:       4650f21b-0a7e-4ff1-9f18-e03a2c52863f
+   :ARCHIVE_TIME: 2018-02-11 Sun 00:40
+   :ARCHIVE_FILE: ~/zorg/Dropbox/base/zwork.org
+   :ARCHIVE_OLPATH: COMMUNICATION
+   :ARCHIVE_CATEGORY: zwork
+   :ARCHIVE_TODO: DONE
+   :ARCHIVE_ITAGS: WORK COMMUNICATION
+   :END:
+   :LOGBOOK:
+   - CLOSING NOTE [2015-11-14 Sat 11:07] \\
+     done
+   :END:
+    Added:[2015-11-11 Wed 06:42]
+
+** DONE 写一篇卷积编码和 Viterbi 译码的博文
+   CLOSED: [2016-01-17 Sun 19:29]
+   :PROPERTIES:
+   :ID:       5edb26bd-9f6d-47f8-a297-b62769636724
+   :ARCHIVE_TIME: 2018-02-11 Sun 00:40
+   :ARCHIVE_FILE: ~/zorg/Dropbox/base/zwork.org
+   :ARCHIVE_OLPATH: COMMUNICATION
+   :ARCHIVE_CATEGORY: zwork
+   :ARCHIVE_TODO: DONE
+   :ARCHIVE_ITAGS: WORK COMMUNICATION
+   :END:
+   :LOGBOOK:
+   - CLOSING NOTE [2016-01-17 Sun 19:29] \\
+     done, finish two blogs
+   CLOCK: [2016-01-17 Sun 11:31]--[2016-01-17 Sun 19:29] =>  7:58
+   CLOCK: [2016-01-03 Sun 09:09]--[2016-01-03 Sun 11:31] =>  2:22
+   CLOCK: [2016-01-02 Sat 07:10]--[2016-01-02 Sat 10:00] =>  1:59
+   CLOCK: [2016-01-01 Fri 13:20]--[2016-01-01 Fri 20:19] =>  6:59
+   :END:
+    Added:[2015-11-15 Sun 20:46]
+
+** DONE 向量空间的积与商
+   CLOSED: [2017-10-13 Fri 00:22]
+   :PROPERTIES:
+   :ID:       0035eaaf-27fd-497e-a907-dad8cf18582d
+   :ARCHIVE_TIME: 2018-02-11 Sun 00:40
+   :ARCHIVE_FILE: ~/zorg/Dropbox/base/zwork.org
+   :ARCHIVE_OLPATH: MATH
+   :ARCHIVE_CATEGORY: zwork
+   :ARCHIVE_TODO: DONE
+   :ARCHIVE_ITAGS: WORK MATH
+   :END:
+    Added:[2017-03-25 Sat 23:19]
+
+** DONE mex.h matrix.h 分析
+   CLOSED: [2016-01-01 Fri 07:00]
+   :PROPERTIES:
+   :ID:       e9eaf983-f5b3-413b-aa9d-8583bf6937cc
+   :ARCHIVE_TIME: 2018-02-11 Sun 00:41
+   :ARCHIVE_FILE: ~/zorg/Dropbox/base/zwork.org
+   :ARCHIVE_OLPATH: COMMUNICATION
+   :ARCHIVE_CATEGORY: zwork
+   :ARCHIVE_TODO: DONE
+   :ARCHIVE_ITAGS: WORK COMMUNICATION
+   :END:
+   :LOGBOOK:
+   - CLOSING NOTE [2016-01-01 Fri 07:00] \\
+     done
+   :END:
+    Added<2013-05-08 Wed 16:25>
+
+** DONE 前三次作业的博客
+    CLOSED: [2017-10-14 Sat 10:33]
+    :PROPERTIES:
+    :ID:       cf2013ca-6c6e-423d-9efc-58097a297531
+    :ARCHIVE_TIME: 2018-02-11 Sun 00:41
+    :ARCHIVE_FILE: ~/zorg/Dropbox/base/zwork.org
+    :ARCHIVE_OLPATH: COMPUTER/MACHINE LEARNING
+    :ARCHIVE_CATEGORY: zwork
+    :ARCHIVE_TODO: DONE
+    :ARCHIVE_ITAGS: WORK COMPUTER
+    :END:
+    :LOGBOOK:
+    - CLOSING NOTE [2017-10-14 Sat 10:33] \\
+      done with a post vectorize computation
+    :END:
+   Added:<2017-10-13 Fri 00:21>
+
+** TODO NG课程两次作业的博客
+    :PROPERTIES:
+    :ID:       2be82219-25f9-4c1a-8c70-904371dada78
+    :ARCHIVE_TIME: 2018-02-11 Sun 00:41
+    :ARCHIVE_FILE: ~/zorg/Dropbox/base/zwork.org
+    :ARCHIVE_OLPATH: COMPUTER/MACHINE LEARNING
+    :ARCHIVE_CATEGORY: zwork
+    :ARCHIVE_TODO: TODO
+    :ARCHIVE_ITAGS: WORK COMPUTER
+    :END:
+   Added:<2017-10-11 Wed 01:10>
+
+** DONE binary distribution
+   CLOSED: [2017-10-13 Fri 00:22]
+   :PROPERTIES:
+   :ID:       d8bda1ec-ef14-4cf4-b30d-6181aadc2b57
+   :ARCHIVE_TIME: 2018-03-11 Sun 07:21
+   :ARCHIVE_FILE: ~/zorg/Dropbox/base/zwork.org
+   :ARCHIVE_OLPATH: MATH
+   :ARCHIVE_CATEGORY: zwork
+   :ARCHIVE_TODO: DONE
+   :ARCHIVE_ITAGS: WORK MATH
+   :END:
+    Added:[2017-03-25 Sat 23:24]

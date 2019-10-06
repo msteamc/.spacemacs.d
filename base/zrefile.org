@@ -1,0 +1,18 @@
+#+FILETAGS: REFILE
+* DONE drafts + beorg
+SCHEDULED: <2018-08-02 Thu>
+* DONE 申请计算云
+SCHEDULED: <2018-08-13 周一>
+[2018-08-11 周六 09:31]
+* DONE 马拉松报名
+<2018-08-16 周四>
+SCHEDULED: <2018-08-16 Thu>
+* TODO 域名更新
+<2019-10-08 Tue 10:30>
+[2018-10-02 Tue 22:46]
+
+更新域名
+
+* TODO 更新搬瓦工
+<2019-10-02 Wed 10:00>
+[2018-10-02 Tue 22:48]

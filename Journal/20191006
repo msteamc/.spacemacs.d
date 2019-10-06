@@ -1,0 +1,81 @@
+* Sunday, 10/06/19
+** 09:58 今日代办
+
+1. 打通从 Emacs : ox-hugo 到 academic 的通路
+2. 围绕目标梳理 Emacs Org 的 GTD 系统
+3. 启动一个 project
+4. 熟悉使用 manim
+** 打通从 ox-hugo 到 hugo
+[2019-10-06 Sun 10:07]
+
+鉴于 [[file:20191002::*Wednesday,%2010/02/19][Wednesday, 10/02/19]] 的工作 [[file:20191002::*ox-hugo%20%E8%87%AA%E5%8A%A8%E5%8C%96][ox-hugo 自动化]] ，我现在需要创建的四个类型的文件：
+1. Videos, 导航栏显示为 Videos, 由 =/content/home/msc_videos.md= 控制格式，并放
+   到 =/content/publication/= 文件夹中，homepage 中显示在 title 为 =Videos= 对应
+   的 section. =msc_videos.md= 文件还控制了显示在这个 section 中的内容都带有标签
+   =video= . 在 =/content/mstemc.org= 中有一个名为 =Videos= 的 =headline= 带有
+   =video= 标签. 这样 =mstemc.org= 的 =Videos= =headline= 对应的内容就会显示在
+   homepage 下的 =Videos= section 中。
+
+2. Posts, 导航栏显示为 Posts, 由 =/content/home/msc_posts.md= 控制格式，并放到
+   =/content/post/= 文件夹中，homepage 中显示在 title 为 =Posts= 对应的
+   section. =msc_posts.md= 文件还控制了显示在这个 section 中的内容都带有标签
+   =post= . 在 =/content/mstemc.org= 中有一个名为 =Posts= 的 =headline= 带有
+   =post= 标签. 这样 =mstemc.org= 的 =Posts= =headline= 对应的内容就会显示在
+   homepage 下的 =Posts= section 中。Posts 类型的内容是 Videos 类型内容的补充，
+
+3. Projects, 导航栏显示为 Projects, 由 =/content/home/msc_projects.md= 控制格式，
+   并放到 =/content/project/= 文件夹中，homepage 中显示在 title 为 =Projects= 对
+   应的 section. =msc_projects.md= 文件还控制了显示在这个 section 中的内容都带有
+   标签 =project= . 在 =/content/mstemc.org= 中有一个名为 =Projects= 的
+   =headline= 带有 =project= 标签. 这样 =mstemc.org= 的 =Projects= =headline= 对
+   应的内容就会显示在 homepage 下的 =Projects= section 中。 Projects section 的
+   内容是 Videos 内容和 Posts 的总结。严格来讲，我总是先发起一个 project, 然后在
+   这个 project 中会产生很多 video, 围绕这个 video 会有很多 post 生成。
+
+4. Courses, 导航栏显示为 Courses, 由 =/content/home/msc_courses.md= 控制格式，并
+   最终放到 =/content/project/= 文件夹中，默认都带有 =course= 标签。 Courses 的
+   内容是 Projects 的合集和再加工。通常，一个 course 包含多个 project.
+
+
+这样，我在 Emacs 中使用 ox-hugo 转出 markdown 的流程就比较清晰了。
+1. 转出到 =publication= 文件夹的内容要默认带标签 =video= , 其展示格式通过
+   =msc_videos.md= 控制。
+2. 转出到 =post= 文件夹的内容要默认带标签 =post= 其展示格式通过 =msc_posts.md=
+   控制。
+3. 转出到 =project= 文件夹的内容要默认带标签 =project= 或者 =course=
+4. 转出 =publication= 要按照 academic theme 自带的 exampleSite 中的[[file:~/Dropbox/mstemc_hugo/themes/academic/exampleSite/content/publication/conference-paper/index.md::---][会议论文]]格式。
+5. 转出 =project= 要按照 academic theme 自带的 exampleSite 中的 [[file:~/Dropbox/mstemc_hugo/themes/academic/exampleSite/content/project/internal-project/index.md::---][internal-project]]
+
+
+
+总结：ox-hugo 需要有四个 capture :
+1. hugo:video 输出到 =/content_org/mstemc.org= 文件的  =Videos= 下；
+2. hugo:post 输出到 =/content_org/mstemc.org= 文件的  =Posts= 下；
+3. hugo:project 输出到 =/content_org/mstemc.org= 文件的  =Projects= 下；
+4. hugo:course 输出到 =/content_org/mstemc.org= 文件的  =Courses= 下；
+
+为此，我创建了四个 org-capture-template
+#+begin_src elisp :n
+("v" "Hugo:Video"
+ entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Videos")
+ (function org-hugo-new-subtree-video-capture-template)
+ :clock-in t :clock-resume t)
+("p" "Hugo:Post"
+ entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Posts")
+ (function org-hugo-new-subtree-post-capture-template)
+ :clock-in t :clock-resume t)
+("j" "Hugo:Project"
+ entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Projects")
+ (function org-hugo-new-subtree-project-capture-template)
+ :clock-in t :clock-resume t)
+("c" "Hugo:Course"
+ entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Courses")
+ (function org-hugo-new-subtree-project-capture-template)
+ :clock-in t :clock-resume t)
+#+end_src
+** 围绕 Emacs Org 的 GTD 流程
+[2019-10-06 Sun 10:14]
+
+1. 以 project 为颗粒，分解 video 和 post
+2. 之前以类别为大类的方式不是目标导向。之前我的 zwork.org 文档理有三个一级标题分
+   别是 =math=  =computer= =communication= 这样的分类更适合

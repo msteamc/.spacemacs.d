@@ -1,0 +1,259 @@
+* Wednesday, 10/02/19
+
+** 21:14 MACOS 配置
+
+1. 如果需要管理两个 github 账户，按照一下链接操作：
+ http://www.up4dev.com/2018/05/05/git-multi-ssh-key/
+2. 多显示器，鼠标不能从较长的显示器跑到较窄的显示器原因：
+https://apple.stackexchange.com/questions/343830/stop-mouse-pointer-from-sticking-to-the-edge-of-display-in-dual-monitor-setup
+
+** 账户设置
+[2019-10-02 Wed 21:21]
+
+
+** 目标
+[2019-10-02 Wed 21:38]
+
+我的目标是通过极具引导性，观赏性和娱乐性的动画视频向世人展示 STEM 的基础概念。我制作
+的视频要像艺术品一样供后人参考。百年树人，良好的教育材料永远不会过期，尤其这个材
+料是基础性的。
+
+越是基础的东西影响的范围越广泛。
+
+** 有了目标之后的感想
+[2019-10-02 Wed 22:01]
+
+1. 做事情目的性更强，更加珍惜自己的精力。所有的吸引注意力的事情都会通过目标这个
+   滤波器过滤一遍。
+2. 做事情更有条理，主次分明。对于一些工具上的琐事，如果需要较长时间去折腾，我就
+   会选择放弃，这个时间阈值暂时定为 5 分钟，也就是说，如果 5 分钟之内能完成的事情，
+   我就会马上去做，如果，5分钟之内完不成并且与目标关系不大，我就会选择时候去做或
+   者不做。
+
+比如我全力切换到 makestemclear 上来。对于过去的帐户不再维护。
+
+** 博客的编写流程
+[2019-10-03 Thu 00:04]
+
+我采用 hugo 来生成静态博客，整个系统由两个 github 仓库构成，使用 Emacs 来维护：
+1. https://github.com/mstemc/mstemc 用于保存 hugo 相关的内容，但是不包括要
+   发布的博客。这个仓库的主要作用是：1. 控制博客的 GUI, 2. 保存博客文章的原始 org
+   文档。我在使用 Emacs 的 ox-hugo 管理博客。这个仓库由 hugo academic 主题的使用过
+   程中自动生成。这个文件夹下面的 =public= 和 =content_org= 两个文件夹是要设置为
+   忽略的。 =public= 下放的是网页， =content_org= 下放的是 Org mode 的源文件。最
+   后 =public= 是要通过主页展示出去的。 =content_org= 则始终都保持私有。
+
+   控制博客的外表都是在这个仓库中进行的。博客的外在一旦调整完毕，这个仓库就不再
+   频繁的更新。转而聚焦内容。
+
+2. https://github.com/mstemc/mstemc.github.io 用于存储博客 html。通过 ox-hugo 输
+   出对应的 markdown 文档到 content 目录中，然后调用 hugo 命令， =public= 目录中
+   的内容会自动更新。因为这个名字仓库每个账户只能有一个。
+
+  博客的内容都是在这个仓库中进行的。
+
+
+
+
+** 关于内容
+[2019-10-03 Thu 19:26]
+
+1. STEM 视频
+2. STEM 课程，可以做那种在线互动的视频，然后就可以做课程买卖。
+
+** Hugo 的使用
+[2019-10-03 Thu 19:39]
+
+1. 安装 hugo .
+2. 使用 netlify 安装；
+3. git clone hugo academic theme
+4. 然后去工程目录里面，执行 hugo server
+5. 对照 =/content/home/= 中的 =.md= 文档进行修改，这个目录中的文件是显示在
+   homepage 中的 widgets . 可以配置其是否显示以及显示顺序。快速配置好网站的办法
+   是修改 =/content/home/= 中的每个 =.md= 然后对照 =hugo server -D= 的输出在浏览
+   器上查看 =127.0.0.1:1313= 的输出。这个方法最直接。通过阅读 academic 的文档太
+   慢。
+** academic theme
+[2019-10-03 Thu 22:03]
+*** 控制主页显示内容
+[2019-10-03 Thu 22:26]
+
+academic theme 的 =/content/= 目录包含网站内容。其中 =/content/home/= 文件夹中的
+内容控制了主页上的 widget 格式。
+
+简单的对应关系：
+|-------------------+--------------------|
+| =/content/home/=  | =/content/= 文件夹 |
+|-------------------+--------------------|
+| =about.md=        | =authors=          |
+| =publications.md= | =publication=      |
+| =featured.md=     | =publication=      |
+| =posts.md=        | =post=             |
+
+在主页上显示的名字通过在 =/content/home/= 目录下的那些 =.md= 文件中修改 =title=
+实现。
+*** 控制最上面一行导航栏的内容
+[2019-10-03 Thu 22:28]
+
+通过修改文件 =config/_default/menu.toml= 。把不需要的导航连接删掉就可以了。
+
+如果要添加一个导航连接到主页的某个 widget, 需要把对应的 =/content/home/= 目录下
+的 =.md= 文件名字（注意没有后缀 =.md= ）添加到 =menu.toml= 中对应的 =url= 中。
+
+导航栏还可以添加下拉菜单，可以参照 Hugo 的帮助文档。
+
+导航栏中的内容应该包括：Home, Videos, Projects, Posts, Courses, Supports, FAQ
+*** 导航栏和 homepage 中 widget 对应关系
+[2019-10-03 Thu 23:48]
+
+现在只有 =/content/home/= 中文件名字和导航栏链接 =url= 之间是一一对应的。
+
+
+| 导航栏名字 | 导航栏链接               | widget    | page_type   |
+|------------+--------------------------+-----------+-------------|
+| Home       | =/home/msc_about.md/=    | about     |             |
+| Videos     | =/home/msc_videos.md/=   | pages     | publication |
+| Projects   | =/home/msc_projects.md/= | portfolio | project     |
+| Posts      | =/home/msc_posts.md/=    | pages     | publication |
+| Courses    | =/home/msc_courses.md/=  | portfolio | project     |
+| Supports   | TBD                      | null      | null        |
+| FAQ        | TBD                      | null      | null        |
+
+其中导航栏名字和导航栏链接之间的关系通过 =munus.toml= 文件指定。widget 对应的
+=.md= 名字和 =content= 文件夹的名字通过每个 widget 指定。
+
+=/content/home= 中 =*.md= 文件指定了 homepage 的 section，这个是外在的表现；在内
+部，通过 =*.md= 中的 =page_type= 指定博客内容存储在 =/content= 中文件夹的名称。
+举个例子，假设 =/content/home= 下有个文件名称是 =/home/posts.md= 其中 =posts= 指
+定了导航栏的按钮指向的 homepage 的 section， =posts.md= 文件中，有以下几个关键的域。
+
+| 域名      | 意义                                                |
+| widget    | 当前 section 使用的格式                               |
+| weight    | 当前 section 在 homepage 出现的顺序                  |
+| page_type | 当前 section 中的文章出现在 =content= 中文件夹的名称 |
+
+
+那么，接下来根据 academic theme 带的 exampleSite 来定制我的博客。我把 exampleSite
+中 =/content/publication= 中的文件都 copy 到我的 =/content/publication= 中。注意，
+按照之前我的定制，我的 homepage 中 Videos 和 Posts 的内容都会放到 publication 中，
+也就是说，publication 中的内容会出现在 Videos 和 Posts 中。这个时候就需要在对应的
+每一条 publication 中添加 =tag=  加以区分。
+*** homepage GUI 设置过程
+[2019-10-04 Fri 16:57]
+
+我通过导航栏的按钮现在可以快速链接到 homepage 的某个 section，这个是通过
+=menus.toml= 实现。 =menus.toml= 关联了 导航栏上的名字和 homepage 中的 section
+名字。并不是每个 homepage 的 section 都需要通过导航栏来连接，也不是导航栏的每个名
+字都需要链接到 homepage 的某个 section。 =menus.toml= 中出现的导航栏按钮 =url= 并且在
+=/content/home/= 目录下有对应的文件才会链接过去。两者缺一不可。比如，如果
+=menus.toml= 文件中的 =url= 链接向了别的地方，那么点击导航栏中的按钮的时候就会自
+动跳转到对应的链接去。你可以在导航栏中添加一个指向 google 的链接。
+
+homepage 中的 section 对应 =/content/home/= 下的 =*.md= 文件如果设置 =active= 为
+=true= 就会在 homepage 中显示。也就是说，一个 section 是否在 homepage 中显示只和
+=active= 的值有关系，和 =menus.toml= 中的设置没有关系。一个 section 在 homepage 中
+如何显示与 =/content/home/=  中 =*.md= 文件中的设置有关系。主要是 =widget= 和
+=page_type= 这两个域的设置。
+
+现在我已经有四个 section 显示在 homepage, 分别对应文件：
+
+1. =msc_videos.md= 对应 homepage 的 Videos section,  =widget= 的值是 =pages=,
+   =page_type= 的值是 =publication= .
+2. =msc_projects.md= 对应 homepage 的 Projects section, =widget= 的值是
+   =portfolio= , =page_type= 的值是 =project= .
+3. =msc_posts.md= 对应 homepage 的 Posts section, =widget= 的值是 =pages=,
+   =page_type= 的值是 =publication=
+4. =msc_courses.md= 对应 homepage 的 Courses section, =widget= 的值是
+   =portfolio= , =page_type= 的值是 =project= .
+
+其中 =Videos= 和 =Courses= section 可以通过设置 =tag= 在 homepage 进行过滤。
+*** 内容路径
+[2019-10-04 Fri 22:15]
+
+由于我的 =msc_videos.md= 和 =msc_posts.md= 对应的内容都去了
+=/content/publication/=  文件夹，所以我为这两个 section 的内容做了标签。
+=msc_videos.md= 负责展示带有 =video= 标签的内容， =msc_posts.md= 负责展示带有
+=post= 标签的内容。
+
+当我需要往 =publication= 中放置内容的时候，我需要事先就为内容打上 =video= 或者
+=post= 标签。 这样这些内容一旦发布就会自己在 homepage 上找到自己的定位。
+** ox-hugo 自动化
+[2019-10-04 Fri 22:29]
+
+鉴于之前的配置，我现在需要创建的四个类型的文件：
+1. Videos, 导航栏显示为 Videos, 由 =/content/home/msc_videos.md= 控制格式，并放
+   到 =/content/publication/= 文件夹中，homepage 中显示在 title 为 =Videos= 对应
+   的 section. =msc_videos.md= 文件还控制了显示在这个 section 中的内容都带有标签
+   =video= . 在 =/content/mstemc.org= 中有一个名为 =Videos= 的 =headline= 带有
+   =video= 标签. 这样 =mstemc.org= 的 =Videos= =headline= 对应的内容就会显示在
+   homepage 下的 =Videos= section 中。
+
+2. Posts, 导航栏显示为 Posts, 由 =/content/home/msc_posts.md= 控制格式，并放到
+   =/content/post/= 文件夹中，homepage 中显示在 title 为 =Posts= 对应的
+   section. =msc_posts.md= 文件还控制了显示在这个 section 中的内容都带有标签
+   =post= . 在 =/content/mstemc.org= 中有一个名为 =Posts= 的 =headline= 带有
+   =post= 标签. 这样 =mstemc.org= 的 =Posts= =headline= 对应的内容就会显示在
+   homepage 下的 =Posts= section 中。Posts 类型的内容是 Videos 类型内容的补充，
+
+3. Projects, 导航栏显示为 Projects, 由 =/content/home/msc_projects.md= 控制格式，
+   并放到 =/content/project/= 文件夹中，homepage 中显示在 title 为 =Projects= 对
+   应的 section. =msc_projects.md= 文件还控制了显示在这个 section 中的内容都带有
+   标签 =project= . 在 =/content/mstemc.org= 中有一个名为 =Projects= 的
+   =headline= 带有 =project= 标签. 这样 =mstemc.org= 的 =Projects= =headline= 对
+   应的内容就会显示在 homepage 下的 =Projects= section 中。 Projects section 的
+   内容是 Videos 内容和 Posts 的总结。严格来讲，我总是先发起一个 project, 然后在
+   这个 project 中会产生很多 video, 围绕这个 video 会有很多 post 生成。
+
+4. Courses, 导航栏显示为 Courses, 由 =/content/home/msc_courses.md= 控制格式，并
+   最终放到 =/content/project/= 文件夹中，默认都带有 =course= 标签。 Courses 的
+   内容是 Projects 的合集和再加工。通常，一个 course 包含多个 project.
+
+这样，我在 Emacs 中使用 ox-hugo 转出 markdown 的流程就比较清晰了。
+1. 转出到 =publication= 文件夹的内容要默认带标签 =video= , 其展示格式通过
+   =msc_videos.md= 控制。
+2. 转出到 =post= 文件夹的内容要默认带标签 =post= 其展示格式通过 =msc_posts.md=
+   控制。
+2. 转出到 =project= 文件夹的内容要默认带标签 =project= 或者 =course=
+3. 转出 =publication= 要按照 academic theme 自带的 exampleSite 中的[[file:~/Dropbox/mstemc_hugo/themes/academic/exampleSite/content/publication/conference-paper/index.md::---][会议论文]]格式。
+4. 转出 =project= 要按照 academic theme 自带的 exampleSite 中的 [[file:~/Dropbox/mstemc_hugo/themes/academic/exampleSite/content/project/internal-project/index.md::---][internal-project]]
+   格式。
+
+总结：ox-hugo 需要有四个 capture :
+1. hugo:video 输出到 =/content_org/mstemc.org= 文件的  =Videos= 下；
+2. hugo:post 输出到 =/content_org/mstemc.org= 文件的  =Posts= 下；
+3. hugo:project 输出到 =/content_org/mstemc.org= 文件的  =Projects= 下；
+4. hugo:course 输出到 =/content_org/mstemc.org= 文件的  =Courses= 下；
+
+
+** 整个工作流程
+[2019-10-06 Sun 06:47]
+
+1. 使用 manim 制作视频
+2. 撰写相关的 Videos 和 Posts 博文
+3. 上传到 youtube 频道
+4. 修改 Videos 和 Posts 相关博文，并发布
+5. 社交媒体发布：reddit, twitter, facebook, instagram, weibo
+6. 根据反馈修正航向
+
+
+** 域名
+[2019-10-03 Thu 21:49]
+
+域名的事情稍后放一下，目前比较中意的域名：
+1. msc.education 321.59;
+2. msc.studio 1786
+3. makestemclear.com
+** 整个博客系统的工具
+[2019-10-03 Thu 22:36]
+
+涉及：
+1. Hugo;
+2. Hugo Academic Theme;
+3. Ox-Hugo (Emacs);
+4. manim (python)
+5. git
+
+Emacs 为中心的工作流：
+1. 使用 emacs 管理 GTD;
+2. 使用 emacs export
+3. 使用 Emacs hugo 输出博客

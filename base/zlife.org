@@ -1,0 +1,49 @@
+#+FILETAGS:LIFE
+#+PROPERTY: Effort_ALL 0 0:10 0:20 0:30 1:00 2:00 4:00 6:00 8:00
+#+COLUMNS: %40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM
+
+* DREAM                                                                  :DREAM:
+** 终极目标
+   我的终极目标是：让我创建的公司成为一家世界 500 强公司，我生活在成就感中，我帮助
+   了数亿的人，改变了他们的思想。拥有超强的关爱他人的能力，我有多于常人的爱的奉
+   献。我将有此能力。
+
+   为了实现这个目标我首先想专注于教育，专注于 STEM 教育。为此，我创建了 MSC, make
+   stem clear
+
+* HOBBY
+
+* SHOPPING
+** DONE buy easiyo yogurt powder
+   CLOSED: [2017-02-23 Thu 22:08]
+   :PROPERTIES:
+   :ID:       2b13b8ab-3cca-48f2-9e04-02faeaf0c37a
+   :END:
+    Added:[2017-01-01 Sun 11:36]
+    地中海椰子
+    菠萝椰子
+    经典香草
+    经典波森莓
+    经典水蜜桃
+    经典柠檬
+    经典芒果
+    夏日水果
+    森林水果
+    经典草莓
+    混合浆果
+    地中海蔓越莓
+    低脂草莓
+    低脂香草
+    低脂芒果
+    经典原味
+    地中海原味
+    低脂原味
+    地中海低脂原味
+* TODO AU
+  :PROPERTIES:
+  :ID:       65fa59b9-ba02-4f63-b642-1972f06905d6
+  :END:
+   [2018-02-04 Sun 10:25]
+
+* PASSWORD
+  [2016-12-09 Fri 20:09]
