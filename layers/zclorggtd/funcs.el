@@ -445,9 +445,33 @@ When not restricted, skip project and sub-project tasks, habits, and project rel
     (widen)))
 ;; Hugo mstemc
 (with-eval-after-load 'org-capture
+  ;;video
 ;;;###autoload
+  (defun org-hugo-new-subtree-video-capture-template ()
+    "Returns `org-capture' template string for new Hugo post.
+See `org-capture-templates' for more information."
+    (let* ((title (read-from-minibuffer "Video Title: ")) ;Prompt to enter the post title
+           (fname (org-hugo-slug title)))
+      (mapconcat #'identity
+                 `(
+                   ,(concat "* TODO " title)
+                   ":PROPERTIES:"
+                   ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
+                   ,(concat ":EXPORT_HUGO_SECTION: " "publication")
+                   ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_project " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "[\"\"]")
+                   ":EXPORT_FILE_NAME: index"
+                   ":END:"
+                   "%?\n")                ;Place the cursor here finally
+                 "\n")))
 
-  (defun org-hugo-new-subtree-publication-capture-template ()
+  ;;post
+;;;###autoload
+  (defun org-hugo-new-subtree-post-capture-template ()
     "Returns `org-capture' template string for new Hugo post.
 See `org-capture-templates' for more information."
     (let* ((title (read-from-minibuffer "Post Title: ")) ;Prompt to enter the post title
@@ -457,6 +481,60 @@ See `org-capture-templates' for more information."
                    ,(concat "* TODO " title)
                    ":PROPERTIES:"
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
+                   ,(concat ":EXPORT_HUGO_SECTION: " "post")
+                   ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_project " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "[\"\"]")
+                   ":EXPORT_FILE_NAME: index"
+                   ":END:"
+                   "%?\n")                ;Place the cursor here finally
+                 "\n")))
+  ;;project
+;;;###autoload
+  (defun org-hugo-new-subtree-project-capture-template ()
+    "Returns `org-capture' template string for new Hugo post.
+See `org-capture-templates' for more information."
+    (let* ((title (read-from-minibuffer "Project Title: ")) ;Prompt to enter the post title
+           (fname (org-hugo-slug title)))
+      (mapconcat #'identity
+                 `(
+                   ,(concat "* TODO " title)
+                   ":PROPERTIES:"
+                   ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
+                   ,(concat ":EXPORT_HUGO_SECTION: " "project")
+                   ,(concat ":EXPORT_DESCRIPTION: "  "summary of this project")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_project " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "[\"\"]")
+                   ":EXPORT_FILE_NAME: index"
+                   ":END:"
+                   "%?\n")                ;Place the cursor here finally
+                 "\n")))
+
+    ;;course
+;;;###autoload
+  (defun org-hugo-new-subtree-course-capture-template ()
+    "Returns `org-capture' template string for new Hugo post.
+See `org-capture-templates' for more information."
+    (let* ((title (read-from-minibuffer "Course Title: ")) ;Prompt to enter the post title
+           (fname (org-hugo-slug title)))
+      (mapconcat #'identity
+                 `(
+                   ,(concat "* TODO " title)
+                   ":PROPERTIES:"
+                   ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
+                   ,(concat ":EXPORT_HUGO_SECTION: " "project")
+                   ,(concat ":EXPORT_DESCRIPTION: "  "summary of this course")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_project " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "[\"\"]")
                    ":EXPORT_FILE_NAME: index"
                    ":END:"
                    "%?\n")                ;Place the cursor here finally
@@ -464,6 +542,7 @@ See `org-capture-templates' for more information."
 
 
   )
+
 
 ;;;;;;###autoload
 (defun bh/restrict-to-file-or-follow (arg)

@@ -51,13 +51,12 @@
           ;;("h" "Hugo post")
           ("v" "Hugo:Video"
            entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Videos")
-           (function org-hugo-new-subtree-publication-capture-template)
+           (function org-hugo-new-subtree-video-capture-template)
            :clock-in t :clock-resume t)
           ("p" "Hugo:Post"
            entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Posts")
-           (function org-hugo-new-subtree-publication-capture-template)
+           (function org-hugo-new-subtree-post-capture-template)
            :clock-in t :clock-resume t)
-
           ("j" "Hugo:Project"
            entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Projects")
            (function org-hugo-new-subtree-project-capture-template)
