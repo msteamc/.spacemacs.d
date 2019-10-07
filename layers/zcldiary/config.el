@@ -1,6 +1,6 @@
-(setq diary-file "~/zorg/base/diary");; 默认的日记文件
+(setq diary-file "~/Dropbox/zorg/base/zdiary.org");; 默认的日记文件
 ;;sorted diary display
-(setq view-diary-entries-initially t
+(setq view-diary-entries-initially 0
       mark-diary-entries-in-calendar t
       number-of-diary-entries 7)
 (add-hook 'list-diary-entries-hook 'sort-diary-entries t)

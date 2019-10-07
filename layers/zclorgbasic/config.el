@@ -26,7 +26,7 @@
               (linum-mode -1)
               ;; Set fill column to 79
               (setq fill-column 80)
-              (setq org-tags-column -60)
+              (setq org-tags-column -80)
               (setq org-agenda-tags-column -90)
               ;; Enable automatic line wrapping at fill column
               (auto-fill-mode t)
@@ -35,5 +35,7 @@
   ;;           '(lambda ()
   ;;              (delete '("\\.pdf\\'" . default) org-file-apps)
   ;;              (add-to-list 'org-file-apps '("\\.pdf\\'" . "qpdfview %s"))))
+
+  (org-cycle-hide-drawers 'all)
 
   )

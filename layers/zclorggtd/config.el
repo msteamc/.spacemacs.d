@@ -19,7 +19,7 @@
   (setq org-refile-targets (quote (
             ("~/Dropbox/zorg/base/zwork.org" :maxlevel . 6)
             ("~/Dropbox/zorg/base/zlife.org" :maxlevel . 6)
-            ("~/Dropbox/zcl.space/content_org/mstemc.org" :maxlevel . 6))))
+            ("~/Dropbox/mstemc_hugo/content_org/mstemc.org" :maxlevel . 6))))
 
   (setq org-agenda-use-tag-inheritance t)
   (setq org-todo-keywords
@@ -64,11 +64,10 @@
            :clock-in t :clock-resume t)
 
           ;; ("g" "my Log Time" entry (file+datetree "~/Dropbox/zorg/base/ztimelog.org" ) "** %T - %?  :timelog:" :clock-in t :clock-resume t)
-          ;; ("d" "diary" entry (file+datetree "~/Dropbox/zorg/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)
-          ("x" "org-protocol" entry (file "~/Dropbox/zorg/base/zrefile.org")
-           "* TODO Review %c \n Added:%T\n")
+          ("d" "diary" entry (file+datetree "~/Dropbox/zorg/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)
+          ;; ("x" "org-protocol" entry (file "~/Dropbox/zorg/base/zrefile.org")
+          ;;  "* TODO Review %c \n Added:%T\n")
           ))
-
 
   (add-hook 'org-clock-out-hook 'bh/remove-empty-drawer-on-clock-out 'append)
   ;;;; Targets include this file and any file contributing to the agenda - up to 9 levels deep
@@ -107,9 +106,9 @@
                 ;;;; ("N" "Notes" tags "NOTE"
                 ;;;;  ((org-agenda-overriding-header "Notes")
                 ;;;;   (org-tags-match-list-sublevels t)))
-                ;;;; ("d" "Diary" tags "diary"
-                ;;;;  ((org-agenda-overriding-header "my diaries")
-                ;;;;   (org-tags-match-list-sublevels t)))
+                ("d" "Diary" tags "diary"
+                 ((org-agenda-overriding-header "my diaries")
+                  (org-tags-match-list-sublevels t)))
                 ;;;; ("h" "Habits" tags-todo "STYLE=\"habit\""
                 ;;;;  ((org-agenda-overriding-header "Habits")
                 ;;;;   (org-agenda-sorting-strategy
@@ -117,9 +116,9 @@
                 ;;;; ("f" occur-tree "FIXME")
                 ("w" "Agenda"
                  ((agenda "" )
-                  (tags "NOTES"
-                        ((org-agenda-overriding-header "NOTES to Refile")
-                         (org-tags-match-list-sublevels nil)))
+                  ;; (tags "NOTES"
+                  ;;       ((org-agenda-overriding-header "NOTES to Refile")
+                  ;;        (org-tags-match-list-sublevels nil)))
                   (tags "REFILE"
                         ((org-agenda-overriding-header "Tasks to Refile")
                          (org-tags-match-list-sublevels nil)))
@@ -331,7 +330,7 @@
   ;;;; Remove completed items from search results
   (setq org-agenda-skip-timestamp-if-done t)
 
-  (setq org-agenda-include-diary t)
+  (setq org-agenda-include-diary nil)
   (setq org-agenda-diary-file  "~/Dropbox/zorg/base/zdiary.org")
 
   (setq org-agenda-insert-diary-extract-time t)
