@@ -61,3 +61,78 @@
 (define-key evil-normal-state-map "’" 'save-buffer)
 (define-key evil-normal-state-map "‘" 'save-buffer)
 (define-key evil-normal-state-map (kbd "RET") 'save-buffer)
+
+(spacemacs/set-leader-keys
+  "g," 'helm-gtags-pop-stack
+  "g." 'helm-gtags-dwim
+  "gb" 'helm-gtags-pop-stack
+  "gc" 'helm-gtags-create-tags
+  "gd" 'helm-gtags-dwim
+  "gf" 'helm-gtags-select-path
+  "gG" 'helm-gtags-dwim-other-window
+  "gi" 'helm-gtags-tags-in-this-function
+  "gl" 'helm-gtags-parse-file
+  "gn" 'helm-gtags-next-history
+  "gp" 'helm-gtags-previous-history
+  "gr" 'helm-gtags-find-rtag
+  "gR" 'helm-gtags-resume
+  "gs" 'helm-gtags-select
+  "gS" 'helm-gtags-show-stack
+  "gt" 'helm-gtags-find-tag
+  "gT" 'helm-gtags-find-tag-other-window
+  "gu" 'helm-gtags-update-tags
+  "gw" 'helm-gtags-dwim
+  "sp" 'spacemacs/helm-project-smart-do-search-region-or-symbol
+  "sP" 'spacemacs/helm-project-smart-do-search
+  )
+(spacemacs/set-leader-keys
+  "da" 'clang-format
+  "db" 'helm-bookmarks
+  "dc" 'calc
+  "dC" 'clc-clear-the-command-window
+  "dd" 'sp-unwrap-sexp
+  "df" 'spaceline-toggle-helm-follow-on
+  "dg" 'magit-status
+  "dk" 'mark-whole-buffer
+  "dl" 'goto-line
+  "dm" 'helm-all-mark-rings
+  "dr" 'repeat-complex-command
+  "ds" 'projectile-save-project-buffers
+  "dt" 'org-insert-structure-template
+  "dp" 'realgud:ipdb
+  "du" 'universal-coding-system-argument
+  "dv" 'view-mode
+  "dw" 'delete-whitespace-rectangle
+  "dx" 'describe-current-coding-system
+  "dy" 'revert-buffer-with-coding-system
+  "dz" 'set-buffer-file-coding-system
+  "pa" 'helm-projectile-find-other-file
+  "pb" 'helm-projectile-switch-to-buffer
+  "pf" 'helm-projectile-find-file-dwim
+  "pr" 'helm-projectile-recentf
+  "pp" 'helm-projectile-switch-project
+  "ph" 'helm-projectile
+  "SPC" 'helm-M-x
+  "tn"  'display-line-numbers-mode
+  )
+
+(spacemacs/set-leader-keys-for-major-mode 'dired-mode
+  "d" 'wdired-change-to-wdired-mode
+  "s" 'org-agenda-schedule
+  )
+
+(spacemacs/set-leader-keys-for-major-mode 'c-mode
+  "f" 'c-mark-function
+  "i" 'helm-gtags-dwim
+  "a" 'beginning-of-defun
+  "e" 'end-of-defun
+  "o" 'helm-gtags-pop-stack
+  )
+
+(spacemacs/set-leader-keys-for-major-mode 'c++-mode
+  "f" 'c-mark-function
+  "i" 'helm-gtags-dwim
+  "a" 'beginning-of-defun
+  "e" 'end-of-defun
+  "o" 'helm-gtags-pop-stack
+  ) 
