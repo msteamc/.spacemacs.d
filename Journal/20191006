@@ -78,4 +78,14 @@
 
 1. 以 project 为颗粒，分解 video 和 post
 2. 之前以类别为大类的方式不是目标导向。之前我的 zwork.org 文档理有三个一级标题分
-   别是 =math=  =computer= =communication= 这样的分类更适合
+   别是 =math=  =computer= =communication= 这三个词更适合分类，于是我把 headline
+   前面的 =TODO= 去掉。 然后在这三个 headline 之后加上 =:math:= =:computer:=
+   =:communication:= 三个标签，并让其能够继承到子目录上。
+3. 设置 org-agenda 的目标
+** 22:05 open file as root
+
+ using =C-x C-f= , input =/sudo::= , then input the password and your are done.
+
+ using =helm-find-files= input =C-c r=, and u r done again.
+** 熟悉使用 mainm
+[2019-10-06 Sun 22:07]

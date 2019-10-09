@@ -1,18 +1,15 @@
 #+FILETAGS: REFILE
-* DONE drafts + beorg
-SCHEDULED: <2018-08-02 Thu>
-* DONE 申请计算云
-SCHEDULED: <2018-08-13 周一>
-[2018-08-11 周六 09:31]
-* DONE 马拉松报名
-<2018-08-16 周四>
-SCHEDULED: <2018-08-16 Thu>
-* TODO 域名更新
-<2019-10-08 Tue 10:30>
-[2018-10-02 Tue 22:46]
+* TODO Euclid's Elementary
+:LOGBOOK:
+CLOCK: [2019-10-06 Sun 22:44]--[2019-10-06 Sun 23:33] =>  0:49
+:END:
+ Added:<2019-10-06 Sun 22:44>
 
-更新域名
-
-* TODO 更新搬瓦工
-<2019-10-02 Wed 10:00>
-[2018-10-02 Tue 22:48]
+欧几里德的几何原本，适合用来练手 manim
+* TODO diary with org
+ Added:<2019-10-06 Sun 23:34>
+* TODO create a pull request for manim
+:LOGBOOK:
+CLOCK: [2019-10-07 Mon 09:48]--[2019-10-07 Mon 09:49] =>  0:01
+:END:
+ Added:<2019-10-07 Mon 09:48>

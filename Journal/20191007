@@ -1,0 +1,35 @@
+* Monday, 10/07/19
+** 06:54 今日代办
+1. walk through the tutorials;
+2. begin my own examples;
+** tips when walk through the tutorial
+[2019-10-07 Mon 07:02]
+
+[[https://talkingphysics.wordpress.com/2019/01/08/getting-started-animating-with-manim-and-python-3-7/][Getting Started Animating with manim and Python 3.7 | Talking Physics]]
+
+1. each scene as a subclass of =Scene= . The subclass must have a =construct()=
+   method.
+2. The =play()= method in the =Scene()= processes the animations.
+3. With no animation, =add()= is enough.
+4.
+** hex color code picker
+[2019-10-07 Mon 07:23]
+
+google has a [[https://www.google.com/search?q=hex+color+picker&rlz=1C5CHFA_enUS774US774&oq=hex+color&aqs=chrome.1.69i57j0l5.4055j0j7&sourceid=chrome&ie=UTF-8][hex color code picker]] .
+** 15:16 brew 慢
+
+更新源 清华或者中科大都可以
+
+[[https://xu3352.github.io/mac/2018/09/06/mac-homebrew-update-slowly][Mac brew update 非常慢... 更换 brew 镜像源解决 • xu3352's Tech Blog]]
+** mac 命令行 github 慢
+[2019-10-07 Mon 15:25]
+
+修改 host:
+1. sudo vim =/etc/hosts/=
+2. 查询 github 的访问 host [[https://www.ipaddress.com/][The Best IP Address Tools IPAddress.com]]
+
+
+刷新 DNS
+#+begin_src shell
+sudo killall -HUP mDNSResponder
+#+end_src

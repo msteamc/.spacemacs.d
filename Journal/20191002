@@ -20,6 +20,11 @@ https://apple.stackexchange.com/questions/343830/stop-mouse-pointer-from-stickin
 
 越是基础的东西影响的范围越广泛。
 
+具体内容：
+1. 把我所在专业的基础课可视化；
+2. 把所有 STEM 专业的基础课可视化； 在这个[[https://zh.wikipedia.org/zh-cn/%25E7%2590%2586%25E5%25B7%25A5%25E7%25A7%2591][链接]] 下有关于 STEM 涉及的领域。
+
+
 ** 有了目标之后的感想
 [2019-10-02 Wed 22:01]
 
@@ -51,7 +56,6 @@ https://apple.stackexchange.com/questions/343830/stop-mouse-pointer-from-stickin
    的内容会自动更新。因为这个名字仓库每个账户只能有一个。
 
   博客的内容都是在这个仓库中进行的。
-
 
 
 
@@ -224,6 +228,31 @@ homepage 中的 section 对应 =/content/home/= 下的 =*.md= 文件如果设置
 3. hugo:project 输出到 =/content_org/mstemc.org= 文件的  =Projects= 下；
 4. hugo:course 输出到 =/content_org/mstemc.org= 文件的  =Courses= 下；
 
+生成 project 之后 需要在 =/content/msc_projects.md= 中添加对应的按钮，这个按钮对
+应了一个标签，只要按下这个按钮，所有打了对应标签的 project 都会显示出来。 =all=
+显示所有的 project.
+** front matter 中的 =url_project= 和 =projects=
+[2019-10-06 Sun 11:30]
+
+如果我发布了一个博文， =url_project= 会链接到这篇文章对应的 project, 会告诉读者
+我做哪一个 project 的时候生成了这个文章。 但是，有时候一篇文章也会和其他项目产生
+联系。这个时候就要在文章的 front matter =projects= 里面填上对应的工程名字。
+
+比如：我在写 fast fourier transform 这篇文章的时候，正在做
+=digital-signal-processing=  这个项目，那么 =url_project= 就会填写
+=digital-signal-processing= 的地址；但是这篇文章还跟 =communication-system= 这个
+项目相关，我就把 =communication-system= 这个项目的名字加到 =projects= 里面。
+
+在 academic theme 中， =projects= 是一个 list value parameters [[https://ox-hugo.scripter.co/doc/custom-front-matter/][Custom
+Front-matter Parameter]] 给出了如何从 Emacs 中使用 ox-hugo 映射一个 list 变量到
+hugo 的 front matter.
+
+
+** video post project course  的 封面 featured
+[2019-10-06 Sun 12:04]
+
+如果需要为某个 video post project course 添加一个封面， 只需要把封面 copy 在当前目
+录下，然后命名为 =featured.jpg= 或者 =featured.png=
 
 ** 整个工作流程
 [2019-10-06 Sun 06:47]
@@ -257,3 +286,8 @@ Emacs 为中心的工作流：
 1. 使用 emacs 管理 GTD;
 2. 使用 emacs export
 3. 使用 Emacs hugo 输出博客
+** org-mac-grab-link
+[2019-10-06 Sun 12:35]
+
+[[https://emacs.stackexchange.com/questions/28607/copy-current-url-from-web-browser-from-emacs-while-editing/28618#28618?newreg=87439145d67849e3a0365fee90d768f0][org mode copy url from web Exchange]] 这个文章非常有效，Org 已经提供了
+=org-mac-grab-link= 命令。
