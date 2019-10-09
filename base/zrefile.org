@@ -16,3 +16,12 @@ SCHEDULED: <2018-08-16 Thu>
 * TODO 更新搬瓦工
 <2019-10-02 Wed 10:00>
 [2018-10-02 Tue 22:48]
+
+* NEXT chrome super dark mode
+:LOGBOOK:
+CLOCK: [2019-10-09 Wed 09:52]
+CLOCK: [2019-10-09 Wed 09:51]--[2019-10-09 Wed 09:52] =>  0:01
+:END:
+ Added:<2019-10-09 Wed 09:51>
+
+https://sites.google.com/view/crx/sdm?authuser=0
