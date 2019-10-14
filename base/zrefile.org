@@ -19,3 +19,5 @@ CLOCK: [2019-10-09 Wed 09:51]--[2019-10-09 Wed 09:52] =>  0:01
  Added:<2019-10-09 Wed 09:51>
 
 https://sites.google.com/view/crx/sdm?authuser=0
+
+* TODO 激活信用卡
