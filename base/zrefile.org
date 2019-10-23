@@ -90,9 +90,9 @@ MIT 的 OCW 主页上统计了访问频率最高的一些课程，如下：
 | 6.002       | Circuits and Electronics                                                 |
 
 所有的课程都是本科生的，所以我的视频受众最好也不要定的太高端。
-
-
 * TODO resolve conflicts using magit in Emacs
  Added:<2019-10-20 Sun 17:23>
 
 https://magit.vc/manual/magit/Resolving-Conflicts.html
+* TODO 伯克利物理系列
+[2019-10-22 Tue 23:04]
