@@ -35,6 +35,10 @@
   7. 《Introduction to Electrodynamics》及《习题解答》by Griffiths 
   8. 《Classical Electrodynamics》及《习题解答》by Jackson
   9. 《An Introduction to Thermal physics》by Schroeder 
+  
+  and the following links give excellent answers about the science and math textbooks:
+  https://www.zhihu.com/question/62795154/answer/234744948
+  https://www.zhihu.com/question/21451715/answer/429838579
 
 
 * TOOLS                                              :TOOL:
