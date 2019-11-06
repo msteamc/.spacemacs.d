@@ -1,0 +1,116 @@
+#+TITLE: make STEM clear
+#+HUGO_BASE_DIR: ../../mstemc_hugo/
+#+HUGO: more
+#+SEQ_TODO: TODO NEXT DONE
+#+HUGO_AUTO_SET_LASTMOD: t
+#+hugo_front_matter_key_replace: description>summary
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../static/css/worg.css"  />
+#+SETUPFILE: ~/.spacemacs.d/org-templates/enpost.org
+
+* Videos                                             :video:
+:LOGBOOK:
+CLOCK: [2019-10-20 Sun 17:23]
+CLOCK: [2019-10-20 Sun 17:06]--[2019-10-20 Sun 17:23] =>  0:17
+CLOCK: [2019-10-09 Wed 22:09]--[2019-10-20 Sun 17:03] => 258:54
+CLOCK: [2019-10-07 Mon 09:49]--[2019-10-09 Wed 22:09] => 60:20
+CLOCK: [2019-10-06 Sun 23:34]--[2019-10-07 Mon 09:48] => 10:14
+CLOCK: [2019-10-06 Sun 19:56]--[2019-10-06 Sun 22:44] =>  2:48
+CLOCK: [2019-10-06 Sun 19:54]--[2019-10-06 Sun 19:56] =>  0:02
+CLOCK: [2019-10-06 Sun 11:11]--[2019-10-06 Sun 19:54] =>  8:43
+CLOCK: [2019-10-06 Sun 09:27]--[2019-10-06 Sun 11:11] =>  1:44
+CLOCK: [2019-10-06 Sun 09:16]--[2019-10-06 Sun 09:27] =>  0:11
+CLOCK: [2019-10-06 Sun 08:33]--[2019-10-06 Sun 09:16] =>  0:43
+CLOCK: [2019-10-06 Sun 08:21]--[2019-10-06 Sun 08:33] =>  0:12
+:END:
+[2019-10-05 Sat 16:52]
+
+
+
+* Posts                                               :post:
+[2019-10-05 Sat 16:52]
+
+
+
+* Projects                                         :project:
+[2019-10-05 Sat 16:53]
+
+** TODO my workflow of creating a video
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: my-workflow-of-creating-a-video
+:EXPORT_HUGO_SECTION: project
+:EXPORT_DESCRIPTION: This collection of Videos and Posts describes my workflow of creating a video. Usage of some tools and methods are covered.
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("a")
+:EXPORT_FILE_NAME: index
+:END:
+
+During the creation of one video, several tools are tuned to fit my workflow. In
+this project several videos and posts will be created to make my workflow clear.
+
+Two targets of this project:
+1. remind me of the configeration of several tools;
+2. show somebody else who may be interested in how I work.
+
+*** Emacs
+[2019-10-06 Sun 20:38]
+
+Emacs lies in the center of my workflow. It behaves like a super-IDE which
+assists me finish almost all the steps. Using Emacs, I program and debug, GTD,
+write the blogs, export and publish them. Many of the Emacs extensions are
+awesome. In particular, Emacs Org is the killer app.
+
+
+How to config Emacs? After more than ten years of using Emacs, I choose
+spacemacs. Most beginners can start their work using spacemacs with only a
+little modifications.
+
+
+**** program and debug
+[2019-10-06 Sun 20:54]
+
+I program in python, C/C++, Matlab and some other languages. Emacs acts as a
+super-IDE for me.
+
+
+**** Org mode - journalize your work
+[2019-10-06 Sun 20:51]
+
+Org mode definitely need a standalone subsection.
+
+**** Org mode - get things done
+[2019-10-06 Sun 20:57]
+
+
+
+**** Org mode - write a diary
+[2019-10-06 Sun 20:57]
+
+**** Org mode - export your Org file
+[2019-10-06 Sun 21:01]
+
+
+**** program and debug
+[2019-10-06 Sun 20:54]
+
+
+**** writing latex
+[2019-10-06 Sun 21:16]
+
+*** Hugo
+[2019-10-06 Sun 20:46]
+
+As the fastest framework for buiding websites, Hugo shocks me by its speed and
+flexibility. It is enough to prettify your site using the more than 300+
+beautiful themes, from which I am in the mode for Academic theme.
+
+Hugo supports Org file but not so good. Ox-hugo, another extension of Emacs, has
+my attention. Serving as a bridge between Emacs and Hugo, ox-hugo helps me
+staying in Emacs Org. There is no need for me to write markdown file if Org is
+available.
+
+
+
+* Courses                                           :course:
+[2019-10-05 Sat 16:53]
