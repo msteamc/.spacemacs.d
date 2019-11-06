@@ -14,7 +14,7 @@
                                "~/Dropbox/zorg/base/zrefile.org"
                                "~/Dropbox/zorg/base/zdiary.org"
                                "~/Dropbox/zorg/base/ztimelog.org"
-                               "~/Dropbox/mstemc_hugo/content_org/mstemc.org"
+                               "~/Dropbox/zorg/mstemc/mstemc.org"
                              ))
   (setq org-refile-targets (quote (
             ("~/Dropbox/zorg/base/zwork.org" :maxlevel . 6)
@@ -47,19 +47,19 @@
            :clock-in t :clock-resume t)
           ;;("h" "Hugo post")
           ("v" "Hugo:Video"
-           entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Videos")
+           entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Videos")
            (function org-hugo-new-subtree-video-capture-template)
            :clock-in t :clock-resume t)
           ("b" "Hugo:Post"
-           entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Posts")
+           entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Posts")
            (function org-hugo-new-subtree-post-capture-template)
            :clock-in t :clock-resume t)
           ("p" "Hugo:Project"
-           entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Projects")
+           entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Projects")
            (function org-hugo-new-subtree-project-capture-template)
            :clock-in t :clock-resume t)
           ("c" "Hugo:Course"
-           entry (file+olp "~/Dropbox/mstemc_hugo/content_org/mstemc.org" "Courses")
+           entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Courses")
            (function org-hugo-new-subtree-course-capture-template)
            :clock-in t :clock-resume t)
 
