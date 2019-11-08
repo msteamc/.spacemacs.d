@@ -1,0 +1,10 @@
+* Friday, 11/08/19
+** 22:23 修改 themes 中的 en.yaml
+
+en.yaml 文件控制了选择英语显示网站时展示给用户的内容。
+** 修改主题的颜色
+[2019-11-08 Fri 22:47]
+
+在主题文件夹中，修改
+[[file:~/Dropbox/mstemc_hugo/themes/academic/data/themes/strawberry.toml][file:~/Dropbox/mstemc_hugo/themes/academic/data/themes/strawberry.toml]]
+中的颜色就可以了。
