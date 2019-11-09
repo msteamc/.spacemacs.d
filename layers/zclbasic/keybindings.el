@@ -93,6 +93,7 @@
   "dd" 'sp-unwrap-sexp
   "df" 'spaceline-toggle-helm-follow-on
   "dg" 'magit-status
+  "di" 'sdcv-search-input+
   "dk" 'mark-whole-buffer
   "dl" 'goto-line
   "dm" 'helm-all-mark-rings
@@ -100,6 +101,7 @@
   "ds" 'projectile-save-project-buffers
   "dt" 'org-insert-structure-template
   "dp" 'realgud:ipdb
+  "dq" 'sdcv-quit
   "du" 'universal-coding-system-argument
   "dv" 'view-mode
   "dw" 'delete-whitespace-rectangle
@@ -135,4 +137,4 @@
   "a" 'beginning-of-defun
   "e" 'end-of-defun
   "o" 'helm-gtags-pop-stack
-  ) 
+  )
