@@ -62,7 +62,7 @@ write the blogs, export and publish them. Many of the Emacs extensions are
 awesome. In particular, Emacs Org is the killer app.
 
 
-How to config Emacs? After more than ten years of using Emacs, I choose
+How to config Emacs? After more Than ten years of using Emacs, I choose
 spacemacs. Most beginners can start their work using spacemacs with only a
 little modifications.
 

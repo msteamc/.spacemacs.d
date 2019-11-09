@@ -2,7 +2,7 @@
 #+PROPERTY: Effort_ALL 0 0:10 0:20 0:30 1:00 2:00 4:00 6:00 8:00
 #+COLUMNS: %40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM
 
-* DREAM                                                                  :DREAM:
+* DREAM                                              :DREAM:
 ** 终极目标
    我的终极目标是：让我创建的公司成为一家世界 500 强公司，我生活在成就感中，我帮助
    了数亿的人，改变了他们的思想。拥有超强的关爱他人的能力，我有多于常人的爱的奉
@@ -47,3 +47,32 @@
 
 * PASSWORD
   [2016-12-09 Fri 20:09]
+* service
+[2019-11-09 Sat 18:46]
+
+| name      | service | price    | period     | status  | extra   |
+|-----------+---------+----------+------------+---------+---------|
+| zcl.space | domain  |          | 2019.11.09 | expired |         |
+| youtube   | premium | 230rmb/y |            |         | 230 rmb |
+| vpn       | vpn     | 300rmb/y |            |         | 300 rmb |
+| icloud    | 200G    | 21rmb/m  | 2019/11/10 |         | 252 rmb |
+| github    | pro     |          |            |         |         |
+| bwh       | vpn     | 19$/y    | 2020/10/03 |         | 133 rmb |
+
+
+
+
+** domain 域名
+[2019-11-09 Sat 18:46]
+
+
+zcl.space godaddy 115549572 zhu+zcl pin:0623
+
+** bwh
+[2019-11-09 Sat 18:46]
+
+** icloud
+[2019-11-09 Sat 18:47]
+
+** youtube
+[2019-11-09 Sat 18:47]

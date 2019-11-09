@@ -9,7 +9,7 @@
    [2018-02-04 Sun 10:23]
 
 
-* COMMUNICATION                             :COMMUNICATION:
+* COMMUNICATION                              :COMMUNICATION:
   :PROPERTIES:
   :ID:       9c6fca84-1b15-46f2-86e5-09e7e2e1a28e
   :END:
@@ -19,29 +19,29 @@
 [[file:///Users/chaolongzhang/Documents/signal_and_system/][signal_and_system]]
 
 
-* COMPUTER                                       :COMPUTER:
+* COMPUTER                                        :COMPUTER:
   :PROPERTIES:
   :ID:       ca37c183-7418-4534-abf1-ad7fff3a87aa
   :END:
   [2018-02-04 Sun 10:23]
 
-* SCIENCE :SCIENCE:
+* SCIENCE                                          :SCIENCE:
   1. 费曼物理学讲义
   2. 朗道物理
-  3. 《Mathematical methods for Physics and engineering》by Riley 
+  3. 《Mathematical methods for Physics and engineering》by Riley
   4. 《All the Mathematics you missed but need to know》by Garrity
   5. 《Classical Mechanics- Systems of Particles and Hamiltonian Dynamics》by Greiner
   6. 伯克利物理学系列
-  7. 《Introduction to Electrodynamics》及《习题解答》by Griffiths 
+  7. 《Introduction to Electrodynamics》及《习题解答》by Griffiths
   8. 《Classical Electrodynamics》及《习题解答》by Jackson
-  9. 《An Introduction to Thermal physics》by Schroeder 
-  
+  9. 《An Introduction to Thermal physics》by Schroeder
+
   and the following links give excellent answers about the science and math textbooks:
   https://www.zhihu.com/question/62795154/answer/234744948
   https://www.zhihu.com/question/21451715/answer/429838579
 
 
-* TOOLS                                              :TOOL:
+* TOOLS                                               :TOOL:
   :PROPERTIES:
   :ID:       01c39ce7-b0d1-4406-a859-996de01cbe82
   :END:
