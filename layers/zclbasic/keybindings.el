@@ -93,7 +93,7 @@
   "dd" 'sp-unwrap-sexp
   "df" 'spaceline-toggle-helm-follow-on
   "dg" 'magit-status
-  "di" 'sdcv-search-input+
+  "di" 'sdcv-search-input
   "dk" 'mark-whole-buffer
   "dl" 'goto-line
   "dm" 'helm-all-mark-rings
