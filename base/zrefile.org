@@ -97,5 +97,5 @@ MIT 的 OCW 主页上统计了访问频率最高的一些课程，如下：
 
 https://magit.vc/manual/magit/Resolving-Conflicts.html
 
-* TODO 伯克利物理系列
+* TODO Physics from berkley
 [2019-10-22 Tue 23:04]

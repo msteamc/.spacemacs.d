@@ -1,4 +1,4 @@
-#+TITLE: make STEM clear
+#+TITLE: make STEAM clear
 #+HUGO_BASE_DIR: ../../mstemc_hugo/
 #+HUGO: more
 #+SEQ_TODO: TODO NEXT DONE
@@ -9,7 +9,6 @@
 
 * Videos                                             :video:
 :LOGBOOK:
-CLOCK: [2019-10-20 Sun 17:23]
 CLOCK: [2019-10-20 Sun 17:06]--[2019-10-20 Sun 17:23] =>  0:17
 CLOCK: [2019-10-09 Wed 22:09]--[2019-10-20 Sun 17:03] => 258:54
 CLOCK: [2019-10-07 Mon 09:49]--[2019-10-09 Wed 22:09] => 60:20
@@ -50,8 +49,11 @@ During the creation of one video, several tools are tuned to fit my workflow. In
 this project several videos and posts will be created to make my workflow clear.
 
 Two targets of this project:
-1. remind me of the configeration of several tools;
+1. remind me of the configuration of several tools;
 2. show somebody else who may be interested in how I work.
+
+I am not ready to detail each tool. If you are interested in any one of them,
+please refer to tutorials written by experts or given by the official document.
 
 *** Emacs
 [2019-10-06 Sun 20:38]
@@ -61,11 +63,9 @@ assists me finish almost all the steps. Using Emacs, I program and debug, GTD,
 write the blogs, export and publish them. Many of the Emacs extensions are
 awesome. In particular, Emacs Org is the killer app.
 
-
 How to config Emacs? After more Than ten years of using Emacs, I choose
 spacemacs. Most beginners can start their work using spacemacs with only a
 little modifications.
-
 
 **** program and debug
 [2019-10-06 Sun 20:54]
@@ -97,11 +97,35 @@ Org mode definitely need a standalone subsection.
 
 **** writing latex
 [2019-10-06 Sun 21:16]
+**** org-journal
+[2019-11-10 Sun 16:10]
+
+I write many notes during a post or a project. Most of my journal is maintained
+by [[https://github.com/bastibe/org-journal][org-journal: A simple org-mode based journaling mode]] . And I set the
+=org-journal-file-type= to =weekly= So that I have around 52 journal file each
+year.
+
+The journals can be searched conveniently. Also they can be integrated into Org
+agenda.
+
+
+**** ox-hugo
+[2019-11-10 Sun 17:17]
+
+[[https://github.com/kaushalmodi/ox-hugo][kaushalmodi/ox-hugo: A carefully crafted Org exporter back-end for Hugo]]
+
+Because hugo supports markdown at first (it also supports org file later), I use
+Emacs Org from the very beginning. I am quite familiar with org-mode, so have no
+motivation to dig into markdown. Fortunately, ox-hugo meets all my requirement
+and definitely worth a try when you want to stay in Org.
+
+Actually, Emacs have extensions to support markdown quite well. However, using
+Org, I can integrate the org file into my agenda.
 
 *** Hugo
 [2019-10-06 Sun 20:46]
 
-As the fastest framework for buiding websites, Hugo shocks me by its speed and
+As the fastest framework for building websites, Hugo shocks me by its speed and
 flexibility. It is enough to prettify your site using the more than 300+
 beautiful themes, from which I am in the mode for Academic theme.
 
@@ -109,6 +133,17 @@ Hugo supports Org file but not so good. Ox-hugo, another extension of Emacs, has
 my attention. Serving as a bridge between Emacs and Hugo, ox-hugo helps me
 staying in Emacs Org. There is no need for me to write markdown file if Org is
 available.
+
+I use ox-hugo as a bridge between Emacs and Hugo. So I do not have to care much
+about how to leverage Hugo. Ox-hugo helps me do most of the work.
+
+*** manim
+[2019-11-10 Sun 16:00]
+
+
+
+*** blender
+[2019-11-10 Sun 17:44]
 
 
 

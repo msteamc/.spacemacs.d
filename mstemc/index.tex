@@ -1,0 +1,125 @@
+% Intended LaTeX compiler: xelatex
+\documentclass[koma,utopia,letterpaper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue]{org-article}
+\author{Eason}
+\date{\today}
+\title{my workflow of creating a video}
+\hypersetup{
+ pdfauthor={Eason},
+ pdftitle={my workflow of creating a video},
+ pdfkeywords={},
+ pdfsubject={This collection of Videos and Posts describes my workflow of creating a video. Usage of some tools and methods are covered.},
+ pdfcreator={Emacs 26.3 (Org mode 9.2.6)},
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+During the creation of one video, several tools are tuned to fit my workflow. In
+this project several videos and posts will be created to make my workflow clear.
+
+Two targets of this project:
+\begin{enumerate}
+\item remind me of the configuration of several tools;
+\item show somebody else who may be interested in how I work.
+\end{enumerate}
+
+I am not ready to detail each tool. If you are interested in any one of them,
+please refer to tutorials written by experts or given by the official document.
+
+\section{Emacs}
+\label{sec:org232de87}
+
+
+Emacs lies in the center of my workflow. It behaves like a super-IDE which
+assists me finish almost all the steps. Using Emacs, I program and debug, GTD,
+write the blogs, export and publish them. Many of the Emacs extensions are
+awesome. In particular, Emacs Org is the killer app.
+
+How to config Emacs? After more Than ten years of using Emacs, I choose
+spacemacs. Most beginners can start their work using spacemacs with only a
+little modifications.
+
+\subsection{program and debug}
+\label{sec:orgcb33eca}
+
+
+I program in python, C/C++, Matlab and some other languages. Emacs acts as a
+super-IDE for me.
+
+
+\subsection{Org mode - journalize your work}
+\label{sec:orga18221f}
+
+
+Org mode definitely need a standalone subsection.
+
+\subsection{Org mode - get things done}
+\label{sec:org8f6b45e}
+
+
+
+\subsection{Org mode - write a diary}
+\label{sec:orgd48d496}
+
+\subsection{Org mode - export your Org file}
+\label{sec:org94ce70b}
+
+
+\subsection{program and debug}
+\label{sec:org8c82502}
+
+
+\subsection{writing latex}
+\label{sec:org3f6fba5}
+\subsection{org-journal}
+\label{sec:org9e0dc38}
+
+
+I write many notes during a post or a project. Most of my journal is maintained
+by \href{https://github.com/bastibe/org-journal}{org-journal: A simple org-mode based journaling mode} . And I set the
+\texttt{org-journal-file-type} to \texttt{weekly} So that I have around 52 journal file each
+year.
+
+The journals can be searched conveniently. Also they can be integrated into Org
+agenda.
+
+
+\subsection{ox-hugo}
+\label{sec:orgeefa353}
+
+
+\href{https://github.com/kaushalmodi/ox-hugo}{kaushalmodi/ox-hugo: A carefully crafted Org exporter back-end for Hugo}
+
+Because hugo supports markdown at first (it also supports org file later), I use
+Emacs Org from the very beginning. I am quite familiar with org-mode, so have no
+motivation to dig into markdown. Fortunately, ox-hugo meets all my requirement
+and definitely worth a try when you want to stay in Org.
+
+Actually, Emacs have extensions to support markdown quite well. However, using
+Org, I can integrate the org file into my agenda.
+
+\section{Hugo}
+\label{sec:org4e548ff}
+
+
+As the fastest framework for building websites, Hugo shocks me by its speed and
+flexibility. It is enough to prettify your site using the more than 300+
+beautiful themes, from which I am in the mode for Academic theme.
+
+Hugo supports Org file but not so good. Ox-hugo, another extension of Emacs, has
+my attention. Serving as a bridge between Emacs and Hugo, ox-hugo helps me
+staying in Emacs Org. There is no need for me to write markdown file if Org is
+available.
+
+I use ox-hugo as a bridge between Emacs and Hugo. So I do not have to care much
+about how to leverage Hugo. Ox-hugo helps me do most of the work.
+
+\section{manim}
+\label{sec:org74b3895}
+
+
+
+\section{blender}
+\label{sec:orge510532}
+\end{document}
