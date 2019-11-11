@@ -2,12 +2,6 @@
 :PROPERTIES:
 :CREATED:  20191110
 :END:
-** TODO 17:01 signal and systems                            :signalsAndSystems:
-<2019-11-10 Sun 17:03>
-
-
-
-
 ** 19:49 ox.el export dispatch 下的 C-s 没有反应
 
 选择导出 sub-tree 的时候应该是按下 C-s 但是 org 没有反应，我修改了 ox.el 下的按键
