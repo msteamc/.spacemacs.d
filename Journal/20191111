@@ -23,11 +23,84 @@
 :PROPERTIES:
 :CREATED:  20191112
 :END:
-** TODO 17:01 signal and systems                            :signalsAndSystems:
-<2019-11-10 Sun 17:03>
 ** 23:08 关于微积分的一些想法
 
 首先我先把俄罗斯的那套教材重新温习一边，然后把普利斯顿的微积分教材刷一边，熟悉英
 语表达。
 
 然后按照[[*22:48 %E4%B8%8B%E5%AE%9A%E5%86%B3%E5%BF%83%E5%BC%A5%E8%A1%A5%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86][22:48 下定决心弥补数学知识]] 所列的顺序开始刷教材。
+
+* Wednesday, 11/13/19
+:PROPERTIES:
+:CREATED:  20191113
+:END:
+
+** 20:29 需要定下每日计划
+
+尽管之前也有重温微积分的打算，但是我必须每日都必须对三件事情有所投入时间：
+1. 微积分；
+2. 信号与系统；
+3. manim;
+
+对这些投入需要形成笔记.
+** 20:42 introduction                                   :ss:
+
+While students studying signals and systems should certainly have a solid
+foundation in disciplines based on the laws of physics, they must also have a
+solid foundation in disciplines based on the laws of physics, they must also
+have a firm grounding in the use of computers for the analysis of phenomena
+and the implementation of systems and algorithms. As a consequence, engineering
+curricula now reflect a blend of subjects, some involving continuous-time models
+and others focusing on the use of computers and discrete representations. For
+these reasons, signals and systems courses that bring discrete-time and
+continuous-time concepts together in a unified way play an increasingly
+important role in the education of engineering students and in their preparation
+for current and future developments in their chosen fields.
+
+It has pedagogical advantage by taking both the continuous-time and
+discrete-time in mind.
+
+Chapter 1 introduces block diagram representations of interconnections of
+systems and discusses several basic system properties such as causality,
+linearity and time-invariance.
+
+The concepts of signals and systems arise in a wide variety of fields, and the
+ideas and techniques associated with these concepts play an important role in
+such diverse areas of science and technology such communications, aeronautics
+and astronautics, circuit design, acoustics, seismology, biomedical engineering,
+energy generation and distribution systems, chemical process control, and speech
+processing. Because of its importance, it worth to take time to digest each
+single idea and concept appearing in such course. Also, it will be greatly
+helpful for the newbie to have an open course to help them dive into the world
+of signals and systems. I tried my best to give the best explanation of the
+concept in this course and comprehensive details are given during my creation of
+videos and posts. It takes time to produce one piece of work so that sometimes I
+think it was a grind. However, for the sake of beautiful result, I pretty enjoy
+the process of doing such creation.
+
+The signals, which are functions of one or more independent variables, contains
+information about the behavior or nature of some phenomenon, whereas the systems
+respond to particular signals by producing other signals or some desired
+behavior.
+
+Examples:
+1. Voltages and currents as a function of time in an electrical circuit are
+   examples of signals. and a circuit is itself an example of a system, which in
+   this case responds to applied voltages and currents.
+2. As another example, when an automobile driver depresses the accelerator
+   pedal, the automobile responds by increasing the speed of the vehicle.
+3. A computer program for the automated diagnosis of electrocardiograms can be
+   viewed as a system which has as its input a digitized electrocardiogram and
+   which produces estimates of parameters such as heart rate as outputs.
+4. A camera is a system that receives light from different sources and reflected
+   from objects and produces a photograph.
+5. A robot arm is a system whose movements are the response to control inputs.
+
+
+The purpose of signals ans systems:
+1. characterizing the system in detail to understand how it will respond to
+   various inputs.
+2. design systems to process signals in particular ways. such enhancement and
+   restoration of certain signals, extraction of specific pieces of information
+   from signals.
+3. modify or control the characteristics of a given system.
