@@ -12,9 +12,6 @@
 (unless (boundp 'org-latex-classes)
   (setq org-latex-classes nil))
 
-;; (setq reftex-default-bibliography
-;;       (quote
-;;        ( "~/zorg/base/temp/201310diary.bib")))
 ;; 在org中插入参考文献
 (defun org-mode-reftex-setup ()
   (load-library "reftex")

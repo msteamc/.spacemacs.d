@@ -1,4 +1,4 @@
-#+AUTHOR:   Eason Zhang
+#+AUTHOR:  Eason
 #+EMAIL:
 #+LANGUAGE:  en
 #+OPTIONS:   *:t <:nil timestamp:nil toc:t prop:nil

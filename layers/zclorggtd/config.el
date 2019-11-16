@@ -17,7 +17,6 @@
                                "~/Dropbox/zorg/mstemc/mstemc.org"
                                ))
 
-
   (setq org-refile-targets (quote (
             ("~/Dropbox/zorg/base/zwork.org" :maxlevel . 6)
             ("~/Dropbox/zorg/base/zlife.org" :maxlevel . 6)

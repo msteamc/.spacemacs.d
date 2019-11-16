@@ -38,4 +38,6 @@
 
   (org-cycle-hide-drawers 'all)
 
+  ;; Replace org-set-tags with org-set-tags-command in keybinding
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode ":" 'org-set-tags-command)
   )
