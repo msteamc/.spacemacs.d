@@ -122,3 +122,70 @@ The purpose of signals ans systems:
 也可以按照这 60 个课程来做。每一个课程都是一个 course。
 
 [[https://brilliant.org/daily-problems/][Daily Challenges | Brilliant]] is the daily challenges.
+
+* Saturday, 11/16/19
+:PROPERTIES:
+:CREATED:  20191116
+:END:
+** 19:38 org-journal in calendar :org:
+In calendar buffer, the key =J= provides several handy functions for =org-journal=
+.Details are shown as below:
+ #+begin_src elisp -n
+ (defun zcljournal//set-calendar-keys ()
+   (define-key calendar-mode-map "Jj" 'org-journal-new-date-entry)
+   (define-key calendar-mode-map "Jv" 'org-journal-read-entry)
+   (define-key calendar-mode-map "JV" 'org-journal-display-entry)
+   (define-key calendar-mode-map "Jn" 'org-journal-next-entry)
+   (define-key calendar-mode-map "Jp" 'org-journal-previous-entry)
+   (define-key calendar-mode-map "Js" 'org-journal-search)
+   (define-key calendar-mode-map "JS" 'org-journal-search-forever)
+   (define-key calendar-mode-map "Jw" 'org-journal-search-calendar-week)
+   (define-key calendar-mode-map "Jm" 'org-journal-search-calendar-month)
+   (define-key calendar-mode-map "Jy" 'org-journal-search-calendar-year)
+   )
+ #+end_src
+
+
+Also, it is very convenient to capture a journal using the =org-capture= .
+#+begin_src elisp -n
+(defun org-journal-find-location ()
+  ;; Open today's journal, but specify a non-nil prefix argument in order to
+  ;; inhibit inserting the heading; org-capture will insert the heading.
+  (org-journal-new-entry t)
+  ;; Position point on the journal's top-level heading so that org-capture
+  ;; will add the new entry as a child entry.
+  (goto-char (point-min)))
+
+(setq org-capture-templates '(("j" "Journal entry" entry (function org-journal-find-location)
+                               "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")))
+#+end_src
+
+* Sunday, 11/17/19
+:PROPERTIES:
+:CREATED:  20191117
+:END:
+** 16:49 chapter 1 summary :ss:
+We developed a number of basic concepts related to continuous-time and
+discrete-time signals and systems. We have presented both an intuitive picture of
+what signals and systems are through several examples and a mathematical
+representation for signals and systems that we will use throughout the book.
+Specifically, we introduced graphical and mathematical representation of signals
+and used these representations in in performing transformations of the
+independent variable. We also defined and examined several basic signals, both
+in continuous time and in discrete time. These included complex exponential
+signals, sinusoidal signals, and unit impulse and step functions. In addition,
+we investigated the concept of periodicity for continuous-time and discrete-time
+signals.
+
+In developing some of the elementary ideas related to systems, we introduced
+block diagrams to facilitate our discussions concerning the interconnection of
+systems, and we defined a number of important properties of systems, including
+causality, stability, time-invariance, and linearity.
+
+The primary focus in most of this book will be on the class of LTI systems, both
+in continuous time and discrete time. These systems play a particularly
+important role in system analysis and design, in part due to the fact that many
+systems encountered in nature can be successfully modeled as linear and time
+invariant. Furthermore, as we shall see in the following chapters, the
+properties of linearity and time invariance allows us to analyze in detail the
+behavior of LTI systems.
