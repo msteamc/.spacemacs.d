@@ -166,15 +166,15 @@ Also, it is very convenient to capture a journal using the =org-capture= .
 :END:
 ** 16:49 chapter 1 summary :ss:
 We developed a number of basic concepts related to continuous-time and
-discrete-time signals and systems. We have presented both an intuitive picture of
-what signals and systems are through several examples and a mathematical
+discrete-time signals and systems. We have presented both an intuitive picture
+of what signals and systems are through several examples and a mathematical
 representation for signals and systems that we will use throughout the book.
 Specifically, we introduced graphical and mathematical representation of signals
-and used these representations in in performing transformations of the
-independent variable. We also defined and examined several basic signals, both
-in continuous time and in discrete time. These included complex exponential
-signals, sinusoidal signals, and unit impulse and step functions. In addition,
-we investigated the concept of periodicity for continuous-time and discrete-time
+and used these representations in performing transformations of the independent
+variable. We also defined and examined several basic signals, both in continuous
+time and in discrete time. These included complex exponential signals,
+sinusoidal signals, and unit impulse and step functions. In addition, we
+investigated the concept of periodicity for continuous-time and discrete-time
 signals.
 
 In developing some of the elementary ideas related to systems, we introduced
