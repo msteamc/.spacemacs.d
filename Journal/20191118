@@ -1,3 +1,10 @@
+#+TITLE: 20191119
+#+HUGO_BASE_DIR: ../../mstemc_hugo/
+#+HUGO: more
+#+SEQ_TODO: TODO NEXT DONE
+#+HUGO_AUTO_SET_LASTMOD: t
+#+hugo_front_matter_key_replace: description>summary
+#+SETUPFILE: ~/.spacemacs.d/org-templates/enpost.org
 * Tuesday, 11/19/19
 :PROPERTIES:
 :CREATED:  20191119
@@ -83,7 +90,8 @@ The purpose of signals ans systems:
 
 *** 15:39 Basics of signals and systems
 :LOGBOOK:
-CLOCK: [2019-11-24 Sun 15:42]
+CLOCK: [2019-11-25 Mon 22:43]
+CLOCK: [2019-11-24 Sun 15:42]--[2019-11-24 Sun 22:42] =>  7:00
 :END:
 <2019-11-24 Sun 15:39>
 
@@ -97,7 +105,6 @@ A signal is defined as any physical quantity that varies with time, space, or
 any other independent variable or variables. Mathematically, we describe a
 signal as a function of one or more independent variables. Signals convey
 information.
-
 
 A continuous-time signal is a quantity of interest that
 depends on an independent variable, where we usually think of the independent
@@ -121,12 +128,24 @@ arise as equally-spaced samples of a continuous-time signal, it is often more
 convenient to think of the index as the "sample number".
 
 Systems process signals to produce a modified or transformed version of the
-original signal. For the information and communication technology, signals and
-systems helps engineer to analyze and design the signals and systems they meet
-in daily life.
+original signal. For the information and communication technology, this series
+of videos and posts help engineers analyze and design the signals and systems
+they meet in daily life.
 
-Signals and systems
-
+In general, two types of tools related with continuous-time signals and
+discrete-time signals will be covered. For example, for the continuous-time
+signals we have Fourier Transform and Laplace transform whereas for the
+discrete-time signals we have discrete time fourier transforms and Z-transform.
+Liveing in a digitized world, I use discrete-time signals related tools more
+often than the continuous-time counterpart. Now, it seems that the
+continuous-time signals only exists before analog-digital convertor(ADC).
+However, to analyze a signal, the continuous-time related tools provide a more
+mathmatical and theoreatical way. So during the learning and teaching signals
+and systems, I will cover both continuous-time and discrete-time topics and give
+as many details about both realms as I can. Fortunately, we have sampling theory
+and ADC, we can move from continuous-time world to discrete-time world pretty
+easily. Most of the conclusions we draw from the continuous-time world will
+apply in the discrete-time world with no or only a little modification.
 
 
 *** summary of chapter 1
