@@ -90,7 +90,7 @@ The purpose of signals ans systems:
 
 *** 15:39 Basics of signals and systems
 :LOGBOOK:
-CLOCK: [2019-11-25 Mon 22:43]
+CLOCK: [2019-11-25 Mon 22:43]--[2019-11-26 Tue 22:07] => 23:24
 CLOCK: [2019-11-24 Sun 15:42]--[2019-11-24 Sun 22:42] =>  7:00
 :END:
 <2019-11-24 Sun 15:39>
@@ -101,18 +101,22 @@ is : /Signal Processing and Linear Systems/ by B.P. Lathi, CRC Press.
 *** definition of signals and systems
 [2019-11-24 Sun 16:41]
 
+Fist give the definition of singal then system.
+**** definition of signals
+[2019-11-26 Tue 22:06]
+
 A signal is defined as any physical quantity that varies with time, space, or
 any other independent variable or variables. Mathematically, we describe a
 signal as a function of one or more independent variables. Signals convey
 information.
 
-A continuous-time signal is a quantity of interest that
-depends on an independent variable, where we usually think of the independent
-variable as time. In the real world, physical quantities take on real numerical
-values, though it turns out that sometimes it is mathematically convenient to
-consider /complex-valued functions of t/. However, the default is real-valued
-\(x(t)\), and indeed the type of sketch exhibited about is valid only for
-real-valued signals.
+A continuous-time signal is a quantity of interest that depends on an
+independent variable, where we usually think of the independent variable as
+time. In the real world, physical quantities take on real numerical values,
+though it turns out that sometimes it is mathematically convenient to consider
+/complex-valued functions of t/. However, the default is real-valued \(x(t)\),
+and indeed the type of sketch exhibited about is valid only for real-valued
+signals.
 
 Remarks:
 1. A continuous-time signal is not necessarily a continuous function as defined
@@ -126,6 +130,21 @@ index can be thought of as a time index, and the values in the sequence
 represent some physical quantity of interest. Because many discrete-time signals
 arise as equally-spaced samples of a continuous-time signal, it is often more
 convenient to think of the index as the "sample number".
+**** examples of signals
+[2019-11-26 Tue 21:45]
+***** ECG signal
+[2019-11-26 Tue 21:57]
+
+***** Speech signal
+[2019-11-26 Tue 22:21]
+
+***** Image
+[2019-11-26 Tue 22:21]
+
+
+
+**** definition of systems
+[2019-11-26 Tue 22:06]
 
 Systems process signals to produce a modified or transformed version of the
 original signal. For the information and communication technology, this series
@@ -135,18 +154,28 @@ they meet in daily life.
 In general, two types of tools related with continuous-time signals and
 discrete-time signals will be covered. For example, for the continuous-time
 signals we have Fourier Transform and Laplace transform whereas for the
-discrete-time signals we have discrete time fourier transforms and Z-transform.
-Liveing in a digitized world, I use discrete-time signals related tools more
+discrete-time signals we have discrete time Fourier Transforms and Z-transform.
+Living in a digitized world, I use discrete-time signals related tools more
 often than the continuous-time counterpart. Now, it seems that the
-continuous-time signals only exists before analog-digital convertor(ADC).
+continuous-time signals only exists before analog-digital converter (ADC).
 However, to analyze a signal, the continuous-time related tools provide a more
-mathmatical and theoreatical way. So during the learning and teaching signals
+mathematical and theoretical way. So during the learning and teaching signals
 and systems, I will cover both continuous-time and discrete-time topics and give
 as many details about both realms as I can. Fortunately, we have sampling theory
-and ADC, we can move from continuous-time world to discrete-time world pretty
-easily. Most of the conclusions we draw from the continuous-time world will
-apply in the discrete-time world with no or only a little modification.
+and ADC, we can easily move from continuous-time world to discrete-time world .
+Most of the conclusions we draw from the continuous-time world will apply in the
+discrete-time world with no or only a little modification.
+**** examples of systems
+[2019-11-26 Tue 22:08]
 
+***** ECG system
+[2019-11-26 Tue 22:22]
+
+***** Voice recording system
+[2019-11-26 Tue 22:23]
+
+***** Camera Systems
+[2019-11-26 Tue 22:22]
 
 *** summary of chapter 1
 [2019-11-24 Sun 15:41]
@@ -249,3 +278,17 @@ Other references are:
 
 12. Dr Wickert's website [[http://www.eas.uccs.edu/~mwickert/][Dr. Wickert's Info Center]]  has quite a lot resources
     for a engineering student.
+*** architecture of each video
+[2019-11-26 Tue 07:29]
+
+1. every video will contain several topics but the mathematical derivation will
+   not be so all-inclusive. More details will given as posts in this site for whom
+   may be interested. So you can grab the overall structure at first then
+   reinforce the it with more bricks.
+2. For each video, only several key points will be explained. I don't want the
+   video make you feel boring or tired.
+3. A piece of suggestion for the serious learner: watch the video twice or even
+   more. Most often, even some concepts which are relatively simple at first
+   look hide some deep relation with other concepts. The obscure relation will
+   not be illustrated in the video if it does not affect the understanding of
+   current object.

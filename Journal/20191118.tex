@@ -2,10 +2,10 @@
 \documentclass[koma,utopia,letterpaper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue]{org-article}
 \author{Eason}
 \date{\today}
-\title{20191119}
+\title{introduction to signal and system}
 \hypersetup{
  pdfauthor={Eason},
- pdftitle={20191119},
+ pdftitle={introduction to signal and system},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={Emacs 26.3 (Org mode 9.2.6)},
@@ -15,23 +15,8 @@
 \maketitle
 \tableofcontents
 
-\section{Tuesday, 11/19/19}
-\label{sec:orgaf7c73e}
-\subsection{21:55 this is a new week}
-\label{sec:org784f7a1}
-STEAM: science, technology, engineering, art and math
-
-Today, I listen to an talk between 3blue1brown and numberphile.
-
-\section{Wednesday, 11/20/19}
-\label{sec:org7da6c22}
-
-\section{Sunday, 11/24/19}
-\label{sec:org9fb7c83}
-\subsection{introduction to signal and system}
-\label{sec:org4132682}
-\subsubsection{preface}
-\label{sec:org30a21fe}
+\section{preface}
+\label{sec:orgb73e917}
 
 
 While students studying signals and systems should certainly have a solid
@@ -99,15 +84,20 @@ from signals.
 \end{enumerate}
 
 
-\subsubsection{15:39 Basics of signals and systems}
-\label{sec:orgf198687}
+\section{15:39 Basics of signals and systems}
+\label{sec:org023432e}
 
 
 This section is from \href{http://www.di.univr.it/documenti/OccorrenzaIns/matdid/matdid744681.pdf}{Signals-and-Systems.ppt}  by Gloria Menegaz. The textbook
 is : \emph{Signal Processing and Linear Systems} by B.P. Lathi, CRC Press.
 
-\subsubsection{definition of signals and systems}
-\label{sec:org9f44052}
+\section{definition of signals and systems}
+\label{sec:org0083078}
+
+
+Fist give the definition of singal then system.
+\subsection{definition of signals}
+\label{sec:orgc5b8c56}
 
 
 A signal is defined as any physical quantity that varies with time, space, or
@@ -115,13 +105,13 @@ any other independent variable or variables. Mathematically, we describe a
 signal as a function of one or more independent variables. Signals convey
 information.
 
-A continuous-time signal is a quantity of interest that
-depends on an independent variable, where we usually think of the independent
-variable as time. In the real world, physical quantities take on real numerical
-values, though it turns out that sometimes it is mathematically convenient to
-consider \emph{complex-valued functions of t}. However, the default is real-valued
-\(x(t)\), and indeed the type of sketch exhibited about is valid only for
-real-valued signals.
+A continuous-time signal is a quantity of interest that depends on an
+independent variable, where we usually think of the independent variable as
+time. In the real world, physical quantities take on real numerical values,
+though it turns out that sometimes it is mathematically convenient to consider
+\emph{complex-valued functions of t}. However, the default is real-valued \(x(t)\),
+and indeed the type of sketch exhibited about is valid only for real-valued
+signals.
 
 Remarks:
 \begin{enumerate}
@@ -137,19 +127,58 @@ index can be thought of as a time index, and the values in the sequence
 represent some physical quantity of interest. Because many discrete-time signals
 arise as equally-spaced samples of a continuous-time signal, it is often more
 convenient to think of the index as the "sample number".
+\subsection{examples of signals}
+\label{sec:org9e7ff00}
+
+\subsubsection{ECG signal}
+\label{sec:org6aa518f}
+
+\subsubsection{Speech signal}
+\label{sec:org4599249}
+
+\subsubsection{Image}
+\label{sec:orgb9ba77a}
+
+
+
+\subsection{definition of systems}
+\label{sec:org50a98a3}
+
 
 Systems process signals to produce a modified or transformed version of the
-original signal. For the information and communication technology, signals and
-systems helps engineer to analyze and design the signals and systems they meet
-in daily life.
+original signal. For the information and communication technology, this series
+of videos and posts help engineers analyze and design the signals and systems
+they meet in daily life.
+
+In general, two types of tools related with continuous-time signals and
+discrete-time signals will be covered. For example, for the continuous-time
+signals we have Fourier Transform and Laplace transform whereas for the
+discrete-time signals we have discrete time Fourier Transforms and Z-transform.
+Living in a digitized world, I use discrete-time signals related tools more
+often than the continuous-time counterpart. Now, it seems that the
+continuous-time signals only exists before analog-digital converter (ADC).
+However, to analyze a signal, the continuous-time related tools provide a more
+mathematical and theoretical way. So during the learning and teaching signals
+and systems, I will cover both continuous-time and discrete-time topics and give
+as many details about both realms as I can. Fortunately, we have sampling theory
+and ADC, we can easily move from continuous-time world to discrete-time world .
+Most of the conclusions we draw from the continuous-time world will apply in the
+discrete-time world with no or only a little modification.
+\subsection{examples of systems}
+\label{sec:org371aacc}
 
 
+\subsubsection{ECG system}
+\label{sec:orge20180e}
 
+\subsubsection{Voice recording system}
+\label{sec:org4bc4f48}
 
+\subsubsection{Camera Systems}
+\label{sec:org36b0296}
 
-
-\subsubsection{summary of chapter 1}
-\label{sec:orgde426c3}
+\section{summary of chapter 1}
+\label{sec:org273cc92}
 
 
 We developed a number of basic concepts related to continuous-time and
@@ -177,8 +206,8 @@ invariant. Furthermore, as we shall see in the following chapters, the
 properties of linearity and time invariance allows us to analyze in detail the
 behavior of LTI systems.
 
-\subsubsection{references}
-\label{sec:orgbf8c476}
+\section{references}
+\label{sec:orgc602a8b}
 
 
 Other references are:
@@ -252,5 +281,22 @@ demonstrations, and laboratory assignments.
 
 \item Dr Wickert's website \href{http://www.eas.uccs.edu/\~mwickert/}{Dr. Wickert's Info Center}  has quite a lot resources
 for a engineering student.
+\end{enumerate}
+\section{architecture of each video}
+\label{sec:org64de00f}
+
+
+\begin{enumerate}
+\item every video will contain several topics but the mathematical derivation will
+not be so all-inclusive. More details will given as posts in this site for whom
+may be interested. So you can grab the overall structure at first then
+reinforce the it with more bricks.
+\item For each video, only several key points will be explained. I don't want the
+video make you feel boring or tired.
+\item A piece of suggestion for the serious learner: watch the video twice or even
+more. Most often, even some concepts which are relatively simple at first
+look hide some deep relation with other concepts. The obscure relation will
+not be illustrated in the video if it does not affect the understanding of
+current object.
 \end{enumerate}
 \end{document}
