@@ -63,12 +63,10 @@
            entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Courses")
            (function org-hugo-new-subtree-course-capture-template)
            :clock-in t :clock-resume t)
-
           ;; ("g" "my Log Time" entry (file+datetree "~/Dropbox/zorg/base/ztimelog.org" ) "** %T - %?  :timelog:" :clock-in t :clock-resume t)
           ("d" "diary" entry (file+datetree "~/Dropbox/zorg/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)
-          ;; ("x" "org-protocol" entry (file "~/Dropbox/zorg/base/zrefile.org")
-          ;;  "* TODO Review %c \n Added:%T\n")
-          ))
+          ("j" "Journal entry" entry (function org-journal-find-location)
+           "* %(format-time-string org-journal-time-format)%^{Title}\n Added:%T\n %?")))
 
   (add-hook 'org-clock-out-hook 'bh/remove-empty-drawer-on-clock-out 'append)
   ;;;; Targets include this file and any file contributing to the agenda - up to 9 levels deep

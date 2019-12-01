@@ -39,7 +39,6 @@
     "jj"  'org-journal-new-entry)
   (spacemacs/set-leader-keys-for-major-mode 'org-journal-mode
     "js"  'org-journal-search)
-
   (spacemacs/set-leader-keys-for-major-mode 'org-agenda-mode
     "Jn" 'org-journal-open-next-entry)
   (spacemacs/set-leader-keys-for-major-mode 'org-agenda-mode

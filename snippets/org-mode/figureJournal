@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: figureJournal
+# --
+#+ATTR_HTML:  :width 800 :align center
+#+ATTR_LATEX: :width 0.6\textwidth :align center
+[[~/Dropbox/img/static/$1.png]]
+$0

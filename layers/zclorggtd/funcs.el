@@ -834,3 +834,11 @@ Late deadlines first, then scheduled, then non-late deadlines"
         (while (org-up-heading-safe)
           (when (member (nth 2 (org-heading-components)) (list "NEXT"))
             (org-todo "TODO")))))))
+;;;;;;###autoload
+(defun org-journal-find-location ()
+  ;; Open today's journal, but specify a non-nil prefix argument in order to
+  ;; inhibit inserting the heading; org-capture will insert the heading.
+  (org-journal-new-entry t)
+  ;; Position point on the journal's top-level heading so that org-capture
+  ;; will add the new entry as a child entry.
+  (goto-char (point-min)))
