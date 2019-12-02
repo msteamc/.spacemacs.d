@@ -294,7 +294,7 @@ Other references are:
    not be illustrated in the video if it does not affect the understanding of
    current object.
 
-** 08:05 introduction to signal and system (ver2) :SS:
+** TODO introduction to signal and system (ver2)                           :SS:
 <2019-12-01 Sun 08:05>
 
 As a basic "language" for engineering students, signals and systems appears in a
@@ -347,3 +347,7 @@ can be divided into four categories.
 2. Digital continuous-time signal;
 3. Analogy discrete-time signal;
 4. Digital discrete-time signal
+** 23:21 关于内容
+
+1. 使用 tikz 画图。
+2. 仔细看看 3b1b 的视频
