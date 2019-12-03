@@ -29,7 +29,7 @@ powerthesaurus.org
 1. 使用 tikz 画图。
 2. 仔细看看 3b1b 的视频
 https://emacs-china.org/t/org-tikz/8891/18
-这个链接中提出修改imagemagick的一个bug，不过是在linux上的。
+这个链接中提出修改 imagemagick 的一个 bug，不过是在 linux 上的。
 
 * just a test
 [2019-12-03 Tue 09:53]
@@ -45,7 +45,7 @@ https://emacs-china.org/t/org-tikz/8891/18
 #+end_export
 
 #+name: test_plot_tikz
-#+header: :exports results :file test.png
+#+header: :exports raw :file test.png
 #+header: :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400
 #+header: :fit yes :noweb yes :headers '("\\usepackage{tikz}")
 #+begin_src latex :noweb yes :exports both
@@ -67,7 +67,9 @@ https://emacs-china.org/t/org-tikz/8891/18
 * Tikz test
 Here's a tree, exported to both html and pdf.
 
-#+begin_src latex :file fsa.png :packages '(("" "tikz")) :border 1em :results raw
+#+header: :results (by-backend (latex "latex") (beamer "latex") (t "raw"))
+#+HEADER: :fit yes :imagemagick yes :imoutoptions -geometry 400 :iminoptions -density 400
+#+begin_src latex :file fsa.png :packages '(("" "tikz"))
   % Define block styles
   \usetikzlibrary{shapes,arrows}
   \tikzstyle{astate} = [circle, draw, text centered, font=\footnotesize, fill=blue!25]
@@ -88,9 +90,11 @@ Here's a tree, exported to both html and pdf.
 [[file:fsa.png]]
 
 
+
+
 #+HEADER: :file ./contour.png :imagemagick yes
-#+HEADER: :results raw silent :headers '("\\usepackage{tikz}")
-#+HEADER: :fit yes :imoutoptions -geometry 400 :iminoptions -density 600
+#+HEADER: :results raw  :headers '("\\usepackage{tikz}")
+#+HEADER: :fit yes :imoutoptions -geometry 300 :iminoptions -density 300
 #+BEGIN_src latex
 \begin{tikzpicture}
 \draw[->] (-3,0) -- (-2,0) arc[radius=0.5cm,start angle=-180,end angle=0] (-1,0) -- (1,0) arc[radius=0.5cm,start angle=180,end angle=0] (2,0) -- (3,0);
@@ -98,6 +102,9 @@ Here's a tree, exported to both html and pdf.
 \filldraw (1.5,0) circle[radius=1mm];
 \end{tikzpicture}
 #+END_src
+
+#+RESULTS:
+[[file:./contour.png]]
 
 * Using a tikz picture
 
@@ -118,6 +125,7 @@ Here's a tree, exported to both html and pdf.
 
 #+RESULTS: mytikzpicture
 [[file:mytikzpicture.png]]
+
 
 
 
@@ -147,9 +155,9 @@ Here's a tree, exported to both html and pdf.
 #+end_src
 
 #+RESULTS: mytikzpicture2
-[[file:mytikzpicture2.png]] 
+[[file:mytikzpicture2.png]]
 
-* emacs latex org 
+* emacs latex org
 
 https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-LaTeX.html
 
