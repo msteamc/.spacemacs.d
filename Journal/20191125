@@ -475,3 +475,6 @@ Here's a tree, exported to both html and pdf.
 * emacs latex org 
 
 https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-LaTeX.html
+
+* imagemagick
+  -flatten 会让图片更清晰
