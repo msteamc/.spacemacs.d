@@ -351,3 +351,127 @@ can be divided into four categories.
 
 1. 使用 tikz 画图。
 2. 仔细看看 3b1b 的视频
+https://emacs-china.org/t/org-tikz/8891/18
+这个链接中提出修改imagemagick的一个bug，不过是在linux上的。
+
+* just a test
+[2019-12-03 Tue 09:53]
+
+#+name: hello-world
+#+BEGIN_SRC latex
+\LaTeX
+#+END_SRC
+
+#+RESULTS: hello-world
+#+begin_export latex
+\LaTeX
+#+end_export
+
+#+name: test_plot_tikz
+#+header: :exports results :file test.png
+#+header: :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400
+#+header: :fit yes :noweb yes :headers '("\\usepackage{tikz}")
+#+begin_src latex :noweb yes :exports both
+  \usetikzlibrary{trees}
+  \begin{tikzpicture}
+    \node [circle, draw, fill=red!20] at (0,0) {1}
+    child { node [circle, draw, fill=blue!30] {2}
+      child { node [circle, draw, fill=green!30] {3} }
+      child { node [circle, draw, fill=yellow!30] {4} }};
+  \end{tikzpicture}
+#+end_src
+
+#+RESULTS: test_plot_tikz
+#+begin_export latex
+[[file:test.png]]
+#+end_export
+
+
+* Tikz test
+Here's a tree, exported to both html and pdf.
+
+#+begin_src latex :file fsa.png :packages '(("" "tikz")) :border 1em :results raw
+  % Define block styles
+  \usetikzlibrary{shapes,arrows}
+  \tikzstyle{astate} = [circle, draw, text centered, font=\footnotesize, fill=blue!25]
+  \tikzstyle{rstate} = [circle, draw, text centered, font=\footnotesize, fill=red!25]
+
+  \begin{tikzpicture}[->,>=stealth', shorten >=1pt, auto, node distance=2.8cm, semithick]
+    \node [astate] (1) at (0,0) {1};
+    \node [astate] (2) at (1,0) {2};
+    \node [rstate] (3) at (2,0) {3};
+    \path (1) edge [bend left] node {b} (2)
+          (2) edge node {b} (3)
+          (2) edge [bend left] node {a} (1)
+          (3) edge [loop above] node {(a, b)} (3);
+  \end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:fsa.png]]
+
+
+#+HEADER: :file ./contour.png :imagemagick yes
+#+HEADER: :results raw silent :headers '("\\usepackage{tikz}")
+#+HEADER: :fit yes :imoutoptions -geometry 400 :iminoptions -density 600
+#+BEGIN_src latex
+\begin{tikzpicture}
+\draw[->] (-3,0) -- (-2,0) arc[radius=0.5cm,start angle=-180,end angle=0] (-1,0) -- (1,0) arc[radius=0.5cm,start angle=180,end angle=0] (2,0) -- (3,0);
+\filldraw (-1.5,0) circle[radius=1mm];
+\filldraw (1.5,0) circle[radius=1mm];
+\end{tikzpicture}
+#+END_src
+
+* Using a tikz picture
+
+#+name: mytikzpicture
+#+header: :file (by-backend (html "mytikzpicture.svg") (latex 'nil) (beamer 'nil) (t "mytikzpicture.png"))
+#+header: :imagemagick (by-backend (html 'nil) (latex 'nil) (beamer 'nil) (t "t"))
+#+header: :results (by-backend (latex "latex") (beamer "latex") (t "raw"))
+#+header: :fit yes :border 0cm
+#+header: :iminoptions -density 300 :imoutoptions -geometry 300
+#+header: :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
+#+begin_src latex
+  \begin{tikzpicture}
+    \node[draw]                   (nodeA) {A};
+    \node[draw, right of = nodeA] (nodeB) {B};
+    \draw[->] (nodeA) -- (nodeB);
+  \end{tikzpicture}
+#+end_src
+
+#+RESULTS: mytikzpicture
+[[file:mytikzpicture.png]]
+
+
+
+* setup emacs                                                      :noexport:
+#+begin_src emacs-lisp :exports none :results silent
+  (setq org-babel-latex-htlatex "htlatex")
+  (defmacro by-backend (&rest body)
+    `(case org-export-current-backend ,@body))
+#+end_src
+
+
+* Using a tikz picture
+
+#+name: mytikzpicture2
+#+header: :file (by-backend (html "mytikzpicture2.svg") (latex 'nil) (beamer 'nil) (t "mytikzpicture2.png"))
+#+header: :imagemagick (by-backend (html 'nil) (latex 'nil) (beamer 'nil) (t "t"))
+#+header: :results (by-backend (latex "latex") (beamer "latex") (t "raw"))
+#+header: :fit yes :border 0cm
+#+header: :iminoptions -density 600 :imoutoptions -geometry 900
+#+header: :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
+#+begin_src latex
+  \begin{tikzpicture}
+    \node[draw]                   (nodeA) {A};
+    \node[draw, right of = nodeA] (nodeB) {B};
+    \draw[->] (nodeA) -- (nodeB);
+  \end{tikzpicture}
+#+end_src
+
+#+RESULTS: mytikzpicture2
+[[file:mytikzpicture2.png]] 
+
+* emacs latex org 
+
+https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-LaTeX.html
