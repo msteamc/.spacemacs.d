@@ -124,7 +124,6 @@ Org, I can integrate the org file into my agenda.
 
 **** TODO preview tikz picture in Org
 [2019-12-04 Wed 22:58]
-
 A minimum working example is shown as below
 #+name: tutorial
 #+header: :file "~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.png"
