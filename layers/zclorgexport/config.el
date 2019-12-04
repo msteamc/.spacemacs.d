@@ -151,7 +151,12 @@
 
 (setq org-image-actual-width 600)
 
+(add-to-list 'image-type-file-name-regexps '("\\.pdf\\'" . imagemagick))
+(add-to-list 'image-file-name-extensions "pdf")
 (setq org-imagemagick-display-command "convert -density 600 \"%s\" -thumbnail \"%sx%s>\" \"%s\"")
-  
+
+(setq org-babel-latex-htlatex "htlatex")
+(defmacro by-backend (&rest body)
+  `(case (if (boundp 'backend) (org-export-backend-name backend) nil) ,@body))
 
 )
