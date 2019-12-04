@@ -330,8 +330,8 @@ can be divided into four categories.
 [2019-12-04 Wed 11:01]
 
 #+name: tutorial
-#+header: :file "tutorial.png"
-#+header: :results raw :exports results :fit yes :border 0cm
+#+header: :file "~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.png"
+#+header: :results raw :exports none :fit yes :border 0cm
 #+header: :imagemagick t :iminoptions -density 400 :imoutoptions -geometry 400 -flatten
 #+header: :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
 #+begin_src latex
@@ -343,8 +343,8 @@ can be divided into four categories.
   \end{tikzpicture}
 #+end_src
 #+RESULTS: tutorial
-[[file:tutorial.png]]
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.png]]
 
 #+ATTR_HTML:  :width 400 :align center
 #+ATTR_LATEX: :width 0.4\textwidth :align center
-[[file:tutorial.png]] 
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.pdf]]

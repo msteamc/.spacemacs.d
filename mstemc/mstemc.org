@@ -1,6 +1,7 @@
 #+TITLE: make STEAM clear
 #+HUGO_BASE_DIR: ../../mstemc_hugo/
 #+HUGO: more
+#+MACRO: if-latex-else (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) "$1" "$2"))
 #+SEQ_TODO: TODO NEXT DONE
 #+HUGO_AUTO_SET_LASTMOD: t
 #+hugo_front_matter_key_replace: description>summary
@@ -119,6 +120,34 @@ and definitely worth a try when you want to stay in Org.
 
 Actually, Emacs have extensions to support markdown quite well. However, using
 Org, I can integrate the org file into my agenda.
+
+
+**** TODO preview tikz picture in Org
+[2019-12-04 Wed 22:58]
+
+A minimum working example is shown as below
+#+name: tutorial
+#+header: :file "~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.png"
+#+header: :results raw :exports none :fit yes :border 0cm
+#+header: :imagemagick t :iminoptions -density 400 :imoutoptions -geometry 400
+#+header: :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
+#+begin_src latex
+  \begin{tikzpicture}
+    \node [circle, draw, fill=red!20] at (0,0) {1}
+    child { node [circle, draw, fill=blue!30] {2}
+      child { node [circle, draw, fill=green!30] {3} }
+      child { node [circle, draw, fill=yellow!30] {4} }};
+  \end{tikzpicture}
+#+end_src
+#+RESULTS: tutorial
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.png]]
+
+
+#+ATTR_HTML:  :width 200 :align center
+#+ATTR_LATEX: :width 0.4\textwidth :align center
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.png]]
+
+
 
 *** Hugo
 [2019-10-06 Sun 20:46]
