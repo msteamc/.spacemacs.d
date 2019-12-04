@@ -18,7 +18,9 @@
   (and (buffer-file-name)
        (file-exists-p (buffer-file-name))
        (reftex-parse-all)))
+
 ;; re-define the org-display-inline-images
+(setq org-imagemagick-display-command "convert -density 600 \"%s\" -thumbnail \"%sx%s>\" \"%s\"")
 (defun org-display-inline-images (&optional include-linked refresh beg end)
   "Display inline images.
 Normally only links without a description part are inlined, because this
