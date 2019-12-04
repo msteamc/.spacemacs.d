@@ -326,3 +326,25 @@ can be divided into four categories.
 3. Analogy discrete-time signal;
 4. Digital discrete-time signal
 ** 07:33
+* reading the Tikz manual
+[2019-12-04 Wed 11:01]
+
+#+name: tutorial
+#+header: :file "tutorial.png"
+#+header: :results raw :exports results :fit yes :border 0cm
+#+header: :imagemagick t :iminoptions -density 400 :imoutoptions -geometry 400 -flatten
+#+header: :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
+#+begin_src latex
+  \begin{tikzpicture}
+    \node [circle, draw, fill=red!20] at (0,0) {1}
+    child { node [circle, draw, fill=blue!30] {2}
+      child { node [circle, draw, fill=green!30] {3} }
+      child { node [circle, draw, fill=yellow!30] {4} }};
+  \end{tikzpicture}
+#+end_src
+#+RESULTS: tutorial
+[[file:tutorial.png]]
+
+#+ATTR_HTML:  :width 400 :align center
+#+ATTR_LATEX: :width 0.4\textwidth :align center
+[[file:tutorial.png]] 
