@@ -129,6 +129,15 @@
             (add-to-list 'TeX-command-list '("PdfLaTeX" "%`pdflatex%(mode)%' %t" TeX-run-TeX nil t))
             (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
             (setq TeX-command-default "pdflatex")))
+(add-to-list 'org-latex-packages-alist
+             '("" "tikz" t))
+(setq org-latex-create-formula-image-program 'imagemagick)
+(eval-after-load "preview"
+  '(add-to-list 'preview-default-preamble "\\PreviewEnvironment{tikzpicture}" t))
+(setq exec-path (append exec-path '("/usr/local/texlive/2018/bin/x86_64-linux/")))
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((latex . t)))
 
 (add-to-list 'org-latex-packages-alist
              '("" "tikz" t))
@@ -139,5 +148,10 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((latex . t)))
+
+(setq org-image-actual-width 600)
+
+(setq org-imagemagick-display-command "convert -density 600 \"%s\" -thumbnail \"%sx%s>\" \"%s\"")
+  
 
 )
