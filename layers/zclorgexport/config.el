@@ -140,4 +140,9 @@
  '((latex . t)))
 
 
+(setq org-image-actual-width 600)
+
+(setq org-imagemagick-display-command "convert -density 600 \"%s\" -thumbnail \"%sx%s>\" \"%s\"")
+  
+
 )
