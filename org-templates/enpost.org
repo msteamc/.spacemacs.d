@@ -8,3 +8,8 @@
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+LaTeX_CLASS: org-article
 #+LaTeX_CLASS_OPTIONS: [koma,utopia,letterpaper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue]
+#+LaTeX_CLASS_OPTIONS: [koma,a4paper,utopia,10pt,listings-color,microtype,paralist,colorlinks]
+#+MACRO: if-latex (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) (concat "[[file:../../img/tikz/"  $1 "]]") (concat "[[file:../../img/tikz/"  $2 "]]") ))
+#+PROPERTY: header-args:latex :results raw :exports none :fit yes :border 0cm
+#+PROPERTY: header-args:latex+ :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
+#+PROPERTY: header-args :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 900 -flatten
