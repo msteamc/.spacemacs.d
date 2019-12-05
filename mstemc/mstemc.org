@@ -1,7 +1,6 @@
 #+TITLE: make STEAM clear
 #+HUGO_BASE_DIR: ../../mstemc_hugo/
 #+HUGO: more
-#+MACRO: if-latex-else (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) "$1" "$2"))
 #+SEQ_TODO: TODO NEXT DONE
 #+HUGO_AUTO_SET_LASTMOD: t
 #+hugo_front_matter_key_replace: description>summary
@@ -28,6 +27,30 @@ CLOCK: [2019-10-06 Sun 08:21]--[2019-10-06 Sun 08:33] =>  0:12
 
 * Posts                                               :post:
 [2019-10-05 Sat 16:52]
+
+
+** TODO Set up the TikZ in Emacs Org Mode :Emacs:Org:TikZ:LaTeX:
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_SECTION: post
+:EXPORT_HUGO_BUNDLE: set-up-the-tikz-in-emacs-org-mode
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
+:END:
+:LOGBOOK:
+CLOCK: [2019-12-05 Thu 23:12]--[2019-12-05 Thu 23:35] =>  0:23
+:END:
+
+#+begin_description
+ An introduction on how to setup the TikZ environment in Emacs Org Mode.So that
+ in Org file, you can generate either vector graph of =pdf= format or raster
+ graph of =png= format. Furthermore, you can export the vector graph when latex
+ is called and otherwise raster graph.
+#+end_description
+
+#+INCLUDE: "./post/set-up-the-tikz-in-emacs-org-mode.org"
 
 
 * Projects                                         :project:
@@ -123,29 +146,15 @@ Actually, Emacs have extensions to support markdown quite well. However, using
 Org, I can integrate the org file into my agenda.
 
 
-**** TODO preview tikz picture in Org
+**** preview tikz picture in Org
 [2019-12-04 Wed 22:58]
-A minimum working example is shown as below
-#+name: tutorial
-#+header: :file "~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.png"
-#+header: :results raw :exports none :fit yes :border 0cm
-#+header: :imagemagick t :iminoptions -density 400 :imoutoptions -geometry 400
-#+header: :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
-#+begin_src latex
-  \begin{tikzpicture}
-    \node [circle, draw, fill=red!20] at (0,0) {1}
-    child { node [circle, draw, fill=blue!30] {2}
-      child { node [circle, draw, fill=green!30] {3} }
-      child { node [circle, draw, fill=yellow!30] {4} }};
-  \end{tikzpicture}
-#+end_src
-#+RESULTS: tutorial
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.png]]
 
+[[http://www.texample.net/tikz/][TikZ and PGF]] are TeX packages for creating graphics programmatically. TikZ is
+build on top of PGF and allows you to create sophisticated graphics in a rather
+intuitive and easy manner.
 
-#+ATTR_HTML:  :width 200 :align center
-#+ATTR_LATEX: :width 0.4\textwidth :align center
-{{{if-latex(tutorial.pdf,tutorial.png)}}} 
+You can integrated TikZ code into the Org mode as a source block. I have a
+not-so-detailed post on how to set up the tikz environment in Org.
 
 
 *** Hugo
