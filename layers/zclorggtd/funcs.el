@@ -466,7 +466,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\",\"\")")
                    ":EXPORT_FILE_NAME: index"
                    ":END:"
-                   "%?\n")                ;Place the cursor here finally
+                   "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
 
   ;;post
@@ -490,7 +490,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\",\"\")")
                    ":EXPORT_FILE_NAME: index"
                    ":END:"
-                   "%?\n")                ;Place the cursor here finally
+                   "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
   ;;project
 ;;;###autoload
@@ -512,7 +512,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\",\"\")")
                    ":EXPORT_FILE_NAME: index"
                    ":END:"
-                   "%?\n")                ;Place the cursor here finally
+                   "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
 
     ;;course
@@ -535,7 +535,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\",\"\")")
                    ":EXPORT_FILE_NAME: index"
                    ":END:"
-                   "%?\n")                ;Place the cursor here finally
+                   "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
 
 
