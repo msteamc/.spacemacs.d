@@ -7,6 +7,7 @@
 #+hugo_front_matter_key_replace: description>summary
 #+SETUPFILE: ~/.spacemacs.d/org-templates/enpost.org
 
+
 * Videos                                             :video:
 :LOGBOOK:
 CLOCK: [2019-10-20 Sun 17:06]--[2019-10-20 Sun 17:23] =>  0:17
@@ -144,8 +145,7 @@ A minimum working example is shown as below
 
 #+ATTR_HTML:  :width 200 :align center
 #+ATTR_LATEX: :width 0.4\textwidth :align center
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.png]]
-
+{{{if-latex(tutorial.pdf,tutorial.png)}}} 
 
 
 *** Hugo
