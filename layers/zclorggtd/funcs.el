@@ -464,7 +464,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_project " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\",\"\")")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
                    ":EXPORT_FILE_NAME: index"
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
@@ -489,7 +489,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_project " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\",\"\")")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
@@ -511,7 +511,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\",\"\")")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
@@ -534,7 +534,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\",\"\")")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
