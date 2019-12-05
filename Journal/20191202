@@ -1,3 +1,4 @@
+#+MACRO: if-latex (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) (concat "[[file:../../img/tikz/"  $1 "]]") (concat "[[file:../../img/tikz/"  $2 "]]") )) 
 * Tuesday, 12/03/19
 :PROPERTIES:
 :CREATED:  20191203
@@ -461,4 +462,5 @@ result is decided by the =#+header: :file= . For the meaning of all the
 
 #+ATTR_HTML:  :width 400 :align center
 #+ATTR_LATEX: :width 0.4\textwidth :align center
+{{{if-latex(tutorial.pdf,tutorial.png)}}} 
 [[file:~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.pdf]]
