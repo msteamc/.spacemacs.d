@@ -33,7 +33,7 @@ CLOCK: [2019-10-06 Sun 08:21]--[2019-10-06 Sun 08:33] =>  0:12
 [2019-10-05 Sat 16:52]
 
 
-** TODO Set up the TikZ in Emacs Org Mode :Emacs:Org:TikZ:LaTeX:
+** TODO Set up the TikZ in Emacs Org File  :Emacs:Org:TikZ:LaTeX:
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
 :EXPORT_HUGO_SECTION: post
