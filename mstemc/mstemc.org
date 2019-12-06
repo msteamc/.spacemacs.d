@@ -5,7 +5,11 @@
 #+HUGO_AUTO_SET_LASTMOD: t
 #+hugo_front_matter_key_replace: description>summary
 #+SETUPFILE: ~/.spacemacs.d/org-templates/enpost.org
-
+#+MACRO: newline @@latex:\hspace{0pt}\\@@
+#+MACRO: begin_tip @@html:{{% alert note %}}@@
+#+MACRO: end_tip @@html:{{% /alert %}}@@
+#+MACRO: begin_warning @@html:{{% alert warning %}}@@
+#+MACRO: end_warning @@html:{{% /alert %}}@@
 
 * Videos                                             :video:
 :LOGBOOK:
@@ -37,18 +41,21 @@ CLOCK: [2019-10-06 Sun 08:21]--[2019-10-06 Sun 08:33] =>  0:12
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_dataset "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :image '((caption . " [**Watch**](https://youtube.com)"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video" "how-do-i-make-a-video")
+:EXPORT_DESCRIPTION: An introduction to setup the TikZ environment in Emacs Org File.So that in Org file, you can generate either vector graph of =pdf=  format or raster graph of =png= format. Furthermore, you can export the vector graph when latex is called and otherwise raster graph.
 :END:
 :LOGBOOK:
 CLOCK: [2019-12-05 Thu 23:12]--[2019-12-05 Thu 23:35] =>  0:23
 :END:
 
-#+begin_description
- An introduction on how to setup the TikZ environment in Emacs Org Mode.So that
- in Org file, you can generate either vector graph of =pdf= format or raster
- graph of =png= format. Furthermore, you can export the vector graph when latex
- is called and otherwise raster graph.
-#+end_description
+{{{begin_tip}}}
+{{{property(EXPORT_DESCRIPTION)}}}
+{{{end_tip}}}
+
+{{{newline}}}
 
 #+INCLUDE: "./post/set-up-the-tikz-in-emacs-org-mode.org"
 
