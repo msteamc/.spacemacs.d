@@ -1,5 +1,4 @@
 #+AUTHOR:  Eason
-#+EMAIL:
 #+LANGUAGE:  en
 #+OPTIONS:   *:t <:nil timestamp:nil toc:t prop:nil
 #+OPTIONS:   H:3 num:t  \n:nil  @:t ::t |:t ^:nil -:t f:t
@@ -8,10 +7,16 @@
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+LaTeX_CLASS: org-article
 #+LaTeX_CLASS_OPTIONS: [koma,utopia,letterpaper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue]
-#+LaTeX_CLASS_OPTIONS: [koma,a4paper,utopia,10pt,listings-color,microtype,paralist,colorlinks]
 #+PROPERTY: header-args: :results raw :exports none :fit yes :border 0cm
 #+PROPERTY: header-args:latex :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
 #+PROPERTY: header-args :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 900 -flatten -transparent white
+
+#+HUGO_BASE_DIR: ../../mstemc_hugo/
+#+HUGO: more
+#+SEQ_TODO: TODO NEXT DONE
+#+HUGO_AUTO_SET_LASTMOD: t
+#+hugo_front_matter_key_replace: description>summary
+
 
 #+MACRO: if-latex (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) (concat "[[file:~/Dropbox/mstemc_hugo/static/img/tikz/"  $1 "]]") (concat "[[file:~/Dropbox/mstemc_hugo/static/img/tikz/"  $2 "]]") ))
 #+MACRO: newline @@latex:\hspace{0pt}\\@@
