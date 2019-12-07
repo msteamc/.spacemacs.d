@@ -1,0 +1,147 @@
+{{{newline}}}
+
+{{{begin_tip}}}
+{{{property(EXPORT_DESCRIPTION)}}}
+{{{end_tip}}}
+
+
+During the creation of one video, several tools are tuned to fit my workflow. In
+this project several videos and posts will be created to make my workflow clear.
+
+Two targets of this project:
+1. remind me of the configuration of several tools;
+2. show somebody else who may be interested in how I work.
+
+I am not ready to detail each tool. If you are interested in any one of them,
+please refer to tutorials written by experts or given by the official document.
+
+*** Emacs
+[2019-10-06 Sun 20:38]
+
+Emacs lies in the center of my workflow. It behaves like a super-IDE which
+assists me finish almost all the steps. Using Emacs, I program and debug, GTD,
+write the blogs, export and publish them. Many of the Emacs extensions are
+awesome. In particular, Emacs Org is the killer app.
+
+How to config Emacs? After more Than ten years of using Emacs, I choose
+spacemacs. Most beginners can start their work using spacemacs with only a
+little modifications.
+
+**** program and debug
+[2019-10-06 Sun 20:54]
+
+I program in python, C/C++, Matlab and some other languages. Emacs acts as a
+super-IDE for me.
+
+
+**** Org mode - journalize your work
+[2019-10-06 Sun 20:51]
+
+Org mode definitely need a standalone subsection.
+
+**** Org mode - get things done
+[2019-10-06 Sun 20:57]
+
+
+
+**** Org mode - write a diary
+[2019-10-06 Sun 20:57]
+
+**** Org mode - export your Org file
+[2019-10-06 Sun 21:01]
+
+
+**** program and debug
+[2019-10-06 Sun 20:54]
+
+
+**** writing latex
+[2019-10-06 Sun 21:16]
+**** org-journal
+[2019-11-10 Sun 16:10]
+
+I write many notes during a post or a project. Most of my journal is maintained
+by [[https://github.com/bastibe/org-journal][org-journal: A simple org-mode based journaling mode]] . And I set the
+=org-journal-file-type= to =weekly= So that I have around 52 journal file each
+year.
+
+The journals can be searched conveniently. Also they can be integrated into Org
+agenda.
+
+
+**** ox-hugo
+[2019-11-10 Sun 17:17]
+
+[[https://github.com/kaushalmodi/ox-hugo][kaushalmodi/ox-hugo: A carefully crafted Org exporter back-end for Hugo]]
+
+Because hugo supports markdown at first (it also supports org file later), I use
+Emacs Org from the very beginning. I am quite familiar with org-mode, so have no
+motivation to dig into markdown. Fortunately, ox-hugo meets all my requirement
+and definitely worth a try when you want to stay in Org.
+
+Actually, Emacs have extensions to support markdown quite well. However, using
+Org, I can integrate the org file into my agenda.
+
+
+**** preview tikz picture in Org
+[2019-12-04 Wed 22:58]
+
+[[http://www.texample.net/tikz/][TikZ and PGF]] are TeX packages for creating graphics programmatically. TikZ is
+build on top of PGF and allows you to create sophisticated graphics in a rather
+intuitive and easy manner.
+
+You can integrated TikZ code into the Org mode as a source block. I have a
+not-so-detailed post on how to set up the tikz environment in Org.
+
+
+*** Hugo
+[2019-10-06 Sun 20:46]
+
+As the fastest framework for building websites, Hugo shocks me by its speed and
+flexibility. It is enough to prettify your site using the more than 300+
+beautiful themes, from which I am in the mode for Academic theme.
+
+Hugo supports Org file but not so good. Ox-hugo, another extension of Emacs, has
+my attention. Serving as a bridge between Emacs and Hugo, ox-hugo helps me
+staying in Emacs Org. There is no need for me to write markdown file if Org is
+available.
+
+I use ox-hugo as a bridge between Emacs and Hugo. So I do not have to care much
+about how to leverage Hugo. Ox-hugo helps me do most of the work.
+*** Hugo Academic Theme
+[2019-12-07 Sat 18:47]
+
+[[https://github.com/gcushen/hugo-academic][Hugo Academic Theme]] is a beautiful and flexible theme developed for Hugo. This
+site is built based on this theme.
+
+If you want attach a pdf version of your post, two steps are needed:
+1. add a line:
+   #+begin_example
+   url_pdf = "#"
+   #+end_example
+   in the front matter of your markdown file.
+2. add a PDF file with the same name as your post’s own folder to your post’s
+   folder.
+
+A PDF link will be automatically generated just like the =pdf= link appears in
+the top of each post in my site. Because I use Emacs Org with ox-hugo, I add one
+line in the property:
+
+#+begin_example
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
+#+end_example
+
+Hugo academic theme provide some front matters that hugo does not support by
+default. Fortunately, [[https://github.com/kaushalmodi/ox-hugo][ox-hugo]] handles this effectively. For more information.
+you can read:
+1. [[https://ox-hugo.scripter.co/doc/org-meta-data-to-hugo-front-matter/][Org meta-data to Hugo front-matter]]
+2. [[https://ox-hugo.scripter.co/doc/custom-front-matter/][Custom Front-matter Parameters]]
+
+
+*** manim
+[2019-11-10 Sun 16:00]
+
+
+
+*** blender
+[2019-11-10 Sun 17:44]
