@@ -1,3 +1,9 @@
+{{{newline}}}
+
+{{{begin_tip}}}
+{{{property(EXPORT_DESCRIPTION)}}}
+{{{end_tip}}}
+
 
 *** config the header args
 [2019-12-05 Thu 16:16]
@@ -12,8 +18,10 @@ like below:
 #+name: tutorial
 #+header: :file "~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.png"
 #+header: :results raw :exports none :fit yes :border 0cm
-#+header: :imagemagick t :iminoptions -density 400 :imoutoptions -geometry 400 -flatten
-#+header: :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
+#+header: :imagemagick t :iminoptions -density 400
+#+header: :imoutoptions -geometry 400 -flatten
+#+header: :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning,
+           shapes.symbols, calc}")
 #+begin_src latex
   \begin{tikzpicture}
     \node [circle, draw, fill=red!20] at (0,0) {1}
@@ -51,7 +59,8 @@ want to set more options of the exports. So I use:
 
 =if-latex= is a Org MACRO whose definition is :
 #+begin_example
-#+MACRO: if-latex (eval (if (org-export-derived-backend-p org-export-current-backend 'latex)
+#+MACRO: if-latex (eval (if
+(org-export-derived-backend-p org-export-current-backend 'latex)
  (concat "[[file:../../img/tikz/"  $1 "]]")
  (concat "[[file:../../img/tikz/"  $2 "]]") ))
 #+end_example

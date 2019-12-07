@@ -1,14 +1,14 @@
 % Intended LaTeX compiler: xelatex
-\documentclass[koma,a4paper,utopia,10pt,listings-color,microtype,paralist,colorlinks]{org-article}
+\documentclass[koma,utopia,letterpaper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue]{org-article}
                \usepackage{tikz}
 \author{Eason}
 \date{\today}
-\title{Set up the TikZ in Emacs Org File}
+\title{Set up the TikZ in Emacs Org}
 \hypersetup{
  pdfauthor={Eason},
- pdftitle={Set up the TikZ in Emacs Org File},
+ pdftitle={Set up the TikZ in Emacs Org},
  pdfkeywords={},
- pdfsubject={An introduction to setup the TikZ environment in Emacs Org File.So that in Org file, you can generate either vector graph of \texttt{pdf}  format or raster graph of \texttt{png} format. Furthermore, you can export the vector graph when latex is called and otherwise raster graph.},
+ pdfsubject={An introduction to setup the TikZ environment in Emacs Org File. So that in Org file, you can generate either vector graph of \texttt{pdf}  format or raster graph of \texttt{png} format. Furthermore, you can export the vector graph when latex is called and otherwise raster graph.},
  pdfcreator={Emacs 26.3 (Org mode 9.2.6)},
  pdflang={English}}
 \begin{document}
@@ -16,12 +16,18 @@
 \maketitle
 \tableofcontents
 
+
+
+
+
 \hspace{0pt}\\
 
-An introduction to setup the TikZ environment in Emacs Org File.So that in Org file, you can generate either vector graph of \texttt{pdf}  format or raster graph of \texttt{png} format. Furthermore, you can export the vector graph when latex is called and otherwise raster graph.
+
+An introduction to setup the TikZ environment in Emacs Org File. So that in Org file, you can generate either vector graph of \texttt{pdf}  format or raster graph of \texttt{png} format. Furthermore, you can export the vector graph when latex is called and otherwise raster graph.
+
 
 \section{config the header args}
-\label{sec:org1e65b28}
+\label{sec:orgb7646ae}
 
 
 You can embed TiKz (One of \(\LaTeX\) graphic package) code into a Org file. With
@@ -34,8 +40,10 @@ like below:
 #+name: tutorial
 #+header: :file "~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.png"
 #+header: :results raw :exports none :fit yes :border 0cm
-#+header: :imagemagick t :iminoptions -density 400 :imoutoptions -geometry 400 -flatten
-#+header: :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
+#+header: :imagemagick t :iminoptions -density 400
+#+header: :imoutoptions -geometry 400 -flatten
+#+header: :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning,
+           shapes.symbols, calc}")
 #+begin_src latex
   \begin{tikzpicture}
     \node [circle, draw, fill=red!20] at (0,0) {1}
@@ -52,7 +60,7 @@ The example begins with several lines containing \texttt{\#+header} which is sor
 clutter. we can put them in a file and include it at the beginning of the Org
 file.
 \section{generate results with different formats}
-\label{sec:org92aa971}
+\label{sec:orgfa49106}
 
 
 By changing the extension of \texttt{:file} (which is \texttt{pdf} for
@@ -60,7 +68,7 @@ By changing the extension of \texttt{:file} (which is \texttt{pdf} for
 Now, I need \texttt{pdf} and \texttt{png} . You can see the result by just press \texttt{C-c C-c} in the
 body of the tikz code.
 \section{export the results according to the backend}
-\label{sec:org8166ca3}
+\label{sec:org6e31306}
 
 
 You can set \texttt{:exports} to control how the results will be exported. Now I set it
@@ -75,7 +83,8 @@ want to set more options of the exports. So I use:
 
 \texttt{if-latex} is a Org MACRO whose definition is :
 \begin{verbatim}
-#+MACRO: if-latex (eval (if (org-export-derived-backend-p org-export-current-backend 'latex)
+#+MACRO: if-latex (eval (if
+(org-export-derived-backend-p org-export-current-backend 'latex)
  (concat "[[file:../../img/tikz/"  $1 "]]")
  (concat "[[file:../../img/tikz/"  $2 "]]") ))
 \end{verbatim}
@@ -86,7 +95,7 @@ figure. Eventually, in the final \texttt{pdf} document, you figure can be zoomed
 out without losing any resolution.
 
 \section{the final workflow}
-\label{sec:org6fc731d}
+\label{sec:orgdf6c076}
 
 
 The minimum working example at the start of this post is simplifed as below.

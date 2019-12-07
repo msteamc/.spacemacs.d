@@ -1,15 +1,5 @@
 #+TITLE: make STEAM clear
-#+HUGO_BASE_DIR: ../../mstemc_hugo/
-#+HUGO: more
-#+SEQ_TODO: TODO NEXT DONE
-#+HUGO_AUTO_SET_LASTMOD: t
-#+hugo_front_matter_key_replace: description>summary
 #+SETUPFILE: ~/.spacemacs.d/org-templates/enpost.org
-#+MACRO: newline @@latex:\hspace{0pt}\\@@
-#+MACRO: begin_tip @@html:{{% alert note %}}@@
-#+MACRO: end_tip @@html:{{% /alert %}}@@
-#+MACRO: begin_warning @@html:{{% alert warning %}}@@
-#+MACRO: end_warning @@html:{{% /alert %}}@@
 
 * Videos                                             :video:
 :LOGBOOK:
@@ -33,32 +23,48 @@ CLOCK: [2019-10-06 Sun 08:21]--[2019-10-06 Sun 08:33] =>  0:12
 [2019-10-05 Sat 16:52]
 
 
-** TODO Set up the TikZ in Emacs Org File  :Emacs:Org:TikZ:LaTeX:
+** TODO Set up the TikZ in Emacs Org  :Emacs:Org:TikZ:LaTeX:
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
 :EXPORT_HUGO_SECTION: post
-:EXPORT_HUGO_BUNDLE: set-up-the-tikz-in-emacs-org-mode
+:EXPORT_HUGO_BUNDLE: set-up-the-tikz-in-emacs-org
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_dataset "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :image '((caption . " [**Watch**](https://youtube.com)"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :image '((caption . " [**Watch**](https://youtube.com)") (preview_only . "false"))
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video" "how-do-i-make-a-video")
-:EXPORT_DESCRIPTION: An introduction to setup the TikZ environment in Emacs Org File.So that in Org file, you can generate either vector graph of =pdf=  format or raster graph of =png= format. Furthermore, you can export the vector graph when latex is called and otherwise raster graph.
+:EXPORT_DESCRIPTION: An introduction to setup the TikZ environment in Emacs Org File. So that in Org file, you can generate either vector graph of =pdf=  format or raster graph of =png= format. Furthermore, you can export the vector graph when latex is called and otherwise raster graph.
 :END:
 :LOGBOOK:
 CLOCK: [2019-12-05 Thu 23:12]--[2019-12-05 Thu 23:35] =>  0:23
 :END:
 
-{{{begin_tip}}}
-{{{property(EXPORT_DESCRIPTION)}}}
-{{{end_tip}}}
+{{{youtube(w7Ft2ymGmfc)}}}
 
-{{{newline}}}
+
 
 #+INCLUDE: "./post/set-up-the-tikz-in-emacs-org-mode.org"
 
+** TODO Export Markdown and latex using Emacs Org :Emacs:Org:Hugo:LaTeX:Markdown:
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: post
+:EXPORT_HUGO_BUNDLE: export-markdown-and-latex-using-emacs-org
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
+:EXPORT_DESCRIPTION: set up the Emacs org and ox-hugo to export the org files in markdown and latex format.
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+CLOCK: [2019-12-07 Sat 07:46]--[2019-12-07 Sat 07:48] =>  0:02
+:END:
+<2019-12-07 Sat 07:46>
+
+#+INCLUDE: "./post/export-markdown-and-latex-using-emacs-org.org"
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
@@ -75,119 +81,7 @@ CLOCK: [2019-12-05 Thu 23:12]--[2019-12-05 Thu 23:35] =>  0:23
 :EXPORT_FILE_NAME: index
 :END:
 
-During the creation of one video, several tools are tuned to fit my workflow. In
-this project several videos and posts will be created to make my workflow clear.
-
-Two targets of this project:
-1. remind me of the configuration of several tools;
-2. show somebody else who may be interested in how I work.
-
-I am not ready to detail each tool. If you are interested in any one of them,
-please refer to tutorials written by experts or given by the official document.
-
-*** Emacs
-[2019-10-06 Sun 20:38]
-
-Emacs lies in the center of my workflow. It behaves like a super-IDE which
-assists me finish almost all the steps. Using Emacs, I program and debug, GTD,
-write the blogs, export and publish them. Many of the Emacs extensions are
-awesome. In particular, Emacs Org is the killer app.
-
-How to config Emacs? After more Than ten years of using Emacs, I choose
-spacemacs. Most beginners can start their work using spacemacs with only a
-little modifications.
-
-**** program and debug
-[2019-10-06 Sun 20:54]
-
-I program in python, C/C++, Matlab and some other languages. Emacs acts as a
-super-IDE for me.
-
-
-**** Org mode - journalize your work
-[2019-10-06 Sun 20:51]
-
-Org mode definitely need a standalone subsection.
-
-**** Org mode - get things done
-[2019-10-06 Sun 20:57]
-
-
-
-**** Org mode - write a diary
-[2019-10-06 Sun 20:57]
-
-**** Org mode - export your Org file
-[2019-10-06 Sun 21:01]
-
-
-**** program and debug
-[2019-10-06 Sun 20:54]
-
-
-**** writing latex
-[2019-10-06 Sun 21:16]
-**** org-journal
-[2019-11-10 Sun 16:10]
-
-I write many notes during a post or a project. Most of my journal is maintained
-by [[https://github.com/bastibe/org-journal][org-journal: A simple org-mode based journaling mode]] . And I set the
-=org-journal-file-type= to =weekly= So that I have around 52 journal file each
-year.
-
-The journals can be searched conveniently. Also they can be integrated into Org
-agenda.
-
-
-**** ox-hugo
-[2019-11-10 Sun 17:17]
-
-[[https://github.com/kaushalmodi/ox-hugo][kaushalmodi/ox-hugo: A carefully crafted Org exporter back-end for Hugo]]
-
-Because hugo supports markdown at first (it also supports org file later), I use
-Emacs Org from the very beginning. I am quite familiar with org-mode, so have no
-motivation to dig into markdown. Fortunately, ox-hugo meets all my requirement
-and definitely worth a try when you want to stay in Org.
-
-Actually, Emacs have extensions to support markdown quite well. However, using
-Org, I can integrate the org file into my agenda.
-
-
-**** preview tikz picture in Org
-[2019-12-04 Wed 22:58]
-
-[[http://www.texample.net/tikz/][TikZ and PGF]] are TeX packages for creating graphics programmatically. TikZ is
-build on top of PGF and allows you to create sophisticated graphics in a rather
-intuitive and easy manner.
-
-You can integrated TikZ code into the Org mode as a source block. I have a
-not-so-detailed post on how to set up the tikz environment in Org.
-
-
-*** Hugo
-[2019-10-06 Sun 20:46]
-
-As the fastest framework for building websites, Hugo shocks me by its speed and
-flexibility. It is enough to prettify your site using the more than 300+
-beautiful themes, from which I am in the mode for Academic theme.
-
-Hugo supports Org file but not so good. Ox-hugo, another extension of Emacs, has
-my attention. Serving as a bridge between Emacs and Hugo, ox-hugo helps me
-staying in Emacs Org. There is no need for me to write markdown file if Org is
-available.
-
-I use ox-hugo as a bridge between Emacs and Hugo. So I do not have to care much
-about how to leverage Hugo. Ox-hugo helps me do most of the work.
-
-*** manim
-[2019-11-10 Sun 16:00]
-
-
-
-*** blender
-[2019-11-10 Sun 17:44]
-
-
+#+INCLUDE: "./project/my-workflow-of-creating-a-video.org"
 
 * Courses                                           :course:
 [2019-10-05 Sat 16:53]
