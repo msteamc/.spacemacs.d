@@ -24,3 +24,4 @@
 #+MACRO: end_tip @@html:{{% /alert %}}@@
 #+MACRO: begin_warning @@html:{{% alert warning %}}@@
 #+MACRO: end_warning @@html:{{% /alert %}}@@
+#+MACRO: youtube @@html:{{< youtube $1 >}}@@
