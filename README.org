@@ -9,12 +9,12 @@ Right now, I use Emacs as my superIDE because of Spacemacs
 
 * split the org settings
 
-I use Org almost every day. As time goes by, the settings grows. There
+I use Org almost every day. The settings grow bigger and bigger. There
 are tons of emacs-elisp in my config.el related with Org. So I split the code in
 config.el into several layers:
 1. *zclorgbasic* layer which stores the basic setting for org including
    the global hotkey.
-2. *zclorggtd*  layer which stores the settings for GTD using org; 
+2. *zclorggtd*  layer which stores the settings for GTD using org;
 3. *zclorgexport* layer which stores the settings for exporting the org
    file as html, pdf, markdown
 4. *zclorgpublish* layer which stores the settings for publishing the org
@@ -24,4 +24,6 @@ config.el into several layers:
 6. *zcljournal* layer describes my journaling system which keep track of
    my work.
 
-Enjoy!
+It's not guaranteed that my cofig can run successfully the first time you clone
+it to you local. Trivial modifications are necessary especially when some notice
+pop up in the minibuffer to notice you that the agenda files are missing.
