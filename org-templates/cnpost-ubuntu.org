@@ -1,5 +1,5 @@
-#+AUTHOR:   Eason Zhang
-#+EMAIL:     chaolongworld AT gmail dot com
+#+AUTHOR:   Eason
+#+EMAIL:
 #+LANGUAGE:  en
 #+OPTIONS:   *:t <:nil timestamp:nil toc:t prop:nil
 #+OPTIONS:   H:3 num:t  \n:nil  @:t ::t |:t ^:nil -:t f:t
