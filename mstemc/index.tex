@@ -16,10 +16,6 @@
 \maketitle
 \tableofcontents
 
-
-
-
-
 \hspace{0pt}\\
 
 
@@ -27,7 +23,7 @@ An introduction to setup the TikZ environment in Emacs Org File. So that in Org 
 
 
 \section{config the header args}
-\label{sec:orgb7646ae}
+\label{sec:org4a15728}
 
 
 You can embed TiKz (One of \(\LaTeX\) graphic package) code into a Org file. With
@@ -60,7 +56,7 @@ The example begins with several lines containing \texttt{\#+header} which is sor
 clutter. we can put them in a file and include it at the beginning of the Org
 file.
 \section{generate results with different formats}
-\label{sec:orgfa49106}
+\label{sec:orge8fdc2f}
 
 
 By changing the extension of \texttt{:file} (which is \texttt{pdf} for
@@ -68,7 +64,7 @@ By changing the extension of \texttt{:file} (which is \texttt{pdf} for
 Now, I need \texttt{pdf} and \texttt{png} . You can see the result by just press \texttt{C-c C-c} in the
 body of the tikz code.
 \section{export the results according to the backend}
-\label{sec:org6e31306}
+\label{sec:orgc8af365}
 
 
 You can set \texttt{:exports} to control how the results will be exported. Now I set it
@@ -95,7 +91,7 @@ figure. Eventually, in the final \texttt{pdf} document, you figure can be zoomed
 out without losing any resolution.
 
 \section{the final workflow}
-\label{sec:orgdf6c076}
+\label{sec:org0567e9b}
 
 
 The minimum working example at the start of this post is simplifed as below.
@@ -131,4 +127,8 @@ Now, If you set the extension of the target file in the first line either \textt
 org-toggle-inline-images}  , you can preview the result. If export the org-file
 as latex file then the \texttt{pdf} file, the image of \texttt{pdf} format will be inserted. If
 export to other format, \texttt{png} image will be used.
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/tutorial.pdf}
+\end{center}
 \end{document}

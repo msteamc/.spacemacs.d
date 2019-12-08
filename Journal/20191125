@@ -162,4 +162,5 @@ Here's a tree, exported to both html and pdf.
 https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-LaTeX.html
 
 * imagemagick
-  -flatten 会让图片更清晰
+  -flatten 会让图片压缩，在背景是白色的情况下，会更清晰。但是当这个选项和
+   -transparent white 一起用的时候，就会很不清晰。

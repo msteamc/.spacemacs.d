@@ -36,16 +36,16 @@ CLOCK: [2019-10-06 Sun 08:21]--[2019-10-06 Sun 08:33] =>  0:12
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :image '((caption . " [**Watch**](https://youtube.com)") (preview_only . "false"))
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video" "how-do-i-make-a-video")
 :EXPORT_DESCRIPTION: An introduction to setup the TikZ environment in Emacs Org File. So that in Org file, you can generate either vector graph of =pdf=  format or raster graph of =png= format. Furthermore, you can export the vector graph when latex is called and otherwise raster graph.
+:ORDERED:  t
 :END:
 :LOGBOOK:
 CLOCK: [2019-12-05 Thu 23:12]--[2019-12-05 Thu 23:35] =>  0:23
 :END:
 
-{{{youtube(w7Ft2ymGmfc)}}}
-
-
 
 #+INCLUDE: "./post/set-up-the-tikz-in-emacs-org-mode.org"
+
+
 
 ** TODO Export Markdown and latex using Emacs Org :Emacs:Org:Hugo:LaTeX:Markdown:
 :PROPERTIES:
@@ -65,6 +65,59 @@ CLOCK: [2019-12-07 Sat 07:46]--[2019-12-07 Sat 07:48] =>  0:02
 <2019-12-07 Sat 07:46>
 
 #+INCLUDE: "./post/export-markdown-and-latex-using-emacs-org.org"
+
+** TODO Drawing Graphs Using TikZ in Emacs Org
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_SECTION: post
+:EXPORT_HUGO_BUNDLE: drawing-graphs-using-tikz-in-emacs-org
+:EXPORT_DESCRIPTION: This post collects working examples of drawing graphs using TikZ in Emacs Org
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
+:END:
+:LOGBOOK:
+CLOCK: [2019-12-08 Sun 17:30]--[2019-12-08 Sun 17:33] =>  0:03
+:END:
+
+<2019-12-08 Sun 17:30>
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example.pdf"
+#+begin_src latex
+\begin{tikzpicture}
+\draw (-1.5,0) -- (1.5,0);
+\draw (0,-1.5) -- (0,1.5)
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example.pdf]]
+
+#+ATTR_HTML:  :width 200 :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(example.pdf,example.png)}}}
+
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example1.png"
+#+header: :fit yes :border 0cm :imoutoptions -geometry 900 -transparent white
+#+begin_src latex :results raw :exports none
+\begin{tikzpicture}
+\filldraw [gray] (0,0) circle [radius=2pt]
+                 (1,1) circle [radius=2pt]
+                 (2,1) circle [radius=2pt]
+                 (2,0) circle [radius=2pt];
+\draw (0,0) .. controls (1,1) and (2,1) .. (2,0);
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example1.png]]
+
+#+ATTR_HTML:  :width 400 :align center
+#+ATTR_LATEX: :width 0.7\textwidth :align center
+{{{if-latex(example1.pdf,example1.png)}}}
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
