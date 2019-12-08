@@ -8,8 +8,8 @@
 #+LaTeX_CLASS: org-article
 #+LaTeX_CLASS_OPTIONS: [koma,utopia,letterpaper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue]
 #+PROPERTY: header-args: :results raw :exports none :fit yes :border 0cm
-#+PROPERTY: header-args:latex :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
-#+PROPERTY: header-args :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 900 -flatten -transparent white
+#+PROPERTY: header-args:latex :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}") :results raw :exports none
+#+PROPERTY: header-args: :imagemagick t :iminoptions -density 900 :imoutoptions -geometry 600 -flatten -transparent white
 
 #+HUGO_BASE_DIR: ../../mstemc_hugo/
 #+HUGO: more

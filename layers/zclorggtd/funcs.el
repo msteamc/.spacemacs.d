@@ -456,7 +456,7 @@ See `org-capture-templates' for more information."
                  `(
                    ,(concat "* TODO " title)
                    ":PROPERTIES:"
-                   ,(concat ":EXPORT_HUGO_NAME:" "index")
+                   ,(concat ":EXPORT_FILE_NAME: " "index")
                    ,(concat ":EXPORT_HUGO_SECTION: " "publication")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
@@ -465,7 +465,6 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_project " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
-                   ":EXPORT_FILE_NAME: index"
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
@@ -481,7 +480,7 @@ See `org-capture-templates' for more information."
                  `(
                    ,(concat "* TODO " title)
                    ":PROPERTIES:"
-                   ,(concat ":EXPORT_HUGO_NAME:" "index")
+                   ,(concat ":EXPORT_FILE_NAME: " "index")
                    ,(concat ":EXPORT_HUGO_SECTION: " "post")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
@@ -504,7 +503,7 @@ See `org-capture-templates' for more information."
                  `(
                    ,(concat "* TODO " title)
                    ":PROPERTIES:"
-                   ,(concat ":EXPORT_HUGO_NAME:" "index")
+                   ,(concat ":EXPORT_FILE_NAME: " "index")
                    ,(concat ":EXPORT_HUGO_SECTION: " "project")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this project")
@@ -527,7 +526,7 @@ See `org-capture-templates' for more information."
                  `(
                    ,(concat "* TODO " title)
                    ":PROPERTIES:"
-                   ,(concat ":EXPORT_HUGO_NAME:" "index")
+                   ,(concat ":EXPORT_FILE_NAME: " "index")
                    ,(concat ":EXPORT_HUGO_SECTION: " "project")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this course")

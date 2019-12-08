@@ -104,6 +104,7 @@
   "r" 'org-refile
   "M" 'org-toggle-inline-images
   "o" 'org-export-dispatch
+  "w" 'widen
   )
 ;;(spacemacs/declare-prefix "ao" "org");; define prefix
 ;; (spacemacs/set-leader-keys

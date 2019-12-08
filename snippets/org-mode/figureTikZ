@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: figureTikZ
+# --
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/${1:figname}.png"
+#+header: :fit yes :border 0cm :imoutoptions -geometry 400 -flatten -transparent white
+#+begin_src latex
+\begin{tikzpicture}
+$0
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/$1.png]]
+
+#+ATTR_HTML:  :width 200 :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex($1.pdf,$1.png)}}}
