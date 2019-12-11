@@ -19,7 +19,7 @@ CLOCK: [2019-10-06 Sun 08:21]--[2019-10-06 Sun 08:33] =>  0:12
 
 
 
-* Posts                                               :post:
+* Posts
 [2019-10-05 Sat 16:52]
 
 
@@ -81,11 +81,12 @@ CLOCK: [2019-12-07 Sat 07:46]--[2019-12-07 Sat 07:48] =>  0:02
 :LOGBOOK:
 CLOCK: [2019-12-08 Sun 17:30]--[2019-12-08 Sun 17:33] =>  0:03
 :END:
-
 <2019-12-08 Sun 17:30>
 
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example.pdf"
-#+begin_src latex
+Draw a graph using TikZ
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example.png"
+#+begin_src latex :results raw :exports none
 \begin{tikzpicture}
 \draw (-1.5,0) -- (1.5,0);
 \draw (0,-1.5) -- (0,1.5)
@@ -93,34 +94,33 @@ CLOCK: [2019-12-08 Sun 17:30]--[2019-12-08 Sun 17:33] =>  0:03
 #+end_src
 
 #+RESULTS:
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example.pdf]]
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example.png]]
+
 
 #+ATTR_HTML:  :width 200 :align center
 #+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex(example.pdf,example.png)}}}
 
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example1.png"
-#+header: :fit yes :border 0cm :imoutoptions -geometry 900 -transparent white
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example1.pdf"
 #+begin_src latex :results raw :exports none
 \begin{tikzpicture}
 \filldraw [gray] (0,0) circle [radius=4pt]
                  (1,1) circle [radius=4pt]
                  (2,1) circle [radius=4pt]
                  (2,0) circle [radius=4pt];
-\draw (0,0) .. controls (1,1) and (4,1) .. (2,0);
+\draw (0,0) .. controls (1,1) and (2,1) .. (2,0);
 \end{tikzpicture}
 #+end_src
 
 #+RESULTS:
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example1.png]]
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example1.pdf]]
 
 #+ATTR_HTML:  :width 400 :align center
 #+ATTR_LATEX: :width 0.7\textwidth :align center
 {{{if-latex(example1.pdf,example1.png)}}}
 
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/basiclayer.pdf"
-#+header: :fit yes :border 0cm :imoutoptions -geometry 400 -transparent white
-#+begin_src latex
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/basiclayer.png"
+#+begin_src latex :results raw :exports none
 \usetikzlibrary{datavisualization.formats.functions}
 \begin{tikzpicture}
 \draw[gray,very thin] (-1.9,-1.9) grid (2.9,3.9)
@@ -144,9 +144,9 @@ node [below right,fill=white,yshift=-4pt] {$(\frac{2}{\pi},0)$};
 #+end_src
 
 #+RESULTS:
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/basiclayer.pdf]]
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/basiclayer.png]]
 
-#+ATTR_HTML:  :width 200 :align center
+#+ATTR_HTML:  :width 400 :align center
 #+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex(basiclayer.pdf,basiclayer.png)}}}
 

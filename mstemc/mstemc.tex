@@ -1,5 +1,5 @@
 % Intended LaTeX compiler: xelatex
-\documentclass[koma,a4paper,utopia,10pt,listings-color,microtype,paralist,colorlinks]{org-article}
+\documentclass[koma,a4paper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue,palatino]{org-article}
                \usepackage{tikz}
 \author{Eason}
 \date{\today}
@@ -17,25 +17,26 @@
 \tableofcontents
 
 
-
 \section{Videos}
-\label{sec:org002a437}
+\label{sec:org80ec581}
 
 
 
 \section{Posts}
-\label{sec:org2d95323}
+\label{sec:org275e087}
 
 
 
-\subsection{Set up the TikZ in Emacs Org File}
-\label{sec:org64c90ff}
-\begin{summary}
-Why is this in \textbf{green}?
-\end{summary}
+\subsection{Set up the TikZ in Emacs Org}
+\label{sec:org5387454}
+\hspace{0pt}\\
+
+
+An introduction to setup the TikZ environment in Emacs Org File. So that in Org file, you can generate either vector graph of \texttt{pdf}  format or raster graph of \texttt{png} format. Furthermore, you can export the vector graph when latex is called and otherwise raster graph.
+
 
 \subsubsection{config the header args}
-\label{sec:org825d7de}
+\label{sec:org3f3612a}
 
 
 You can embed TiKz (One of \(\LaTeX\) graphic package) code into a Org file. With
@@ -48,8 +49,10 @@ like below:
 #+name: tutorial
 #+header: :file "~/Dropbox/mstemc_hugo/static/img/tikz/tutorial.png"
 #+header: :results raw :exports none :fit yes :border 0cm
-#+header: :imagemagick t :iminoptions -density 400 :imoutoptions -geometry 400 -flatten
-#+header: :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
+#+header: :imagemagick t :iminoptions -density 400
+#+header: :imoutoptions -geometry 400 -flatten
+#+header: :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning,
+           shapes.symbols, calc}")
 #+begin_src latex
   \begin{tikzpicture}
     \node [circle, draw, fill=red!20] at (0,0) {1}
@@ -66,7 +69,7 @@ The example begins with several lines containing \texttt{\#+header} which is sor
 clutter. we can put them in a file and include it at the beginning of the Org
 file.
 \subsubsection{generate results with different formats}
-\label{sec:org75935d2}
+\label{sec:orgac277d3}
 
 
 By changing the extension of \texttt{:file} (which is \texttt{pdf} for
@@ -74,7 +77,7 @@ By changing the extension of \texttt{:file} (which is \texttt{pdf} for
 Now, I need \texttt{pdf} and \texttt{png} . You can see the result by just press \texttt{C-c C-c} in the
 body of the tikz code.
 \subsubsection{export the results according to the backend}
-\label{sec:org59da2c2}
+\label{sec:org864fe62}
 
 
 You can set \texttt{:exports} to control how the results will be exported. Now I set it
@@ -89,7 +92,8 @@ want to set more options of the exports. So I use:
 
 \texttt{if-latex} is a Org MACRO whose definition is :
 \begin{verbatim}
-#+MACRO: if-latex (eval (if (org-export-derived-backend-p org-export-current-backend 'latex)
+#+MACRO: if-latex (eval (if
+(org-export-derived-backend-p org-export-current-backend 'latex)
  (concat "[[file:../../img/tikz/"  $1 "]]")
  (concat "[[file:../../img/tikz/"  $2 "]]") ))
 \end{verbatim}
@@ -100,7 +104,7 @@ figure. Eventually, in the final \texttt{pdf} document, you figure can be zoomed
 out without losing any resolution.
 
 \subsubsection{the final workflow}
-\label{sec:orgc0cd8cc}
+\label{sec:orgc26c788}
 
 
 The minimum working example at the start of this post is simplifed as below.
@@ -138,12 +142,107 @@ as latex file then the \texttt{pdf} file, the image of \texttt{pdf} format will 
 export to other format, \texttt{png} image will be used.
 
 
+
+\subsection{Export Markdown and latex using Emacs Org}
+\label{sec:orgb25f912}
+
+
+\hspace{0pt}\\
+
+
+set up the Emacs org and ox-hugo to export the org files in markdown and latex format.
+
+
+\subsubsection{Introduction}
+\label{sec:org1a16d6f}
+
+
+I use hugo before it support Emacs org file. Then I use an Emacs extension
+called \href{https://github.com/kaushalmodi/ox-hugo}{ox-hugo} which is a carefully crafted Org exporter back-end for Hugo.
+Ox-hugo meets all my requirement and definitely worth a try when you are an
+advanced user of Emacs Org. By the way, if you are quite familiar with Emacs
+Org, there is no need to take time to learn markdown. Emacs Org, I think, is
+more elegant than markdown.
+
+\subsubsection{set up ox-hugo}
+\label{sec:org11a7de8}
+
+
+I use Spacemacs and integrate ox-hugo into my config is easy. You can add it
+into your private layer or just add it in your \texttt{user-config} . Please refer to
+\href{https://github.com/kaushalmodi/ox-hugo}{the repo.} and read the document for more information.
+
+The first time you want to export an Org file or a subtree of an Org file, use
+\texttt{M-x org-hugo-export-to-md} . There will be a hugo-related section in the
+\texttt{org-dispatcher} whenever you use \texttt{C-c C-e} .
+\subsubsection{use Org Macro replacement}
+\label{sec:orgf79a086}
+
+
+Often, you want different actions when you export the Org file to
+hugo-compatible markdown and latex file. For example, hugo or hugo theme supports
+summary and shortcodes such as \texttt{alert note} and \texttt{alert warning} (see  \href{https://sourcethemes.com/academic/docs/writing-markdown-latex/}{Writing
+content with Markdown, \LaTeX{}, and Shortcodes | Academic} )
+
+When you export the snippet to markdown then hugo will display the content
+according to the css. However, latex does not recognize the shortcodes. So latex
+will display \texttt{\{ \{\% alert note \%\} \}} literally which is clutter. The Org Macro may
+help. For more information please refer to \href{https://orgmode.org/manual/Macro-replacement.html}{The Org Manual: Macro replacement} and
+\href{https://github.com/fniessen/org-macros}{fniessen/org-macros: Shared macros for Org mode} . I also define my own Org Macro
+in \href{https://github.com/msteamc/.spacemacs.d/blob/master/org-templates/enpost.org}{my setup file for every .org file}. With Org Macro, I control some contents
+and options exist only for certain backend.
+
+Once you are familiar with Org Macro, It behaves beyond your imagination.
+\subsubsection{use the setupfile for each Org file}
+\label{sec:org66edc24}
+
+
+Often, you options for a org file grows more and more. If you think it kind of
+clutter at the top of your Org files, you can group them in a setupfile then
+include it at the top of your Org file.
+
+For my setupfiles, please refer to \href{https://github.com/msteamc/.spacemacs.d/tree/master/org-templates}{my org-templates}. As you can see, I have
+several setupfiles for different aims. To include one of them in my Org file, I
+use:
+
+\texttt{\#+SETUPFILE: <path+name of the setup files>}
+
+By using \texttt{\#+SETUPFILE} ,I only have to option lines at the top of my org file.
+So it looks clean.
+
+Also, you can notice that in \href{https://github.com/msteamc/.spacemacs.d/blob/master/org-templates/enpost.org}{my setupfile named enpost.org} exists options for
+different export targets.
+
+\subsection{Drawing Graphs Using TikZ in Emacs Org}
+\label{sec:org171ea2a}
+
+
+Draw a graph using TikZ
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/example.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/example1.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/basiclayer.pdf}
+\end{center}
+
 \section{Projects}
-\label{sec:org8f61cb8}
+\label{sec:org91fe676}
 
 
 \subsection{my workflow of creating a video}
-\label{sec:org597f5bb}
+\label{sec:org7aa4f8b}
+\hspace{0pt}\\
+
+
+This collection of Videos and Posts describes my workflow of creating a video. Usage of some tools and methods are covered.
+
+
 During the creation of one video, several tools are tuned to fit my workflow. In
 this project several videos and posts will be created to make my workflow clear.
 
@@ -157,7 +256,7 @@ I am not ready to detail each tool. If you are interested in any one of them,
 please refer to tutorials written by experts or given by the official document.
 
 \subsubsection{Emacs}
-\label{sec:org76d34e1}
+\label{sec:org2fbd9b9}
 
 
 Emacs lies in the center of my workflow. It behaves like a super-IDE which
@@ -171,7 +270,7 @@ little modifications.
 
 \begin{enumerate}
 \item program and debug
-\label{sec:orgd2ab070}
+\label{sec:org2090515}
 
 
 I program in python, C/C++, Matlab and some other languages. Emacs acts as a
@@ -179,31 +278,31 @@ super-IDE for me.
 
 
 \item Org mode - journalize your work
-\label{sec:org75ff6e1}
+\label{sec:org68fd51b}
 
 
 Org mode definitely need a standalone subsection.
 
 \item Org mode - get things done
-\label{sec:org4df4183}
+\label{sec:orgc649c82}
 
 
 
 \item Org mode - write a diary
-\label{sec:org266bdcc}
+\label{sec:orgc5ee9f2}
 
 \item Org mode - export your Org file
-\label{sec:orge9ee370}
+\label{sec:orgec750d0}
 
 
 \item program and debug
-\label{sec:orgcf10226}
+\label{sec:org78ee2a9}
 
 
 \item writing latex
-\label{sec:org69631c2}
+\label{sec:org5309ad9}
 \item org-journal
-\label{sec:org06a8ebe}
+\label{sec:orgb4dcd6b}
 
 
 I write many notes during a post or a project. Most of my journal is maintained
@@ -216,7 +315,7 @@ agenda.
 
 
 \item ox-hugo
-\label{sec:orgde97df4}
+\label{sec:org5a96636}
 
 
 \href{https://github.com/kaushalmodi/ox-hugo}{kaushalmodi/ox-hugo: A carefully crafted Org exporter back-end for Hugo}
@@ -231,7 +330,7 @@ Org, I can integrate the org file into my agenda.
 
 
 \item preview tikz picture in Org
-\label{sec:org2bcb08b}
+\label{sec:org8bf8be5}
 
 
 \href{http://www.texample.net/tikz/}{TikZ and PGF} are \TeX{} packages for creating graphics programmatically. TikZ is
@@ -244,7 +343,7 @@ not-so-detailed post on how to set up the tikz environment in Org.
 
 
 \subsubsection{Hugo}
-\label{sec:org79f095e}
+\label{sec:orgaed3855}
 
 
 As the fastest framework for building websites, Hugo shocks me by its speed and
@@ -258,17 +357,49 @@ available.
 
 I use ox-hugo as a bridge between Emacs and Hugo. So I do not have to care much
 about how to leverage Hugo. Ox-hugo helps me do most of the work.
+\subsubsection{Hugo Academic Theme}
+\label{sec:org7ca124e}
+
+
+\href{https://github.com/gcushen/hugo-academic}{Hugo Academic Theme} is a beautiful and flexible theme developed for Hugo. This
+site is built based on this theme.
+
+If you want attach a pdf version of your post, two steps are needed:
+\begin{enumerate}
+\item add a line:
+\begin{verbatim}
+url_pdf = "#"
+\end{verbatim}
+in the front matter of your markdown file.
+\item add a PDF file with the same name as your post’s own folder to your post’s
+folder.
+\end{enumerate}
+
+A PDF link will be automatically generated just like the \texttt{pdf} link appears in
+the top of each post in my site. Because I use Emacs Org with ox-hugo, I add one
+line in the property:
+
+\begin{verbatim}
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
+\end{verbatim}
+
+Hugo academic theme provide some front matters that hugo does not support by
+default. Fortunately, \href{https://github.com/kaushalmodi/ox-hugo}{ox-hugo} handles this effectively. For more information.
+you can read:
+\begin{enumerate}
+\item \href{https://ox-hugo.scripter.co/doc/org-meta-data-to-hugo-front-matter/}{Org meta-data to Hugo front-matter}
+\item \href{https://ox-hugo.scripter.co/doc/custom-front-matter/}{Custom Front-matter Parameters}
+\end{enumerate}
+
 
 \subsubsection{manim}
-\label{sec:orga490cc3}
+\label{sec:org12e9ea1}
 
 
 
 \subsubsection{blender}
-\label{sec:org362635d}
-
-
+\label{sec:orgb3042c1}
 
 \section{Courses}
-\label{sec:orgc9e6ff6}
+\label{sec:org92abef5}
 \end{document}
