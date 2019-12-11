@@ -86,6 +86,7 @@
   "sP" 'spacemacs/helm-project-smart-do-search
   )
 (spacemacs/set-leader-keys
+  "bv" 'revert-buffer
   "da" 'clang-format
   "db" 'helm-bookmarks
   "dc" 'calc
