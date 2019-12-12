@@ -164,7 +164,7 @@
          "\\vspace{\\baselineskip}\n"
          "\\vfill\n"
          "\\setlength{\\unitlength}{3pt}\n"
-         "\\makebox[\\textwidth][c]{\\includegraphics[width=0.2\\textwidth]{../../img/tikz/example2.png}}"
+         "\\makebox[\\textwidth][c]{\\includegraphics[width=0.2\\textwidth]{../../img/tikz/example2.png}}\n"
          "\\vfill\n"
          "\\vspace{\\baselineskip}\n"
          "{\\Large WWW.MAKESTEAMCLEAR.COM \\par}\\newline\n"
