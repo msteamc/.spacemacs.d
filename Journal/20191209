@@ -344,6 +344,7 @@ can be divided into four categories.
 4. Digital discrete-time signal
 ** 06:34 存档                                   :academic:
 
+<<<<<<< HEAD
 hugo academic 的主页可以显示一定数量（阈值可以设置）的博客，超过这个阈值就会显示
 一个类似 =more posts= (这个名字也可以定制)的按钮。默认情况下， =more posts= 会链
 接到 =/post/= 下的 =_index.md= , 但是如果对 =/post/= 文件夹对应的那个 =.md= (我
@@ -351,3 +352,144 @@ hugo academic 的主页可以显示一定数量（阈值可以设置）的博客
 是带有对应 =tags= 的内容。
 
 这两者不仅在内容上有差距，在显示风格也会有差距。
+=======
+1. 保证代理打开；
+2. 设置 git 代理：
+#+begin_src shell
+git config --global http.proxy http://127.0.0.1:1086
+git config --global https.proxy https://127.0.0.1:1086
+#+end_src
+3. 修改 =/etc/hosts=访问 https://www.ipaddress.com 分别输入
+   github.global.ssl.fastly.net 和 github.com，查询 ip 地址。
+4. 更新 DNS 缓存
+   sudo dscacheutil -flushcache
+ * Drawing a TikZ picture in Emacs Org Mode
+[2019-12-11 Wed 11:35]
+
+#+caption: a minimum working example
+#+name: a-minimum-working-example
+#+header: :file  "../../img/tikz/example3.pdf"
+#+begin_src latex -n -r  :results raw :exports code
+\usetikzlibrary{intersections,arrows.meta}
+\begin{tikzpicture}[thin]
+\draw (-1.5,0) -- (1.5,0);
+\draw (0,-1.5) -- (0,1.5);
+\filldraw[fill = green!20, draw = green!50!black] (0,0) circle[radius = 1cm];
+\draw (0,0) rectangle (.5,.5);
+\draw (0,0) rectangle (-0.5,-0.5);
+\draw[help lines,very thin,step=.5cm,color=gray] (-1.5,-1.5) grid (1.5,1.5);
+% relative coordinate
+\draw[blue, very thick] (30:1) ++ (0,-0.5) --(0,0);
+% name a path without drawing it
+\path[name path = upward line] (1,0) -- (1,1);                              (ref:path)
+\path[name path = sloped line] (0,0) -- (30:1.5cm);
+% use intersection of two path
+\draw[name intersections={of = upward line and sloped line, by=x}]
+     [very thick, orange] (1,0) -- (x);                                     (ref:intersections)
+% use arrow
+\draw[<->>] (0,0) -- (145:1);                                                        (ref:arrow1)
+\draw[<-{Triangle[fill=red]}] (0,0) -- (30:1);                                       (ref:arrow2)
+% use scope
+\begin{scope}[very thick]                                                           (ref:scope1)
+\draw (-0.4,0.4) -- (0.4,0.4);
+\draw (-0.4,-0.4) -- (0.4,-0.4);
+\end{scope}                                                                         (ref:scope2)
+% use foreach
+\foreach \x in {-1cm,-0.5cm,1cm}                 (ref:foreach1)
+    \draw[red] (\x,-3pt) -- (\x,3pt);
+\foreach \y in {-1cm,-0.5cm,1cm}
+    \draw[red](-3pt,\y) -- (3pt,\y);             (ref:foreach2)
+% using node
+\draw (0,0)+(0.2,-0.2) node {\tiny $(0,0)$ };    (ref:node1)
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: a-minimum-working-example
+[[file:../../img/tikz/example3.pdf]]
+
+The generated figure is shown as:
+#+ATTR_HTML:  :width 800 :align center
+#+ATTR_LATEX: :width 0.5\textwidth :align center
+{{{if-latex(example3.pdf,example3.png)}}}
+
+1. In [[a-minimum-working-example][the minimum working example]] line [[(path)]] , a path is named  without drawing
+   it.
+2. Line [[(intersections)]] gives an example of using library =intersections=. Note
+   that you need to add the library using =\usetikzlibrary{intersections}=
+   otherwise an error occurs during \LaTeX compiling.
+3. Line [[(arrow1)]] and [[(arrow2)]] gives an example of using arrow. To make it work,
+   =\usetikzlibrary{arrows.meta}= is needed. The library =arrows.meta= provides tons
+   of types of arrows whick shock me when I see them the first time.
+4. Line [[(scope1)]] to [[(scope2)]] gives an example of =scope= . In the environment, all
+   the lines are drawn in the =very thick= style.
+5. Line [[(foreach1)]] to [[(foreach2)]] gives an examplt of =foreach= . =foreach= is handy
+   when you want to draw a list of objects. In [[a-minimum-working-example][the minimum working example]] , I
+   draw a list of short red sticks along with the x-axis and y-axis.
+6. Line [[(node1)]] is an example of =node=. The keyword =node= is typically followed by
+   some options between =[]= and then some text between ={}=. Every node has flexible
+   anchor options to decide where the text should be placed.
+* Another Example
+[2019-12-12 Thu 20:15]
+
+The code is shown as:
+#+caption: another minimum working example
+#+name: another-minimum-working-example
+#+header: :file  "../../img/tikz/example4.png"
+#+begin_src latex -n -r  :results raw :exports code
+\usetikzlibrary{intersections,arrows.meta}
+\begin{tikzpicture}[scale=3]
+  \clip (-0.6,-0.2) rectangle (0.6,1.51);
+  \draw[step = .5cm, help lines] (-1.4,-1.4) grid (1.4,1.4);
+  \filldraw[fill=green!20,draw = green!50!black] (0,0) -- (3mm,0mm)
+  arc [start angle = 0, end angle = 30,radius = 3mm] -- cycle;
+  \draw[->] (-1.5,0) -- (1.5,0);
+  \draw[->] (0,-1.5) -- (0,1.5);
+  \draw (0,0) circle [radius=1cm];
+  \foreach \x in {-1,-0.5,1}
+  \draw(\x cm, 1pt) -- (\x cm, -1 pt) node [anchor = north] {$\x$};
+  \foreach \y in {-1,-0.5,1}
+  \draw(1pt,\y cm) -- (-1pt, \y cm) node[anchor = east] {$\y$};
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: another-minimum-working-example
+[[file:../../img/tikz/example4.png]]
+
+The generated figure is shown as:
+#+ATTR_HTML:  :width 800 :align center
+#+ATTR_LATEX: :width 0.5\textwidth :align center
+{{{if-latex(example4.pdf,example4.png)}}}
+
+
+* Some Basic Rules in TikZ
+[2019-12-12 Thu 14:16]
+
+1. The options appear in =[]=. No matter it is an object or an operation, the
+   contents in the following  =[]= serve as options.
+
+   Options =[]= can be at the very beginning of the environment =tikzpicture=
+   following the operation, following the object.
+
+2. =\filldraw= is a good command. It draws a closed loop and fill it with color or
+   pattern. The colors for filling and drawing can be different.
+
+3. Coordinates can be specified in x-y format, polar format.
+   - The easiest way is =(x,y)= which means =x= cm in the x-axis and =y= cm in the
+     y-axis;
+   - =(a:x)= is the polar format which means =x= cm in direction =a= degree.
+4. =(<p> |- <q>)= is another way to specify coordinates for example =(30:1 |- 0,0)=
+   which means the interaction of a vertical line through =(30:1)= and a
+   horizontal line through =(0,0)= .
+5. Relative coordinates are possible with =+= and =++= in front of =(x,y)= and =(a:x)= .
+   =+= is relative to the closest coordinate whereas =++= is relative to the very
+   first coordinate of current path.
+
+* Some tips for in TikZ
+[2019-12-12 Thu 15:14]
+
+1. To use =intersections= to specify a coordinate, you need to include the
+   library, i.e. =\usetikzlibrary{intersections}= is a must.
+* mdframed package
+[2019-12-12 Thu 20:03]
+
+>>>>>>> a6dda58c60e315f55aabf5738f30b4068689d4b8
