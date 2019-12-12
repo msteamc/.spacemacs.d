@@ -2,6 +2,23 @@
 :PROPERTIES:
 :CREATED:  20191211
 :END:
+** 22:04 github clone 慢
+
+1. 保证代理打开；
+2. 设置 git 代理：
+#+begin_src shell
+git config --global http.proxy http://127.0.0.1:1086
+git config --global https.proxy https://127.0.0.1:1086
+#+end_src
+3. 修改 =/etc/hosts=访问 https://www.ipaddress.com 分别输入
+   github.global.ssl.fastly.net 和 github.com，查询 ip 地址。
+4. 更新 DNS 缓存
+   sudo dscacheutil -flushcache
+
+* Thursday, 12/12/19
+:PROPERTIES:
+:CREATED:  20191212
+:END:
 ** TODO introduction to signal and system             :SS:
 *** preface
 [2019-11-24 Sun 21:37]
@@ -325,15 +342,12 @@ can be divided into four categories.
 2. Digital continuous-time signal;
 3. Analogy discrete-time signal;
 4. Digital discrete-time signal
-** 22:04 github clone 慢
+** 06:34 存档                                   :academic:
 
-1. 保证代理打开；
-2. 设置 git 代理：
-#+begin_src shell
-git config --global http.proxy http://127.0.0.1:1086
-git config --global https.proxy https://127.0.0.1:1086
-#+end_src
-3. 修改 =/etc/hosts=访问 https://www.ipaddress.com 分别输入
-   github.global.ssl.fastly.net 和 github.com，查询 ip 地址。
-4. 更新 DNS 缓存
-   sudo dscacheutil -flushcache
+hugo academic 的主页可以显示一定数量（阈值可以设置）的博客，超过这个阈值就会显示
+一个类似 =more posts= (这个名字也可以定制)的按钮。默认情况下， =more posts= 会链
+接到 =/post/= 下的 =_index.md= , 但是如果对 =/post/= 文件夹对应的那个 =.md= (我
+的是 =msc_posts.md=) 中设置 =tags= 内容为非空，则点击 =more posts= 之后，显示的
+是带有对应 =tags= 的内容。
+
+这两者不仅在内容上有差距，在显示风格也会有差距。

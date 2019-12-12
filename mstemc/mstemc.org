@@ -23,7 +23,7 @@ CLOCK: [2019-10-06 Sun 08:21]--[2019-10-06 Sun 08:33] =>  0:12
 [2019-10-05 Sat 16:52]
 
 
-** TODO Set up the TikZ in Emacs Org  :Emacs:Org:TikZ:LaTeX:
+** TODO Set up the TikZ in Emacs Org  :@Tools:Emacs:Org:TikZ:LaTeX:
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
 :EXPORT_HUGO_SECTION: post
@@ -83,7 +83,8 @@ CLOCK: [2019-12-08 Sun 17:30]--[2019-12-08 Sun 17:33] =>  0:03
 :END:
 <2019-12-08 Sun 17:30>
 
-Draw a graph using TikZ
+Draw a graph using TikZ cite:Fossorier_2005 and left is a citation
+
 
 #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example.png"
 #+begin_src latex :results raw :exports none
@@ -101,19 +102,19 @@ Draw a graph using TikZ
 #+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex(example.pdf,example.png)}}}
 
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example1.pdf"
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example1.png"
 #+begin_src latex :results raw :exports none
 \begin{tikzpicture}
-\filldraw [gray] (0,0) circle [radius=4pt]
+\filldraw [blue] (0,0) circle [radius=4pt]
                  (1,1) circle [radius=4pt]
                  (2,1) circle [radius=4pt]
                  (2,0) circle [radius=4pt];
-\draw (0,0) .. controls (1,1) and (2,1) .. (2,0);
+\draw (0,0) .. controls (1,1) and (2,2) .. (2,0);
 \end{tikzpicture}
 #+end_src
 
 #+RESULTS:
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example1.pdf]]
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example1.png]]
 
 #+ATTR_HTML:  :width 400 :align center
 #+ATTR_LATEX: :width 0.7\textwidth :align center
@@ -149,6 +150,9 @@ node [below right,fill=white,yshift=-4pt] {$(\frac{2}{\pi},0)$};
 #+ATTR_HTML:  :width 400 :align center
 #+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex(basiclayer.pdf,basiclayer.png)}}}
+
+bibliography:~/Dropbox/research_library/zcl.bib
+bibliographystyle:unsrt
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
