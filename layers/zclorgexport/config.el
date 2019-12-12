@@ -149,4 +149,33 @@
 (defmacro by-backend (&rest body)
   `(case (if (boundp 'backend) (org-export-backend-name backend) nil) ,@body))
 
+
+(setq org-latex-title-command (concat
+                               "\\newcommand*{\\lqm}[1]{{\\HUGE\\fontsize{#1}{#1}\\selectfont ?}}\n"
+     "\\newcommand*{\\titleCM}{\\begingroup\n"
+       "\\vspace*{\\drop} \n"
+       "\\begin{center}\n"
+         "\\vspace{\\baselineskip}\n"
+         "{\\Huge \\bf %t \\par}\n"
+         "\\vspace{2\\baselineskip}   \\newline \n"
+         "{\\large Eason Zhang with www.makesteamclear.com \\par}\n"
+         "\\vspace{\\baselineskip}          \\newline\n"
+         "{\\large \\today \\par}\n"
+         "\\vspace{\\baselineskip}\n"
+         "\\vfill\n"
+         "\\setlength{\\unitlength}{3pt}\n"
+         "\\makebox[\\textwidth][c]{\\includegraphics[width=0.2\\textwidth]{../../img/tikz/example2.png}}\n"
+         "\\vfill\n"
+         "\\vspace{\\baselineskip}\n"
+         "{\\Large WWW.MAKESTEAMCLEAR.COM \\par}\\newline\n"
+         "\\vspace{\\baselineskip}\n"
+         "{\\texttt www.makesteamclear.com is a free project, supported by Eason Zhang, to make videos about STEAM in a more approachable and different way. If you found the contents in this post or the site or the youtube channel helpful, please consider support me, thanks \\par}\n"
+         "\\end{center}\n"
+         "\\vspace*{\\drop}\n"
+         "\\endgroup}\n"
+     "\\begin{titlepage}\n"
+       "\\titleCM\n"
+       "\\end{titlepage}\n"
+       )) 
+  
 )
