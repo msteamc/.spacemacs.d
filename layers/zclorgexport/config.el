@@ -149,7 +149,7 @@
 (defmacro by-backend (&rest body)
   `(case (if (boundp 'backend) (org-export-backend-name backend) nil) ,@body))
 
-  ;; customize the title command
+
 (setq org-latex-title-command (concat
                                "\\newcommand*{\\lqm}[1]{{\\HUGE\\fontsize{#1}{#1}\\selectfont ?}}\n"
      "\\newcommand*{\\titleCM}{\\begingroup\n"
@@ -164,17 +164,7 @@
          "\\vspace{\\baselineskip}\n"
          "\\vfill\n"
          "\\setlength{\\unitlength}{3pt}\n"
-         "\\begin{picture}(0,40)\n"
-           "\\thicklines\n"
-           "{\\color{Red}\n"
-             "\\put(-20,0){\\framebox(40,40){}}\n"
-             "\\put(0,0){\\line(0,1){40}}\n"
-             "\\put(-20,20){\\line(1,0){40}}}\n"
-           "\\put(-10,10){\\makebox(0,0){\\lqm{80pt}}}\n"
-           "\\put(-10,30){\\makebox(0,0){\\lqm{60pt}}}\n"
-           "\\put(10,10){\\makebox(0,0){\\lqm{80pt}}}\n"
-           "\\put(10,30){\\makebox(0,0){\\lqm{60pt}}}\n"
-         "\\end{picture}\n"
+         "\\makebox[\\textwidth][c]{\\includegraphics[width=0.2\\textwidth]{../../img/tikz/example2.png}}"
          "\\vfill\n"
          "\\vspace{\\baselineskip}\n"
          "{\\Large WWW.MAKESTEAMCLEAR.COM \\par}\\newline\n"
@@ -186,7 +176,6 @@
      "\\begin{titlepage}\n"
        "\\titleCM\n"
        "\\end{titlepage}\n"
-       ))
-
+       )) 
   
 )
