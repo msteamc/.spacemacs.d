@@ -110,14 +110,14 @@
 
 (setq reftex-default-bibliography
       (quote
-       ("default.bib" "~/Dropbox/zorg/research_library/zcl.bib")))
+       ("default.bib" "~/Dropbox/research_library/zcl.bib")))
 (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
 ;;;;orgpublish;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; (setq org-latex-to-pdf-process
 ;;       '("xelatex -interaction nonstopmode %f"
 ;;         "xelatex -interaction nonstopmode %f"))
 ;;(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
-(setq org-latex-compiler "xelatex")
+(setq org-latex-compiler "pdflatex")
 (setq org-latex-pdf-process '("%latex -interaction nonstopmode -output-directory %o %f"
                               "bibtex %b"
                               "%latex -interaction nonstopmode -output-directory %o %f"
