@@ -3,11 +3,12 @@
 #+OPTIONS:   *:t <:nil timestamp:nil toc:t prop:nil
 #+OPTIONS:   H:3 num:t  \n:nil  @:t ::t |:t ^:nil -:t f:t
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:nil pri:nil tags:nil
+#+STARTUP: showall
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+LaTeX_CLASS: org-article
 #+LaTeX_CLASS_OPTIONS: [koma,utopia,a4paper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue]
-#+PROPERTY: header-args :fit yes :border 0cm :results raw :exports none :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 600 -flatten
+#+PROPERTY: header-args :fit yes :border 0cm :results raw :exports none :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 600 -transparent white -flatten
 
 #+HUGO_BASE_DIR: ../../mstemc_hugo/
 #+HUGO: more
@@ -16,7 +17,7 @@
 #+hugo_front_matter_key_replace: description>summary
 
 #+MACRO: if-latex (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) (concat "[[file:~/Dropbox/mstemc_hugo/static/img/tikz/"  $1 "]]") (concat "[[file:~/Dropbox/mstemc_hugo/static/img/tikz/"  $2 "]]") ))
-#+MACRO: newline @@latex:\hspace{0pt}\\@@
+#+MACRO: newline @@latex:\hspace{0pt}\\@@ @@html:<br>@@
 #+MACRO: begin_tip @@html:{{% alert note %}}@@
 #+MACRO: end_tip @@html:{{% /alert %}}@@
 #+MACRO: begin_warning @@html:{{% alert warning %}}@@

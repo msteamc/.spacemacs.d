@@ -40,6 +40,7 @@
                  "\\documentclass[10pt,a4paper,UTF8]{article}
                   \\usepackage{zclorg}
                   \\usepackage{tikztheorem}
+                  \\usepackage[toc,lof,lot]{multicol}
                   [NO-DEFAULT-PACKAGES]
                   [NO-PACKAGES]"
                   ("\\section{%s}" . "\\section*{%s}")
@@ -151,12 +152,11 @@
 
 
 (setq org-latex-title-command (concat
-                               "\\newcommand*{\\lqm}[1]{{\\HUGE\\fontsize{#1}{#1}\\selectfont ?}}\n"
      "\\newcommand*{\\titleCM}{\\begingroup\n"
        "\\vspace*{\\drop} \n"
        "\\begin{center}\n"
          "\\vspace{\\baselineskip}\n"
-         "{\\Huge \\bf %t \\par}\n"
+         "{\\Huge \\textbf{%t} \\par}\n"
          "\\vspace{2\\baselineskip}   \\newline \n"
          "{\\large Eason Zhang with www.makesteamclear.com \\par}\n"
          "\\vspace{\\baselineskip}          \\newline\n"
@@ -164,7 +164,7 @@
          "\\vspace{\\baselineskip}\n"
          "\\vfill\n"
          "\\setlength{\\unitlength}{3pt}\n"
-         "\\makebox[\\textwidth][c]{\\includegraphics[width=0.2\\textwidth]{../../img/tikz/example2.png}}\n"
+         "\\makebox[\\textwidth][c]{\\includegraphics[width=0.5\\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/example3.pdf}}\n"
          "\\vfill\n"
          "\\vspace{\\baselineskip}\n"
          "{\\Large WWW.MAKESTEAMCLEAR.COM \\par}\\newline\n"
@@ -176,6 +176,5 @@
      "\\begin{titlepage}\n"
        "\\titleCM\n"
        "\\end{titlepage}\n"
-       )) 
-  
+       ))
 )
