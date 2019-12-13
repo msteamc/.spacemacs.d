@@ -1,5 +1,5 @@
-% Intended LaTeX compiler: xelatex
-\documentclass[koma,a4paper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue,palatino]{org-article}
+% Intended LaTeX compiler: pdflatex
+\documentclass[koma,utopia,a4paper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue]{org-article}
                \usepackage{tikz}
 \author{Eason}
 \date{\today}
@@ -13,22 +13,45 @@
  pdflang={English}}
 \begin{document}
 
-\maketitle
+\newcommand*{\titleCM}{\begingroup
+\vspace*{\drop}
+\begin{center}
+\vspace{\baselineskip}
+{\Huge \textbf{make STEAM clear} \par}
+\vspace{2\baselineskip}   \newline
+{\large Eason Zhang with www.makesteamclear.com \par}
+\vspace{\baselineskip}          \newline
+{\large \today \par}
+\vspace{\baselineskip}
+\vfill
+\setlength{\unitlength}{3pt}
+\makebox[\textwidth][c]{\includegraphics[width=0.2\textwidth]{\~/Dropbox/mstemc_hugo/static/img/tikz/example3.pdf}}
+\vfill
+\vspace{\baselineskip}
+{\Large WWW.MAKESTEAMCLEAR.COM \par}\newline
+\vspace{\baselineskip}
+{\texttt www.makesteamclear.com is a free project, supported by Eason Zhang, to make videos about STEAM in a more approachable and different way. If you found the contents in this post or the site or the youtube channel helpful, please consider support me, thanks \par}
+\end{center}
+\vspace*{\drop}
+\endgroup}
+\begin{titlepage}
+\titleCM
+\end{titlepage}
 \tableofcontents
 
 
 \section{Videos}
-\label{sec:org80ec581}
+\label{sec:orge61aa3c}
 
 
 
 \section{Posts}
-\label{sec:org275e087}
+\label{sec:orgcd8829e}
 
 
 
 \subsection{Set up the TikZ in Emacs Org}
-\label{sec:org5387454}
+\label{sec:org7c6689e}
 \hspace{0pt}\\
 
 
@@ -36,7 +59,7 @@ An introduction to setup the TikZ environment in Emacs Org File. So that in Org 
 
 
 \subsubsection{config the header args}
-\label{sec:org3f3612a}
+\label{sec:org8a24a77}
 
 
 You can embed TiKz (One of \(\LaTeX\) graphic package) code into a Org file. With
@@ -69,7 +92,7 @@ The example begins with several lines containing \texttt{\#+header} which is sor
 clutter. we can put them in a file and include it at the beginning of the Org
 file.
 \subsubsection{generate results with different formats}
-\label{sec:orgac277d3}
+\label{sec:org05b6333}
 
 
 By changing the extension of \texttt{:file} (which is \texttt{pdf} for
@@ -77,7 +100,7 @@ By changing the extension of \texttt{:file} (which is \texttt{pdf} for
 Now, I need \texttt{pdf} and \texttt{png} . You can see the result by just press \texttt{C-c C-c} in the
 body of the tikz code.
 \subsubsection{export the results according to the backend}
-\label{sec:org864fe62}
+\label{sec:orgff78033}
 
 
 You can set \texttt{:exports} to control how the results will be exported. Now I set it
@@ -104,7 +127,7 @@ figure. Eventually, in the final \texttt{pdf} document, you figure can be zoomed
 out without losing any resolution.
 
 \subsubsection{the final workflow}
-\label{sec:orgc26c788}
+\label{sec:orga6d2484}
 
 
 The minimum working example at the start of this post is simplifed as below.
@@ -144,7 +167,7 @@ export to other format, \texttt{png} image will be used.
 
 
 \subsection{Export Markdown and latex using Emacs Org}
-\label{sec:orgb25f912}
+\label{sec:orgd6fe22f}
 
 
 \hspace{0pt}\\
@@ -154,7 +177,7 @@ set up the Emacs org and ox-hugo to export the org files in markdown and latex f
 
 
 \subsubsection{Introduction}
-\label{sec:org1a16d6f}
+\label{sec:orgd478c4d}
 
 
 I use hugo before it support Emacs org file. Then I use an Emacs extension
@@ -165,7 +188,7 @@ Org, there is no need to take time to learn markdown. Emacs Org, I think, is
 more elegant than markdown.
 
 \subsubsection{set up ox-hugo}
-\label{sec:org11a7de8}
+\label{sec:org76b6cf4}
 
 
 I use Spacemacs and integrate ox-hugo into my config is easy. You can add it
@@ -176,7 +199,7 @@ The first time you want to export an Org file or a subtree of an Org file, use
 \texttt{M-x org-hugo-export-to-md} . There will be a hugo-related section in the
 \texttt{org-dispatcher} whenever you use \texttt{C-c C-e} .
 \subsubsection{use Org Macro replacement}
-\label{sec:orgf79a086}
+\label{sec:orga32c0f1}
 
 
 Often, you want different actions when you export the Org file to
@@ -194,7 +217,7 @@ and options exist only for certain backend.
 
 Once you are familiar with Org Macro, It behaves beyond your imagination.
 \subsubsection{use the setupfile for each Org file}
-\label{sec:org66edc24}
+\label{sec:org589cab1}
 
 
 Often, you options for a org file grows more and more. If you think it kind of
@@ -214,29 +237,160 @@ Also, you can notice that in \href{https://github.com/msteamc/.spacemacs.d/blob/
 different export targets.
 
 \subsection{Drawing Graphs Using TikZ in Emacs Org}
-\label{sec:org171ea2a}
+\label{sec:org220de70}
 
 
-Draw a graph using TikZ
 
+\subsubsection{Drawing a TikZ picture in Emacs Org Mode}
+\label{sec:orgd491791}
+
+
+\lstset{language=[LaTeX]TeX,label=a-minimum-working-example,caption={a minimum working example},captionpos=b,firstnumber=1,numbers=left}
+\begin{lstlisting}
+\usetikzlibrary{intersections,arrows.meta}
+\begin{tikzpicture}[thin]
+\draw (-1.5,0) -- (1.5,0);
+\draw (0,-1.5) -- (0,1.5);
+\filldraw[fill = green!20, draw = green!50!black] (0,0) circle[radius = 1cm];
+\draw (0,0) rectangle (.5,.5);
+\draw (0,0) rectangle (-0.5,-0.5);
+\draw[help lines,very thin,step=.5cm,color=gray] (-1.5,-1.5) grid (1.5,1.5);
+% relative coordinate
+\draw[blue, very thick] (30:1) ++ (0,-0.5) --(0,0);
+% name a path without drawing it
+\path[name path = upward line] (1,0) -- (1,1);
+\path[name path = sloped line] (0,0) -- (30:1.5cm);
+% use intersection of two path
+\draw[name intersections={of = upward line and sloped line, by=x}]
+     [very thick, orange] (1,0) -- (x);
+% use arrow
+\draw[<->>] (0,0) -- (145:1);
+\draw[<-{Triangle[fill=red]}] (0,0) -- (30:1);
+% use scope
+\begin{scope}[very thick]
+\draw (-0.4,0.4) -- (0.4,0.4);
+\draw (-0.4,-0.4) -- (0.4,-0.4);
+\end{scope}
+% use foreach
+\foreach \x in {-1cm,-0.5cm,1cm}
+    \draw[red] (\x,-3pt) -- (\x,3pt);
+\foreach \y in {-1cm,-0.5cm,1cm}
+    \draw[red](-3pt,\y) -- (3pt,\y);
+% using node
+\draw (0,0)+(0.2,-0.2) node {\tiny $(0,0)$ };
+\end{tikzpicture}
+\end{lstlisting}
+
+
+\hspace{0pt}\\
+The generated figure is shown as:
 \begin{center}
-\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/example.pdf}
+\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/example3.pdf}
 \end{center}
 
+\begin{enumerate}
+\item In \hyperref[a-minimum-working-example]{the minimum working example} line 12 , a path is named  without drawing
+it.
+\item Line 16 gives an example of using library \texttt{intersections}. Note
+that you need to add the library using \texttt{\textbackslash{}usetikzlibrary\{intersections\}}
+otherwise an error occurs during \LaTeX compiling.
+\item Line 18 and 19 gives an example of using arrow. To make it work,
+\texttt{\textbackslash{}usetikzlibrary\{arrows.meta\}} is needed. The library \texttt{arrows.meta} provides tons
+of types of arrows whick shock me when I see them the first time.
+\item Line 21 to 24 gives an example of \texttt{scope} . In the environment, all
+the lines are drawn in the \texttt{very thick} style.
+\item Line 26 to 29 gives an examplt of \texttt{foreach} . \texttt{foreach} is handy
+when you want to draw a list of objects. In \hyperref[a-minimum-working-example]{the minimum working example} , I
+draw a list of short red sticks along with the x-axis and y-axis.
+\item Line 31 is an example of \texttt{node}. The keyword \texttt{node} is typically followed by
+some options between \texttt{[]} and then some text between \texttt{\{\}}. Every node has flexible
+anchor options to decide where the text should be placed.
+\end{enumerate}
+\subsubsection{Another Example}
+\label{sec:orgbc1168b}
+
+
+The code is shown as:
+\lstset{language=[LaTeX]TeX,label=another-minimum-working-example,caption={another minimum working example},captionpos=b,firstnumber=1,numbers=left}
+\begin{lstlisting}
+\usetikzlibrary{intersections,arrows.meta}
+\begin{tikzpicture}[scale=3]
+  \clip (-0.6,-0.2) rectangle (0.6,1.51);
+  \draw[step = .5cm, help lines] (-1.4,-1.4) grid (1.4,1.4);
+  \filldraw[fill=green!20,draw = green!50!black] (0,0) -- (3mm,0mm)
+  arc [start angle = 0, end angle = 30,radius = 3mm] -- cycle;
+  \draw[->] (-1.5,0) -- (1.5,0);
+  \draw[->] (0,-1.5) -- (0,1.5);
+  \draw (0,0) circle [radius=1cm];
+  \foreach \x in {-1,-0.5,1}
+  \draw(\x cm, 1pt) -- (\x cm, -1 pt) node [anchor = north] {$\x$};
+  \foreach \y in {-1,-0.5,1}
+  \draw(1pt,\y cm) -- (-1pt, \y cm) node[anchor = east] {$\y$};
+\end{tikzpicture}
+\end{lstlisting}
+
+The generated figure is shown as:
 \begin{center}
-\includegraphics[width=0.7\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/example1.pdf}
+\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/example4.pdf}
 \end{center}
 
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/basiclayer.pdf}
-\end{center}
+
+\subsubsection{Some Basic Rules in TikZ}
+\label{sec:orgdb48b38}
+
+
+\begin{enumerate}
+\item The options appear in \texttt{[]}. No matter it is an object or an operation, the
+contents in the following  \texttt{[]} serve as options.
+
+Options \texttt{[]} can be at the very beginning of the environment \texttt{tikzpicture}
+following the operation, following the object.
+
+\item \texttt{\textbackslash{}filldraw} is a good command. It draws a closed loop and fill it with color or
+pattern. The colors for filling and drawing can be different.
+
+\item Coordinates can be specified in x-y format, polar format.
+\begin{itemize}
+\item The easiest way is \texttt{(x,y)} which means \texttt{x} cm in the x-axis and \texttt{y} cm in the
+y-axis;
+\item \texttt{(a:x)} is the polar format which means \texttt{x} cm in direction \texttt{a} degree.
+\end{itemize}
+\item \texttt{(<p> |- <q>)} is another way to specify coordinates for example \texttt{(30:1 |- 0,0)}
+which means the interaction of a vertical line through \texttt{(30:1)} and a
+horizontal line through \texttt{(0,0)} .
+\item Relative coordinates are possible with \texttt{+} and \texttt{++} in front of \texttt{(x,y)} and \texttt{(a:x)} .
+\texttt{+} is relative to the closest coordinate whereas \texttt{++} is relative to the very
+first coordinate of current path.
+\end{enumerate}
+
+\subsubsection{Some tips for in TikZ}
+\label{sec:org8e92c4c}
+
+
+\begin{enumerate}
+\item To use \texttt{intersections} to specify a coordinate, you need to include the
+library, i.e. \texttt{\textbackslash{}usetikzlibrary\{intersections\}} is a must.
+\end{enumerate}
+
+
+\lstset{language=C,label= ,caption= ,captionpos=b,numbers=none}
+\begin{lstlisting}
+int main()
+{
+  int i=0;
+  printf();
+}
+\end{lstlisting}
+
+\bibliography{../../research_library/zcl}
+\bibliographystyle{unsrt}
 
 \section{Projects}
-\label{sec:org91fe676}
+\label{sec:org92a94e0}
 
 
 \subsection{my workflow of creating a video}
-\label{sec:org7aa4f8b}
+\label{sec:orga6b7968}
 \hspace{0pt}\\
 
 
@@ -256,7 +410,7 @@ I am not ready to detail each tool. If you are interested in any one of them,
 please refer to tutorials written by experts or given by the official document.
 
 \subsubsection{Emacs}
-\label{sec:org2fbd9b9}
+\label{sec:org9c05b58}
 
 
 Emacs lies in the center of my workflow. It behaves like a super-IDE which
@@ -270,7 +424,7 @@ little modifications.
 
 \begin{enumerate}
 \item program and debug
-\label{sec:org2090515}
+\label{sec:orge66ddd0}
 
 
 I program in python, C/C++, Matlab and some other languages. Emacs acts as a
@@ -278,31 +432,31 @@ super-IDE for me.
 
 
 \item Org mode - journalize your work
-\label{sec:org68fd51b}
+\label{sec:org108dfd7}
 
 
 Org mode definitely need a standalone subsection.
 
 \item Org mode - get things done
-\label{sec:orgc649c82}
+\label{sec:orgb5f62bc}
 
 
 
 \item Org mode - write a diary
-\label{sec:orgc5ee9f2}
+\label{sec:org168bbcf}
 
 \item Org mode - export your Org file
-\label{sec:orgec750d0}
+\label{sec:orgce77f24}
 
 
 \item program and debug
-\label{sec:org78ee2a9}
+\label{sec:org6b73797}
 
 
 \item writing latex
-\label{sec:org5309ad9}
+\label{sec:orgf96355a}
 \item org-journal
-\label{sec:orgb4dcd6b}
+\label{sec:orgc17cd60}
 
 
 I write many notes during a post or a project. Most of my journal is maintained
@@ -315,7 +469,7 @@ agenda.
 
 
 \item ox-hugo
-\label{sec:org5a96636}
+\label{sec:org9e07d00}
 
 
 \href{https://github.com/kaushalmodi/ox-hugo}{kaushalmodi/ox-hugo: A carefully crafted Org exporter back-end for Hugo}
@@ -330,7 +484,7 @@ Org, I can integrate the org file into my agenda.
 
 
 \item preview tikz picture in Org
-\label{sec:org8bf8be5}
+\label{sec:orgab2630d}
 
 
 \href{http://www.texample.net/tikz/}{TikZ and PGF} are \TeX{} packages for creating graphics programmatically. TikZ is
@@ -343,7 +497,7 @@ not-so-detailed post on how to set up the tikz environment in Org.
 
 
 \subsubsection{Hugo}
-\label{sec:orgaed3855}
+\label{sec:org3f30c08}
 
 
 As the fastest framework for building websites, Hugo shocks me by its speed and
@@ -358,7 +512,7 @@ available.
 I use ox-hugo as a bridge between Emacs and Hugo. So I do not have to care much
 about how to leverage Hugo. Ox-hugo helps me do most of the work.
 \subsubsection{Hugo Academic Theme}
-\label{sec:org7ca124e}
+\label{sec:orgad8a7d5}
 
 
 \href{https://github.com/gcushen/hugo-academic}{Hugo Academic Theme} is a beautiful and flexible theme developed for Hugo. This
@@ -393,13 +547,13 @@ you can read:
 
 
 \subsubsection{manim}
-\label{sec:org12e9ea1}
+\label{sec:org022fb8d}
 
 
 
 \subsubsection{blender}
-\label{sec:orgb3042c1}
+\label{sec:org7659274}
 
 \section{Courses}
-\label{sec:org92abef5}
+\label{sec:org85ca59f}
 \end{document}

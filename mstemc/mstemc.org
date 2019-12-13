@@ -83,73 +83,144 @@ CLOCK: [2019-12-08 Sun 17:30]--[2019-12-08 Sun 17:33] =>  0:03
 :END:
 <2019-12-08 Sun 17:30>
 
-Draw a graph using TikZ cite:Fossorier_2005 and left is a citation
 
+*** Drawing a TikZ picture in Emacs Org Mode
+[2019-12-11 Wed 11:35]
 
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example.png"
-#+begin_src latex :results raw :exports none
-\begin{tikzpicture}
+#+caption: a minimum working example
+#+name: a-minimum-working-example
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example3.png"
+#+begin_src latex -n -r  :results raw :exports code
+\usetikzlibrary{intersections,arrows.meta}
+\begin{tikzpicture}[thin]
 \draw (-1.5,0) -- (1.5,0);
-\draw (0,-1.5) -- (0,1.5)
+\draw (0,-1.5) -- (0,1.5);
+\filldraw[fill = green!20, draw = green!50!black] (0,0) circle[radius = 1cm];
+\draw (0,0) rectangle (.5,.5);
+\draw (0,0) rectangle (-0.5,-0.5);
+\draw[help lines,very thin,step=.5cm,color=gray] (-1.5,-1.5) grid (1.5,1.5);
+% relative coordinate
+\draw[blue, very thick] (30:1) ++ (0,-0.5) --(0,0);
+% name a path without drawing it
+\path[name path = upward line] (1,0) -- (1,1);                              (ref:path)
+\path[name path = sloped line] (0,0) -- (30:1.5cm);
+% use intersection of two path
+\draw[name intersections={of = upward line and sloped line, by=x}]
+     [very thick, orange] (1,0) -- (x);                                     (ref:intersections)
+% use arrow
+\draw[<->>] (0,0) -- (145:1);                                                        (ref:arrow1)
+\draw[<-{Triangle[fill=red]}] (0,0) -- (30:1);                                       (ref:arrow2)
+% use scope
+\begin{scope}[very thick]                                                           (ref:scope1)
+\draw (-0.4,0.4) -- (0.4,0.4);
+\draw (-0.4,-0.4) -- (0.4,-0.4);
+\end{scope}                                                                         (ref:scope2)
+% use foreach
+\foreach \x in {-1cm,-0.5cm,1cm}                 (ref:foreach1)
+    \draw[red] (\x,-3pt) -- (\x,3pt);
+\foreach \y in {-1cm,-0.5cm,1cm}
+    \draw[red](-3pt,\y) -- (3pt,\y);             (ref:foreach2)
+% using node
+\draw (0,0)+(0.2,-0.2) node {\tiny $(0,0)$ };    (ref:node1)
 \end{tikzpicture}
 #+end_src
 
-#+RESULTS:
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example.png]]
+#+RESULTS: a-minimum-working-example
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example3.png]]
 
 
-#+ATTR_HTML:  :width 200 :align center
-#+ATTR_LATEX: :width 0.8\textwidth :align center
-{{{if-latex(example.pdf,example.png)}}}
+{{{newline}}}
+The generated figure is shown as:
+#+ATTR_HTML:  :width 800 :align center
+#+ATTR_LATEX: :width 0.5\textwidth :align center
+{{{if-latex(example3.pdf,example3.png)}}}
 
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example1.png"
-#+begin_src latex :results raw :exports none
-\begin{tikzpicture}
-\filldraw [blue] (0,0) circle [radius=4pt]
-                 (1,1) circle [radius=4pt]
-                 (2,1) circle [radius=4pt]
-                 (2,0) circle [radius=4pt];
-\draw (0,0) .. controls (1,1) and (2,2) .. (2,0);
+1. In [[a-minimum-working-example][the minimum working example]] line [[(path)]] , a path is named  without drawing
+   it.
+2. Line [[(intersections)]] gives an example of using library =intersections=. Note
+   that you need to add the library using =\usetikzlibrary{intersections}=
+   otherwise an error occurs during \LaTeX compiling.
+3. Line [[(arrow1)]] and [[(arrow2)]] gives an example of using arrow. To make it work,
+   =\usetikzlibrary{arrows.meta}= is needed. The library =arrows.meta= provides tons
+   of types of arrows whick shock me when I see them the first time.
+4. Line [[(scope1)]] to [[(scope2)]] gives an example of =scope= . In the environment, all
+   the lines are drawn in the =very thick= style.
+5. Line [[(foreach1)]] to [[(foreach2)]] gives an examplt of =foreach= . =foreach= is handy
+   when you want to draw a list of objects. In [[a-minimum-working-example][the minimum working example]] , I
+   draw a list of short red sticks along with the x-axis and y-axis.
+6. Line [[(node1)]] is an example of =node=. The keyword =node= is typically followed by
+   some options between =[]= and then some text between ={}=. Every node has flexible
+   anchor options to decide where the text should be placed.
+*** Another Example
+[2019-12-12 Thu 20:15]
+
+The code is shown as:
+#+caption: another minimum working example
+#+name: another-minimum-working-example
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example4.png"
+#+begin_src latex -n -r  :results raw :exports code
+\usetikzlibrary{intersections,arrows.meta}
+\begin{tikzpicture}[scale=3]
+  \clip (-0.6,-0.2) rectangle (0.6,1.51);
+  \draw[step = .5cm, help lines] (-1.4,-1.4) grid (1.4,1.4);
+  \filldraw[fill=green!20,draw = green!50!black] (0,0) -- (3mm,0mm)
+  arc [start angle = 0, end angle = 30,radius = 3mm] -- cycle;
+  \draw[->] (-1.5,0) -- (1.5,0);
+  \draw[->] (0,-1.5) -- (0,1.5);
+  \draw (0,0) circle [radius=1cm];
+  \foreach \x in {-1,-0.5,1}
+  \draw(\x cm, 1pt) -- (\x cm, -1 pt) node [anchor = north] {$\x$};
+  \foreach \y in {-1,-0.5,1}
+  \draw(1pt,\y cm) -- (-1pt, \y cm) node[anchor = east] {$\y$};
 \end{tikzpicture}
 #+end_src
 
-#+RESULTS:
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example1.png]]
+#+RESULTS: another-minimum-working-example
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example4.png]]
 
-#+ATTR_HTML:  :width 400 :align center
-#+ATTR_LATEX: :width 0.7\textwidth :align center
-{{{if-latex(example1.pdf,example1.png)}}}
+The generated figure is shown as:
+#+ATTR_HTML:  :width 800 :align center
+#+ATTR_LATEX: :width 0.5\textwidth :align center
+{{{if-latex(example4.pdf,example4.png)}}}
 
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/basiclayer.png"
-#+begin_src latex :results raw :exports none
-\usetikzlibrary{datavisualization.formats.functions}
-\begin{tikzpicture}
-\draw[gray,very thin] (-1.9,-1.9) grid (2.9,3.9)
-[step=0.25cm] (-1,-1) grid (1,1);
-\draw[blue] (1,-2.1) -- (1,4.1); % asymptote
-\draw[->] (-2,0) -- (3,0) node[right] {$x(t)$};
-\draw[->] (0,-2) -- (0,4) node[above] {$y(t)$};
-\foreach \pos in {-1,2}
-\draw[shift={(\pos,0)}] (0pt,2pt) -- (0pt,-2pt) node[below] {$\pos$};
-\foreach \pos in {-1,1,2,3}
-\draw[shift={(0,\pos)}] (2pt,0pt) -- (-2pt,0pt) node[left] {$\pos$};
-\fill (0,0) circle (0.064cm);
-\draw[thick,parametric,domain=0.4:1.5,samples=200]
-% The plot is reparameterised such that there are more samples
-% near the center.
-plot[id=asymptotic-example] function{(t*t*t)*sin(1/(t*t*t)),(t*t*t)*cos(1/(t*t*t))}
-node[right] {$\bigl(x(t),y(t)\bigr) = (t\sin \frac{1}{t}, t\cos \frac{1}{t})$};
-\fill[red] (0.63662,0) circle (2pt)
-node [below right,fill=white,yshift=-4pt] {$(\frac{2}{\pi},0)$};
-\end{tikzpicture}
+
+*** Some Basic Rules in TikZ
+[2019-12-12 Thu 14:16]
+
+1. The options appear in =[]=. No matter it is an object or an operation, the
+   contents in the following  =[]= serve as options.
+
+   Options =[]= can be at the very beginning of the environment =tikzpicture=
+   following the operation, following the object.
+
+2. =\filldraw= is a good command. It draws a closed loop and fill it with color or
+   pattern. The colors for filling and drawing can be different.
+
+3. Coordinates can be specified in x-y format, polar format.
+   - The easiest way is =(x,y)= which means =x= cm in the x-axis and =y= cm in the
+     y-axis;
+   - =(a:x)= is the polar format which means =x= cm in direction =a= degree.
+4. =(<p> |- <q>)= is another way to specify coordinates for example =(30:1 |- 0,0)=
+   which means the interaction of a vertical line through =(30:1)= and a
+   horizontal line through =(0,0)= .
+5. Relative coordinates are possible with =+= and =++= in front of =(x,y)= and =(a:x)= .
+   =+= is relative to the closest coordinate whereas =++= is relative to the very
+   first coordinate of current path.
+
+*** Some tips for in TikZ
+[2019-12-12 Thu 15:14]
+
+1. To use =intersections= to specify a coordinate, you need to include the
+   library, i.e. =\usetikzlibrary{intersections}= is a must.
+
+
+#+begin_src c  -n :exports code
+int main()
+{
+  int i=0;
+  printf();
+}
 #+end_src
-
-#+RESULTS:
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/basiclayer.png]]
-
-#+ATTR_HTML:  :width 400 :align center
-#+ATTR_LATEX: :width 0.8\textwidth :align center
-{{{if-latex(basiclayer.pdf,basiclayer.png)}}}
 
 bibliography:~/Dropbox/research_library/zcl.bib
 bibliographystyle:unsrt

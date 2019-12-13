@@ -5,7 +5,7 @@
 使用 showcase 里的一个配置。
 * TODO publish ebooks
  Added:<2019-12-12 Thu 06:51>
-* TODO setup the citation system using org-ref
+* NEXT setup the citation system using org-ref
 :LOGBOOK:
 CLOCK: [2019-12-12 Thu 06:52]
 :END:

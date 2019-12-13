@@ -342,9 +342,8 @@ can be divided into four categories.
 2. Digital continuous-time signal;
 3. Analogy discrete-time signal;
 4. Digital discrete-time signal
-** 06:34 存档                                   :academic:
+** 06:34 存档 archive                                                :academic:
 
-<<<<<<< HEAD
 hugo academic 的主页可以显示一定数量（阈值可以设置）的博客，超过这个阈值就会显示
 一个类似 =more posts= (这个名字也可以定制)的按钮。默认情况下， =more posts= 会链
 接到 =/post/= 下的 =_index.md= , 但是如果对 =/post/= 文件夹对应的那个 =.md= (我
@@ -352,7 +351,7 @@ hugo academic 的主页可以显示一定数量（阈值可以设置）的博客
 是带有对应 =tags= 的内容。
 
 这两者不仅在内容上有差距，在显示风格也会有差距。
-=======
+
 1. 保证代理打开；
 2. 设置 git 代理：
 #+begin_src shell
@@ -363,7 +362,7 @@ git config --global https.proxy https://127.0.0.1:1086
    github.global.ssl.fastly.net 和 github.com，查询 ip 地址。
 4. 更新 DNS 缓存
    sudo dscacheutil -flushcache
- * Drawing a TikZ picture in Emacs Org Mode
+*** Drawing a TikZ picture in Emacs Org Mode
 [2019-12-11 Wed 11:35]
 
 #+caption: a minimum working example
@@ -428,7 +427,7 @@ The generated figure is shown as:
 6. Line [[(node1)]] is an example of =node=. The keyword =node= is typically followed by
    some options between =[]= and then some text between ={}=. Every node has flexible
    anchor options to decide where the text should be placed.
-* Another Example
+**** Another Example
 [2019-12-12 Thu 20:15]
 
 The code is shown as:
@@ -461,7 +460,7 @@ The generated figure is shown as:
 {{{if-latex(example4.pdf,example4.png)}}}
 
 
-* Some Basic Rules in TikZ
+**** Some Basic Rules in TikZ
 [2019-12-12 Thu 14:16]
 
 1. The options appear in =[]=. No matter it is an object or an operation, the
@@ -484,12 +483,10 @@ The generated figure is shown as:
    =+= is relative to the closest coordinate whereas =++= is relative to the very
    first coordinate of current path.
 
-* Some tips for in TikZ
+**** Some tips for in TikZ
 [2019-12-12 Thu 15:14]
 
 1. To use =intersections= to specify a coordinate, you need to include the
    library, i.e. =\usetikzlibrary{intersections}= is a must.
 * mdframed package
 [2019-12-12 Thu 20:03]
-
->>>>>>> a6dda58c60e315f55aabf5738f30b4068689d4b8
