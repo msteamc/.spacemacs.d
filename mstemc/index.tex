@@ -1,5 +1,5 @@
 % Intended LaTeX compiler: pdflatex
-\documentclass[koma,utopia,a4paper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue]{org-article}
+\documentclass[koma,a4paper,utopia,12pt,listings-color,microtype,paralist,colorlinks,urlcolor=red]{org-article}
                \usepackage{tikz}
 \author{Eason}
 \date{\today}
@@ -14,10 +14,9 @@
 \begin{document}
 
 \newcommand*{\titleCM}{\begingroup
-\vspace*{\drop}
 \begin{center}
 \vspace{\baselineskip}
-{\Huge \textbf{Drawing Graphs Using TikZ in Emacs Org} \par}
+{\Huge \textbf {Drawing Graphs Using TikZ in Emacs Org} \par}
 \vspace{2\baselineskip}   \newline
 {\large Eason Zhang with www.makesteamclear.com \par}
 \vspace{\baselineskip}          \newline
@@ -28,11 +27,10 @@
 \makebox[\textwidth][c]{\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/example3.pdf}}
 \vfill
 \vspace{\baselineskip}
-{\Large WWW.MAKESTEAMCLEAR.COM \par}\newline
+{\Large \href{WWW.MAKESTEAMCLEAR.COM}{WWW.MAKESTEAMCLEAR.COM} \par}\newline
 \vspace{\baselineskip}
-{\texttt www.makesteamclear.com is a free project, supported by Eason Zhang, to make videos about STEAM in a more approachable and different way. If you found the contents in this post or the site or the youtube channel helpful, please consider support me, thanks \par}
+{\texttt www.makesteamclear.com is a free project, supported by Eason Zhang, to make videos about STEAM in a more approachable and different way. If you found the contents in this post or the site or the youtube channel helpful, please consider \href{www.makesteamclear.com}{support me}, thanks \par}
 \end{center}
-\vspace*{\drop}
 \endgroup}
 \begin{titlepage}
 \titleCM
@@ -43,7 +41,7 @@
 
 
 \section{Drawing a TikZ picture in Emacs Org Mode}
-\label{sec:org8d51a0b}
+\label{sec:org9b89783}
 
 
 \lstset{language=[LaTeX]TeX,label=a-minimum-working-example,caption={a minimum working example},captionpos=b,firstnumber=1,numbers=left}
@@ -52,10 +50,12 @@
 \begin{tikzpicture}[thin]
 \draw (-1.5,0) -- (1.5,0);
 \draw (0,-1.5) -- (0,1.5);
-\filldraw[fill = green!20, draw = green!50!black] (0,0) circle[radius = 1cm];
+\filldraw[fill = green!20, draw = green!50!black]
+                       (0,0) circle[radius = 1cm];
+\draw[help lines,very thin,step=.5cm,color=gray]
+                       (-1.5,-1.5) grid (1.5,1.5);
 \draw (0,0) rectangle (.5,.5);
 \draw (0,0) rectangle (-0.5,-0.5);
-\draw[help lines,very thin,step=.5cm,color=gray] (-1.5,-1.5) grid (1.5,1.5);
 % relative coordinate
 \draw[blue, very thick] (30:1) ++ (0,-0.5) --(0,0);
 % name a path without drawing it
@@ -90,25 +90,25 @@ The generated figure is shown as:
 \end{center}
 
 \begin{enumerate}
-\item In \hyperref[a-minimum-working-example]{the minimum working example} line 12 , a path is named  without drawing
+\item In \hyperref[a-minimum-working-example]{the minimum working example} line 14 , a path is named  without drawing
 it.
-\item Line 16 gives an example of using library \texttt{intersections}. Note
+\item Line 18 gives an example of using library \texttt{intersections}. Note
 that you need to add the library using \texttt{\textbackslash{}usetikzlibrary\{intersections\}}
 otherwise an error occurs during \LaTeX compiling.
-\item Line 18 and 19 gives an example of using arrow. To make it work,
+\item Line 20 and 21 gives an example of using arrow. To make it work,
 \texttt{\textbackslash{}usetikzlibrary\{arrows.meta\}} is needed. The library \texttt{arrows.meta} provides tons
 of types of arrows whick shock me when I see them the first time.
-\item Line 21 to 24 gives an example of \texttt{scope} . In the environment, all
+\item Line 23 to 26 gives an example of \texttt{scope} . In the environment, all
 the lines are drawn in the \texttt{very thick} style.
-\item Line 26 to 29 gives an examplt of \texttt{foreach} . \texttt{foreach} is handy
+\item Line 28 to 31 gives an examplt of \texttt{foreach} . \texttt{foreach} is handy
 when you want to draw a list of objects. In \hyperref[a-minimum-working-example]{the minimum working example} , I
 draw a list of short red sticks along with the x-axis and y-axis.
-\item Line 31 is an example of \texttt{node}. The keyword \texttt{node} is typically followed by
+\item Line 33 is an example of \texttt{node}. The keyword \texttt{node} is typically followed by
 some options between \texttt{[]} and then some text between \texttt{\{\}}. Every node has flexible
 anchor options to decide where the text should be placed.
 \end{enumerate}
 \section{Another Example}
-\label{sec:orgc5e5c7a}
+\label{sec:org9260ef3}
 
 
 The code is shown as:
@@ -137,7 +137,7 @@ The generated figure is shown as:
 
 
 \section{Some Basic Rules in TikZ}
-\label{sec:org171b856}
+\label{sec:org628b561}
 
 
 \begin{enumerate}
@@ -165,7 +165,7 @@ first coordinate of current path.
 \end{enumerate}
 
 \section{Some tips for in TikZ}
-\label{sec:org46592f8}
+\label{sec:org924da02}
 
 
 \begin{enumerate}

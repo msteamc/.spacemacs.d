@@ -89,32 +89,32 @@ CLOCK: [2019-12-08 Sun 17:30]--[2019-12-08 Sun 17:33] =>  0:03
 
 #+caption: a minimum working example
 #+name: a-minimum-working-example
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example3.png"
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example3.pdf"
 #+begin_src latex -n -r  :results raw :exports code
 \usetikzlibrary{intersections,arrows.meta}
 \begin{tikzpicture}[thin]
 \draw (-1.5,0) -- (1.5,0);
 \draw (0,-1.5) -- (0,1.5);
 \filldraw[fill = green!20, draw = green!50!black] (0,0) circle[radius = 1cm];
+\draw[help lines,very thin,step=.5cm,color=gray] (-1.5,-1.5) grid (1.5,1.5);
 \draw (0,0) rectangle (.5,.5);
 \draw (0,0) rectangle (-0.5,-0.5);
-\draw[help lines,very thin,step=.5cm,color=gray] (-1.5,-1.5) grid (1.5,1.5);
 % relative coordinate
 \draw[blue, very thick] (30:1) ++ (0,-0.5) --(0,0);
 % name a path without drawing it
-\path[name path = upward line] (1,0) -- (1,1);                              (ref:path)
+\path[name path = upward line] (1,0) -- (1,1);    (ref:path)
 \path[name path = sloped line] (0,0) -- (30:1.5cm);
 % use intersection of two path
 \draw[name intersections={of = upward line and sloped line, by=x}]
-     [very thick, orange] (1,0) -- (x);                                     (ref:intersections)
+     [very thick, orange] (1,0) -- (x);            (ref:intersections)
 % use arrow
-\draw[<->>] (0,0) -- (145:1);                                                        (ref:arrow1)
-\draw[<-{Triangle[fill=red]}] (0,0) -- (30:1);                                       (ref:arrow2)
+\draw[<->>] (0,0) -- (145:1);                      (ref:arrow1)
+\draw[<-{Triangle[fill=red]}] (0,0) -- (30:1);     (ref:arrow2)
 % use scope
-\begin{scope}[very thick]                                                           (ref:scope1)
+\begin{scope}[very thick]                          (ref:scope1)
 \draw (-0.4,0.4) -- (0.4,0.4);
 \draw (-0.4,-0.4) -- (0.4,-0.4);
-\end{scope}                                                                         (ref:scope2)
+\end{scope}                                      (ref:scope2)
 % use foreach
 \foreach \x in {-1cm,-0.5cm,1cm}                 (ref:foreach1)
     \draw[red] (\x,-3pt) -- (\x,3pt);
@@ -126,7 +126,7 @@ CLOCK: [2019-12-08 Sun 17:30]--[2019-12-08 Sun 17:33] =>  0:03
 #+end_src
 
 #+RESULTS: a-minimum-working-example
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example3.png]]
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example3.pdf]]
 
 
 {{{newline}}}
@@ -213,8 +213,7 @@ The generated figure is shown as:
 1. To use =intersections= to specify a coordinate, you need to include the
    library, i.e. =\usetikzlibrary{intersections}= is a must.
 
-
-#+begin_src c  -n :exports code
+#+begin_src C  -n :exports code
 int main()
 {
   int i=0;
