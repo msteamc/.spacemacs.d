@@ -7,6 +7,7 @@
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+LaTeX_CLASS: org-article
 #+LaTeX_CLASS_OPTIONS: [koma,utopia,a4paper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue]
+#+LaTeX_CLASS_OPTIONS: [koma,a4paper,utopia,12pt,listings-color,microtype,paralist,colorlinks] 
 #+PROPERTY: header-args :fit yes :border 0cm :results raw :exports none :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 600 -flatten
 
 #+HUGO_BASE_DIR: ../../mstemc_hugo/
