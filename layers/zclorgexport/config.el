@@ -72,6 +72,9 @@
   (add-to-list 'org-latex-classes
                '("org-article"
                  "\\documentclass{org-article}
+       \\usepackage{tikz}
+       \\usetikzlibrary{arrows,decorations.pathmorphing}
+       \\usetikzlibrary{backgrounds,positioning,fit,petri}
                [NO-DEFAULT-PACKAGES]
                [PACKAGES]
                [EXTRA]"
@@ -153,8 +156,8 @@
 
 ;; customize the title command
 (setq org-latex-title-command (concat
-       "\\newcommand*{\\titleCM}{\\begingroup\n"
-       "\\begin{center}\n"
+         "\\newcommand*{\\titleCM}{\\begingroup\n"
+         "\\begin{center}\n"
          "\\vspace{\\baselineskip}\n"
          "{\\Huge \\textbf {%t} \\par}\n"
          "\\vspace{2\\baselineskip}   \\newline \n"

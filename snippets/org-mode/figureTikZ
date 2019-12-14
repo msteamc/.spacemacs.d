@@ -2,16 +2,15 @@
 # name: figureTikZ
 # --
 
+#+caption: ${2:caption}
+#+name: $2
 #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/${1:figname}.png"
-#+header: :fit yes :border 0cm :imoutoptions -geometry 400 -flatten -transparent white
-#+begin_src latex
+#+begin_src latex -n -r :results raw :exports code
 \begin{tikzpicture}
 $0
 \end{tikzpicture}
 #+end_src
 
-#+RESULTS:
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/$1.png]]
 
 #+ATTR_HTML:  :width 200 :align center
 #+ATTR_LATEX: :width 0.8\textwidth :align center
