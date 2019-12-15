@@ -42,9 +42,9 @@ CLOCK: [2019-10-06 Sun 08:21]--[2019-10-06 Sun 08:33] =>  0:12
 CLOCK: [2019-12-05 Thu 23:12]--[2019-12-05 Thu 23:35] =>  0:23
 :END:
 
+{{{titlepage(petrinetfinal)}}}
 
 #+INCLUDE: "./post/set-up-the-tikz-in-emacs-org-mode.org"
-
 
 
 ** TODO Export Markdown and latex using Emacs Org :Emacs:Org:Hugo:LaTeX:Markdown:
@@ -70,6 +70,7 @@ CLOCK: [2019-12-07 Sat 07:46]--[2019-12-07 Sat 07:48] =>  0:02
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
 :EXPORT_HUGO_SECTION: post
+:VISIBILITY: folded
 :EXPORT_HUGO_BUNDLE: drawing-graphs-using-tikz-in-emacs-org
 :EXPORT_DESCRIPTION: This post collects working examples of drawing graphs using TikZ in Emacs Org
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
@@ -241,6 +242,8 @@ CLOCK: [2019-12-14 Sat 15:07]--[2019-12-14 Sat 15:21] =>  0:14
 :END:
 <2019-12-14 Sat 15:07>
 
+{{{titlepage(petrinetfinal)}}}
+
 Chapter 3 of the TikZ tutorial gives an example of Petri net. In this post, let
 me work through the code line by line. During this example, more tikz libraries
 are used, such as =arrows= , =decorations.pathmorphing= , =backgrounds= ,
@@ -249,7 +252,7 @@ are used, such as =arrows= , =decorations.pathmorphing= , =backgrounds= ,
 
 #+caption: the petri net code
 #+name: the-petri-net-code
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/petrinet.png"
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/petrinetfinal.png"
 #+begin_src latex -n -r :results raw :exports none
 \begin{tikzpicture}
   [node distance=1.3cm,on grid,>=stealth',bend angle=45,auto,
@@ -322,7 +325,7 @@ are used, such as =arrows= , =decorations.pathmorphing= , =backgrounds= ,
 #+end_src
 
 #+RESULTS: the-petri-net-code
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/petrinet.png]]
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/petrinetfinal.png]]
 
 
 

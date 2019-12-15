@@ -1,57 +1,16 @@
-% Intended LaTeX compiler: pdflatex
-\documentclass[koma,utopia,a4paper,captions=tableheading,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue]{org-article}
-               \usepackage{tikz}
-\author{Eason}
-\date{\today}
-\title{make STEAM clear}
-\hypersetup{
- pdfauthor={Eason},
- pdftitle={make STEAM clear},
- pdfkeywords={},
- pdfsubject={},
- pdfcreator={Emacs 26.3 (Org mode 9.2.6)},
- pdflang={English}}
-\begin{document}
-
-\newcommand*{\titleCM}{\begingroup
-\vspace*{\drop}
-\begin{center}
-\vspace{\baselineskip}
-{\Huge \textbf{make STEAM clear} \par}
-\vspace{2\baselineskip}   \newline
-{\large Eason Zhang with www.makesteamclear.com \par}
-\vspace{\baselineskip}          \newline
-{\large \today \par}
-\vspace{\baselineskip}
-\vfill
-\setlength{\unitlength}{3pt}
-\makebox[\textwidth][c]{\includegraphics[width=0.2\textwidth]{\~/Dropbox/mstemc_hugo/static/img/tikz/example3.pdf}}
-\vfill
-\vspace{\baselineskip}
-{\Large WWW.MAKESTEAMCLEAR.COM \par}\newline
-\vspace{\baselineskip}
-{\texttt www.makesteamclear.com is a free project, supported by Eason Zhang, to make videos about STEAM in a more approachable and different way. If you found the contents in this post or the site or the youtube channel helpful, please consider support me, thanks \par}
-\end{center}
-\vspace*{\drop}
-\endgroup}
-\begin{titlepage}
-\titleCM
-\end{titlepage}
-\tableofcontents
-
 
 \section{Videos}
-\label{sec:orge61aa3c}
+\label{sec:org1f1f886}
 
 
 
 \section{Posts}
-\label{sec:orgcd8829e}
+\label{sec:org33c9a58}
 
 
 
 \subsection{Set up the TikZ in Emacs Org}
-\label{sec:org7c6689e}
+\label{sec:org9a1a1dd}
 \hspace{0pt}\\
 
 
@@ -59,7 +18,7 @@ An introduction to setup the TikZ environment in Emacs Org File. So that in Org 
 
 
 \subsubsection{config the header args}
-\label{sec:org8a24a77}
+\label{sec:orgf59efeb}
 
 
 You can embed TiKz (One of \(\LaTeX\) graphic package) code into a Org file. With
@@ -92,7 +51,7 @@ The example begins with several lines containing \texttt{\#+header} which is sor
 clutter. we can put them in a file and include it at the beginning of the Org
 file.
 \subsubsection{generate results with different formats}
-\label{sec:org05b6333}
+\label{sec:orgebb7e4e}
 
 
 By changing the extension of \texttt{:file} (which is \texttt{pdf} for
@@ -100,7 +59,7 @@ By changing the extension of \texttt{:file} (which is \texttt{pdf} for
 Now, I need \texttt{pdf} and \texttt{png} . You can see the result by just press \texttt{C-c C-c} in the
 body of the tikz code.
 \subsubsection{export the results according to the backend}
-\label{sec:orgff78033}
+\label{sec:org3858655}
 
 
 You can set \texttt{:exports} to control how the results will be exported. Now I set it
@@ -127,7 +86,7 @@ figure. Eventually, in the final \texttt{pdf} document, you figure can be zoomed
 out without losing any resolution.
 
 \subsubsection{the final workflow}
-\label{sec:orga6d2484}
+\label{sec:org2af511e}
 
 
 The minimum working example at the start of this post is simplifed as below.
@@ -167,7 +126,7 @@ export to other format, \texttt{png} image will be used.
 
 
 \subsection{Export Markdown and latex using Emacs Org}
-\label{sec:orgd6fe22f}
+\label{sec:orgf87a4ad}
 
 
 \hspace{0pt}\\
@@ -177,7 +136,7 @@ set up the Emacs org and ox-hugo to export the org files in markdown and latex f
 
 
 \subsubsection{Introduction}
-\label{sec:orgd478c4d}
+\label{sec:orgb9aacc7}
 
 
 I use hugo before it support Emacs org file. Then I use an Emacs extension
@@ -188,7 +147,7 @@ Org, there is no need to take time to learn markdown. Emacs Org, I think, is
 more elegant than markdown.
 
 \subsubsection{set up ox-hugo}
-\label{sec:org76b6cf4}
+\label{sec:org0a52bcd}
 
 
 I use Spacemacs and integrate ox-hugo into my config is easy. You can add it
@@ -199,7 +158,7 @@ The first time you want to export an Org file or a subtree of an Org file, use
 \texttt{M-x org-hugo-export-to-md} . There will be a hugo-related section in the
 \texttt{org-dispatcher} whenever you use \texttt{C-c C-e} .
 \subsubsection{use Org Macro replacement}
-\label{sec:orga32c0f1}
+\label{sec:orgaa4e7a2}
 
 
 Often, you want different actions when you export the Org file to
@@ -217,7 +176,7 @@ and options exist only for certain backend.
 
 Once you are familiar with Org Macro, It behaves beyond your imagination.
 \subsubsection{use the setupfile for each Org file}
-\label{sec:org589cab1}
+\label{sec:orgd15a7e2}
 
 
 Often, you options for a org file grows more and more. If you think it kind of
@@ -237,12 +196,12 @@ Also, you can notice that in \href{https://github.com/msteamc/.spacemacs.d/blob/
 different export targets.
 
 \subsection{Drawing Graphs Using TikZ in Emacs Org}
-\label{sec:org220de70}
+\label{sec:org5bc49d6}
 
 
 
 \subsubsection{Drawing a TikZ picture in Emacs Org Mode}
-\label{sec:orgd491791}
+\label{sec:org8506b3a}
 
 
 \lstset{language=[LaTeX]TeX,label=a-minimum-working-example,caption={a minimum working example},captionpos=b,firstnumber=1,numbers=left}
@@ -252,9 +211,9 @@ different export targets.
 \draw (-1.5,0) -- (1.5,0);
 \draw (0,-1.5) -- (0,1.5);
 \filldraw[fill = green!20, draw = green!50!black] (0,0) circle[radius = 1cm];
+\draw[help lines,very thin,step=.5cm,color=gray] (-1.5,-1.5) grid (1.5,1.5);
 \draw (0,0) rectangle (.5,.5);
 \draw (0,0) rectangle (-0.5,-0.5);
-\draw[help lines,very thin,step=.5cm,color=gray] (-1.5,-1.5) grid (1.5,1.5);
 % relative coordinate
 \draw[blue, very thick] (30:1) ++ (0,-0.5) --(0,0);
 % name a path without drawing it
@@ -307,7 +266,7 @@ some options between \texttt{[]} and then some text between \texttt{\{\}}. Every
 anchor options to decide where the text should be placed.
 \end{enumerate}
 \subsubsection{Another Example}
-\label{sec:orgbc1168b}
+\label{sec:org85bdcaf}
 
 
 The code is shown as:
@@ -336,7 +295,7 @@ The generated figure is shown as:
 
 
 \subsubsection{Some Basic Rules in TikZ}
-\label{sec:orgdb48b38}
+\label{sec:orge995912}
 
 
 \begin{enumerate}
@@ -364,7 +323,7 @@ first coordinate of current path.
 \end{enumerate}
 
 \subsubsection{Some tips for in TikZ}
-\label{sec:org8e92c4c}
+\label{sec:org742f086}
 
 
 \begin{enumerate}
@@ -372,8 +331,7 @@ first coordinate of current path.
 library, i.e. \texttt{\textbackslash{}usetikzlibrary\{intersections\}} is a must.
 \end{enumerate}
 
-
-\lstset{language=C,label= ,caption= ,captionpos=b,numbers=none}
+\lstset{language=C,label= ,caption= ,captionpos=b,firstnumber=1,numbers=left}
 \begin{lstlisting}
 int main()
 {
@@ -385,12 +343,49 @@ int main()
 \bibliography{../../research_library/zcl}
 \bibliographystyle{unsrt}
 
+\subsection{Walk Through the Petri-Net In TiKZ Tutorial}
+\label{sec:orgfaa8657}
+
+
+\bigin{titlepage}
+ \begingroup
+\begin{center}
+ \vspace{\baselineskip}
+ \textbf{\Huge Walk Through the Petri-Net In TiKZ Tutorial} \par
+ \vspace{2\baselineskip}  \newline
+ \textbf{\large Eason Zhang with www.makesteamclear.com \par}
+ \vspace{\baselineskip}          \newline
+  \today \par
+ \vspace{\baselineskip}
+  \vfill
+ \setlength{\unitlength}{3pt}
+ \includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/example3.pdf}
+ \vfill \vspace{\baselineskip}
+ \href{WWW.MAKESTEAMCLEAR.COM}{\Large WWW.MAKESTEAMCLEAR.COM} \par\newline
+  www.makesteamclear.com is a free project, supported by Eason Zhang, to make videos about STEAM in a more approachable and different way. If you found the contents in this post or the site or the youtube channel helpful, please consider \href{www.makesteamclear.com}{support me}, thanks \par
+ \end{center}
+\endgroup
+\end{titlepage}
+\newpage
+
+Chapter 3 of the TikZ tutorial gives an example of Petri net. In this post, let
+me work through the code line by line. During this example, more tikz libraries
+are used, such as \texttt{arrows} , \texttt{decorations.pathmorphing} , \texttt{backgrounds} ,
+\texttt{positioning} , \texttt{fit}, \texttt{petri} . These libraries should be added before the
+\texttt{tikzpicture} environment.
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/petrinet.pdf}
+\end{center}
+
+
+
 \section{Projects}
-\label{sec:org92a94e0}
+\label{sec:orgaf97de2}
 
 
 \subsection{my workflow of creating a video}
-\label{sec:orga6b7968}
+\label{sec:org45aac98}
 \hspace{0pt}\\
 
 
@@ -410,7 +405,7 @@ I am not ready to detail each tool. If you are interested in any one of them,
 please refer to tutorials written by experts or given by the official document.
 
 \subsubsection{Emacs}
-\label{sec:org9c05b58}
+\label{sec:orgcb16fe3}
 
 
 Emacs lies in the center of my workflow. It behaves like a super-IDE which
@@ -424,7 +419,7 @@ little modifications.
 
 \begin{enumerate}
 \item program and debug
-\label{sec:orge66ddd0}
+\label{sec:orgbe5b8cf}
 
 
 I program in python, C/C++, Matlab and some other languages. Emacs acts as a
@@ -432,31 +427,31 @@ super-IDE for me.
 
 
 \item Org mode - journalize your work
-\label{sec:org108dfd7}
+\label{sec:org5077380}
 
 
 Org mode definitely need a standalone subsection.
 
 \item Org mode - get things done
-\label{sec:orgb5f62bc}
+\label{sec:org0286871}
 
 
 
 \item Org mode - write a diary
-\label{sec:org168bbcf}
+\label{sec:org2d64073}
 
 \item Org mode - export your Org file
-\label{sec:orgce77f24}
+\label{sec:orgbd13d0c}
 
 
 \item program and debug
-\label{sec:org6b73797}
+\label{sec:org53b4991}
 
 
 \item writing latex
-\label{sec:orgf96355a}
+\label{sec:orgce5ad4a}
 \item org-journal
-\label{sec:orgc17cd60}
+\label{sec:orgb58b60d}
 
 
 I write many notes during a post or a project. Most of my journal is maintained
@@ -469,7 +464,7 @@ agenda.
 
 
 \item ox-hugo
-\label{sec:org9e07d00}
+\label{sec:org7fc8972}
 
 
 \href{https://github.com/kaushalmodi/ox-hugo}{kaushalmodi/ox-hugo: A carefully crafted Org exporter back-end for Hugo}
@@ -484,7 +479,7 @@ Org, I can integrate the org file into my agenda.
 
 
 \item preview tikz picture in Org
-\label{sec:orgab2630d}
+\label{sec:org697542b}
 
 
 \href{http://www.texample.net/tikz/}{TikZ and PGF} are \TeX{} packages for creating graphics programmatically. TikZ is
@@ -497,7 +492,7 @@ not-so-detailed post on how to set up the tikz environment in Org.
 
 
 \subsubsection{Hugo}
-\label{sec:org3f30c08}
+\label{sec:org7cb7cf9}
 
 
 As the fastest framework for building websites, Hugo shocks me by its speed and
@@ -512,7 +507,7 @@ available.
 I use ox-hugo as a bridge between Emacs and Hugo. So I do not have to care much
 about how to leverage Hugo. Ox-hugo helps me do most of the work.
 \subsubsection{Hugo Academic Theme}
-\label{sec:orgad8a7d5}
+\label{sec:org8323bc3}
 
 
 \href{https://github.com/gcushen/hugo-academic}{Hugo Academic Theme} is a beautiful and flexible theme developed for Hugo. This
@@ -547,13 +542,12 @@ you can read:
 
 
 \subsubsection{manim}
-\label{sec:org022fb8d}
+\label{sec:org00574e3}
 
 
 
 \subsubsection{blender}
-\label{sec:org7659274}
+\label{sec:orgbef2b43}
 
 \section{Courses}
-\label{sec:org85ca59f}
-\end{document}
+\label{sec:orgeb1cbcd}

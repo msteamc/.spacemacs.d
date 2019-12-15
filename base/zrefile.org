@@ -7,7 +7,8 @@
  Added:<2019-12-12 Thu 06:51>
 * NEXT setup the citation system using org-ref
 :LOGBOOK:
-CLOCK: [2019-12-14 Sat 15:21]
+CLOCK: [2019-12-14 Sat 22:16]
+CLOCK: [2019-12-14 Sat 15:21]--[2019-12-14 Sat 22:13] =>  6:52
 CLOCK: [2019-12-12 Thu 06:52]--[2019-12-14 Sat 15:07] => 56:15
 :END:
  Added:<2019-12-12 Thu 06:52>
@@ -18,3 +19,12 @@ bibliography:~/Dropbox/research_library/zcl.bib
 bibliographystyle:unsrt
 #+end_example
 This two lines are must at the end of the org file.
+* TODO mdframed package
+:LOGBOOK:
+CLOCK: [2019-12-14 Sat 22:13]--[2019-12-14 Sat 22:16] =>  0:03
+:END:
+ Added:<2019-12-14 Sat 22:13>
+
+a beautiful theorem environment package
+
+[[https://ctan.org/pkg/mdframed?lang=en][CTAN: Package mdframed]]

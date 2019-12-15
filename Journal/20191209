@@ -169,6 +169,15 @@ The generated figure is shown as:
 :PROPERTIES:
 :CREATED:  20191213
 :END:
+** 20:31 smerge the conflicts :magit:smerge:
+
+please refer to [[https://magit.vc/manual/magit/Resolving-Conflicts.html][Resolving Conflicts (Magit User Manual)]] . The key is smerge-mode
+and use shortkey prefixed with =C-c ^= .
+
+* Saturday, 12/14/19
+:PROPERTIES:
+:CREATED:  20191214
+:END:
 ** TODO introduction to signal and system             :SS:
 *** preface
 [2019-11-24 Sun 21:37]
@@ -492,10 +501,9 @@ can be divided into four categories.
 2. Digital continuous-time signal;
 3. Analogy discrete-time signal;
 4. Digital discrete-time signal
-** 20:31 smerge the conflicts :magit:smerge:
+** 22:12 Emacs C-u will be replace as SPC-u in Spacemacs :emacs:
 
-please refer to [[https://magit.vc/manual/magit/Resolving-Conflicts.html][Resolving Conflicts (Magit User Manual)]] . The key is smerge-mode
-and use shortkey prefixed with =C-c ^= .
+[[https://emacs.stackexchange.com/questions/44841/how-do-i-hit-the-equivalent-of-c-u-of-normal-emacs-in-spacemacs][How do I hit the equivalent of `C-u` in Spacemacs?]]
 
 * mdframed package
 [2019-12-12 Thu 20:03]
