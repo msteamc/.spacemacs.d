@@ -72,9 +72,6 @@
   (add-to-list 'org-latex-classes
                '("org-article"
                  "\\documentclass{org-article}
-       \\usepackage{tikz}
-       \\usetikzlibrary{arrows,decorations.pathmorphing}
-       \\usetikzlibrary{backgrounds,positioning,fit,petri}
                [NO-DEFAULT-PACKAGES]
                [PACKAGES]
                [EXTRA]"
@@ -155,28 +152,7 @@
 
 
 ;; customize the title command
-(setq org-latex-title-command (concat
-         "\\newcommand*{\\titleCM}{\\begingroup\n"
-         "\\begin{center}\n"
-         "\\vspace{\\baselineskip}\n"
-         "{\\Huge \\textbf {%t} \\par}\n"
-         "\\vspace{2\\baselineskip}   \\newline \n"
-         "{\\large Eason Zhang with www.makesteamclear.com \\par}\n"
-         "\\vspace{\\baselineskip}          \\newline\n"
-         "{\\large \\today \\par}\n"
-         "\\vspace{\\baselineskip}\n"
-         "\\vfill\n"
-         "\\setlength{\\unitlength}{3pt}\n"
-         "\\makebox[\\textwidth][c]{\\includegraphics[width=0.5\\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/example3.pdf}}\n"
-         "\\vfill\n"
-         "\\vspace{\\baselineskip}\n"
-         "{\\Large \\href{WWW.MAKESTEAMCLEAR.COM}{WWW.MAKESTEAMCLEAR.COM} \\par}\\newline\n"
-         "\\vspace{\\baselineskip}\n"
-         "{\\texttt www.makesteamclear.com is a free project, supported by Eason Zhang, to make videos about STEAM in a more approachable and different way. If you found the contents in this post or the site or the youtube channel helpful, please consider \\href{www.makesteamclear.com}{support me}, thanks \\par}\n"
-         "\\end{center}\n"
-         "\\endgroup}\n"
-     "\\begin{titlepage}\n"
-       "\\titleCM\n"
-       "\\end{titlepage}\n"
-       ))
+(setq org-latex-title-command (concat ""))
+(setq org-latex-toc-command (concat ""))
+
 )
