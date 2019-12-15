@@ -1,0 +1,19 @@
+#+AUTHOR:   Eason
+#+LANGUAGE:  en
+#+OPTIONS:   *:t <:nil timestamp:nil toc:t prop:nil
+#+OPTIONS:   H:3 num:t  \n:nil  @:t ::t |:t ^:nil -:t f:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:nil pri:nil tags:nil
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LaTeX_CLASS: org-article-cn
+#+LaTeX_CLASS_OPTIONS: [koma,letterpaper,captions=tableheading,ctex,11pt,listings-sv,microtype,paralist,colorlinks=true,urlcolor=blue]
+#+PROPERTY: header-args: :results raw :exports none :fit yes :border 0cm
+#+PROPERTY: header-args:latex :headers '("\\usepackage{tikz} \\usetikzlibrary{positioning, shapes.symbols, calc}")
+#+PROPERTY: header-args :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 900 -flatten -transparent white
+
+#+MACRO: if-latex (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) (concat "[[file:~/Dropbox/mstemc_hugo/static/img/tikz/"  $1 "]]") (concat "[[file:~/Dropbox/mstemc_hugo/static/img/tikz/"  $2 "]]") ))
+#+MACRO: newline @@latex:\hspace{0pt}\\@@
+#+MACRO: begin_tip @@html:{{% alert note %}}@@
+#+MACRO: end_tip @@html:{{% /alert %}}@@
+#+MACRO: begin_warning @@html:{{% alert warning %}}@@
+#+MACRO: end_warning @@html:{{% /alert %}}@@

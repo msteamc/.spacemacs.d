@@ -1,5 +1,5 @@
 #+TITLE: make STEAM clear
-#+SETUPFILE: ~/.spacemacs.d/org-templates/enpost.org
+#+SETUPFILE: ~/Dropbox/zorg/org-templates/enpost.org
 
 * Videos                                             :video:
 :LOGBOOK:
