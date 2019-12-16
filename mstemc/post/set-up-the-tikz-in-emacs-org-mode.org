@@ -1,8 +1,3 @@
-{{{newline}}}
-
-{{{begin_tip}}}
-{{{property(EXPORT_DESCRIPTION)}}}
-{{{end_tip}}}
 
 
 *** config the header args

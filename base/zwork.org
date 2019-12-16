@@ -170,6 +170,15 @@ CLOCK: [2019-12-08 Sun 08:05]--[2019-12-08 Sun 08:19] =>  0:14
   name = "Follow"
   url = "https://twitter.com/georgecushen"
 #+end_src
+** DONE hugo academic tag post
+CLOSED: [2019-12-15 Sun 23:19]
+:LOGBOOK:
+- CLOSING NOTE [2019-12-15 Sun 23:19] \\
+  done by delete the tag in the msc_posts.md and msc_videos.md
+:END:
+[2019-12-11 Wed 17:51]
+
+使用 showcase 里的一个配置。
 * MISC
   :PROPERTIES:
   :ID:       fe556f0a-eeee-418a-b5f8-f10b82884f4f

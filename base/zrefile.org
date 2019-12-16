@@ -1,8 +1,4 @@
 #+FILETAGS: REFILE
-* TODO hugo academic tag post
-[2019-12-11 Wed 17:51]
-
-使用 showcase 里的一个配置。
 * TODO publish ebooks
  Added:<2019-12-12 Thu 06:51>
 * NEXT setup the citation system using org-ref
