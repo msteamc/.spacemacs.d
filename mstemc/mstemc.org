@@ -188,39 +188,54 @@ The generated figure is shown as:
 *** Some Basic Rules in TikZ
 [2019-12-12 Thu 14:16]
 
-1. The options appear in =[]=. No matter it is an object or an operation, the
+1. The basic three steps to draw a figure: 1. name a path; 2. add some
+   objects along the path; 3. execute an action. At each step, many options are
+   available to render your figure.
+2. A path can be a =rectangle= =circle= =ellipse= =arc= =grid= =parabola, to= . Of course,
+   the path can be just =move to= which is =--= . One more thing, you can specified
+   horizontal and vertical lines just using =-|= or vertical then horizontal lines
+   using =|-= . Notice that you can add options following =to= , but =--= cannot have
+   options.
+3. Along the path, nodes can be added at certain position. The position can be
+   specified by absolute coordinates or relative coordinates. The coordinates
+   can be specified by either xy-coordinates or polar system. Furthermore, the
+   position can be calculated as intersections of two paths.
+4. Once paths and nodes are ready, you can execute an action on it. An action
+   can be =draw, fill, filldraw, pattern, shade, shadedraw, clip,
+   useasboundingbox= . Do not be nervous. You will get familiar with them when
+   you use them.
+5. For the paths, nodes and actions, many options are available.
+6. The options appear in =[]=. No matter it is an object or an operation, the
    contents in the following  =[]= serve as options.
 
    Options =[]= can be at the very beginning of the environment =tikzpicture=
    following the operation, following the object.
 
-2. =\filldraw= is a good command. It draws a closed loop and fill it with color or
-   pattern. The colors for filling and drawing can be different.
-
-3. Coordinates can be specified in x-y format, polar format.
+7. Coordinates can be specified in x-y format, polar format.
    - The easiest way is =(x,y)= which means =x= cm in the x-axis and =y= cm in the
      y-axis;
    - =(a:x)= is the polar format which means =x= cm in direction =a= degree.
-4. =(<p> |- <q>)= is another way to specify coordinates for example =(30:1 |- 0,0)=
+8. =(<p> |- <q>)= is another way to specify coordinates for example =(30:1 |- 0,0)=
    which means the interaction of a vertical line through =(30:1)= and a
    horizontal line through =(0,0)= .
-5. Relative coordinates are possible with =+= and =++= in front of =(x,y)= and =(a:x)= .
-   =+= is relative to the closest coordinate whereas =++= is relative to the very
-   first coordinate of current path.
+9. Relative coordinates are possible with =+= and =++= in front of =(x,y)= and =(a:x)= .
+   =+= is relative to the very first coordinate whereas =++= is relative to the last
+   coordinate of current path. 
+
 
 *** Some tips for in TikZ
 [2019-12-12 Thu 15:14]
 
+1. Walking through the *Part Tutorials and Guidelines* and *Chapter 11 Design
+   Principles* in the TikZ manual, You can draw most figures you want. Diving
+   into *Part 3* you can render your figures more beautiful. *Part V Libraries*
+   provide many predefined patterns to save your time.
 1. To use =intersections= to specify a coordinate, you need to include the
    library, i.e. =\usetikzlibrary{intersections}= is a must.
+2. =\filldraw= is a good command. It draws a closed loop and fill it with color or
+   pattern. The colors for filling and drawing can be different. 
 
-#+begin_src C  -n :exports code
-int main()
-{
-  int i=0;
-  printf();
-}
-#+end_src
+
 
 bibliography:~/Dropbox/research_library/zcl.bib
 bibliographystyle:unsrt
