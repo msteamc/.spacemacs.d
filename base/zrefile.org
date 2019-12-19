@@ -3,7 +3,8 @@
  Added:<2019-12-12 Thu 06:51>
 * NEXT setup the citation system using org-ref
 :LOGBOOK:
-CLOCK: [2019-12-14 Sat 22:16]
+CLOCK: [2019-12-19 Thu 22:37]
+CLOCK: [2019-12-14 Sat 22:16]--[2019-12-19 Thu 22:36] => 120:20
 CLOCK: [2019-12-14 Sat 15:21]--[2019-12-14 Sat 22:13] =>  6:52
 CLOCK: [2019-12-12 Thu 06:52]--[2019-12-14 Sat 15:07] => 56:15
 :END:

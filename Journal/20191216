@@ -2,6 +2,16 @@
 :PROPERTIES:
 :CREATED:  20191216
 :END:
+** 23:00 latex theorem style in html using css :css:latex:
+
+[[http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/][LaTeX Theorem-like Environments for the Web - DrZ.ac]]
+
+[[http://felix11h.github.io/blog/mathjax-theorems][Theorems in MathJax - amsmath-like custom names with improved CSS]]
+
+* Wednesday, 12/18/19
+:PROPERTIES:
+:CREATED:  20191218
+:END:
 ** TODO introduction to signal and system             :SS:
 *** preface
 [2019-11-24 Sun 21:37]
@@ -325,8 +335,6 @@ can be divided into four categories.
 2. Digital continuous-time signal;
 3. Analogy discrete-time signal;
 4. Digital discrete-time signal
-** 23:00 latex theorem style in html using css :css:latex:
+** 23:12 关于 project 和 post 的一些想法
 
-[[http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/][LaTeX Theorem-like Environments for the Web - DrZ.ac]]
-
-[[http://felix11h.github.io/blog/mathjax-theorems][Theorems in MathJax - amsmath-like custom names with improved CSS]]
+每个 project 对应的 .org 都独立成为一个仓库。
