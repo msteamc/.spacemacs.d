@@ -5,13 +5,13 @@
 #+caption: ${2:caption}
 #+name: $2
 #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/${1:figname}.png"
-#+begin_src latex -n -r :results raw :exports code
+#+begin_src latex -n -r :results raw :exports none
 \begin{tikzpicture}
 $0
 \end{tikzpicture}
 #+end_src
 
 
-#+ATTR_HTML:  :width 200 :align center
+#+ATTR_HTML:  :width 800 :align center
 #+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex($1.pdf,$1.png)}}}
