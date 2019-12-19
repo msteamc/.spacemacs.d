@@ -457,6 +457,7 @@ See `org-capture-templates' for more information."
                    ,(concat "* TODO " title)
                    ":PROPERTIES:"
                    ,(concat ":EXPORT_FILE_NAME: " "index")
+                   ,(concat ":LATEX_TITLE: " title)
                    ,(concat ":EXPORT_HUGO_SECTION: " "publication")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
@@ -481,6 +482,7 @@ See `org-capture-templates' for more information."
                    ,(concat "* TODO " title)
                    ":PROPERTIES:"
                    ,(concat ":EXPORT_FILE_NAME: " "index")
+                   ,(concat ":LATEX_TITLE: " title)
                    ,(concat ":EXPORT_HUGO_SECTION: " "post")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
@@ -504,6 +506,7 @@ See `org-capture-templates' for more information."
                    ,(concat "* TODO " title)
                    ":PROPERTIES:"
                    ,(concat ":EXPORT_FILE_NAME: " "index")
+                   ,(concat ":LATEX_TITLE: " title)
                    ,(concat ":EXPORT_HUGO_SECTION: " "project")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this project")
@@ -527,6 +530,7 @@ See `org-capture-templates' for more information."
                    ,(concat "* TODO " title)
                    ":PROPERTIES:"
                    ,(concat ":EXPORT_FILE_NAME: " "index")
+                   ,(concat ":LATEX_TITLE: " title)
                    ,(concat ":EXPORT_HUGO_SECTION: " "project")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this course")
