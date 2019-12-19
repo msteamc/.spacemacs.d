@@ -141,7 +141,7 @@
  'org-babel-load-languages
  '((latex . t)))
 
-(setq org-image-actual-width 600)
+(setq org-image-actual-width 800)
 
 (add-to-list 'image-type-file-name-regexps '("\\.pdf\\'" . imagemagick))
 (add-to-list 'image-file-name-extensions "pdf")
