@@ -362,7 +362,7 @@ layers configuration. You are free to put any user code."
   ;; 使用 pupup-el 来绘制选词框
   (setq pyim-page-tooltip 'popup)
   ;; 选词框显示5个候选词
-  (setq pyim-page-length 9)
+  (setq pyim-page-length 6)
 
   ;; org journal(do not delete and must appear here)
   ;; https://github.com/bastibe/org-journal/issues/20
