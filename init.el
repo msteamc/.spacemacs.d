@@ -363,6 +363,7 @@ layers configuration. You are free to put any user code."
   (setq pyim-page-tooltip 'popup)
   ;; 选词框显示5个候选词
   (setq pyim-page-length 6)
+  (setenv "LANG" "en_US.UTF-8")
 
   ;; org journal(do not delete and must appear here)
   ;; https://github.com/bastibe/org-journal/issues/20
