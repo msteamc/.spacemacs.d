@@ -494,11 +494,117 @@ CLOCK: [2019-12-19 Thu 22:36]--[2019-12-19 Thu 22:37] =>  0:01
 [[file:~/Dropbox/mstemc_hugo/static/img/tikz/elements.png]]
 
 
+
 #+ATTR_HTML:  :width 800 :align center
 #+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex(elements.pdf,elements.png)}}}
+*** Proposition II
+[2019-12-20 Fri 21:01]
+
+#+caption: Proposition II
+#+name: Proposition II
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/propositionII.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+[thick,help lines./style={thin,draw=black!50}]
+\def\A{\textcolor{orange}{$A$}}
+\def\B{\textcolor{input}{$B$}}
+\def\C{\textcolor{input}{C}}
+\def\D{$D$}
+\def\E{$E$}
+\def\F{$F$}
+\def\G{$G$}
+\def\H{$H$}
+\def\K{$K$}
+\def\L{\textcolor{output}{$L$}}
+
+\colorset{input}{blue!80!black}
+\colorset{output}{red!70!black}
+
+\coordinate [label=left:\A] (A) at (0,0) ;
+\coordinate [label=right:\B] (B) at (1,0.2);
+\coordinate [label=above:\C] (C) at (1,2);
+
+\draw [input] (B) -- (C);
+\draw [help lines] (A) -- (B);
+
+\coordinate [label=above:\D] (D) at ($(A)!.5!(B)!{sin(60)*2}!90:(B)$);
+
+\draw [help lines] (D) -- ($(D)!3.75!(A)$) coordinate [label=-135:\E] (E);
+\draw [help lines] (D) -- ($(D)!3.75!(B)$) coordinate [label=-45:\F] (F);
+
+\node (H) at (B) [name path =H, help lines, circle through=(C),draw,label=135:\H] {};
+\path [name path=B--F] (B) -- (F);
+\path [name intersections = {of= H and B--F,by = {[label=right:\G]G}}];
+
+\node (K) at (D) [name path =K,help lines,circle through = (G),draw,label=135:\K]{};
+\path [name path = A--E] (A) -- (E);
+
+\path [name intersections = {of = K and A--E,by={[label=below:\L]L}}];
+
+\draw [outptu] (A) -- (L);
+\foreach \point in {A,B,C,D,G,L}
+\fill [black,opacity=0.5] (\point) circle (2pt);
+
+\end{tikzpicture}
+#+end_src
 
 
+#+RESULTS: Proposition II
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/propositionII.pdf]]
+
+
+#+ATTR_HTML:  :width 800 :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(propositionII.pdf,propositionII.png)}}}
+*** A Lecture Map Tutorial
+[2019-12-22 Sun 07:45]
+
+#+caption: A Lecture Map Tutorial
+#+name: A Lecture Map Tutorial
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/lecturemap.png"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+[font=\footnotesize, grow=right, level 1./style ={sibling distance=1em},level 2./style={sibling distance=1em}, level distance=5cm]
+  \node {Computational Comlexity}
+    child { node {Problem Measures}
+      child{ node {Problem Measures}}
+      child{ node {Problem Aspects}}
+      child{ node {Problem Domains}}
+      child{ node {Key Problems}}
+    }
+    child {node {Computational Models}
+      child { node {Turing Machines}}
+      child { node {Random-Access Machines}}
+      child { node {Circuits}}
+      child { node {Binary Decision Diagrams}}
+      child { node {Oracle Machines}}
+      child { node {Programming in Logic}}
+    }
+    child {node {Measuring Complexity}
+      child {node {Complexity Measures}}
+      child {node {Classifying Complexity}}
+      child {node {Comparing Complexity}}
+      child {node {Describing Complexity}}
+    }
+    child {node {Solving Problems}
+      child {node {Exact Algorithms}}
+      child {node {Randomization}}
+      child {node {Fixed-Parameter Algorithms}}
+      child {node {Parallel Computation}}
+      child {node {Partial Solutions}}
+      child {node {Approximation}}
+    };
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: A Lecture Map Tutorial
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/lecturemap.png]]
+
+
+#+ATTR_HTML:  :width 800 :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(lecturemap.pdf,lecturemap.png)}}}
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
