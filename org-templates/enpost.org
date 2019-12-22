@@ -8,7 +8,7 @@
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+LaTeX_CLASS: org-article
 #+LaTeX_CLASS_OPTIONS: [koma,a4paper,utopia,12pt,listings-color,microtype,paralist,colorlinks,urlcolor=red]
-#+PROPERTY: header-args :fit yes :border 0cm :results raw :exports none :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 900 -quality 900 -flatten -strip -define profile:skip="*"  :headers '("\\usepackage{tikz} \\usetikzlibrary{arrows,decorations.pathmorphing,,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.misc,mindmap,calendar,shadows,mindmap,calendar}")
+#+PROPERTY: header-args :fit yes :border 0cm :results raw :exports none :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 900 -quality 900 -flatten -strip -define profile:skip="*"  :headers '("\\usepackage{tikz} \\usetikzlibrary{arrows,decorations.pathmorphing,,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.misc,mindmap,calendar,shadows,mindmap,calendar,graphdrawing,trees}")
 #+HUGO_BASE_DIR: ../../mstemc_hugo/
 #+HUGO: more
 #+SEQ_TODO: TODO NEXT DONE
