@@ -72,6 +72,8 @@
   (add-to-list 'org-latex-classes
                '("org-article"
                  "\\documentclass{org-article}
+\\usepackage{tikz}
+\\usetikzlibrary{arrows,decorations.pathmorphing,,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.misc,mindmap,calendar,shadows,mindmap,calendar,graphdrawing,trees}
                [NO-DEFAULT-PACKAGES]
                [PACKAGES]
                [EXTRA]"
@@ -118,7 +120,8 @@
 ;;       '("xelatex -interaction nonstopmode %f"
 ;;         "xelatex -interaction nonstopmode %f"))
 ;;(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
-(setq org-latex-compiler "pdflatex")
+(setq-default TeX-engine "luatex")
+(setq org-latex-compiler "lualatex")
 (setq org-latex-pdf-process '("%latex -interaction nonstopmode -output-directory %o %f"
                               "bibtex %b"
                               "%latex -interaction nonstopmode -output-directory %o %f"
@@ -128,11 +131,12 @@
 (add-hook 'LaTeX-mode-hook
           (lambda()
             (add-to-list 'TeX-command-list '("PdfLaTeX" "%`pdflatex%(mode)%' %t" TeX-run-TeX nil t))
+            (add-to-list 'TeX-command-list '("LuaLatex" "%`lualatex%(mode)%' %t" TeX-run-TeX nil t))
             (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
             (setq TeX-command-default "pdflatex")))
 
-(add-to-list 'org-latex-packages-alist
-             '("" "tikz" t))
+;; (add-to-list 'org-latex-packages-alist
+;;              '("" "tikz" t))
 (setq org-latex-create-formula-image-program 'imagemagick)
 (eval-after-load "preview"
   '(add-to-list 'preview-default-preamble "\\PreviewEnvironment{tikzpicture}" t))
@@ -145,10 +149,6 @@
 
 (add-to-list 'image-type-file-name-regexps '("\\.pdf\\'" . imagemagick))
 (add-to-list 'image-file-name-extensions "pdf")
-
-(setq org-babel-latex-htlatex "htlatex")
-(defmacro by-backend (&rest body)
-  `(case (if (boundp 'backend) (org-export-backend-name backend) nil) ,@body))
 
 
 ;; customize the title command
