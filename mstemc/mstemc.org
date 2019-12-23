@@ -676,6 +676,68 @@ CLOCK: [2019-12-19 Thu 22:36]--[2019-12-19 Thu 22:37] =>  0:01
 #+ATTR_LATEX: :width 0.9\textwidth :align center
 {{{if-latex(lecturemap.pdf,lecturemap.png)}}}
 
+** TODO Walk Through the Tutorial 5 of TikZ Manual
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:LATEX_TITLE: Walk Through the Tutorial 5 of TikZ Manual
+:EXPORT_HUGO_SECTION: post
+:EXPORT_HUGO_BUNDLE: walk-through-the-tutorial-5-of-tikz-manual
+:EXPORT_DESCRIPTION: summary of this post
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
+:END:
+:LOGBOOK:
+CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
+:END:
+<2019-12-23 Mon 22:03>
+
+{{{titlepage(diagram)}}}
+
+#+caption: Diagrams as Simple Graphs
+#+name: Diagrams as Simple Graphs
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/diagram.png"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+  [>=stealth',black!50,text=black,thick,
+  every new ->/.style       = {shorten >=1pt},
+  graphs/every graph/.style = {edges=rounded corners},
+  skip loop/.style          = {to path={-- ++(0,#1) -| (\tikztotarget)}},
+  hv path/.style            = {to path={-| (\tikztotarget)}},
+  vh path/.style            = {to path={|- (\tikztotarget)}},
+  nonterminal/.style        ={
+    rectangle, minimum size=6mm,very thick,draw=red!50!black!50,top color=white,bottom color=red!50!black!20,font=\itshape,text height=1.5ex,text depth=.25ex},
+  terminal/.style           ={
+    rounded rectangle,minimum size=6mm,very thick,draw=black!50,top color=white,bottom color=black!20,font=\ttfamily,text height=1.5ex,text depth=.25ex},
+  shape                     = coordinate
+  ]
+  \graph [grow right sep, branch down=7mm,simple]{
+    / -> unsigned integer[nonterminal] -- p1 -> "." [terminal] -- p2 -> digit[terminal] -- p3 -- p4 -- p5 -> E[terminal] -- q1 -> [vh path]
+    {[nodes={yshift=7mm}]
+      "+"[terminal], q2, "="[terminal]
+    } -> [hv path]
+    q3 -- /unsigned integer [nonterminal] -- p6 -> /;
+    p1 ->[skip loop=5mm] p4;
+    p3 ->[skip loop=-5mm] p2;
+    p5 ->[skip loop=-11mm] p6;
+
+    q1 -- q2 -- q3;
+  };
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: Diagrams as Simple Graphs
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/diagram.png]]
+
+
+
+#+ATTR_HTML:  :width 800 :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(diagram.pdf,diagram.png)}}}
+
+
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
 
