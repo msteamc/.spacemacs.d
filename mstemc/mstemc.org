@@ -722,7 +722,6 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
     p1 ->[skip loop=5mm] p4;
     p3 ->[skip loop=-5mm] p2;
     p5 ->[skip loop=-11mm] p6;
-
     q1 -- q2 -- q3;
   };
 \end{tikzpicture}
