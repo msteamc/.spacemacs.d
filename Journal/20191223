@@ -1,0 +1,336 @@
+* Wednesday, 12/25/19
+:PROPERTIES:
+:CREATED:  20191225
+:END:
+** TODO introduction to signal and system             :SS:
+*** preface
+[2019-11-24 Sun 21:37]
+
+While students studying signals and systems should certainly have a solid
+foundation in disciplines based on the laws of physics, they must also have a
+solid foundation in disciplines based on the laws of physics, they must also
+have a firm grounding in the use of computers for the analysis of phenomena
+and the implementation of systems and algorithms. As a consequence, engineering
+curricula now reflect a blend of subjects, some involving continuous-time models
+and others focusing on the use of computers and discrete representations. For
+these reasons, signals and systems courses that bring discrete-time and
+continuous-time concepts together in a unified way play an increasingly
+important role in the education of engineering students and in their preparation
+for current and future developments in their chosen fields.
+
+It has pedagogical advantage by taking both the continuous-time and
+discrete-time in mind.
+
+Chapter 1 introduces block diagram representations of interconnections of
+systems and discusses several basic system properties such as causality,
+linearity and time-invariance.
+
+The concepts of signals and systems arise in a wide variety of fields, and the
+ideas and techniques associated with these concepts play an important role in
+such diverse areas of science and technology such communications, aeronautics
+and astronautics, circuit design, acoustics, seismology, biomedical engineering,
+energy generation and distribution systems, chemical process control, and speech
+processing. Because of its importance, it worth to take time to digest each
+single idea and concept appearing in such course. Also, it will be greatly
+helpful for the newbie to have an open course to help them dive into the world
+of signals and systems. I tried my best to give the best explanation of the
+concept in this course and comprehensive details are given during my creation of
+videos and posts. It takes time to produce one piece of work so that sometimes I
+think it was a grind. However, for the sake of beautiful result, I pretty enjoy
+the process of doing such creation.
+
+The signals, which are functions of one or more independent variables, contains
+information about the behavior or nature of some phenomenon, whereas the systems
+respond to particular signals by producing other signals or some desired
+behavior.
+
+Examples:
+1. Voltages and currents as a function of time in an electrical circuit are
+   examples of signals. and a circuit is itself an example of a system, which in
+   this case responds to applied voltages and currents.
+2. As another example, when an automobile driver depresses the accelerator
+   pedal, the automobile responds by increasing the speed of the vehicle.
+3. A computer program for the automated diagnosis of electrocardiograms can be
+   viewed as a system which has as its input a digitized electrocardiogram and
+   which produces estimates of parameters such as heart rate as outputs.
+4. A camera is a system that receives light from different sources and reflected
+   from objects and produces a photograph.
+5. A robot arm is a system whose movements are the response to control inputs.
+
+
+The purpose of signals ans systems:
+1. characterizing the system in detail to understand how it will respond to
+   various inputs.
+2. design systems to process signals in particular ways. such enhancement and
+   restoration of certain signals, extraction of specific pieces of information
+   from signals.
+3. modify or control the characteristics of a given system.
+
+
+*** 15:39 Basics of signals and systems
+:LOGBOOK:
+CLOCK: [2019-11-25 Mon 22:43]--[2019-11-26 Tue 22:07] => 23:24
+CLOCK: [2019-11-24 Sun 15:42]--[2019-11-24 Sun 22:42] =>  7:00
+:END:
+<2019-11-24 Sun 15:39>
+
+This section is from [[http://www.di.univr.it/documenti/OccorrenzaIns/matdid/matdid744681.pdf][Signals-and-Systems.ppt]]  by Gloria Menegaz. The textbook
+is : /Signal Processing and Linear Systems/ by B.P. Lathi, CRC Press.
+
+*** definition of signals and systems
+[2019-11-24 Sun 16:41]
+
+Fist give the definition of singal than system.
+**** definition of signals
+[2019-11-26 Tue 22:06]
+
+A signal is defined as any physical quantity that varies with time, space, or
+any other independent variable or variables. Mathematically, we describe a
+signal as a function of one or more independent variables. Signals convey
+information.
+
+A continuous-time signal is a quantity of interest that depends on an
+independent variable, where we usually think of the independent variable as
+time. In the real world, physical quantities take on real numerical values,
+though it turns out that sometimes it is mathematically convenient to consider
+/complex-valued functions of t/. However, the default is real-valued \(x(t)\),
+and indeed the type of sketch exhibited about is valid only for real-valued
+signals.
+
+Remarks:
+1. A continuous-time signal is not necessarily a continuous function as defined
+   in calculus. They are two different definition.
+2. The independent variable need not to be time, it could has other meaning. But
+   considering it as time does not affect we study the concepts of signals and
+   systems.
+
+A discrete-time signal is a sequence of values of interest, where the integer
+index can be thought of as a time index, and the values in the sequence
+represent some physical quantity of interest. Because many discrete-time signals
+arise as equally-spaced samples of a continuous-time signal, it is often more
+convenient to think of the index as the "sample number".
+**** examples of signals
+[2019-11-26 Tue 21:45]
+***** ECG signal
+[2019-11-26 Tue 21:57]
+
+***** Speech signal
+[2019-11-26 Tue 22:21]
+
+***** Image
+[2019-11-26 Tue 22:21]
+
+
+
+**** definition of systems
+[2019-11-26 Tue 22:06]
+
+Systems process signals to produce a modified or transformed version of the
+original signal. For the information and communication technology, this series
+of videos and posts help engineers analyze and design the signals and systems
+they meet in daily life.
+
+In general, two types of tools related with continuous-time signals and
+discrete-time signals will be covered. For example, for the continuous-time
+signals we have Fourier Transform and Laplace transform whereas for the
+discrete-time signals we have discrete time Fourier Transforms and Z-transform.
+Living in a digitized world, I use discrete-time signals related tools more
+often than the continuous-time counterpart. Now, it seems that the
+continuous-time signals only exists before analog-digital converter (ADC).
+However, to analyze a signal, the continuous-time related tools provide a more
+mathematical and theoretical way. So during the learning and teaching signals
+and systems, I will cover both continuous-time and discrete-time topics and give
+as many details about both realms as I can. Fortunately, we have sampling theory
+and ADC, we can easily move from continuous-time world to discrete-time world .
+Most of the conclusions we draw from the continuous-time world will apply in the
+discrete-time world with no or only a little modification.
+**** examples of systems
+[2019-11-26 Tue 22:08]
+
+***** ECG system
+[2019-11-26 Tue 22:22]
+
+***** Voice recording system
+[2019-11-26 Tue 22:23]
+
+***** Camera Systems
+[2019-11-26 Tue 22:22]
+
+*** summary of chapter 1
+[2019-11-24 Sun 15:41]
+
+We developed a number of basic concepts related to continuous-time and
+discrete-time signals and systems. We have presented both an intuitive picture
+of what signals and systems are through several examples and a mathematical
+representation for signals and systems that we will use throughout the book.
+Specifically, we introduced graphical and mathematical representation of signals
+and used these representations in performing transformations of the independent
+variable. We also defined and examined several basic signals, both in continuous
+time and in discrete time. These included complex exponential signals,
+sinusoidal signals, and unit impulse and step functions. In addition, we
+investigated the concept of periodicity for continuous-time and discrete-time
+signals.
+
+In developing some of the elementary ideas related to systems, we introduced
+block diagrams to facilitate our discussions concerning the interconnection of
+systems, and we defined a number of important properties of systems, including
+causality, stability, time-invariance, and linearity.
+
+The primary focus in most of this book will be on the class of LTI systems, both
+in continuous time and discrete time. These systems play a particularly
+important role in system analysis and design, in part due to the fact that many
+systems encountered in nature can be successfully modeled as linear and time
+invariant. Furthermore, as we shall see in the following chapters, the
+properties of linearity and time invariance allows us to analyze in detail the
+behavior of LTI systems.
+
+*** references
+[2019-11-24 Sun 16:39]
+
+Other references are:
+1. Signals and systems by Richard Baraniuk's lecture
+   notes.[[https://web.itu.edu.tr/hulyayalcin/Signal_Processing_Books/2003_Richard_Baraniuk_Signals_and_Systems.pdf][2003_Richard_Baraniuk_Signals_and_Systems.pdf]]
+2. Digital Signal Processing by John G. Proakis, Dimitris K Manolakis[[https://engineering.purdue.edu/~ee538/DSP_Text_3rdEdition.pdf][Digital Signal Processing: Principles, Algorithms & Applications]]
+
+3. Signal processing and linear systems, Schaun's outline of digital signal
+   processing.
+4. Foundations of Signal Processing.[[http://fourierandwavelets.org/][Foundations of Signal Processing and Fourier
+   and Wavelet Signal Processing]]
+
+   Together with Fourier and Wavelet Signal Processing (to be published by CUP),
+   the two books aim to present the essential principles in signal processing
+   along with mathematical tools and algorithms for signal representation. They
+   comprehensively cover both classical Fourier techniques and newer basis
+   constructions from filter banks and multiresolution analysis—wavelets.
+   Furthermore, they gives a synthetic view from basic mathematical principles,
+   to construction of bases, all the way to concrete applications.
+
+5. Signal processing for communications, by Palo Prandoni and Martin
+   Vetterli. [[https://www.sp4comm.org/index.html][Signal Processing for Communications]]
+
+   With a novel, less formal approach to the subject, the authors have written a
+   book with the conviction that signal processing should be taught to be fun.
+   The treatment is less focused on the mathematics and more on the conceptual
+   and practical aspects but the book remains an engineering text, with the goal
+   of helping students solve real-world problems. In this vein, the last chapter
+   pulls together all the topics discussed throughout the book into an in-depth
+   look at the development of an end-to-end communication system, namely, a
+   modem for communicating digital information over an analog channel.
+
+6. Lecture notes of ELE 301 by [[https://www.princeton.edu/~cuff/][Paul W. Cuff]] . The[[https://www.princeton.edu/~cuff/ele301/files/lecture1_2.pdf][Lecture 1 ELE 301: Signals and
+   Systems]]  process some basic of the signals and systems
+
+7. Signal and system analysis by Jianping Yao[[http://www.site.uottawa.ca/~jpyao/courses/E3125B_Fall_2019.html][ELG3120]] .
+
+8. Notes for signals and Systems by Wilson J. Rugh[[https://pages.jh.edu/~bcooper8/sigma_files/courses/214/signalsandsystemsnotes.pdf][Notes for Signals and Systems]]
+   . And in the site[[https://pages.jh.edu/~signals/][Signals, Systems, and Control Demonstrations]] has some other
+   demos about signals and systems.
+
+9. [[https://ptolemy.berkeley.edu/books/leevaraiya/][Lee and Varaiya, Structure and Interpretation of Signals and Systems]]
+
+   Signals convey information. Systems transform signals. This book introduces
+   the mathematical models used to design and understand both. It is intended
+   for students interested in developing a deep understanding of how to
+   digitally create and manipulate signals to measure and control the physical
+   world and to enhance human experience and communication. This book is based
+   on several years of successful classroom use at the University of California,
+   Berkeley. The material starts with an early introduction to applications,
+   well before students have built up enough theory to fully analyze the
+   applications. This motivates students to learn the theory and allows students
+   to master signals and systems at the sophomore level. The material motivates
+   signals and systems through sound and images. Calculus is the only
+   prerequisite.
+
+    And the PDF version of the book is [[https://ptolemy.berkeley.edu/books/leevaraiya/releases/LeeVaraiya_DigitalV2_04.pdf][here]]. There is also [[https://ptolemy.berkeley.edu/books/leevaraiya/releases/LabManualV1_AddisonWesley.pdf][an accompanied
+   laboratory]] manual using matlab.
+
+10. Gurdal Arslan has several [[http://www2.hawaii.edu/~gurdal/index_files/Page386.htm][Courses]] about signals and systems.
+
+11. [[http://www.eas.uccs.edu/~mwickert/ece2610/][ECE2610 Introduction to Signals and Systems]]
+
+    Mathematical representation of signals and systems; spectrum representation;
+    representation of signals by sample values; discrete-time filter
+    characterization and response; the z-transform; continuous-time signals and
+    linear, time-invariant systems; frequency response; continuous-time Fourier
+    transform and application to signals and systems. Include lectures,
+    demonstrations, and laboratory assignments.
+
+12. Dr Wickert's website [[http://www.eas.uccs.edu/~mwickert/][Dr. Wickert's Info Center]]  has quite a lot resources
+    for a engineering student.
+*** architecture of each video
+[2019-11-26 Tue 07:29]
+
+1. every video will contain several topics but the mathematical derivation will
+   not be so all-inclusive. More details will given as posts in this site for whom
+   may be interested. So you can grab the overall structure at first then
+   reinforce the it with more bricks.
+2. For each video, only several key points will be explained. I don't want the
+   video make you feel boring or tired.
+3. A piece of suggestion for the serious learner: watch the video twice or even
+   more. Most often, even some concepts which are relatively simple at first
+   look hide some deep relation with other concepts. The obscure relation will
+   not be illustrated in the video if it does not affect the understanding of
+   current object.
+
+** TODO introduction to signal and system (ver2)      :SS:
+<2019-12-01 Sun 08:05>
+
+As a basic "language" for engineering students, signals and systems appears in a
+variety of fields which can be wireless communications, aeronautics and
+astronautics, circuit design, acoustics, seismology, biomedical engineering,
+chemical process control, speech processing and image processing. The tools
+developed in this course will play an important role in the future of
+engineering students.
+
+Before we give some official definitions of signals and systems, let's dive into
+some examples.
+#+ATTR_HTML:  :width 600 :align center
+#+ATTR_LATEX: :width 0.6\textwidth :align center
+[[~/Dropbox/img/icon-512.png]]
+
+1. wireless communications
+2. aeronautics and astronautics
+3. circuit design
+4. acoustics
+5. seismology
+6. biomedical engineering
+7. chemical process control
+8. speech processing
+9. image processing
+
+After the examples, we give definitions of signals and systems. A signal is
+defined as any physical quantity that varies with time, space, or any other
+independent variable or variables. In general, signals convey information.
+Mathematically, we describe a signal as a function of one or more independent
+variables. When a signal is specified for every real value of the independent
+variable, we call it a continuous time signal. The independent variable is
+continuous, which means that it takes any value on the real axis. When a signal
+is specified only for discrete values of the independent values of the
+independent variable, we call it a discrete-time signal. Usually, a
+discrete-time can be generated by sampling a continuous-time signal. Sampling
+means that only some values of a continuous-time signal is taken. One question
+arise: can we deal a continuous-time signal by just take samples from it? Yes,
+we can! but with certain condition. Later we will talk about it. There is a
+theory called sampling theory.
+
+What about the amplitude of signals? when the amplitude of one signal can be taken
+from any value in a continuous range, we call the signal "analog signal". When the
+amplitude can only taken from a finite number of values, we call the signal
+digital signal.
+
+Taking the two types of independent variable and two types of amplitude, signals
+can be divided into four categories.
+
+1. Analog continuous-time signal;
+2. Digital continuous-time signal;
+3. Analogy discrete-time signal;
+4. Digital discrete-time signal
+** 20:15 mount ntfs on Mac
+
+[[https://zhuanlan.zhihu.com/p/82665550][怎样在苹果电脑上用移动硬盘（使用 NTFS 格式硬盘）？ - 知乎]]
+
+#+begin_src shell
+$ mkdir ~/Desktop/md1 ~/Desktop/md2
+$ sudo mount_ntfs -o rw,nobrowse /dev/disk2s1 ~/Desktop/md1
+$ sudo mount_ntfs -o rw,nobrowse /dev/disk2s2 ~/Desktop/md2
+#+end_src
