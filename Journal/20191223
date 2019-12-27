@@ -2,6 +2,20 @@
 :PROPERTIES:
 :CREATED:  20191225
 :END:
+** 20:15 mount ntfs on Mac
+
+[[https://zhuanlan.zhihu.com/p/82665550][怎样在苹果电脑上用移动硬盘（使用 NTFS 格式硬盘）？ - 知乎]]
+
+#+begin_src shell
+$ mkdir ~/Desktop/md1 ~/Desktop/md2
+$ sudo mount_ntfs -o rw,nobrowse /dev/disk2s1 ~/Desktop/md1
+$ sudo mount_ntfs -o rw,nobrowse /dev/disk2s2 ~/Desktop/md2
+#+end_src
+
+* Friday, 12/27/19
+:PROPERTIES:
+:CREATED:  20191227
+:END:
 ** TODO introduction to signal and system             :SS:
 *** preface
 [2019-11-24 Sun 21:37]
@@ -325,12 +339,17 @@ can be divided into four categories.
 2. Digital continuous-time signal;
 3. Analogy discrete-time signal;
 4. Digital discrete-time signal
-** 20:15 mount ntfs on Mac
+** 22:12 syllus of ECE2610 Introduction to Signals and Systems
 
-[[https://zhuanlan.zhihu.com/p/82665550][怎样在苹果电脑上用移动硬盘（使用 NTFS 格式硬盘）？ - 知乎]]
-
-#+begin_src shell
-$ mkdir ~/Desktop/md1 ~/Desktop/md2
-$ sudo mount_ntfs -o rw,nobrowse /dev/disk2s1 ~/Desktop/md1
-$ sudo mount_ntfs -o rw,nobrowse /dev/disk2s2 ~/Desktop/md2
-#+end_src
+1. Course Overview and Introduction
+2. Sinusoids
+3. Spectrum Representation
+4. Sampling and Aliasing
+5. FIR filters
+6. Frequency response of FIR filters
+7. z-transforms
+8. IIR filters
+9. Continuous-time Signals and systems
+10. Frequency Response
+11. Continuous-time Fourier Transform
+12. Filtering, Modulation, and Sampling
