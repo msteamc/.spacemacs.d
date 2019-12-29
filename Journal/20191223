@@ -16,6 +16,27 @@ $ sudo mount_ntfs -o rw,nobrowse /dev/disk2s2 ~/Desktop/md2
 :PROPERTIES:
 :CREATED:  20191227
 :END:
+** 22:12 syllabus of ECE2610 Introduction to Signals and Systems
+
+1. Course Overview and Introduction
+2. Sinusoids
+3. Spectrum Representation
+4. Sampling and Aliasing
+5. FIR filters
+6. Frequency response of FIR filters
+7. z-transforms
+8. IIR filters
+9. Continuous-time Signals and systems
+10. Frequency Response
+11. Continuous-time Fourier Transform
+12. Filtering, Modulation, and Sampling
+
+
+
+* Sunday, 12/29/19
+:PROPERTIES:
+:CREATED:  20191229
+:END:
 ** TODO introduction to signal and system             :SS:
 *** preface
 [2019-11-24 Sun 21:37]
