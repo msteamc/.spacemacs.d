@@ -95,7 +95,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(cdlatex monokai-theme solarized-theme ox-hugo org-mobile-sync  wc-mode sdcv powerthesaurus)
+   dotspacemacs-additional-packages '(cdlatex monokai-theme solarized-theme ox-hugo org-mobile-sync  wc-mode sdcv powerthesaurus all-the-icons)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(orgit org-projectile org-bullets)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
