@@ -737,6 +737,23 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 {{{if-latex(diagram.pdf,diagram.png)}}}
 
 
+** TODO signal and system chapter 1 problems
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:LATEX_TITLE: signal and system chapter 1 problems
+:EXPORT_HUGO_SECTION: post
+:EXPORT_HUGO_BUNDLE: signal-and-system-chapter-1-problems
+:EXPORT_DESCRIPTION: summary of this post
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("signal and systems")
+:END:
+<2020-01-02 Thu 23:32>
+
+
+
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
 
