@@ -737,6 +737,41 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 {{{if-latex(diagram.pdf,diagram.png)}}}
 
 
+This is theorem [[theo:1]] .
+#+ATTR_LATEX: :options [Mean Value Theorem]{theo:1}
+#+NAME: theo:1
+#+begin_theo
+ This is a theorem, and with the
+#+end_theo
+
+This is theorem [[lem:1]] .
+#+ATTR_LATEX: :options [Mean Value Theorem]{lem:1}
+#+NAME: lem:1
+#+begin_lem
+ This is a theorem, and with the
+#+end_lem
+
+
+#+ATTR_LATEX: :options []{}
+#+begin_prf
+ This is a theorem, and with the
+#+end_prf
+
+This is problem [[prob:1]] .
+#+ATTR_LATEX: :options []{}
+#+NAME: prob:1
+#+begin_prob
+ This is a theorem, and with the
+#+end_prob
+
+This is problem [[solu:1]] .
+#+ATTR_LATEX: :options []{}
+#+NAME: solu:1
+#+begin_solu
+ This is a theorem, and with the
+#+end_solu
+
+
 ** TODO signal and system chapter 1 problems
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
