@@ -185,7 +185,7 @@ BEG and END default to the buffer boundaries."
         file (expand-file-name
                       (concat (or (match-string 3) "") (match-string 4))))
           (when (file-exists-p file)
-            (let ((file-thumb (format "%s%s_thumb.png" (file-name-directory file) (file-name-base file))))
+            (let ((file-thumb (format "%s%s.png" (file-name-directory file) (file-name-base file))))
               (if (file-exists-p file-thumb)
                   (let ((thumb-time (nth 5 (file-attributes file-thumb 'string)))
                         (file-time (nth 5 (file-attributes file 'string))))
