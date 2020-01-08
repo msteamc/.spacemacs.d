@@ -5,10 +5,10 @@
                \usepackage{tikz}
 \author{Eason}
 \date{\today}
-\title{Walk Through the Tutorial 5 of TikZ Manual}
+\title{signals and systems chapter 1 problems}
 \hypersetup{
  pdfauthor={Eason},
- pdftitle={Walk Through the Tutorial 5 of TikZ Manual},
+ pdftitle={signals and systems chapter 1 problems},
  pdfkeywords={},
  pdfsubject={summary of this post},
  pdfcreator={Emacs 26.3 (Org mode 9.2.6)},
@@ -22,7 +22,7 @@
  \begingroup
 \begin{center}
  \vspace{\baselineskip}
- \textbf{\Huge Walk Through the Tutorial 5 of TikZ Manual} \par
+ \textbf{\Huge signal and system chapter 1 problems} \par
  \vspace{2\baselineskip}  \newline
  \textbf{\large Eason Zhang with www.makesteamclear.com \par}
  \vspace{\baselineskip} \newline
@@ -30,7 +30,7 @@
  \vspace{\baselineskip}
   \vfill
  \setlength{\unitlength}{3pt}
- \includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/diagram.pdf}
+ \includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/eulerEquation.pdf}
  \vfill \vspace{\baselineskip}
  \href{WWW.MAKESTEAMCLEAR.COM}{\Large WWW.MAKESTEAMCLEAR.COM} \par\newline
   makesteamclear is a free project, run by Eason Zhang, to make videos about STEAM in a more approachable way. If you find the contents in this article or the site or the youtube channel helpful, please consider \href{www.makesteamclear.com}{\ensuremath \heartsuit support me\ensuremath\heartsuit }, thanks \par
@@ -41,38 +41,40 @@
 \hspace{0pt}\\
 
 summary of this post
-
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/diagram.pdf}
-\end{center}
+\section{Basic Problems With Answers}
+\label{sec:org8f261cc}
 
 
-This is theorem \ref{theo:1} .
-\begin{theo}[Mean Value Theorem]{theo:1}
-This is a theorem, and with the
-\label{theo:1}
-\end{theo}
 
-This is theorem \ref{lem:1} .
-\begin{lem}[Mean Value Theorem]{lem:1}
-This is a theorem, and with the
-\label{lem:1}
-\end{lem}
-
-
-\begin{prf}[]{}
-This is a theorem, and with the
-\end{prf}
-
-This is problem \ref{prob:1} .
-\begin{prob}[]{}
-This is a theorem, and with the
-\label{prob:1}
+\begin{prob}[]{prob:1.1}
+Express each of the following complex numbers in \emph{Cartesian} form \(x+iy\):
+\begin{equation*}
+\begin{array}
+\quad \frac{1}{2}e^{i\pi}  & \frac{1}{2}e^{-i\pi}  & e^{i\pi/2}  \\
+ e^{-i\pi/2}         & e^{i5\pi/2}  & \sqrt{2}e^{i\pi/4}  \\
+ \sqrt{2}e^{i9\pi/4} & \sqrt{2}e^{-9i\pi/4}  & \sqrt{2} e^{-i\pi/4}
+\end{array}
+\end{equation*}
+\label{prob:1.1}
 \end{prob}
 
-This is problem \ref{solu:1} .
-\begin{solu}[]{}
-This is a theorem, and with the
-\label{solu:1}
-\end{solu}
+\begin{prob}[]{prob:1.2}
+Express each of the following complex numbers in \emph{polar} form (\(re^{i\theta},
+-\pi < \theta \leq -\pi\)): \(5\),\(-2\),\(-3i\),\(\frac{1}{2} -
+i\frac{\sqrt{3}}{2}\), \(1 + i\), \((1-i)^{2}\), \(i(1-i)\), \((1+i)/(1-i)\), \((\sqrt{2} +i\sqrt{2})/ (1 +i\sqrt{3})\)
+\label{prob:1.2}
+\end{prob}
+
+
+Every complex number \(a+ib\) can be visualized in the complex plane
+\(\mathbb{C}\). It can be viewed as the point with the coordinate \((a,b)\) in
+the plane or as a vector starting from \(0,0\) to the point \((a,b)\).
+
+Also every complex number \(a+ib\) can be represented in the exponential form
+conveniently through the Euler's formula \(e^{i\alpha} = \cos\alpha +
+i\sin\alpha\).
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/eulerEquation.pdf}
+\end{center}
 \end{document}

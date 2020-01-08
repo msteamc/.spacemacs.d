@@ -18,7 +18,6 @@ CLOCK: [2019-10-06 Sun 08:21]--[2019-10-06 Sun 08:33] =>  0:12
 [2019-10-05 Sat 16:52]
 
 
-
 * Posts
 [2019-10-05 Sat 16:52]
 
@@ -736,10 +735,7 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 #+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex(diagram.pdf,diagram.png)}}}
 
-
-
-
-** TODO signal and system chapter 1 problems
+** TODO signals and systems chapter 1 problems
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
 :LATEX_TITLE: signal and system chapter 1 problems
@@ -754,147 +750,112 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 :END:
 <2020-01-02 Thu 23:32>
 
+{{{titlepage(eulerEquation)}}}
+*** Basic Problems With Answers
+[2020-01-08 Wed 21:19]
 
 
-
-This is theorem [[theo:1]] .
-#+ATTR_LATEX: :options [Mean Value Theorem]{theo:1}
-#+NAME: theo:1
-#+begin_theo
- This is a theorem, and with the
-
-
- This is a theorem, and with the Lorem ipsum dolor sit amet, consectetur
- adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt
- magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque
- sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor
- diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac
- tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla,
- tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit
- amet erat at nulla eleifend gravida.
-
-
-Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse
-platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla
-euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est
-vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut
-leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus
-non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor,
-pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam
-mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna
-odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula
-cursus.
-
-#+end_theo
-
-This is theorem [[lem:1]] .
-#+ATTR_LATEX: :options [Mean Value Theorem]{lem:1}
-#+NAME: lem:1
-#+begin_lem
- This is a theorem, and with the Lorem ipsum dolor sit amet, consectetur
- adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt
- magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque
- sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor
- diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac
- tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla,
- tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit
- amet erat at nulla eleifend gravida.
-
-
-Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse
-platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla
-euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est
-vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut
-leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus
-non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor,
-pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam
-mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna
-odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula
-cursus.
-
-#+end_lem
-
-
-#+ATTR_LATEX: :options []{}
-#+begin_prf
- This is a theorem, and with the
- This is a theorem, and with the Lorem ipsum dolor sit amet, consectetur
- adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt
- magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque
- sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor
- diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac
- tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla,
- tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit
- amet erat at nulla eleifend gravida.
-
-
-Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse
-platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla
-euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est
-vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut
-leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus
-non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor,
-pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam
-mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna
-odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula
-cursus.
-
-#+end_prf
-
-This is problem [[prob:1]] .
-#+ATTR_LATEX: :options []{}
-#+NAME: prob:1
+#+ATTR_LATEX: :options []{prob:1.1}
+#+NAME: prob:1.1
 #+begin_prob
- This is a theorem, and with the
- This is a theorem, and with the Lorem ipsum dolor sit amet, consectetur
- adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt
- magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque
- sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor
- diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac
- tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla,
- tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit
- amet erat at nulla eleifend gravida.
-
-
-Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse
-platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla
-euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est
-vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut
-leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus
-non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor,
-pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam
-mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna
-odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula
-cursus.
+Express each of the following complex numbers in /Cartesian/ form \(x+iy\):
+\begin{equation*}
+\begin{array}{ccc}
+ \frac{1}{2}e^{i\pi}  & \frac{1}{2}e^{-i\pi}  & e^{i\pi/2}  \\
+ e^{-i\pi/2}         & e^{i5\pi/2}  & \sqrt{2}e^{i\pi/4}  \\
+ \sqrt{2}e^{i9\pi/4} & \sqrt{2}e^{-9i\pi/4}  & \sqrt{2} e^{-i\pi/4}
+\end{array}
+\end{equation*}
 
 #+end_prob
 
-This is problem [[solu:1]] .
-#+ATTR_LATEX: :options []{}
-#+NAME: solu:1
-#+begin_solu
- This is a theorem, and with the
- This is a theorem, and with the Lorem ipsum dolor sit amet, consectetur
- adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt
- magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque
- sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor
- diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac
- tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla,
- tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit
- amet erat at nulla eleifend gravida.
+#+ATTR_LATEX: :options []{prob:1.2}
+#+NAME: prob:1.2
+#+begin_prob
+Express each of the following complex numbers in /polar/ form (\(re^{i\theta},
+-\pi < \theta \leq -\pi\)):
+\begin{equation*}
+\begin{array}{c{3cm}c{3cm}c{3cm}}
+5 & -2 & -3i \\
+\frac{1}{2} - i \frac{\sqrt{3}}{2} & 1+i & (1-i)^{2} \\
+i(1-i)  & \frac{1+i}{1-i}  & \frac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}}
+\end{array}
+\end{equation*}
+#+end_prob
 
 
-Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse
-platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla
-euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est
-vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut
-leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus
-non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor,
-pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam
-mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna
-odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula
-cursus.
-#+end_solu
+Every complex number \(a+ib\) can be visualized in the complex plane
+\(\mathbb{C}\). It can be viewed as the point with the coordinate \((a,b)\) in
+the plane or as a vector starting from \(0,0\) to the point \((a,b)\).
+
+Also every complex number \(a+ib\) can be represented in the exponential form
+conveniently through the Euler's formula \(e^{i\alpha} = \cos\alpha +
+i\sin\alpha\).
+
+#+caption: Euler Example
+#+name: EulerExample
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/eulerEquation.pdf"
+#+begin_src latex -n -r  :results raw :exports none
+\begin{tikzpicture}
+[scale=3,line cap=round,
+axes/.style=,
+important line/.style={very thick},
+information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
+
+\colorlet{anglecolor}{green!50!black}
+\colorlet{sincolor}{red}
+\colorlet{tancolor}{orange!80!black}
+\colorlet{coscolor}{blue}
+
+
+\draw[step=0.5cm,gray!50] (-2.3,-2.3) grid (2.3,2.3);
+\draw[radius=1cm] (0,0) circle;
+
+\begin{scope}[axes]
+  \draw[->] (-2.6,0)  -- (2.6,0) node[at end,below] {$\mathrm{Re}$} coordinate(x axis);
+  \draw[->] (0,-2.6) -- (0,2.6) node[at end,right] {$\mathrm{Im}$} coordinate(y axis);
+
+  \foreach \x/\xtext in {-1,1}
+    \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\xtext$};
+  \foreach \y/\ytext in {-1,1}
+    \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
+\end{scope}
+
+\filldraw[fill=green!20,draw=anglecolor] (0,0) -- (2mm,0pt) arc [start angle=0, end angle=70,radius=2mm] -- cycle;
+\node at (35:2.3mm) [anglecolor] {$\alpha$};
+
+\draw[important line,sincolor] (70:1cm) -- node[right=1pt,fill=white] {$\sin\alpha$} (70:1cm |- x axis);
+% \draw[decoration={brace,raise=4pt},decorate] (70:1cm) -- (70:1cm |- x axis);
+
+\draw[important line,coscolor] (70:1cm |- x axis) -- node[below=2pt] {$\cos\alpha$} (0,0);
+
+\draw (0,0) -- (70:1cm);
+
+\filldraw[draw=gray,fill=gray,radius=0.5pt](70:1cm) circle node[above right] {\huge ${e^{i\alpha} = { \color{blue}{\cos\alpha} } + i\color{red}{ \sin\alpha} }$};
+
+\draw[-{Stealth}] (0,0) -- (140:2cm) node[above=5pt] {\huge $z={ \color{blue}{a} }+i{ \color{red}{b} }=re^{i\theta}$};
+\draw[important line,red] (140:2.025cm |- x axis) -- (140:2.025cm) node[midway,left] {$b$};
+\draw[important line,blue] (140:2.025cm |- x axis) -- (0,0) node[midway,above]{$a$};
+
+\filldraw[fill=black,radius=0.3mm]  (140:2.025cm) circle ;
+
+\filldraw[fill=red!20,draw=red,fill opacity=0.5] (0,0) -- (1.5mm,0pt) arc [start angle=0, end angle=140,radius=1.5mm] -- cycle;
+\node at (35:2.3mm) [anglecolor] {$\alpha$};
+\node at (70:1.mm) [red] {$\theta$};
+\end{tikzpicture}
+#+end_src
+
+
+#+RESULTS: EulerExample
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/eulerEquation.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(eulerEquation.pdf,eulerEquation.png)}}}
+
+Using Euler's formula, we can transform a complex number from it's Cartesian
+form and Polar form back and forth easily.
 
 
 * Projects                                         :project:
