@@ -7,7 +7,7 @@
   ;; ❀❤♫♠♣♥♦♡♢♤♧
   ;; (setq org-bullets-bullet-list '("☯" "☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☭" "❀" "☯" "⊙" ))
   ;;(setq org-bullets-bullet-list '("☰" "☷" "☯" "☭"))
-  (setq org-ellipsis "..");Other interesting characters are ▼, ↴, and ⋱.▼
+  (setq org-ellipsis "...");Other interesting characters are ▼, ↴, and ⋱.▼
     ;;(setq org-bullets-bullet-list '("✿"  "♣" "♧" "❀"))
   ;;  "➢" "➣" "➤" "≪", "≫", "«", "»"
   ;; "✡" "✽" "✲" "✱" "✻" "✼" "✽" "✾" "✿" "❀" "❁" "❂" "❃" "❄" "❅" "❆" "❇"
@@ -30,7 +30,7 @@
               (setq org-agenda-tags-column -90)
               ;; Enable automatic line wrapping at fill column
               (auto-fill-mode t)
-              (org-indent-mode t)))
+              (org-indent-mode nil)))
   ;; (add-hook 'org-mode-hook
   ;;           '(lambda ()
   ;;              (delete '("\\.pdf\\'" . default) org-file-apps)
@@ -40,4 +40,19 @@
   (setq org-hide-macro-markers t)
   ;; Replace org-set-tags with org-set-tags-command in keybinding
   (spacemacs/set-leader-keys-for-major-mode 'org-mode ":" 'org-set-tags-command)
+
+  (defvar org-blocks-hidden nil)
+
+  (defun org-toggle-blocks ()
+    (interactive)
+    (if org-blocks-hidden
+        (org-show-block-all)
+      (org-hide-block-all))
+    (setq-local org-blocks-hidden (not org-blocks-hidden)))
+
+  (add-hook 'org-mode-hook 'org-toggle-blocks)
+
+  (define-key org-mode-map (kbd "C-c t") 'org-toggle-blocks)
+  (setq org-startup-indented t
+        org-hide-leading-stars nil)
   )
