@@ -145,7 +145,7 @@
  'org-babel-load-languages
  '((latex . t)))
 
-(setq org-image-actual-width 800)
+(setq org-image-actual-width 600)
 
 (add-to-list 'image-type-file-name-regexps '("\\.pdf\\'" . imagemagick))
 (add-to-list 'image-file-name-extensions "pdf")
@@ -205,7 +205,7 @@ BEG and END default to the buffer boundaries."
                   (overlay-put ov 'modification-hooks
                                (list 'org-display-inline-remove-overlay))
                   (push ov org-inline-image-overlays))))))))))
-(add-hook 'org-mode-hook 'org-display-inline-images) 
-  
-  
+(add-hook 'org-mode-hook 'org-display-inline-images)
+
+
 )
