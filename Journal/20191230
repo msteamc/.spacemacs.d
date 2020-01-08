@@ -330,3 +330,71 @@ can be divided into four categories.
 2. Digital continuous-time signal;
 3. Analogy discrete-time signal;
 4. Digital discrete-time signal
+* Euler's formula
+Every complex number \(a+ib\) can be visualized in the complex plane
+\(\mathbb{C}\). It can be viewed as the point with the coordinate \((a,b)\) in
+the plane or as a vector starting from \(0,0\) to the point \((a,b)\).
+
+Also every complex number \(a+ib\) can be represented in the exponential format
+through the Euler's formula \(e^{i\alpha} = \cos\alpha + i\sin\alpha\). Euler's
+formula provides a convenient way to illustrate the points sitting on the unit
+circle.
+
+#+caption: Euler Example
+#+name: EulerExample
+#+header: :file  "../../img/tikz/eulerEquationnew.pdf"
+#+begin_src latex -n -r :fit yes :results raw :exports none
+\begin{tikzpicture}
+[scale=3,line cap=round,
+axes/.style=,
+important line/.style={very thick},
+information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
+
+\colorlet{anglecolor}{green!50!black}
+\colorlet{sincolor}{red}
+\colorlet{tancolor}{orange!80!black}
+\colorlet{coscolor}{blue}
+
+
+\draw[step=0.5cm,gray!20] (-2.3,-2.3) grid (2.3,2.3);
+\draw[radius=1cm] (0,0) circle;
+
+\begin{scope}[axes]
+  \draw[->] (-2.6,0)  -- (2.6,0) node[at end,below] {$\mathrm{Re}$} coordinate(x axis);
+  \draw[->] (0,-2.6) -- (0,2.6) node[at end,right] {$\mathrm{Im}$} coordinate(y axis);
+
+  \foreach \x/\xtext in {-1,-.5/-\frac{1}{2},.5/\frac{1}{2},1}
+    \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\xtext$};
+  \foreach \y/\ytext in {-1,-.5/-\frac{1}{2},.5/\frac{1}{2},1}
+    \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
+\end{scope}
+
+\filldraw[fill=green!20,draw=anglecolor] (0,0) -- (2mm,0pt) arc [start angle=0, end angle=70,radius=2mm] -- cycle;
+\node at (35:2.3mm) [anglecolor] {$\alpha$};
+
+\draw[important line,sincolor] (70:1cm) -- node[right=1pt,fill=white] {$\sin\alpha$} (70:1cm |- x axis);
+\draw[important line,coscolor] (70:1cm |- x axis) -- node[below=2pt] {$\cos\alpha$} (0,0);
+
+\draw (0,0) -- (70:1cm);
+
+\filldraw[draw=gray,fill=gray,radius=0.5pt](70:1cm) circle node[above right] {\huge ${e^{i\alpha} = { \color{blue}{\cos\alpha} } + i\color{red}{ \sin\alpha} }$};
+
+\draw[-{Stealth}] (0,0) -- (140:2cm) node[above=5pt] {\huge $z={ \color{blue}{a} }+i{ \color{red}{b} }=re^{i\theta}$};
+\draw[important line,red] (140:2.025cm |- x axis) -- (140:2.025cm) node[midway,left] {$b$};
+\draw[important line,blue] (140:2.025cm |- x axis) -- (0,0) node[midway,above]{$a$};
+
+\filldraw[fill=black,radius=0.3mm]  (140:2.025cm) circle ;
+
+\filldraw[fill=red!20,draw=red,fill opacity=0.5] (0,0) -- (1.5mm,0pt) arc [start angle=0, end angle=140,radius=1.5mm] -- cycle;
+\node at (35:2.3mm) [anglecolor] {$\alpha$};
+\node at (70:1.mm) [red] {$\theta$};
+
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: EulerExample
+[[file:../../img/tikz/eulerEquationnew.pdf]]
+
+#+ATTR_HTML:  :width 800 :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(eulerEquationnew.pdf,eulerEquationnew.png)}}} 
