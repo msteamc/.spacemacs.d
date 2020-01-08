@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: theo
+# --
+
+#+ATTR_LATEX: :options []{theo:$1}
+#+NAME: theo:${1:tag}
+#+begin_theo
+$0
+#+end_theo

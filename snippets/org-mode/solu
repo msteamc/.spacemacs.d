@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: solu
+# --
+
+#+ATTR_LATEX: :options []{solu:$1}
+#+NAME: solu:${1:tag}
+#+begin_solu
+$0
+#+end_solu

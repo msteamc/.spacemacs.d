@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: prf
+# --
+
+#+ATTR_LATEX: :options []{}
+#+begin_prf
+$0
+#+end_prf

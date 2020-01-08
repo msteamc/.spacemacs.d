@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: prob
+# --
+
+#+ATTR_LATEX: :options []{prob:$1}
+#+NAME: prob:${1:index}
+#+begin_prob
+$0
+#+end_prob

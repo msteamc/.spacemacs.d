@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: lem
+# --
+
+#+ATTR_LATEX: :options []{lem:$1}
+#+NAME: lem:${1:tag}
+#+begin_lem
+$0
+#+end_lem
