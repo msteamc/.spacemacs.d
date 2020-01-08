@@ -30,7 +30,7 @@
 (spacemacs/set-leader-keys "fp" 'ffap)
 (spacemacs/set-leader-keys "oe" 'open-in-desktop)
 (spacemacs/set-leader-keys "bc" 'whitespace-cleanup)
-(spacemacs/set-leader-keys "fw" 'ido-write-file)
+(spacemacs/set-leader-keys "fw" 'write-file)
 (spacemacs/set-leader-keys "fd" 'open-in-desktop)
 (spacemacs/set-leader-keys "ss" 'spacemacs/helm-swoop-region-or-symbol)
 (spacemacs/set-leader-keys "sS" 'helm-swoop)
@@ -84,6 +84,7 @@
   "gw" 'helm-gtags-dwim
   "sp" 'spacemacs/helm-project-smart-do-search-region-or-symbol
   "sP" 'spacemacs/helm-project-smart-do-search
+  "sq" 'query-replace
   )
 (spacemacs/set-leader-keys
   "bv" 'revert-buffer
@@ -116,6 +117,7 @@
   "pp" 'helm-projectile-switch-project
   "ph" 'helm-projectile
   "SPC" 'helm-M-x
+  "tb"  'org-toggle-blocks
   "tn"  'display-line-numbers-mode
   )
 
