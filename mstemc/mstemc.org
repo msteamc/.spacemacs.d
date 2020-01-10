@@ -877,7 +877,6 @@ i\sin\alpha\).
 axes/.style=,
 important line/.style={very thick},
 information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
-
 \colorlet{anglecolor}{green!50!black}
 \colorlet{sincolor}{red}
 \colorlet{tancolor}{orange!80!black}
@@ -901,23 +900,21 @@ information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
 \node at (35:2.3mm) [anglecolor] {$\alpha$};
 
 \draw[important line,sincolor] (70:1cm) -- node[right=1pt,fill=white] {$\sin\alpha$} (70:1cm |- x axis);
-% \draw[decoration={brace,raise=4pt},decorate] (70:1cm) -- (70:1cm |- x axis);
-
-\draw[important line,coscolor] (70:1cm |- x axis) -- node[below=2pt] {$\cos\alpha$} (0,0);
+\draw[important line,coscolor] (70:1cm |- x axis) -- node[at start,below=2pt] {$\cos\alpha$} (0,0);
 
 \draw (0,0) -- (70:1cm);
 
 \filldraw[draw=gray,fill=gray,radius=0.5pt](70:1cm) circle node[above right] {\huge ${e^{i\alpha} = { \color{blue}{\cos\alpha} } + i\color{red}{ \sin\alpha} }$};
 
-\draw[-{Stealth}] (0,0) -- (140:2cm) node[above=5pt] {\huge $z={ \color{blue}{a} }+i{ \color{red}{b} }=re^{i\theta}$};
-\draw[important line,red] (140:2.025cm |- x axis) -- (140:2.025cm) node[midway,left] {$b$};
-\draw[important line,blue] (140:2.025cm |- x axis) -- (0,0) node[midway,above]{$a$};
+\draw[-{Stealth}] (0,0) -- (-140:2cm) node[below=5pt] {\huge $z={ \color{blue}{a} }+i{ \color{red}{b} }=re^{i\theta}$};
+\draw[important line,red] (-140:2.025cm |- x axis) -- (-140:2.025cm) node[midway,left] {$b$};
+\draw[important line,blue] (-140:2.025cm |- x axis) -- (0,0) node[midway,above]{$a$};
 
-\filldraw[fill=black,radius=0.3mm]  (140:2.025cm) circle ;
+\filldraw[fill=black,radius=0.3mm]  (-140:2.025cm) circle ;
 
-\filldraw[fill=red!20,draw=red,fill opacity=0.5] (0,0) -- (1.5mm,0pt) arc [start angle=0, end angle=140,radius=1.5mm] -- cycle;
+\filldraw[fill=red!20,draw=red,fill opacity=0.5] (0,0) -- (1.5mm,0pt) arc [start angle=0, end angle=-140,radius=1.5mm] -- cycle;
 \node at (35:2.3mm) [anglecolor] {$\alpha$};
-\node at (70:1.mm) [red] {$\theta$};
+\node at (-70:1.mm) [red] {$\theta$}; 
 \end{tikzpicture}
 #+end_src
 
