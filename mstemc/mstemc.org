@@ -755,34 +755,6 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 [2020-01-08 Wed 21:19]
 
 
-#+ATTR_LATEX: :options []{prob:1.1}
-#+NAME: prob:1.1
-#+begin_prob
-Express each of the following complex numbers in /Cartesian/ form \(x+iy\):
-\begin{equation*}
-\begin{array}{ccc}
- \frac{1}{2}e^{i\pi}  & \frac{1}{2}e^{-i\pi}  & e^{i\pi/2}  \\
- e^{-i\pi/2}         & e^{i5\pi/2}  & \sqrt{2}e^{i\pi/4}  \\
- \sqrt{2}e^{i9\pi/4} & \sqrt{2}e^{-9i\pi/4}  & \sqrt{2} e^{-i\pi/4}
-\end{array}
-\end{equation*}
-
-#+end_prob
-
-#+ATTR_LATEX: :options []{prob:1.2}
-#+NAME: prob:1.2
-#+begin_prob
-Express each of the following complex numbers in /polar/ form (\(re^{i\theta},
--\pi < \theta \leq -\pi\)):
-\begin{equation*}
-\begin{array}{c{3cm}c{3cm}c{3cm}}
-5 & -2 & -3i \\
-\frac{1}{2} - i \frac{\sqrt{3}}{2} & 1+i & (1-i)^{2} \\
-i(1-i)  & \frac{1+i}{1-i}  & \frac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}}
-\end{array}
-\end{equation*}
-#+end_prob
-
 #+ATTR_LATEX: :options []{prob:1-1}
 #+NAME: prob:1-1
 #+begin_prob
@@ -813,60 +785,54 @@ i(1-i)  & \frac{1+i}{1-i}  & \frac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}}
 First, let's figure them out using the Euler's formula. For the nine complex
 numbers in Problem [[prob:1-1]], we have:
 \begin{eqnarray*}
-&&\tfrac{1}{2} e^{i\pi } =  \tfrac{1}{2} (\cos(\pi) + i\sin(\pi) ) = \tfrac{1}{2} \cos(\pi) = -\tfrac{1}{2} \\
-&&\tfrac{1}{2} e^{-i\pi} = \tfrac{1}{2}  (\cos(-\pi) + i\sin(-\pi) ) = \tfrac{1}{2} \cos(-\pi) = -\tfrac{1}{2} \\
-&&e^{i\pi/2} = \cos(\pi/2) + i \sin(\pi/2) = i \\
-&&e^{-i\pi/2} = \cos(-\pi/2) + i \sin(-\pi/2) = -i \\
-&&e^{i5\pi/2} = \cos(5\pi/2) + i \sin(5\pi/2) = \cos(2\pi + \pi/2) + i \sin(2\pi + \pi/2) = i \sin(\pi/2) = i \\
-&&\sqrt{2}e^{i\pi/4} = \sqrt{2} ( \cos(\pi/4) + i \sin(\pi/4) ) = \sqrt{2} ( \tfrac{\sqrt{2}}{2} + i\tfrac{\sqrt{2}}{2}  ) = 1 + i \\
-&& \sqrt{2} e^{i9 \pi/4} = \sqrt{2} ( \cos(9\pi/4) + i \sin(9\pi/4) ) = 1 + i \\
-&& \sqrt{2} e^{-i9 \pi/4} = \sqrt{2} ( \cos(-9\pi/4) + i \sin(-9\pi/4) ) = 1 - i \\
-&& \sqrt{2} e^{-i \pi/4} = \sqrt{2} ( \cos(-\pi/4) + i \sin(-\pi/4) ) = 1 - i
+\tfrac{1}{2} e^{i\pi } &=&  \tfrac{1}{2} (\cos(\pi) + i\sin(\pi) ) = \tfrac{1}{2} \cos(\pi) = -\tfrac{1}{2} \\
+\tfrac{1}{2} e^{-i\pi} &=& \tfrac{1}{2}  (\cos(-\pi) + i\sin(-\pi) ) = \tfrac{1}{2} \cos(-\pi) = -\tfrac{1}{2} \\
+e^{i\pi/2} &=& \cos(\pi/2) + i \sin(\pi/2) = i \\
+e^{-i\pi/2} &=& \cos(-\pi/2) + i \sin(-\pi/2) = -i \\
+e^{i5\pi/2} &=& \cos(5\pi/2) + i \sin(5\pi/2) = \cos(2\pi + \pi/2) + i \sin(2\pi + \pi/2) = i \sin(\pi/2) = i \\
+\sqrt{2}e^{i\pi/4} &=& \sqrt{2} ( \cos(\pi/4) + i \sin(\pi/4) ) = \sqrt{2} ( \tfrac{\sqrt{2}}{2} + i\tfrac{\sqrt{2}}{2}  ) = 1 + i \\
+ \sqrt{2} e^{i9 \pi/4} &=& \sqrt{2} ( \cos(9\pi/4) + i \sin(9\pi/4) ) = 1 + i \\
+ \sqrt{2} e^{-i9 \pi/4} &=& \sqrt{2} ( \cos(-9\pi/4) + i \sin(-9\pi/4) ) = 1 - i \\
+ \sqrt{2} e^{-i \pi/4} &=& \sqrt{2} ( \cos(-\pi/4) + i \sin(-\pi/4) ) = 1 - i
 \end{eqnarray*}
 
 For the nine complex numbers in Problem [[prob:1-2]] , we have:
 
 \begin{eqnarray*}
-&& 5 = 5 e^{i0} = 5 e^{i(2\pi n)}, n\in \{\ldots, -2,-1,0,1,2,\ldots \} \\
-&& -2 = 2 e^{i\pi} = -2 e^{i0} \\
-&& -3i = 3 e^{-i\pi} \\
-&& \frac{1}{2} - i \frac{\sqrt{3}}{2}  = e^{-i\pi/3} \\
-&& 1+i = \sqrt{2} e^{i\pi/4} \\
-&& (1-i)^{2} = ( \sqrt{2} e^{-i\pi/4} )^{2} = 2 e^{-i\pi/2} \\
-&& i(1-i) = 1 - i = \sqrt{2} e^{-i\pi/4} \\
-&& \frac{1+i}{1-i} = \frac{ \sqrt{2}e^{i\pi/4} } { \sqrt{2}e^{-i\pi/4} } = e^{i\pi/2} \\
-&& \frac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}} = \frac{ 2e^{i\pi/4} }{ 2 e^{i\pi/3} } = e^{-i\pi/12}
+ 5 &=& 5 e^{i0} = 5 e^{i(2\pi n)}, n\in \{\ldots, -2,-1,0,1,2,\ldots \} \\
+ -2 &=& 2 e^{i\pi} = -2 e^{i0} \\
+ -3i &=& 3 e^{-i\pi} \\
+ \tfrac{1}{2} - i \tfrac{\sqrt{3}}{2}  &=& e^{-i\pi/3} \\
+ 1+i &=& \sqrt{2} e^{i\pi/4} \\
+ (1-i)^{2} &=& ( \sqrt{2} e^{-i\pi/4} )^{2} = 2 e^{-i\pi/2} \\
+ i(1-i) &=& 1 - i = \sqrt{2} e^{-i\pi/4} \\
+ \tfrac{1+i}{1-i} &=& \tfrac{ \sqrt{2}e^{i\pi/4} } { \sqrt{2}e^{-i\pi/4} } = e^{i\pi/2} \\
+ \tfrac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}} &=& \tfrac{ 2e^{i\pi/4} }{ 2 e^{i\pi/3} } = e^{-i\pi/12}
 \end{eqnarray*}
 
 
-
 Every complex number \(a+ib\) can be visualized in the complex plane
-\(\mathbb{C}\). It can be viewed as the point with the coordinate \((a,b)\) in
-the plane or as a vector starting from \(0,0\) to the point \((a,b)\).
+\(\mathbb{C}\). It can be viewed either as the point with the coordinate
+\((a,b)\) or as a vector starting from \(0,0\) to the point \((a,b)\).
 
 Also every complex number \(a+ib\) can be represented in the exponential form
-conveniently through the Euler's formula \(e^{i\alpha} = \cos\alpha +
+conveniently by using the Euler's formula \(e^{i\alpha} = \cos\alpha +
 i\sin\alpha\). One complex number have unique Cartesian form but do not have a
 unique expoential form. Taking \(1+i\) for example, its expoential form can be
 \(\sqrt{2}e^{i(\pi/4 + 2n\pi)}, n\in \{ \ldots, -2,-1,0,1,2,\ldots \}\). When we
-express a complex number in its expoential form, it helps to have a periodic
-concept in mind. In the complex plane \(\mathBB{C}\), a complex number will
+express a complex number in expoential form, it helps to keep a concept of
+rotation in mind. In the complex plane \(\mathbb{C}\), a complex number will
 return to itself if it rotates a multiple of \(2\pi\) around the origin point
-with fixed radius. please keep the concept of roatation in mind and it will
-become increasingly important during our engineering life.
+with radius equal to its modulus. please keep the concept of roatation in mind
+and it will become increasingly important during our later study.
 
 In the development of complex analysis, \(a+ib\) has another form \(r\angle
-\theta\), where \(r\) is the modulus and \(\theta\) is tha argument. Obviously,
-this notation is not as good as the expoential form. We just mention it here for
-the sake of completion. The expoential form will be deployed from now on. 
+\theta\), where \(r\) is the modulus and \(\theta\) the argument (or the angle).
+Obviously, this notation is not as good as the expoential form, espacialy when
+we want to do complex analysis such as differentiation and integration. We just
+mention it here for the sake of completion. The expoential form will be deployed
+from now on.
 
-Every complex number \(a+ib\) can be visualized in the complex plane
-\(\mathbb{C}\). It can be viewed as the point with the coordinate \((a,b)\) in
-the plane or as a vector starting from \(0,0\) to the point \((a,b)\).
-
-Also every complex number \(a+ib\) can be represented in the exponential form
-conveniently through the Euler's formula \(e^{i\alpha} = \cos\alpha +
-i\sin\alpha\).
 
 #+caption: Euler Example
 #+name: EulerExample
@@ -897,7 +863,6 @@ information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
 \end{scope}
 
 \filldraw[fill=green!20,draw=anglecolor] (0,0) -- (2mm,0pt) arc [start angle=0, end angle=70,radius=2mm] -- cycle;
-\node at (35:2.3mm) [anglecolor] {$\alpha$};
 
 \draw[important line,sincolor] (70:1cm) -- node[right=1pt,fill=white] {$\sin\alpha$} (70:1cm |- x axis);
 \draw[important line,coscolor] (70:1cm |- x axis) -- node[at start,below=2pt] {$\cos\alpha$} (0,0);
@@ -912,9 +877,11 @@ information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
 
 \filldraw[fill=black,radius=0.3mm]  (-140:2.025cm) circle ;
 
-\filldraw[fill=red!20,draw=red,fill opacity=0.5] (0,0) -- (1.5mm,0pt) arc [start angle=0, end angle=-140,radius=1.5mm] -- cycle;
-\node at (35:2.3mm) [anglecolor] {$\alpha$};
+\filldraw[fill=red!20,draw=red] (0,0) -- (1.5mm,0pt) arc [start angle=0, end angle=-140,radius=1.5mm] -- cycle;
+\node at (35:1.6mm) [anglecolor] {$\alpha$};
 \node at (-70:1.mm) [red] {$\theta$}; 
+
+
 \end{tikzpicture}
 #+end_src
 
@@ -927,8 +894,121 @@ information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
 #+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex(eulerEquation.pdf,eulerEquation.png)}}}
 
-Using Euler's formula, we can transform a complex number from it's Cartesian
-form and Polar form back and forth easily.
+Now, let's go back to Problem [[prob:1-1]] and Problem [[prob:1-2]]. It's easy to figure
+the answers out using the Euler's formula. Let's do more to show them on the
+complex plane keeping the concept of rotation in mind. 
+
+#+caption: Problem 1.1
+#+name: Problem1_1
+#+header: :file  "../../img/tikz/problem1_1.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+[scale=3,line cap=round,
+axes/.style=,
+important line/.style={very thick},
+information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
+
+\colorlet{anglecolor}{green!50!black}
+\colorlet{sincolor}{red}
+\colorlet{tancolor}{orange!80!black}
+\colorlet{coscolor}{blue}
+\coordinate (0) at (0,0);
+
+
+\draw[step=0.25cm,gray!50] (-1.5,-1.5) grid (1.5,1.5);
+\draw[radius=1cm] (0,0) circle;
+
+%% pi/4
+\draw[-Stealth,important line] (0,0) -- (45:1.414cm)
+     node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
+     node[below right] {$\sqrt{2}e^{i\pi/4},\sqrt{2}e^{i9\pi/4}$};
+
+\draw[-Stealth,important line] (0,0) -- (45:1.414cm) coordinate (45)
+     node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
+     node[below right] {$\sqrt{2}e^{i\pi/4},\sqrt{2}e^{i9\pi/4}$};
+\filldraw[fill=blue!20,draw=anglecolor,nearly opaque] (0,0) -- (4mm,0pt) arc [start angle=0, end angle=45,radius=4mm]-- cycle;
+\draw [draw=anglecolor,->] (4mm,0pt) arc [start angle=0, end angle=45,radius=4mm] node[midway,right] {$\pi/4$};
+
+\draw[-Stealth,important line] (0,0) -- (-45:1.414cm) coordinate (m45)
+     node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
+     node[below right] {$\sqrt{2}e^{-i\pi/4},\sqrt{2}e^{-i9\pi/4}$};
+\filldraw[fill=cyan!20,draw=anglecolor,nearly opaque] (0,0) -- (4mm,0pt) arc [start angle=0, end angle=-45,radius=4mm]-- cycle;
+\draw [draw=anglecolor,->] (4mm,0pt) arc [start angle=0, end angle=-45,radius=4mm] node[midway,right] {$-i\pi/4$};
+%% pi/2
+\draw[-Stealth,important line] (0,0) -- (90:1cm)
+     node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
+     node[above right] {$e^{i\pi/2},e^{i5\pi/2}$};
+\filldraw[fill=blue!20!green,draw=anglecolor,nearly opaque] (0,0) -- (3mm,0pt) arc [start angle=0, end angle=90,radius=3mm]-- cycle;
+\draw [draw=anglecolor,->] (3mm,0pt) arc [start angle=0, end angle=90,radius=3mm] node[at end,above right] {$\pi/2$};
+
+
+\draw[-Stealth,important line] (0,0) -- (-90:1cm)
+     node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
+     node[below right] {$e^{-i\pi/2},e^{-i5\pi/2}$};
+\filldraw[fill=cyan!20!red,draw=anglecolor,nearly opaque] (0,0) -- (3mm,0pt) arc [start angle=0, end angle=-90,radius=3mm]-- cycle;
+\draw [draw=anglecolor,->] (3mm,0pt) arc [start angle=0, end angle=-90,radius=3mm] node[at end,below right] {$-\pi/2$};
+
+
+\draw[-Stealth,important line] (0,0) -- (180:0.5cm) coordinate (number1) node[above] {$\color{green}{ \frac{1}{2}e^{i\pi} }$};
+\draw[-Stealth,important line] (0,0) -- (180:0.5cm) coordinate (number1) node[below] {$\color{red}{ \frac{1}{2}e^{-i\pi} }$};
+\coordinate (pointAtX) at (2,0) ;
+\fill[black,radius=1pt] (number1) circle;
+\draw pic [ draw,->,draw=green,fill=green!30,nearly opaque] {angle=pointAtX--O--number1};
+\node[green] at (-1.5mm,2mm) {$\color{black}{\pi}$};
+\draw pic [ draw,<-,draw=red,fill=red!30,nearly opaque] {angle=number1--O--pointAtX};
+\node[red] at (-1.5mm,-2mm) {$\color{black}{-\pi}$};
+
+
+\begin{scope}[axes]
+  \draw[->] (-1.6,0)  -- (1.6,0) node[at end,below] {$\mathrm{Re}$} coordinate(x axis);
+  \draw[->] (0,-1.6) -- (0,1.6) node[at end,right] {$\mathrm{Im}$} coordinate(y axis);
+
+  \foreach \x/\xtext in {-1,1}
+    \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\xtext$};
+  \foreach \y/\ytext in {-1,1}
+    \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
+\end{scope}
+
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: Problem1_1
+[[file:../../img/tikz/problem1_1.pdf]]
+
+
+
+#+caption: visualized the complex numbers from Problem [[problem1-1]] in the complex plan
+#+name: problem1-1
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.5\textwidth :align center
+{{{if-latex(problem1_1.pdf,problem1_1.png)}}}
+
+From Figure [[problem1-1]] , taking \(\color{green}{\tfrac{1}{2}e^{i\pi}}\) and
+\(\color{red}{\tfrac{1}{2}e^{-i\pi}}\) for example, in the complex plane, they
+are the same point \(-\tfrac{1}{2}\) which means \(-\tfrac{1}{2}\) can be
+reached by rotating \(\tfrac{1}{2}\) with angle \(\pi\) clockwise or with angle
+\(-\pi\) anti-clockwise. Essentially, this is because that \(e^{i\theta} =
+e^{i(\theta + 2n\pi)}, n\in \{\ldots,-2,-1,0,1,2,\ldots\}\). It's
+straightforward that \(e^{i\pi} = e^{i(\pi + 2(-1)\pi)} = e^{-i\pi}\).
+
+In the end of Problem [[prob:1-1]] and Problem [[prob:1-2]], I want to say more about
+expressing \(\tfrac{1+i}{1-i}\) in its polar form. In general, there are two
+methods:
+1. multiply the fraction's numerator and denominator by \(( 1 + i )\)
+
+   So we have:
+   \begin{eqnarray*}
+   \frac{1+i}{1-i}& = & \frac{(1+i)(1+i)}{(1-i)(1+i)} \\
+   &=& \frac{2i}{2} = i
+   \end{eqnarray*}
+
+2. express the numerator and denominator in expoential form first, then do the
+   following calculation.
+
+   \begin{eqnarray*}
+   \frac{1+i}{1-i} &=& \frac{\sqrt{2}e^{i\pi/4}}{\sqrt{2}e^{-i\pi/4}}  \\
+   &=& e^{i2\pi/4} = e^{i\pi/2} = i
+   \end{eqnarray*} 
 
 
 * Projects                                         :project:
