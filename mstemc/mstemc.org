@@ -751,14 +751,14 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 <2020-01-02 Thu 23:32>
 
 {{{titlepage(eulerEquation)}}}
+
 *** Basic Problems With Answers
 [2020-01-08 Wed 21:19]
 
 
-#+ATTR_LATEX: :options []{prob:1-1}
-#+NAME: prob:1-1
+#+name: prob11
 #+begin_prob
-Express each of the following complex numbers in /Cartesian/ form \(x+iy\):
+Problem 1.1: Express each of the following complex numbers in /Cartesian/ form \(x+iy\):
 \begin{equation*}
 \begin{array}{ccc}
  \frac{1}{2}e^{i\pi}  & \frac{1}{2}e^{-i\pi}  & e^{i\pi/2}  \\
@@ -768,10 +768,9 @@ Express each of the following complex numbers in /Cartesian/ form \(x+iy\):
 \end{equation*}
 #+end_prob
 
-#+ATTR_LATEX: :options []{prob:1-2}
-#+NAME: prob:1-2
+#+name: prob12
 #+begin_prob
-Express each of the following complex numbers in /polar/ form (\(re^{i\theta},
+Problem 1.2: Express each of the following complex numbers in /polar/ form (\(re^{i\theta},
 -\pi < \theta \leq \pi\)):
 \begin{equation*}
 \begin{array}{c{3cm}c{3cm}c{3cm}}
@@ -783,7 +782,7 @@ i(1-i)  & \frac{1+i}{1-i}  & \frac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}}
 #+end_prob
 
 First, let's figure them out using the Euler's formula. For the nine complex
-numbers in Problem [[prob:1-1]], we have:
+numbers in  [[prob11][Problem 1.1]], we have:
 \begin{eqnarray*}
 \tfrac{1}{2} e^{i\pi } &=&  \tfrac{1}{2} (\cos(\pi) + i\sin(\pi) ) = \tfrac{1}{2} \cos(\pi) = -\tfrac{1}{2} \\
 \tfrac{1}{2} e^{-i\pi} &=& \tfrac{1}{2}  (\cos(-\pi) + i\sin(-\pi) ) = \tfrac{1}{2} \cos(-\pi) = -\tfrac{1}{2} \\
@@ -796,7 +795,7 @@ e^{i5\pi/2} &=& \cos(5\pi/2) + i \sin(5\pi/2) = \cos(2\pi + \pi/2) + i \sin(2\pi
  \sqrt{2} e^{-i \pi/4} &=& \sqrt{2} ( \cos(-\pi/4) + i \sin(-\pi/4) ) = 1 - i
 \end{eqnarray*}
 
-For the nine complex numbers in Problem [[prob:1-2]] , we have:
+For the nine complex numbers in  [[prob12][Problem 1.2]] , we have:
 
 \begin{eqnarray*}
  5 &=& 5 e^{i0} = 5 e^{i(2\pi n)}, n\in \{\ldots, -2,-1,0,1,2,\ldots \} \\
@@ -879,7 +878,7 @@ information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
 
 \filldraw[fill=red!20,draw=red] (0,0) -- (1.5mm,0pt) arc [start angle=0, end angle=-140,radius=1.5mm] -- cycle;
 \node at (35:1.6mm) [anglecolor] {$\alpha$};
-\node at (-70:1.mm) [red] {$\theta$}; 
+\node at (-70:1.mm) [red] {$\theta$};
 
 
 \end{tikzpicture}
@@ -894,19 +893,20 @@ information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
 #+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex(eulerEquation.pdf,eulerEquation.png)}}}
 
-Now, let's go back to Problem [[prob:1-1]] and Problem [[prob:1-2]]. It's easy to figure
-the answers out using the Euler's formula. Let's do more to show them on the
-complex plane keeping the concept of rotation in mind. 
+Now, let's go back to [[prob11][Problem 1.1]] and Problem [[prob12][Problem
+1.2]]. It's easy to figure the answers out using the Euler's formula. Let's do
+more to show them on the complex plane keeping the concept of rotation in mind.
 
 #+caption: Problem 1.1
 #+name: Problem1_1
-#+header: :file  "../../img/tikz/problem1_1.pdf"
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/problem1_1.pdf"
 #+begin_src latex -n -r :results raw :exports none
 \begin{tikzpicture}
 [scale=3,line cap=round,
 axes/.style=,
 important line/.style={very thick},
 information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
+
 
 \colorlet{anglecolor}{green!50!black}
 \colorlet{sincolor}{red}
@@ -973,14 +973,13 @@ information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
 #+end_src
 
 #+RESULTS: Problem1_1
-[[file:../../img/tikz/problem1_1.pdf]]
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/problem1_1.pdf]]
 
 
-
-#+caption: visualized the complex numbers from Problem [[problem1-1]] in the complex plan
+#+caption: visualized the complex numbers from Problem [[prob11][Problem 1.1]] in the complex plan
 #+name: problem1-1
 #+ATTR_HTML:  :width 80% :align center
-#+ATTR_LATEX: :width 0.5\textwidth :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex(problem1_1.pdf,problem1_1.png)}}}
 
 From Figure [[problem1-1]] , taking \(\color{green}{\tfrac{1}{2}e^{i\pi}}\) and
@@ -991,9 +990,9 @@ reached by rotating \(\tfrac{1}{2}\) with angle \(\pi\) clockwise or with angle
 e^{i(\theta + 2n\pi)}, n\in \{\ldots,-2,-1,0,1,2,\ldots\}\). It's
 straightforward that \(e^{i\pi} = e^{i(\pi + 2(-1)\pi)} = e^{-i\pi}\).
 
-In the end of Problem [[prob:1-1]] and Problem [[prob:1-2]], I want to say more about
-expressing \(\tfrac{1+i}{1-i}\) in its polar form. In general, there are two
-methods:
+In the end of [[prob11][Problem 1.1]] and [[prob12][Problem 1.2]], I want to say
+more about expressing \(\tfrac{1+i}{1-i}\) in its polar form. There are two
+methods to get the polar form:
 1. multiply the fraction's numerator and denominator by \(( 1 + i )\)
 
    So we have:
@@ -1008,7 +1007,21 @@ methods:
    \begin{eqnarray*}
    \frac{1+i}{1-i} &=& \frac{\sqrt{2}e^{i\pi/4}}{\sqrt{2}e^{-i\pi/4}}  \\
    &=& e^{i2\pi/4} = e^{i\pi/2} = i
-   \end{eqnarray*} 
+   \end{eqnarray*}
+
+#+ATTR_LATEX: :options []{prob:1.3}
+#+NAME: prob:1.3
+#+begin_prob
+Problem 1.3: Determine the values of \(P_{\infty}\) and \(E_{\infty}\) for each
+of the following signals:
+\begin{equation*}
+\begin{array}{ll}
+\mathrm{(a)} \quad x_{1}(t) = e^{-2t}u(t) & \mathrm{(b)} \quad x_{2}(t) = e^{i(2t + \pi/4)} \\
+ \mathrm{(c)} \quad x_{3}(t) = \cos(t) & \mathrm{(d)} \quad x_{1}[n] = (\tfrac{1}{2})^{n} u[n] \\
+ \mathrm{( e )} \quad x_{2}[n] = e^{i(\pi/2n + \pi/8)} & \mathrm{(f)} \quad x_{3}[n] = \cos(\tfrac{\pi}{4}n)
+\end{array}
+\end{equation*}
+#+end_prob
 
 
 * Projects                                         :project:

@@ -2,7 +2,6 @@
 \documentclass[koma,a4paper,utopia,12pt,listings-color,microtype,paralist,colorlinks,urlcolor=red]{org-article}
 \usepackage{tikz}
 \usetikzlibrary{arrows,decorations.pathmorphing,,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.misc,mindmap,calendar,shadows,mindmap,calendar,graphdrawing,trees}
-               \usepackage{tikz}
 \author{Eason}
 \date{\today}
 \title{signals and systems chapter 1 problems}
@@ -41,40 +40,130 @@
 \hspace{0pt}\\
 
 summary of this post
+
 \section{Basic Problems With Answers}
-\label{sec:org8f261cc}
+\label{sec:orgf4c241b}
 
 
 
-\begin{prob}[]{prob:1.1}
-Express each of the following complex numbers in \emph{Cartesian} form \(x+iy\):
+\begin{prob}
+Problem 1.1: Express each of the following complex numbers in \emph{Cartesian} form \(x+iy\):
 \begin{equation*}
-\begin{array}
-\quad \frac{1}{2}e^{i\pi}  & \frac{1}{2}e^{-i\pi}  & e^{i\pi/2}  \\
+\begin{array}{ccc}
+ \frac{1}{2}e^{i\pi}  & \frac{1}{2}e^{-i\pi}  & e^{i\pi/2}  \\
  e^{-i\pi/2}         & e^{i5\pi/2}  & \sqrt{2}e^{i\pi/4}  \\
- \sqrt{2}e^{i9\pi/4} & \sqrt{2}e^{-9i\pi/4}  & \sqrt{2} e^{-i\pi/4}
+ \sqrt{2}e^{i9\pi/4} & \sqrt{2}e^{-i9\pi/4}  & \sqrt{2} e^{-i\pi/4}
 \end{array}
 \end{equation*}
-\label{prob:1.1}
+\label{prob11}
 \end{prob}
 
-\begin{prob}[]{prob:1.2}
-Express each of the following complex numbers in \emph{polar} form (\(re^{i\theta},
--\pi < \theta \leq -\pi\)): \(5\),\(-2\),\(-3i\),\(\frac{1}{2} -
-i\frac{\sqrt{3}}{2}\), \(1 + i\), \((1-i)^{2}\), \(i(1-i)\), \((1+i)/(1-i)\), \((\sqrt{2} +i\sqrt{2})/ (1 +i\sqrt{3})\)
-\label{prob:1.2}
+\begin{prob}
+Problem 1.2: Express each of the following complex numbers in \emph{polar} form (\(re^{i\theta},
+-\pi < \theta \leq \pi\)):
+\begin{equation*}
+\begin{array}{c{3cm}c{3cm}c{3cm}}
+5 & -2 & -3i \\
+\frac{1}{2} - i \frac{\sqrt{3}}{2} & 1+i & (1-i)^{2} \\
+i(1-i)  & \frac{1+i}{1-i}  & \frac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}}
+\end{array}
+\end{equation*}
+\label{prob12}
 \end{prob}
+
+First, let's figure them out using the Euler's formula. For the nine complex
+numbers in  \hyperref[prob11]{Problem 1.1}, we have:
+\begin{eqnarray*}
+\tfrac{1}{2} e^{i\pi } &=&  \tfrac{1}{2} (\cos(\pi) + i\sin(\pi) ) = \tfrac{1}{2} \cos(\pi) = -\tfrac{1}{2} \\
+\tfrac{1}{2} e^{-i\pi} &=& \tfrac{1}{2}  (\cos(-\pi) + i\sin(-\pi) ) = \tfrac{1}{2} \cos(-\pi) = -\tfrac{1}{2} \\
+e^{i\pi/2} &=& \cos(\pi/2) + i \sin(\pi/2) = i \\
+e^{-i\pi/2} &=& \cos(-\pi/2) + i \sin(-\pi/2) = -i \\
+e^{i5\pi/2} &=& \cos(5\pi/2) + i \sin(5\pi/2) = \cos(2\pi + \pi/2) + i \sin(2\pi + \pi/2) = i \sin(\pi/2) = i \\
+\sqrt{2}e^{i\pi/4} &=& \sqrt{2} ( \cos(\pi/4) + i \sin(\pi/4) ) = \sqrt{2} ( \tfrac{\sqrt{2}}{2} + i\tfrac{\sqrt{2}}{2}  ) = 1 + i \\
+ \sqrt{2} e^{i9 \pi/4} &=& \sqrt{2} ( \cos(9\pi/4) + i \sin(9\pi/4) ) = 1 + i \\
+ \sqrt{2} e^{-i9 \pi/4} &=& \sqrt{2} ( \cos(-9\pi/4) + i \sin(-9\pi/4) ) = 1 - i \\
+ \sqrt{2} e^{-i \pi/4} &=& \sqrt{2} ( \cos(-\pi/4) + i \sin(-\pi/4) ) = 1 - i
+\end{eqnarray*}
+
+For the nine complex numbers in  \hyperref[prob12]{Problem 1.2} , we have:
+
+\begin{eqnarray*}
+ 5 &=& 5 e^{i0} = 5 e^{i(2\pi n)}, n\in \{\ldots, -2,-1,0,1,2,\ldots \} \\
+ -2 &=& 2 e^{i\pi} = -2 e^{i0} \\
+ -3i &=& 3 e^{-i\pi} \\
+ \tfrac{1}{2} - i \tfrac{\sqrt{3}}{2}  &=& e^{-i\pi/3} \\
+ 1+i &=& \sqrt{2} e^{i\pi/4} \\
+ (1-i)^{2} &=& ( \sqrt{2} e^{-i\pi/4} )^{2} = 2 e^{-i\pi/2} \\
+ i(1-i) &=& 1 - i = \sqrt{2} e^{-i\pi/4} \\
+ \tfrac{1+i}{1-i} &=& \tfrac{ \sqrt{2}e^{i\pi/4} } { \sqrt{2}e^{-i\pi/4} } = e^{i\pi/2} \\
+ \tfrac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}} &=& \tfrac{ 2e^{i\pi/4} }{ 2 e^{i\pi/3} } = e^{-i\pi/12}
+\end{eqnarray*}
 
 
 Every complex number \(a+ib\) can be visualized in the complex plane
-\(\mathbb{C}\). It can be viewed as the point with the coordinate \((a,b)\) in
-the plane or as a vector starting from \(0,0\) to the point \((a,b)\).
+\(\mathbb{C}\). It can be viewed either as the point with the coordinate
+\((a,b)\) or as a vector starting from \(0,0\) to the point \((a,b)\).
 
 Also every complex number \(a+ib\) can be represented in the exponential form
-conveniently through the Euler's formula \(e^{i\alpha} = \cos\alpha +
-i\sin\alpha\).
+conveniently by using the Euler's formula \(e^{i\alpha} = \cos\alpha +
+i\sin\alpha\). One complex number have unique Cartesian form but do not have a
+unique expoential form. Taking \(1+i\) for example, its expoential form can be
+\(\sqrt{2}e^{i(\pi/4 + 2n\pi)}, n\in \{ \ldots, -2,-1,0,1,2,\ldots \}\). When we
+express a complex number in expoential form, it helps to keep a concept of
+rotation in mind. In the complex plane \(\mathbb{C}\), a complex number will
+return to itself if it rotates a multiple of \(2\pi\) around the origin point
+with radius equal to its modulus. please keep the concept of roatation in mind
+and it will become increasingly important during our later study.
+
+In the development of complex analysis, \(a+ib\) has another form \(r\angle
+\theta\), where \(r\) is the modulus and \(\theta\) the argument (or the angle).
+Obviously, this notation is not as good as the expoential form, espacialy when
+we want to do complex analysis such as differentiation and integration. We just
+mention it here for the sake of completion. The expoential form will be deployed
+from now on.
+
 
 \begin{center}
 \includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/eulerEquation.pdf}
 \end{center}
+
+Now, let's go back to \hyperref[prob11]{Problem 1.1} and Problem \hyperref[prob12]{Problem
+1.2}. It's easy to figure the answers out using the Euler's formula. Let's do
+more to show them on the complex plane keeping the concept of rotation in mind.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/problem1_1.pdf}
+\caption{\label{problem1-1}
+visualized the complex numbers from Problem \hyperref[prob11]{Problem 1.1} in the complex plan}
+\end{figure}
+
+From Figure \ref{problem1-1} , taking \(\color{green}{\tfrac{1}{2}e^{i\pi}}\) and
+\(\color{red}{\tfrac{1}{2}e^{-i\pi}}\) for example, in the complex plane, they
+are the same point \(-\tfrac{1}{2}\) which means \(-\tfrac{1}{2}\) can be
+reached by rotating \(\tfrac{1}{2}\) with angle \(\pi\) clockwise or with angle
+\(-\pi\) anti-clockwise. Essentially, this is because that \(e^{i\theta} =
+e^{i(\theta + 2n\pi)}, n\in \{\ldots,-2,-1,0,1,2,\ldots\}\). It's
+straightforward that \(e^{i\pi} = e^{i(\pi + 2(-1)\pi)} = e^{-i\pi}\).
+
+In the end of \hyperref[prob11]{Problem 1.1} and \hyperref[prob11]{Problem 1.1}, I want to say
+more about expressing \(\tfrac{1+i}{1-i}\) in its polar form. There are two
+methods to get the polar form:
+\begin{enumerate}
+\item multiply the fraction's numerator and denominator by \(( 1 + i )\)
+
+So we have:
+\begin{eqnarray*}
+\frac{1+i}{1-i}& = & \frac{(1+i)(1+i)}{(1-i)(1+i)} \\
+&=& \frac{2i}{2} = i
+\end{eqnarray*}
+
+\item express the numerator and denominator in expoential form first, then do the
+following calculation.
+
+\begin{eqnarray*}
+\frac{1+i}{1-i} &=& \frac{\sqrt{2}e^{i\pi/4}}{\sqrt{2}e^{-i\pi/4}}  \\
+&=& e^{i2\pi/4} = e^{i\pi/2} = i
+\end{eqnarray*}
+\end{enumerate}
 \end{document}
