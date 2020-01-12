@@ -9,7 +9,7 @@
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+LaTeX_CLASS: org-article
 #+LaTeX_CLASS_OPTIONS: [koma,a4paper,utopia,12pt,listings-color,microtype,paralist,colorlinks,urlcolor=red]
-#+PROPERTY: header-args :fit yes :border 0cm :results raw :exports none :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 900 -quality 900  -strip -define profile:skip="*"  :headers '("\\usepackage{tikz} \\usetikzlibrary{arrows,arrows.meta,decorations.pathmorphing,,decorations.pathreplacing,backgrounds,positioning,fit,petri,calc,intersections,through,mindmap,calendar,shadows,mindmap,calendar,graphs,graphdrawing,trees,shapes.misc,angles}")
+#+PROPERTY: header-args :fit yes :border 0cm :results raw :exports none :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 900 -quality 900 -transparent white -flatten -strip -define profile:skip="*"  :headers '("\\usepackage{pgfplots} \\pgfplotsset{compat=1.16} \\usepackage{tikz} \\usetikzlibrary{arrows,arrows.meta,decorations.pathmorphing,,decorations.pathreplacing,backgrounds,positioning,fit,petri,calc,intersections,through,mindmap,calendar,shadows,mindmap,calendar,graphs,graphdrawing,trees,shapes.misc,quotes,angles}")
 #+HUGO_BASE_DIR: ../../mstemc_hugo/
 #+HUGO: more
 #+SEQ_TODO: TODO NEXT DONE
