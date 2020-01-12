@@ -3,7 +3,7 @@
 # --
 
 #+caption: ${2:caption}
-#+name: $2
+#+name: $1
 #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/${1:figname}.png"
 #+begin_src latex -n -r :results raw :exports none
 \begin{tikzpicture}
