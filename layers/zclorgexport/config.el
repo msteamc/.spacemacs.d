@@ -122,18 +122,48 @@
 ;;(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
 (setq-default TeX-engine "luatex")
 (setq org-latex-compiler "lualatex")
-(setq org-latex-pdf-process '("%latex -interaction nonstopmode -output-directory %o %f"
-                              "bibtex %b"
-                              "%latex -interaction nonstopmode -output-directory %o %f"
-                              "%latex -interaction nonstopmode -output-directory %o %f"
-                              "rm -rf %b.out %b.log %b.bbl %b.thm %b.aux auto "
+(setq org-latex-pdf-process
+      '("%latex -interaction nonstopmode  -output-directory %o %f"
+        "bibtex %b"
+        "%latex -interaction nonstopmode  -output-directory %o %f"
+        "%latex -interaction nonstopmode  -output-directory %o %f"
+        "rm -rf %b.out %b.log %b.bbl %b.thm %b.aux auto "
                               ))
+
 (add-hook 'LaTeX-mode-hook
           (lambda()
             (add-to-list 'TeX-command-list '("PdfLaTeX" "%`pdflatex%(mode)%' %t" TeX-run-TeX nil t))
-            (add-to-list 'TeX-command-list '("LuaLatex" "%`lualatex%(mode)%' %t" TeX-run-TeX nil t))
+            (add-to-list 'TeX-command-list '("LuaLatex" "%`lualatex  --shell-escape %(mode)%' %t" TeX-run-TeX nil t))
             (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
             (setq TeX-command-default "pdflatex")))
+
+
+(setq org-preview-latex-process-alist
+   (quote
+    ((dvipng :programs
+             ("latex" "dvipng")
+             :description "dvi > png" :message "you need to install the programs: latex and dvipng." :image-input-type "dvi" :image-output-type "png" :image-size-adjust
+             (1.0 . 1.0)
+             :latex-compiler
+             ("latex -interaction nonstopmode -output-directory %o %f")
+             :image-converter
+             ("dvipng -fg %F -bg %B -D %D -T tight -o %O %f"))
+     (dvisvgm :programs
+              ("latex" "dvisvgm")
+              :description "dvi > svg" :message "you need to install the programs: latex and dvisvgm." :use-xcolor t :image-input-type "dvi" :image-output-type "svg" :image-size-adjust
+              (1.7 . 1.5)
+              :latex-compiler
+              ("latex -interaction nonstopmode -output-directory %o %f")
+              :image-converter
+              ("dvisvgm %f -n -b min -c %S -o %O"))
+     (imagemagick :programs
+                  ("latex" "convert")
+                  :description "pdf > png" :message "you need to install the programs: latex and imagemagick." :use-xcolor t :image-input-type "pdf" :image-output-type "png" :image-size-adjust
+                  (1.0 . 1.0)
+                  :latex-compiler
+                  ("latex  -interaction nonstopmode --shell-escape -output-directory %o %f")
+                  :image-converter
+                  ("convert -density %D -trim -antialias %f -quality 100 %O")))))
 
 ;; (add-to-list 'org-latex-packages-alist
 ;;              '("" "tikz" t))
@@ -144,6 +174,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((latex . t)))
+
 
 (setq org-image-actual-width 600)
 
