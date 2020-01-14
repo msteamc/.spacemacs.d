@@ -755,273 +755,388 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 *** Basic Problems With Answers
 [2020-01-08 Wed 21:19]
 
+**** Problem 1.1 and Problem 1.2
+     [2020-01-12 Sun 12:45]
 
-#+name: prob11
-#+begin_prob
-Problem 1.1: Express each of the following complex numbers in /Cartesian/ form \(x+iy\):
-\begin{equation*}
-\begin{array}{ccc}
- \frac{1}{2}e^{i\pi}  & \frac{1}{2}e^{-i\pi}  & e^{i\pi/2}  \\
- e^{-i\pi/2}         & e^{i5\pi/2}  & \sqrt{2}e^{i\pi/4}  \\
- \sqrt{2}e^{i9\pi/4} & \sqrt{2}e^{-i9\pi/4}  & \sqrt{2} e^{-i\pi/4}
-\end{array}
-\end{equation*}
-#+end_prob
 
-#+name: prob12
-#+begin_prob
-Problem 1.2: Express each of the following complex numbers in /polar/ form (\(re^{i\theta},
--\pi < \theta \leq \pi\)):
-\begin{equation*}
-\begin{array}{c{3cm}c{3cm}c{3cm}}
-5 & -2 & -3i \\
-\frac{1}{2} - i \frac{\sqrt{3}}{2} & 1+i & (1-i)^{2} \\
-i(1-i)  & \frac{1+i}{1-i}  & \frac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}}
-\end{array}
-\end{equation*}
-#+end_prob
+ #+name: prob11
+ #+begin_prob
+ Problem 1.1: Express each of the following complex numbers in /Cartesian/ form \(x+iy\):
+ \begin{equation*}
+ \begin{array}{ccc}
+  \frac{1}{2}e^{i\pi}  & \frac{1}{2}e^{-i\pi}  & e^{i\pi/2}  \\
+  e^{-i\pi/2}         & e^{i5\pi/2}  & \sqrt{2}e^{i\pi/4}  \\
+  \sqrt{2}e^{i9\pi/4} & \sqrt{2}e^{-i9\pi/4}  & \sqrt{2} e^{-i\pi/4}
+ \end{array}
+ \end{equation*}
+ #+end_prob
 
-First, let's figure them out using the Euler's formula. For the nine complex
-numbers in  [[prob11][Problem 1.1]], we have:
+ #+name: prob12
+ #+begin_prob
+ Problem 1.2: Express each of the following complex numbers in /polar/ form (\(re^{i\theta},
+ -\pi < \theta \leq \pi\)):
+ \begin{equation*}
+ \begin{array}{c{3cm}c{3cm}c{3cm}}
+ 5 & -2 & -3i \\
+ \frac{1}{2} - i \frac{\sqrt{3}}{2} & 1+i & (1-i)^{2} \\
+ i(1-i)  & \frac{1+i}{1-i}  & \frac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}}
+ \end{array}
+ \end{equation*}
+ #+end_prob
+
+ First, let's figure them out using the Euler's formula. For the nine complex
+ numbers in  [[prob11][Problem 1.1]], we have:
+ \begin{eqnarray*}
+ \tfrac{1}{2} e^{i\pi } &=&  \tfrac{1}{2} (\cos(\pi) + i\sin(\pi) ) = \tfrac{1}{2} \cos(\pi) = -\tfrac{1}{2} \\
+ \tfrac{1}{2} e^{-i\pi} &=& \tfrac{1}{2}  (\cos(-\pi) + i\sin(-\pi) ) = \tfrac{1}{2} \cos(-\pi) = -\tfrac{1}{2} \\
+ e^{i\pi/2} &=& \cos(\pi/2) + i \sin(\pi/2) = i \\
+ e^{-i\pi/2} &=& \cos(-\pi/2) + i \sin(-\pi/2) = -i \\
+ e^{i5\pi/2} &=& \cos(5\pi/2) + i \sin(5\pi/2) = \cos(2\pi + \pi/2) + i \sin(2\pi + \pi/2) = i \sin(\pi/2) = i \\
+ \sqrt{2}e^{i\pi/4} &=& \sqrt{2} ( \cos(\pi/4) + i \sin(\pi/4) ) = \sqrt{2} ( \tfrac{\sqrt{2}}{2} + i\tfrac{\sqrt{2}}{2}  ) = 1 + i \\
+  \sqrt{2} e^{i9 \pi/4} &=& \sqrt{2} ( \cos(9\pi/4) + i \sin(9\pi/4) ) = 1 + i \\
+  \sqrt{2} e^{-i9 \pi/4} &=& \sqrt{2} ( \cos(-9\pi/4) + i \sin(-9\pi/4) ) = 1 - i \\
+  \sqrt{2} e^{-i \pi/4} &=& \sqrt{2} ( \cos(-\pi/4) + i \sin(-\pi/4) ) = 1 - i
+ \end{eqnarray*}
+
+ For the nine complex numbers in  [[prob12][Problem 1.2]] , we have:
+
+ \begin{eqnarray*}
+  5 &=& 5 e^{i0} = 5 e^{i(2\pi n)}, n\in \{\ldots, -2,-1,0,1,2,\ldots \} \\
+  -2 &=& 2 e^{i\pi} = -2 e^{i0} \\
+  -3i &=& 3 e^{-i\pi} \\
+  \tfrac{1}{2} - i \tfrac{\sqrt{3}}{2}  &=& e^{-i\pi/3} \\
+  1+i &=& \sqrt{2} e^{i\pi/4} \\
+  (1-i)^{2} &=& ( \sqrt{2} e^{-i\pi/4} )^{2} = 2 e^{-i\pi/2} \\
+  i(1-i) &=& 1 - i = \sqrt{2} e^{-i\pi/4} \\
+  \tfrac{1+i}{1-i} &=& \tfrac{ \sqrt{2}e^{i\pi/4} } { \sqrt{2}e^{-i\pi/4} } = e^{i\pi/2} \\
+  \tfrac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}} &=& \tfrac{ 2e^{i\pi/4} }{ 2 e^{i\pi/3} } = e^{-i\pi/12}
+ \end{eqnarray*}
+
+
+ Every complex number \(a+ib\) can be visualized in the complex plane
+ \(\mathbb{C}\). It can be viewed either as the point with the coordinate
+ \((a,b)\) or as a vector starting from \(0,0\) to the point \((a,b)\).
+
+ Also every complex number \(a+ib\) can be represented in the exponential form
+ conveniently by using the Euler's formula \(e^{i\alpha} = \cos\alpha +
+ i\sin\alpha\). One complex number have unique Cartesian form but do not have a
+ unique expoential form. Taking \(1+i\) for example, its expoential form can be
+ \(\sqrt{2}e^{i(\pi/4 + 2n\pi)}, n\in \{ \ldots, -2,-1,0,1,2,\ldots \}\). When we
+ express a complex number in expoential form, it helps to keep a concept of
+ rotation in mind. In the complex plane \(\mathbb{C}\), a complex number will
+ return to itself if it rotates a multiple of \(2\pi\) around the origin point
+ with radius equal to its modulus. please keep the concept of roatation in mind
+ and it will become increasingly important during our later study.
+
+ In the development of complex analysis, \(a+ib\) has another form \(r\angle
+ \theta\), where \(r\) is the modulus and \(\theta\) the argument (or the angle).
+ Obviously, this notation is not as good as the expoential form, espacialy when
+ we want to do complex analysis such as differentiation and integration. We just
+ mention it here for the sake of completion. The expoential form will be deployed
+ from now on.
+
+
+ #+caption: Euler Example
+ #+name: EulerExample
+ #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/eulerEquation.pdf"
+ #+begin_src latex -n -r  :results raw :exports none
+ \begin{tikzpicture}
+ [scale=3,line cap=round,
+ axes/.style=,
+ important line/.style={very thick},
+ information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
+ \colorlet{anglecolor}{green!50!black}
+ \colorlet{sincolor}{red}
+ \colorlet{tancolor}{orange!80!black}
+ \colorlet{coscolor}{blue}
+
+
+ \draw[step=0.5cm,gray!50] (-2.3,-2.3) grid (2.3,2.3);
+ \draw[radius=1cm] (0,0) circle;
+
+ \begin{scope}[axes]
+   \draw[->] (-2.6,0)  -- (2.6,0) node[at end,below] {$\mathrm{Re}$} coordinate(x axis);
+   \draw[->] (0,-2.6) -- (0,2.6) node[at end,right] {$\mathrm{Im}$} coordinate(y axis);
+
+   \foreach \x/\xtext in {-1,1}
+     \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\xtext$};
+   \foreach \y/\ytext in {-1,1}
+     \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
+ \end{scope}
+
+ \filldraw[fill=green!20,draw=anglecolor] (0,0) -- (2mm,0pt) arc [start angle=0, end angle=70,radius=2mm] -- cycle;
+
+ \draw[important line,sincolor] (70:1cm) -- node[right=1pt,fill=white] {$\sin\alpha$} (70:1cm |- x axis);
+ \draw[important line,coscolor] (70:1cm |- x axis) -- node[at start,below=2pt] {$\cos\alpha$} (0,0);
+
+ \draw (0,0) -- (70:1cm);
+
+ \filldraw[draw=gray,fill=gray,radius=0.5pt](70:1cm) circle node[above right] {\huge ${e^{i\alpha} = { \color{blue}{\cos\alpha} } + i\color{red}{ \sin\alpha} }$};
+
+ \draw[-{Stealth}] (0,0) -- (-140:2cm) node[below=5pt] {\huge $z={ \color{blue}{a} }+i{ \color{red}{b} }=re^{i\theta}$};
+ \draw[important line,red] (-140:2.025cm |- x axis) -- (-140:2.025cm) node[midway,left] {$b$};
+ \draw[important line,blue] (-140:2.025cm |- x axis) -- (0,0) node[midway,above]{$a$};
+
+ \filldraw[fill=black,radius=0.3mm]  (-140:2.025cm) circle ;
+
+ \filldraw[fill=red!20,draw=red] (0,0) -- (1.5mm,0pt) arc [start angle=0, end angle=-140,radius=1.5mm] -- cycle;
+ \node at (35:1.6mm) [anglecolor] {$\alpha$};
+ \node at (-70:1.mm) [red] {$\theta$};
+
+
+ \end{tikzpicture}
+ #+end_src
+
+
+ #+RESULTS: EulerExample
+ [[file:~/Dropbox/mstemc_hugo/static/img/tikz/eulerEquation.pdf]]
+
+
+ #+ATTR_HTML:  :width 80% :align center
+ #+ATTR_LATEX: :width 0.8\textwidth :align center
+ {{{if-latex(eulerEquation.pdf,eulerEquation.png)}}}
+
+ Now, let's go back to [[prob11][Problem 1.1]] and Problem [[prob12][Problem
+ 1.2]]. It's easy to figure the answers out using the Euler's formula. Let's do
+ more to show them on the complex plane keeping the concept of rotation in mind.
+
+ #+caption: Problem 1.1
+ #+name: Problem1_1
+ #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/problem1_1.pdf"
+ #+begin_src latex -n -r :results raw :exports none
+ \begin{tikzpicture}
+ [scale=3,line cap=round,
+ axes/.style=,
+ important line/.style={very thick},
+ information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
+
+
+ \colorlet{anglecolor}{green!50!black}
+ \colorlet{sincolor}{red}
+ \colorlet{tancolor}{orange!80!black}
+ \colorlet{coscolor}{blue}
+ \coordinate (0) at (0,0);
+
+
+ \draw[step=0.25cm,gray!50] (-1.5,-1.5) grid (1.5,1.5);
+ \draw[radius=1cm] (0,0) circle;
+
+ %% pi/4
+ \draw[-Stealth,important line] (0,0) -- (45:1.414cm)
+      node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
+      node[below right] {$\sqrt{2}e^{i\pi/4},\sqrt{2}e^{i9\pi/4}$};
+
+ \draw[-Stealth,important line] (0,0) -- (45:1.414cm) coordinate (45)
+      node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
+      node[below right] {$\sqrt{2}e^{i\pi/4},\sqrt{2}e^{i9\pi/4}$};
+ \filldraw[fill=blue!20,draw=anglecolor,nearly opaque] (0,0) -- (4mm,0pt) arc [start angle=0, end angle=45,radius=4mm]-- cycle;
+ \draw [draw=anglecolor,->] (4mm,0pt) arc [start angle=0, end angle=45,radius=4mm] node[midway,right] {$\pi/4$};
+
+ \draw[-Stealth,important line] (0,0) -- (-45:1.414cm) coordinate (m45)
+      node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
+      node[below right] {$\sqrt{2}e^{-i\pi/4},\sqrt{2}e^{-i9\pi/4}$};
+ \filldraw[fill=cyan!20,draw=anglecolor,nearly opaque] (0,0) -- (4mm,0pt) arc [start angle=0, end angle=-45,radius=4mm]-- cycle;
+ \draw [draw=anglecolor,->] (4mm,0pt) arc [start angle=0, end angle=-45,radius=4mm] node[midway,right] {$-i\pi/4$};
+ %% pi/2
+ \draw[-Stealth,important line] (0,0) -- (90:1cm)
+      node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
+      node[above right] {$e^{i\pi/2},e^{i5\pi/2}$};
+ \filldraw[fill=blue!20!green,draw=anglecolor,nearly opaque] (0,0) -- (3mm,0pt) arc [start angle=0, end angle=90,radius=3mm]-- cycle;
+ \draw [draw=anglecolor,->] (3mm,0pt) arc [start angle=0, end angle=90,radius=3mm] node[at end,above right] {$\pi/2$};
+
+
+ \draw[-Stealth,important line] (0,0) -- (-90:1cm)
+      node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
+      node[below right] {$e^{-i\pi/2},e^{-i5\pi/2}$};
+ \filldraw[fill=cyan!20!red,draw=anglecolor,nearly opaque] (0,0) -- (3mm,0pt) arc [start angle=0, end angle=-90,radius=3mm]-- cycle;
+ \draw [draw=anglecolor,->] (3mm,0pt) arc [start angle=0, end angle=-90,radius=3mm] node[at end,below right] {$-\pi/2$};
+
+
+ \draw[-Stealth,important line] (0,0) -- (180:0.5cm) coordinate (number1) node[above] {$\color{green}{ \frac{1}{2}e^{i\pi} }$};
+ \draw[-Stealth,important line] (0,0) -- (180:0.5cm) coordinate (number1) node[below] {$\color{red}{ \frac{1}{2}e^{-i\pi} }$};
+ \coordinate (pointAtX) at (2,0) ;
+ \fill[black,radius=1pt] (number1) circle;
+ \draw pic [ draw,->,draw=green,fill=green!30,nearly opaque] {angle=pointAtX--O--number1};
+ \node[green] at (-1.5mm,2mm) {$\color{black}{\pi}$};
+ \draw pic [ draw,<-,draw=red,fill=red!30,nearly opaque] {angle=number1--O--pointAtX};
+ \node[red] at (-1.5mm,-2mm) {$\color{black}{-\pi}$};
+
+
+ \begin{scope}[axes]
+   \draw[->] (-1.6,0)  -- (1.6,0) node[at end,below] {$\mathrm{Re}$} coordinate(x axis);
+   \draw[->] (0,-1.6) -- (0,1.6) node[at end,right] {$\mathrm{Im}$} coordinate(y axis);
+
+   \foreach \x/\xtext in {-1,1}
+     \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\xtext$};
+   \foreach \y/\ytext in {-1,1}
+     \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
+ \end{scope}
+
+ \end{tikzpicture}
+ #+end_src
+
+ #+RESULTS: Problem1_1
+ [[file:~/Dropbox/mstemc_hugo/static/img/tikz/problem1_1.pdf]]
+
+
+ #+caption: visualized the complex numbers from Problem [[prob11][Problem 1.1]] in the complex plan
+ #+name: problem1-1
+ #+ATTR_HTML:  :width 80% :align center
+ #+ATTR_LATEX: :width 0.8\textwidth :align center
+ {{{if-latex(problem1_1.pdf,problem1_1.png)}}}
+
+ From Figure [[problem1-1]] , taking \(\color{green}{\tfrac{1}{2}e^{i\pi}}\) and
+ \(\color{red}{\tfrac{1}{2}e^{-i\pi}}\) for example, in the complex plane, they
+ are the same point \(-\tfrac{1}{2}\) which means \(-\tfrac{1}{2}\) can be
+ reached by rotating \(\tfrac{1}{2}\) with angle \(\pi\) clockwise or with angle
+ \(-\pi\) anti-clockwise. Essentially, this is because that \(e^{i\theta} =
+ e^{i(\theta + 2n\pi)}, n\in \{\ldots,-2,-1,0,1,2,\ldots\}\). It's
+ straightforward that \(e^{i\pi} = e^{i(\pi + 2(-1)\pi)} = e^{-i\pi}\).
+
+ In the end of [[prob11][Problem 1.1]] and [[prob12][Problem 1.2]], I want to say
+ more about expressing \(\tfrac{1+i}{1-i}\) in its polar form. There are two
+ methods to get the polar form:
+ 1. multiply the fraction's numerator and denominator by \(( 1 + i )\)
+
+    So we have:
+    \begin{eqnarray*}
+    \frac{1+i}{1-i}& = & \frac{(1+i)(1+i)}{(1-i)(1+i)} \\
+    &=& \frac{2i}{2} = i
+    \end{eqnarray*}
+
+ 2. express the numerator and denominator in expoential form first, then do the
+    following calculation.
+
+    \begin{eqnarray*}
+    \frac{1+i}{1-i} &=& \frac{\sqrt{2}e^{i\pi/4}}{\sqrt{2}e^{-i\pi/4}}  \\
+    &=& e^{i2\pi/4} = e^{i\pi/2} = i
+    \end{eqnarray*}
+**** Problem 1.3
+      [2020-01-12 Sun 12:46]
+
+  #+ATTR_LATEX: :options []{prob:1.3}
+  #+NAME: prob13
+  #+begin_prob
+  Problem 1.3: Determine the values of \(P_{\infty}\) and \(E_{\infty}\) for each
+  of the following signals:
+  \begin{equation*}
+  \begin{array}{ll}
+  \mathrm{(a)} \quad x_{1}(t) = e^{-2t}u(t) & \mathrm{(b)} \quad x_{2}(t) = e^{i(2t + \pi/4)} \\
+   \mathrm{(c)} \quad x_{3}(t) = \cos(t) & \mathrm{(d)} \quad x_{1}[n] = (\tfrac{1}{2})^{n} u[n] \\
+   \mathrm{( e )} \quad x_{2}[n] = e^{i(\pi/2n + \pi/8)} & \mathrm{(f)} \quad x_{3}[n] = \cos(\tfrac{\pi}{4}n)
+  \end{array}
+  \end{equation*}
+  #+end_prob
+
+Before solving this problem, let's review the definition of \(P_{\infty}\) and
+\(E_{\infty}\). For a continuous time signal \(x(t)\), we have
+\begin{eqnarray}
+\label{eq:2}
+E_{\infty}&=& \lim_{T\to \infty} \int_{-T}^{T} |x(t)|^{2}\mathrm{d}t \\
+P_{\infty}&=& \lim_{T\to \infty} \frac{1}{2T}\int_{-T}^{T} |x(t)|^{2}\mathrm{d}t = \lim_{T\to\infty} \frac{E_{\infty}}{2T}
+\end{eqnarray}
+For a discrete time signal \(x[n]\), we have:
+\begin{eqnarray}
+\label{eq:3}
+E_{\infty}&=& \lim_{N\to \infty} \sum_{n=-N}^{+N} |x[n]|^{2} \\
+P_{\infty}&=& \lim_{N\to \infty} \frac{1}{2N+1} \sum_{n=-N}^{+N} |x[n]|^{2} = \lim_{N\to\infty} \frac{E_{\infty}}{2N+1}
+\end{eqnarray}
+
+Equation (\ref{eq:2})(\ref{eq:3}) are not only mathmatical definitions but also
+related to physical quantities such as power and energy in a physical system.
+For an electric circuit, taking the voltage \(v(t)\) and current \(i(t)\) across
+a resistor for example, the power at time \(t\) can be calculated by:
+\begin{equation}
+\label{eq:4}
+p(t) = v(t)i(t) = \frac{v^{2}(t)}{R}
+\end{equation}
+Let's go back to equation (\ref{eq:2}) and equation(\ref{eq:3}), if
+\(E_{\infty}< \infty\) we say that the signal has finite energy otherwise
+infinite energy. If \(P_{\infty} <\infty\) we say that the signal has finite
+power otherwise infinite power.
+
+Next let's determine the values of \(P_{\infty}\) and \(E_{\infty}\) for the
+given signals.
+
+\(\mathbf{(a)}: x_{1}(t)= e^{-2t}u(t)\) :
+
 \begin{eqnarray*}
-\tfrac{1}{2} e^{i\pi } &=&  \tfrac{1}{2} (\cos(\pi) + i\sin(\pi) ) = \tfrac{1}{2} \cos(\pi) = -\tfrac{1}{2} \\
-\tfrac{1}{2} e^{-i\pi} &=& \tfrac{1}{2}  (\cos(-\pi) + i\sin(-\pi) ) = \tfrac{1}{2} \cos(-\pi) = -\tfrac{1}{2} \\
-e^{i\pi/2} &=& \cos(\pi/2) + i \sin(\pi/2) = i \\
-e^{-i\pi/2} &=& \cos(-\pi/2) + i \sin(-\pi/2) = -i \\
-e^{i5\pi/2} &=& \cos(5\pi/2) + i \sin(5\pi/2) = \cos(2\pi + \pi/2) + i \sin(2\pi + \pi/2) = i \sin(\pi/2) = i \\
-\sqrt{2}e^{i\pi/4} &=& \sqrt{2} ( \cos(\pi/4) + i \sin(\pi/4) ) = \sqrt{2} ( \tfrac{\sqrt{2}}{2} + i\tfrac{\sqrt{2}}{2}  ) = 1 + i \\
- \sqrt{2} e^{i9 \pi/4} &=& \sqrt{2} ( \cos(9\pi/4) + i \sin(9\pi/4) ) = 1 + i \\
- \sqrt{2} e^{-i9 \pi/4} &=& \sqrt{2} ( \cos(-9\pi/4) + i \sin(-9\pi/4) ) = 1 - i \\
- \sqrt{2} e^{-i \pi/4} &=& \sqrt{2} ( \cos(-\pi/4) + i \sin(-\pi/4) ) = 1 - i
+E_{\infty}  & =  & \int_{\infty}^{\infty} |e^{-2t}u(t)|^{2} \mathrm{d}t \\
+&=& \int_{0}^{\infty} e^{-4t} \mathrm{d}t \\
+&=& \frac{1}{4}
 \end{eqnarray*}
-
-For the nine complex numbers in  [[prob12][Problem 1.2]] , we have:
-
-\begin{eqnarray*}
- 5 &=& 5 e^{i0} = 5 e^{i(2\pi n)}, n\in \{\ldots, -2,-1,0,1,2,\ldots \} \\
- -2 &=& 2 e^{i\pi} = -2 e^{i0} \\
- -3i &=& 3 e^{-i\pi} \\
- \tfrac{1}{2} - i \tfrac{\sqrt{3}}{2}  &=& e^{-i\pi/3} \\
- 1+i &=& \sqrt{2} e^{i\pi/4} \\
- (1-i)^{2} &=& ( \sqrt{2} e^{-i\pi/4} )^{2} = 2 e^{-i\pi/2} \\
- i(1-i) &=& 1 - i = \sqrt{2} e^{-i\pi/4} \\
- \tfrac{1+i}{1-i} &=& \tfrac{ \sqrt{2}e^{i\pi/4} } { \sqrt{2}e^{-i\pi/4} } = e^{i\pi/2} \\
- \tfrac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}} &=& \tfrac{ 2e^{i\pi/4} }{ 2 e^{i\pi/3} } = e^{-i\pi/12}
-\end{eqnarray*}
+So, it's straightforward that:
+\begin{equation}
+\label{eq:5}
+P_{\infty} = \lim_{T\to \infty} \frac{E_{\infty}}{2T}  = 0
+\end{equation}
 
 
-Every complex number \(a+ib\) can be visualized in the complex plane
-\(\mathbb{C}\). It can be viewed either as the point with the coordinate
-\((a,b)\) or as a vector starting from \(0,0\) to the point \((a,b)\).
-
-Also every complex number \(a+ib\) can be represented in the exponential form
-conveniently by using the Euler's formula \(e^{i\alpha} = \cos\alpha +
-i\sin\alpha\). One complex number have unique Cartesian form but do not have a
-unique expoential form. Taking \(1+i\) for example, its expoential form can be
-\(\sqrt{2}e^{i(\pi/4 + 2n\pi)}, n\in \{ \ldots, -2,-1,0,1,2,\ldots \}\). When we
-express a complex number in expoential form, it helps to keep a concept of
-rotation in mind. In the complex plane \(\mathbb{C}\), a complex number will
-return to itself if it rotates a multiple of \(2\pi\) around the origin point
-with radius equal to its modulus. please keep the concept of roatation in mind
-and it will become increasingly important during our later study.
-
-In the development of complex analysis, \(a+ib\) has another form \(r\angle
-\theta\), where \(r\) is the modulus and \(\theta\) the argument (or the angle).
-Obviously, this notation is not as good as the expoential form, espacialy when
-we want to do complex analysis such as differentiation and integration. We just
-mention it here for the sake of completion. The expoential form will be deployed
-from now on.
-
-
-#+caption: Euler Example
-#+name: EulerExample
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/eulerEquation.pdf"
-#+begin_src latex -n -r  :results raw :exports none
+#+name: figprob13
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figprob13.png"
+#+begin_src latex -n -r :results raw :exports value
 \begin{tikzpicture}
-[scale=3,line cap=round,
-axes/.style=,
-important line/.style={very thick},
-information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
-\colorlet{anglecolor}{green!50!black}
-\colorlet{sincolor}{red}
-\colorlet{tancolor}{orange!80!black}
-\colorlet{coscolor}{blue}
+[domain=0:3]
+\coordinate (xleft) at (-2,0);
+\coordinate (xright) at (4,0);
+\coordinate (ybellow) at (0,-4);
+\coordinate (yabove) at (0,4);
+\node[below left] (0) at (0,0) {$0$}
+\draw[-Stealth] (xleft) -- (xright);
+\draw[-Stealth] (0,-1) -- (0,2);
 
-
-\draw[step=0.5cm,gray!50] (-2.3,-2.3) grid (2.3,2.3);
-\draw[radius=1cm] (0,0) circle;
-
-\begin{scope}[axes]
-  \draw[->] (-2.6,0)  -- (2.6,0) node[at end,below] {$\mathrm{Re}$} coordinate(x axis);
-  \draw[->] (0,-2.6) -- (0,2.6) node[at end,right] {$\mathrm{Im}$} coordinate(y axis);
-
-  \foreach \x/\xtext in {-1,1}
-    \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\xtext$};
-  \foreach \y/\ytext in {-1,1}
-    \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
-\end{scope}
-
-\filldraw[fill=green!20,draw=anglecolor] (0,0) -- (2mm,0pt) arc [start angle=0, end angle=70,radius=2mm] -- cycle;
-
-\draw[important line,sincolor] (70:1cm) -- node[right=1pt,fill=white] {$\sin\alpha$} (70:1cm |- x axis);
-\draw[important line,coscolor] (70:1cm |- x axis) -- node[at start,below=2pt] {$\cos\alpha$} (0,0);
-
-\draw (0,0) -- (70:1cm);
-
-\filldraw[draw=gray,fill=gray,radius=0.5pt](70:1cm) circle node[above right] {\huge ${e^{i\alpha} = { \color{blue}{\cos\alpha} } + i\color{red}{ \sin\alpha} }$};
-
-\draw[-{Stealth}] (0,0) -- (-140:2cm) node[below=5pt] {\huge $z={ \color{blue}{a} }+i{ \color{red}{b} }=re^{i\theta}$};
-\draw[important line,red] (-140:2.025cm |- x axis) -- (-140:2.025cm) node[midway,left] {$b$};
-\draw[important line,blue] (-140:2.025cm |- x axis) -- (0,0) node[midway,above]{$a$};
-
-\filldraw[fill=black,radius=0.3mm]  (-140:2.025cm) circle ;
-
-\filldraw[fill=red!20,draw=red] (0,0) -- (1.5mm,0pt) arc [start angle=0, end angle=-140,radius=1.5mm] -- cycle;
-\node at (35:1.6mm) [anglecolor] {$\alpha$};
-\node at (-70:1.mm) [red] {$\theta$};
-
-
+\draw[color=red] plot (\x,{exp(-2*\x)}) node[above=0.5cm] {$f(x) = \mathrm e^{-2t}u(t)$};
+\end{tikzpicture}
+\begin{tikzpicture}[domain=0:4]
+\draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
+\draw[->] (-0.2,0) -- (4.2,0) node[right] {$x$};
+\draw[->] (0,-1.2) -- (0,4.2) node[above] {$f(x)$};
+\draw[color=red] plot[id=x] function{x} node[right] {$f(x) =x$};
+\draw[color=blue] plot[id=sin] function{sin(x)} node[right] {$f(x) = \sin x$};
+\draw[color=orange] plot[id=exp] function{0.05*exp(x)} node[right] {$f(x) = \frac{1}{20} \mathrm e^x$};
 \end{tikzpicture}
 #+end_src
 
+#+RESULTS: figprob13
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figprob13.png]]
 
-#+RESULTS: EulerExample
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/eulerEquation.pdf]]
 
-
-#+ATTR_HTML:  :width 80% :align center
+#+ATTR_HTML:  :width 800 :align center
 #+ATTR_LATEX: :width 0.8\textwidth :align center
-{{{if-latex(eulerEquation.pdf,eulerEquation.png)}}}
-
-Now, let's go back to [[prob11][Problem 1.1]] and Problem [[prob12][Problem
-1.2]]. It's easy to figure the answers out using the Euler's formula. Let's do
-more to show them on the complex plane keeping the concept of rotation in mind.
-
-#+caption: Problem 1.1
-#+name: Problem1_1
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/problem1_1.pdf"
-#+begin_src latex -n -r :results raw :exports none
-\begin{tikzpicture}
-[scale=3,line cap=round,
-axes/.style=,
-important line/.style={very thick},
-information text/.style={rounded corners,fill=red!10, inner sep=1ex}]
+{{{if-latex(figprob13.pdf,figprob13.png)}}}
 
 
-\colorlet{anglecolor}{green!50!black}
-\colorlet{sincolor}{red}
-\colorlet{tancolor}{orange!80!black}
-\colorlet{coscolor}{blue}
-\coordinate (0) at (0,0);
+ \(\mathbf{(b)}: x_{2}(t)= e^{i(2t+\pi/4)}\)
 
+We have \(|e^{i(2t+\pi/4)}| = 1\) , therefore
+\begin{eqnarray*}
+E_{\infty}&=& \int_{\infty}^{\infty} |x_{2}(t)= e^{i(2t+\pi/4)}|^{2} \mathrm{d}t \\
+&=& \infty
+\end{eqnarray*}
 
-\draw[step=0.25cm,gray!50] (-1.5,-1.5) grid (1.5,1.5);
-\draw[radius=1cm] (0,0) circle;
+For power \(P_{\infty}\), we have:
+\begin{eqnarray*}
+P_{\infty}&= &\lim_{T\to\infty} \frac{1}{2T}\int_{-T}^{T} |x_{2}(t)|^{2} \mathrm{d}t  \\
+&=& 1
+\end{eqnarray*}
 
-%% pi/4
-\draw[-Stealth,important line] (0,0) -- (45:1.414cm)
-     node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
-     node[below right] {$\sqrt{2}e^{i\pi/4},\sqrt{2}e^{i9\pi/4}$};
+This signal has constant power. If you keep the concept of rotation mentioned in
+Problem [[prob11]], you will notice immediately that all the points generated by
+\(x_{2}(t)\) lies on the unit circle.
 
-\draw[-Stealth,important line] (0,0) -- (45:1.414cm) coordinate (45)
-     node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
-     node[below right] {$\sqrt{2}e^{i\pi/4},\sqrt{2}e^{i9\pi/4}$};
-\filldraw[fill=blue!20,draw=anglecolor,nearly opaque] (0,0) -- (4mm,0pt) arc [start angle=0, end angle=45,radius=4mm]-- cycle;
-\draw [draw=anglecolor,->] (4mm,0pt) arc [start angle=0, end angle=45,radius=4mm] node[midway,right] {$\pi/4$};
+\(\mathbf{(c)}:x_{3}(t)=\cos(t)\)
 
-\draw[-Stealth,important line] (0,0) -- (-45:1.414cm) coordinate (m45)
-     node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
-     node[below right] {$\sqrt{2}e^{-i\pi/4},\sqrt{2}e^{-i9\pi/4}$};
-\filldraw[fill=cyan!20,draw=anglecolor,nearly opaque] (0,0) -- (4mm,0pt) arc [start angle=0, end angle=-45,radius=4mm]-- cycle;
-\draw [draw=anglecolor,->] (4mm,0pt) arc [start angle=0, end angle=-45,radius=4mm] node[midway,right] {$-i\pi/4$};
-%% pi/2
-\draw[-Stealth,important line] (0,0) -- (90:1cm)
-     node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
-     node[above right] {$e^{i\pi/2},e^{i5\pi/2}$};
-\filldraw[fill=blue!20!green,draw=anglecolor,nearly opaque] (0,0) -- (3mm,0pt) arc [start angle=0, end angle=90,radius=3mm]-- cycle;
-\draw [draw=anglecolor,->] (3mm,0pt) arc [start angle=0, end angle=90,radius=3mm] node[at end,above right] {$\pi/2$};
+\begin{eqnarray*}
+E_{\infty}&=& \lim_{T\to\infty} \int_{-\infty}^{\infty} |x_{3}(t)|^{2} \mathrm{d}t \\
+&=& \int_{\infty}^{\infty} \cos(t)^{2} \mathrm{d}t = \infty
+\end{eqnarray*}
 
+\begin{eqnarray*}
+P_{\infty}&=& \lim_{T\to\infty} \frac{1}{2T}\int_{-T}^{T} |x_{3}(t)|^{2} \mathrm{d}t  \\
+&=& \lim_{T\to\infty} \int_{-T}^{T} \cos(t)^{2} \mathrm{d}t \\
+&=& \lim_{T\to\infty}  \int_{-T}^{T} \frac{1+\cos(2t)}{2} \mathrm{d}t = \frac{1}{2}
+\end{eqnarray*}
 
-\draw[-Stealth,important line] (0,0) -- (-90:1cm)
-     node[circle, inner sep=2pt,radius=0.2pt,fill=black]{}
-     node[below right] {$e^{-i\pi/2},e^{-i5\pi/2}$};
-\filldraw[fill=cyan!20!red,draw=anglecolor,nearly opaque] (0,0) -- (3mm,0pt) arc [start angle=0, end angle=-90,radius=3mm]-- cycle;
-\draw [draw=anglecolor,->] (3mm,0pt) arc [start angle=0, end angle=-90,radius=3mm] node[at end,below right] {$-\pi/2$};
-
-
-\draw[-Stealth,important line] (0,0) -- (180:0.5cm) coordinate (number1) node[above] {$\color{green}{ \frac{1}{2}e^{i\pi} }$};
-\draw[-Stealth,important line] (0,0) -- (180:0.5cm) coordinate (number1) node[below] {$\color{red}{ \frac{1}{2}e^{-i\pi} }$};
-\coordinate (pointAtX) at (2,0) ;
-\fill[black,radius=1pt] (number1) circle;
-\draw pic [ draw,->,draw=green,fill=green!30,nearly opaque] {angle=pointAtX--O--number1};
-\node[green] at (-1.5mm,2mm) {$\color{black}{\pi}$};
-\draw pic [ draw,<-,draw=red,fill=red!30,nearly opaque] {angle=number1--O--pointAtX};
-\node[red] at (-1.5mm,-2mm) {$\color{black}{-\pi}$};
-
-
-\begin{scope}[axes]
-  \draw[->] (-1.6,0)  -- (1.6,0) node[at end,below] {$\mathrm{Re}$} coordinate(x axis);
-  \draw[->] (0,-1.6) -- (0,1.6) node[at end,right] {$\mathrm{Im}$} coordinate(y axis);
-
-  \foreach \x/\xtext in {-1,1}
-    \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\xtext$};
-  \foreach \y/\ytext in {-1,1}
-    \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
-\end{scope}
-
-\end{tikzpicture}
-#+end_src
-
-#+RESULTS: Problem1_1
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/problem1_1.pdf]]
-
-
-#+caption: visualized the complex numbers from Problem [[prob11][Problem 1.1]] in the complex plan
-#+name: problem1-1
-#+ATTR_HTML:  :width 80% :align center
-#+ATTR_LATEX: :width 0.8\textwidth :align center
-{{{if-latex(problem1_1.pdf,problem1_1.png)}}}
-
-From Figure [[problem1-1]] , taking \(\color{green}{\tfrac{1}{2}e^{i\pi}}\) and
-\(\color{red}{\tfrac{1}{2}e^{-i\pi}}\) for example, in the complex plane, they
-are the same point \(-\tfrac{1}{2}\) which means \(-\tfrac{1}{2}\) can be
-reached by rotating \(\tfrac{1}{2}\) with angle \(\pi\) clockwise or with angle
-\(-\pi\) anti-clockwise. Essentially, this is because that \(e^{i\theta} =
-e^{i(\theta + 2n\pi)}, n\in \{\ldots,-2,-1,0,1,2,\ldots\}\). It's
-straightforward that \(e^{i\pi} = e^{i(\pi + 2(-1)\pi)} = e^{-i\pi}\).
-
-In the end of [[prob11][Problem 1.1]] and [[prob12][Problem 1.2]], I want to say
-more about expressing \(\tfrac{1+i}{1-i}\) in its polar form. There are two
-methods to get the polar form:
-1. multiply the fraction's numerator and denominator by \(( 1 + i )\)
-
-   So we have:
-   \begin{eqnarray*}
-   \frac{1+i}{1-i}& = & \frac{(1+i)(1+i)}{(1-i)(1+i)} \\
-   &=& \frac{2i}{2} = i
-   \end{eqnarray*}
-
-2. express the numerator and denominator in expoential form first, then do the
-   following calculation.
-
-   \begin{eqnarray*}
-   \frac{1+i}{1-i} &=& \frac{\sqrt{2}e^{i\pi/4}}{\sqrt{2}e^{-i\pi/4}}  \\
-   &=& e^{i2\pi/4} = e^{i\pi/2} = i
-   \end{eqnarray*}
-
-#+ATTR_LATEX: :options []{prob:1.3}
-#+NAME: prob:1.3
-#+begin_prob
-Problem 1.3: Determine the values of \(P_{\infty}\) and \(E_{\infty}\) for each
-of the following signals:
-\begin{equation*}
-\begin{array}{ll}
-\mathrm{(a)} \quad x_{1}(t) = e^{-2t}u(t) & \mathrm{(b)} \quad x_{2}(t) = e^{i(2t + \pi/4)} \\
- \mathrm{(c)} \quad x_{3}(t) = \cos(t) & \mathrm{(d)} \quad x_{1}[n] = (\tfrac{1}{2})^{n} u[n] \\
- \mathrm{( e )} \quad x_{2}[n] = e^{i(\pi/2n + \pi/8)} & \mathrm{(f)} \quad x_{3}[n] = \cos(\tfrac{\pi}{4}n)
-\end{array}
-\end{equation*}
-#+end_prob
 
 
 * Projects                                         :project:
