@@ -1449,7 +1449,40 @@ tick label style={font=\footnotesize}]
 #+ATTR_LATEX: :width 0.5\textwidth :align center
 {{{if-latex(figProb1-4e.pdf,figProb1-4e.png)}}}
 
+** Problem 1.5
+[2020-01-15 Wed 09:39]
 
+Let \(x(t)\) be a signal with \(x(t)=0, \ x<3\). For each signal
+given below, determine the values of \(t\) for which it is guaranteed to be
+zero.
+
+\begin{equation*}
+\begin{array}{lll}
+\(\mathbf{(a)}: x(1-t) \qquad \) &   \(\mathbf{(b)}: x(1-t) + x(2-t)\qquad \) & \(\mathbf{(c)}: x(1-t)x(2-t)\qquad \)\\
+ \(\mathbf{(d)}: x(3t) \qquad \) &  \(\mathbf{(e)}: x(t/3)\qquad\) & \\
+\end{array}
+\end{equation*}
+
+For signal \(\mathbf{(a)}: x(1-t) \),  we have:
+\begin{equation*}
+1-t < 3
+\end{equation*}
+
+So, \(t>-2\). Signal \(\mathbf{(a)}: x(1-t) \) can be achieved by flipping the
+origin signal first then right shifting one.
+
+For signal \(\mathbf{(b)}: x(1-t) + x(2-t) \) , we have:
+\begin{eqnarray*}
+1-t&< &3 \\
+2-t&<& 3
+\end{eqnarray*}
+so, \(t>-1\). we achieve signal \(\mathbf{(b)}: x(1-t) + x(2-t) \) by adding
+signal \(\mathbf{(a)}: x(1-t) \) with a second signal \(x(2-t)\) which can be
+achieved by flipping it first then right shifting two.
+
+
+For signal \(\mathbf{(c)}: x(1-t)x(2-t) \), based on the result of signal
+\(\mathbf{( b )}\), we have \(t>-2\) 
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
