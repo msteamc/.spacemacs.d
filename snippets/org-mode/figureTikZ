@@ -12,6 +12,6 @@ $0
 #+end_src
 
 
-#+ATTR_HTML:  :width 800 :align center
+#+ATTR_HTML:  :width 80% :align center
 #+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex($1.pdf,$1.png)}}}

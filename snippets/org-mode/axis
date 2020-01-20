@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name:axis
+# key: axis
+# --
+\begin{axis}
+$0
+\end{axis}
