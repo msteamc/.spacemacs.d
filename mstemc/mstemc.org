@@ -755,7 +755,7 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 *** Basic Problems With Answers
 [2020-01-08 Wed 21:19]
 
-**** Problem 1.1 and Problem 1.2
+**** DONE Problem 1.1 and Problem 1.2
      [2020-01-12 Sun 12:45]
 
 
@@ -1206,7 +1206,7 @@ P_{\infty}&=& \lim_{N\to\infty} \frac{1}{2N+1} \sum_{n=-N}^{N} \big((\tfrac{1}{2
 
 
 
-**** Problem 1.4
+**** DONE Problem 1.4
 [2020-01-14 Tue 22:15]
 
 #+ATTR_LATEX: :options []{prob:1-4}
@@ -1449,7 +1449,7 @@ tick label style={font=\footnotesize}]
 #+ATTR_LATEX: :width 0.5\textwidth :align center
 {{{if-latex(figProb1-4e.pdf,figProb1-4e.png)}}}
 
-** Problem 1.5
+**** Problem 1.5
 [2020-01-15 Wed 09:39]
 
 Let \(x(t)\) be a signal with \(x(t)=0, \ x<3\). For each signal
@@ -1482,7 +1482,7 @@ achieved by flipping it first then right shifting two.
 
 
 For signal \(\mathbf{(c)}: x(1-t)x(2-t) \), based on the result of signal
-\(\mathbf{( b )}\), we have \(t>-2\) 
+\(\mathbf{( b )}\), we have \(t>-2\)
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
