@@ -1476,13 +1476,30 @@ For signal \(\mathbf{(b)}: x(1-t) + x(2-t) \) , we have:
 1-t&< &3 \\
 2-t&<& 3
 \end{eqnarray*}
-so, \(t>-1\). we achieve signal \(\mathbf{(b)}: x(1-t) + x(2-t) \) by adding
-signal \(\mathbf{(a)}: x(1-t) \) with a second signal \(x(2-t)\) which can be
-achieved by flipping it first then right shifting two.
+Because it a "\(+\)" between \(x(1-t)\) and \(x(2-t)\) so only when both of the
+two signals are zero, the result will be zero. For the first part we have the
+value zero when \(t>-2\) the second \(t>-1\), so the result will be the
+intersect of these two intervals, i.e. \(t>-1\) . we achieve signal
+\(\mathbf{(b)}: x(1-t) + x(2-t) \) by adding signal \(\mathbf{(a)}: x(1-t) \)
+with a second signal \(x(2-t)\) which can be achieved by flipping it first then
+right shifting two.
 
 
-For signal \(\mathbf{(c)}: x(1-t)x(2-t) \), based on the result of signal
-\(\mathbf{( b )}\), we have \(t>-2\)
+For signal \(\mathbf{(c)}: x(1-t)x(2-t) \), \(x(1-t)\) is multiplied by
+\(x(2-t)\), so if any one of these two signals is zero, the result is zero.
+Based on the result of signal \(\mathbf{( b )}\), we have \(t>-2\).
+
+For signal \(\mathbf{( d )}: x(3t)\), we have:
+\begin{equation*}
+3t < 3
+\end{equation*}
+Then, \(t<1\). The signal is compressed by \(3\).
+
+For signal \(\mathbf{( e )}: x(t/3)\), we have:
+\begin{equation*}
+t/3 < 3
+\end{equation*}
+Then, \(t<9\). The signal is strtched by \(3\).
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
