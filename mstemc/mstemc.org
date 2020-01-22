@@ -1583,6 +1583,24 @@ d. \( \mathcal{R} \{x_{4}(t)\}   = \mathcal{R} \{
    e^{i\pi/2} e^{(-2+i100)t} \} = \mathcal{R}\{ e^{(-2 + i100)t + i\pi/2} \} =
    e^{-2t}\cos(100t + \pi/2) \) with\(A = 1\), \(a=2\), \(\omega=100\), \(\phi=\pi/2\)
 
+**** Problem 1.9
+[2020-01-22 Wed 16:23]
+
+Determine whether or not each of the following signals is periodic. If a signal
+is periodic, specify its fundamental period.
+
+\begin{equation*}
+\begin{array}{ll}
+  \mathbf{( a )}: x_{1}(t) = ie^{i10t} &  \mathbf{( b )}: x_{2}(t) = e^{(-1 + i)t}\\
+  \mathbf{( c )}: x_{3}[n] = e^{i7\pi n} & \mathbf{( d )}: x_{4}[n] = 3e^{i3\pi (n + 1/2)/5} \\
+  \mathbf{( e )}: x_{5}[n] = 3e^{i3/5(n+1/2)}
+\end{array}
+\end{equation*}
+
+During figuring all the problems, we have to keep in mind that for a complex
+number after rotating \(2\pi \) around the origin the number returns to itself.
+
+a.  For \(x_{1}(t)\), only when phase \(10t\) change \(2\pi\)
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
