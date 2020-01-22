@@ -1530,6 +1530,107 @@ Then, \(t<9\). The signal is strtched by \(3\).
 
 
 
+**** Problem 1.6
+Determine whether or not each of the following signals is periodic:
+
+\begin{equation*}
+\begin{array}{lll}
+\mathbf{(a)}: x_{1}(t) = 2e^{i(t+\pi/4)}u(t)   &  \mathbf{( b )}: x_{2}[n] = u[n] + u[-n]  &\\
+\mathbf{(c)}: x_{3}[n] = \sum_{k=-\infty}^{\infty} \{ \delta[n-4k] - \delta[n-1-4k] \} &  & \\
+\end{array}
+\end{equation*}
+
+- \(x_{1}(t)\) is not periodic because \(u(t) = 0, t<0\)
+- \(x_{2}[n]\) is not periodic because
+  \begin{equation*}
+  x_{2}[n] =
+  \begin{cases}
+  2 & n=0 \\
+  1 & n\neq 0
+  \end{cases}
+  \end{equation*}
+- For signal \(x_{3}[n]\) we know that with a \(n\), \(\delta[n-4k]\) and
+  \(\delta[n-1-4k]\) can not be zero at the same time. Because \(k\) and
+  \(n-4k\) must be integers, \(\delta[n-4k]\) and \(\delta[n-1-4k]\) will repeat
+  themself every four steps. Furthermore, for every \(n\), the \(k\) runs from
+  \(-\infty \) to \(\infty\), and only one \(k\) will match the \(n\) to set
+  \(\delta[n-4k]\) or \(\delta[n-1-4k]\) as zero. We can test it by setting
+  \(n = 0,1,2,\ldots\)
+  \begin{eqnarray*}
+  && x[0] = 1,\quad x[1] = -1, \quad x[2] = 0, \quad x[3] = 0 \\
+  && x[4] = 1,\quad x[5] = -1, \quad x[6] = 0, \quad x[7] = 0 \\
+  && x[8] = 1,\quad x[9] = -1, \quad x[10] = 0, \quad x[11] = 0
+  \end{eqnarray*}
+
+  #+caption: caption
+  #+name: figprob1-6
+  #+header: :file  "../../img/tikz/figprob1-6.pdf"
+  #+begin_src latex -n -r :results raw :exports none
+  \begin{tikzpicture}
+  \definecolor{mycolor}{RGB}{139,0,0};
+  \draw[very thick,-Stealth] (-9,0) -- (8,0);
+  \foreach \x in {-8,-4,0,4}
+    {
+     \filldraw[draw=mycolor,fill=mycolor] (\x,0) + (2,0) circle[radius=3pt];
+     \filldraw[draw=mycolor,fill=mycolor] (\x,0) + (3,0) circle[radius=3pt];
+     \draw[mycolor,very thick,-Circle,] (\x,0) +(1,0) -- +(1,-1) node[right] {$-1$};
+     \draw[mycolor,very thick,-{Circle},] (\x,0)  -- +(0,1) node[right] {$1$};
+    }
+  \foreach \x in {-9,-8,-7,...,8}
+   \node[semitransparent,green] at (\x,-0.3) {$\x$};
+  \end{tikzpicture}
+  #+end_src
+
+  #+RESULTS: figprob1-6
+  [[file:../../img/tikz/figprob1-6.pdf]]
+
+  #+ATTR_HTML:  :width 800 :align center
+  #+ATTR_LATEX: :width 0.5\textwidth :align center
+  {{{if-latex(figprob1-6.pdf,figprob1-6.png)}}}
+
+**** DONE Problem 1.8
+[2020-01-22 Wed 15:18]
+
+Express the real part of each of the following signals in the form
+\(Ae^{-at}\cos(\omega t + \phi)\), where \(A,a,\omega, \phi\) are real numbers
+with \(A>0\) and \(-\pi < \phi \leq \pi \):
+\begin{equation*}
+\begin{array}{ll}
+  \mathbf{( a )}: x_{1}(t) = -2 &  \mathbf{( b )}: x_{2}(t) = \sqrt{2}e^{i\pi/4}\cos(3t + 2\pi) \\
+  \mathbf{( c )}: x_{3}(t) = e^{-t}\sin(3t + \pi) & \mathbf{( d )}: x_{4}(t) = i e^{(-2+i100)t}
+\end{array}
+\end{equation*}
+
+a. \(\mathcal{R}\{x_{1}(t)\} = -2 = 2e^{-0t}\cos(0t + \pi) \) with \(A = 2,
+   a=0, \omega = 0, \phi = \pi\)
+b. \( \mathcal{R} \{x_{2}(t)\} = \mathcal{R} \{ \sqrt{2} ( \cos( \pi/4 ) + i
+   \sin (\pi/4) ) \cos(3t) \} = \cos(3t) = e^{-0t}\cos( 3t + 0 ) \) with \(A =
+   1\), \( a = 0 \), \( \omega = 3 \),\(\phi = 0\)
+c. \( \mathcal{R} \{ x_{3}(t) \} = \mathcal{R} \{ e^{-t} \sin ( 3t + \pi )  \}
+   = e^{-t}\cos(3t + \pi/2) \) with \(A=1\), \(a=1\), \(\omega=3\), \(\phi=\pi/2\)
+d. \( \mathcal{R} \{x_{4}(t)\}   = \mathcal{R} \{
+   e^{i\pi/2} e^{(-2+i100)t} \} = \mathcal{R}\{ e^{(-2 + i100)t + i\pi/2} \} =
+   e^{-2t}\cos(100t + \pi/2) \) with\(A = 1\), \(a=2\), \(\omega=100\), \(\phi=\pi/2\)
+
+**** Problem 1.9
+[2020-01-22 Wed 16:23]
+
+Determine whether or not each of the following signals is periodic. If a signal
+is periodic, specify its fundamental period.
+
+\begin{equation*}
+\begin{array}{ll}
+  \mathbf{( a )}: x_{1}(t) = ie^{i10t} &  \mathbf{( b )}: x_{2}(t) = e^{(-1 + i)t}\\
+  \mathbf{( c )}: x_{3}[n] = e^{i7\pi n} & \mathbf{( d )}: x_{4}[n] = 3e^{i3\pi (n + 1/2)/5} \\
+  \mathbf{( e )}: x_{5}[n] = 3e^{i3/5(n+1/2)}
+\end{array}
+\end{equation*}
+
+During figuring all the problems, we have to keep in mind that for a complex
+number after rotating \(2\pi \) around the origin the number returns to itself.
+
+a.  For \(x_{1}(t)\), only when phase \(10t\) change \(2\pi\)
+
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
 
