@@ -1501,6 +1501,64 @@ t/3 < 3
 \end{equation*}
 Then, \(t<9\). The signal is strtched by \(3\).
 
+**** Problem 1.6
+Determine whether or not each of the following signals is periodic:
+
+\begin{equation*}
+\begin{array}{lll}
+\mathbf{(a)}: x_{1}(t) = 2e^{i(t+\pi/4)}u(t)   &  \mathbf{( b )}: x_{2}[n] = u[n] + u[-n]  &\\
+\mathbf{(c)}: x_{3}[n] = \sum_{k=-\infty}^{\infty} \{ \delta[n-4k] - \delta[n-1-4k] \} &  & \\
+\end{array}
+\end{equation*}
+
+- \(x_{1}(t)\) is not periodic because \(u(t) = 0, t<0\)
+- \(x_{2}[n]\) is not periodic because
+  \begin{equation*}
+  x_{2}[n] =
+  \begin{cases}
+  2 & n=0 \\
+  1 & n\neq 0
+  \end{cases}
+  \end{equation*}
+- For signal \(x_{3}[n]\) we know that with a \(n\), \(\delta[n-4k]\) and
+  \(\delta[n-1-4k]\) can not be zero at the same time. Because \(k\) and
+  \(n-4k\) must be integers, \(\delta[n-4k]\) and \(\delta[n-1-4k]\) will repeat
+  themself every four steps. Furthermore, for every \(n\), the \(k\) runs from
+  \(-\infty \) to \(\infty\), and only one \(k\) will match the \(n\) to set
+  \(\delta[n-4k]\) or \(\delta[n-1-4k]\) as zero. We can test it by setting
+  \(n = 0,1,2,\ldots\)
+  \begin{eqnarray*}
+  && x[0] = 1,\quad x[1] = -1, \quad x[2] = 0, \quad x[3] = 0 \\
+  && x[4] = 1,\quad x[5] = -1, \quad x[6] = 0, \quad x[7] = 0 \\
+  && x[8] = 1,\quad x[9] = -1, \quad x[10] = 0, \quad x[11] = 0
+  \end{eqnarray*}
+
+  #+caption: caption
+  #+name: figprob1-6
+  #+header: :file  "../../img/tikz/figprob1-6.pdf"
+  #+begin_src latex -n -r :results raw :exports none
+  \begin{tikzpicture}
+  \definecolor{mycolor}{RGB}{139,0,0};
+  \draw[very thick,-Stealth] (-9,0) -- (8,0);
+  \foreach \x in {-8,-4,0,4}
+    {
+     \filldraw[draw=mycolor,fill=mycolor] (\x,0) + (2,0) circle[radius=3pt];
+     \filldraw[draw=mycolor,fill=mycolor] (\x,0) + (3,0) circle[radius=3pt];
+     \draw[mycolor,very thick,-Circle,] (\x,0) +(1,0) -- +(1,-1) node[right] {$-1$};
+     \draw[mycolor,very thick,-{Circle},] (\x,0)  -- +(0,1) node[right] {$1$};
+    }
+  \foreach \x in {-9,-8,-7,...,8}
+   \node[semitransparent,green] at (\x,-0.3) {$\x$};
+  \end{tikzpicture}
+  #+end_src
+
+  #+RESULTS: figprob1-6
+  [[file:../../img/tikz/figprob1-6.pdf]]
+
+  #+ATTR_HTML:  :width 800 :align center
+  #+ATTR_LATEX: :width 0.5\textwidth :align center
+  {{{if-latex(figprob1-6.pdf,figprob1-6.png)}}}
+
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
 
