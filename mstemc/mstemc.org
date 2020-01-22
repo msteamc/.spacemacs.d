@@ -1559,6 +1559,31 @@ Determine whether or not each of the following signals is periodic:
   #+ATTR_LATEX: :width 0.5\textwidth :align center
   {{{if-latex(figprob1-6.pdf,figprob1-6.png)}}}
 
+**** DONE Problem 1.8
+[2020-01-22 Wed 15:18]
+
+Express the real part of each of the following signals in the form
+\(Ae^{-at}\cos(\omega t + \phi)\), where \(A,a,\omega, \phi\) are real numbers
+with \(A>0\) and \(-\pi < \phi \leq \pi \):
+\begin{equation*}
+\begin{array}{ll}
+  \mathbf{( a )}: x_{1}(t) = -2 &  \mathbf{( b )}: x_{2}(t) = \sqrt{2}e^{i\pi/4}\cos(3t + 2\pi) \\
+  \mathbf{( c )}: x_{3}(t) = e^{-t}\sin(3t + \pi) & \mathbf{( d )}: x_{4}(t) = i e^{(-2+i100)t}
+\end{array}
+\end{equation*}
+
+a. \(\mathcal{R}\{x_{1}(t)\} = -2 = 2e^{-0t}\cos(0t + \pi) \) with \(A = 2,
+   a=0, \omega = 0, \phi = \pi\)
+b. \( \mathcal{R} \{x_{2}(t)\} = \mathcal{R} \{ \sqrt{2} ( \cos( \pi/4 ) + i
+   \sin (\pi/4) ) \cos(3t) \} = \cos(3t) = e^{-0t}\cos( 3t + 0 ) \) with \(A =
+   1\), \( a = 0 \), \( \omega = 3 \),\(\phi = 0\)
+c. \( \mathcal{R} \{ x_{3}(t) \} = \mathcal{R} \{ e^{-t} \sin ( 3t + \pi )  \}
+   = e^{-t}\cos(3t + \pi/2) \) with \(A=1\), \(a=1\), \(\omega=3\), \(\phi=\pi/2\)
+d. \( \mathcal{R} \{x_{4}(t)\}   = \mathcal{R} \{
+   e^{i\pi/2} e^{(-2+i100)t} \} = \mathcal{R}\{ e^{(-2 + i100)t + i\pi/2} \} =
+   e^{-2t}\cos(100t + \pi/2) \) with\(A = 1\), \(a=2\), \(\omega=100\), \(\phi=\pi/2\)
+
+
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
 
