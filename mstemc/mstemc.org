@@ -1449,19 +1449,26 @@ tick label style={font=\footnotesize}]
 #+ATTR_LATEX: :width 0.5\textwidth :align center
 {{{if-latex(figProb1-4e.pdf,figProb1-4e.png)}}}
 
-**** Problem 1.5
+**** DONE Problem 1.5
 [2020-01-15 Wed 09:39]
 
+#+ATTR_LATEX: :options []{prob:1-5}
+#+NAME: prob:1-5
+#+begin_prob
 Let \(x(t)\) be a signal with \(x(t)=0, \ x<3\). For each signal
 given below, determine the values of \(t\) for which it is guaranteed to be
 zero.
 
 \begin{equation*}
-\begin{array}{lll}
-\(\mathbf{(a)}: x(1-t) \qquad \) &   \(\mathbf{(b)}: x(1-t) + x(2-t)\qquad \) & \(\mathbf{(c)}: x(1-t)x(2-t)\qquad \)\\
- \(\mathbf{(d)}: x(3t) \qquad \) &  \(\mathbf{(e)}: x(t/3)\qquad\) & \\
+\begin{array}{ll}
+\mathbf{(a)}: x(1-t) \qquad  &   \mathbf{(b)}: x(1-t) + x(2-t)\qquad   \\
+\mathbf{(c)}: x(1-t)x(2-t)\qquad &  \mathbf{(d)}: x(3t) \qquad  \\
+  \mathbf{(e)}: x(t/3)\qquad & \\
 \end{array}
 \end{equation*}
+#+end_prob
+
+
 
 For signal \(\mathbf{(a)}: x(1-t) \),  we have:
 \begin{equation*}
@@ -1500,6 +1507,28 @@ For signal \(\mathbf{( e )}: x(t/3)\), we have:
 t/3 < 3
 \end{equation*}
 Then, \(t<9\). The signal is strtched by \(3\).
+**** Problem 1.6
+     [2020-01-21 Tue 21:36]
+
+**** Problem 1.7
+     [2020-01-22 Wed 06:35]
+
+     #+ATTR_LATEX: :options []{prob:1-7}
+     #+NAME: prob:1-7
+     #+begin_prob
+     For each signal given below, determine all the values of the independent
+     variable at which the even part of the signal is guaranteed to be zero.
+
+     \begin{equation*}
+     \small
+     \begin{array}{ll}
+      \mathbf{(a)}: x_{1}[n] = u[n] - u[n-4] \qquad  &   \mathbf{(b)}: x_{2}(t) = \sin(\tfrac{1}{2} t) \qquad   \\
+       \mathbf{(c)}: x_{3}[n] = (\frac{1}{2})^{n} u[n-3] \qquad &  \mathbf{(d)}: x_{4}(t) = e^{-5t}u(t+2) \\
+     \end{array}
+     \end{equation*}
+     #+end_prob
+
+
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
