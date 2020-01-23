@@ -1629,9 +1629,21 @@ is periodic, specify its fundamental period.
 During figuring all the problems, we have to keep in mind that for a complex
 number after rotating \(2\pi \) around the origin the number returns to itself.
 
-a.  For \(x_{1}(t)\), only when phase \(10t\) increases multiples of  \(2\pi\),
-   does the signal returns to itself. So the fundamental period is \(2\pi/20 =
-   \pi/10\) .
+a. For \(x_{1}(t)\), only when phase \(10t\) increases multiples of \(2\pi\),
+  does the signal return to itself. So the fundamental period is \(
+  \frac{2\pi}{10} = \frac{\pi}{5} \).
+b. For \(x_{2}(t)\), which can be expressed as \(e^{-t}e^{it}\), because the
+   factor \(e^{-t}\) , the signal is not periodic.
+c. For \(x_{3}[ n ]\), we have \(e^{i7\pi n} = e^{i\pi n}\), then the
+   fundamental period is \(\frac{2\pi}{\pi} = 2\)
+d. For \(x_{4}[n]\), we have:
+   \begin{equation*}
+   \frac{3\pi N}{5} = 2\pi m
+   \end{equation*}
+   Then \(N = \frac{10m}{3}\), So fundamental period \(N=10\) when \(m=3\).
+e. For \(x_{5}[n]\), because \(m\frac{2\pi}{3/5}\) is an irrational number, so
+   the signal is not periodic.
+
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
