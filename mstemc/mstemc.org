@@ -1629,7 +1629,9 @@ is periodic, specify its fundamental period.
 During figuring all the problems, we have to keep in mind that for a complex
 number after rotating \(2\pi \) around the origin the number returns to itself.
 
-a.  For \(x_{1}(t)\), only when phase \(10t\) change \(2\pi\)
+a.  For \(x_{1}(t)\), only when phase \(10t\) increases multiples of  \(2\pi\),
+   does the signal returns to itself. So the fundamental period is \(2\pi/20 =
+   \pi/10\) .
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
