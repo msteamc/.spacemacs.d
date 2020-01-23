@@ -1133,7 +1133,7 @@ P_{\infty}&=& \lim_{T\to\infty} \frac{1}{2T}\int_{-T}^{T} |x_{3}(t)|^{2} \mathrm
 \(x_{3}(t)\)  can be visualized as follows:
 
 #+name: figprob1-3c
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-3c.png"
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-3c.pdf"
 #+begin_src latex -n -r :results raw :exports none
 \begin{tikzpicture}
 \definecolor{mycolor}{RGB}{139,0,0};
@@ -1153,7 +1153,7 @@ P_{\infty}&=& \lim_{T\to\infty} \frac{1}{2T}\int_{-T}^{T} |x_{3}(t)|^{2} \mathrm
 #+end_src
 
 #+RESULTS: figprob1-3c
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-3c.png]]
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-3c.pdf]]
 
 
 #+ATTR_HTML:  :width 80% :align center
@@ -1177,7 +1177,7 @@ P_{\infty}&=& \lim_{N\to\infty} \frac{1}{2N+1} \sum_{n=-N}^{N} \big((\tfrac{1}{2
 
 \(x_{1}[n]\) can visualized as:
 #+name: figprob1-3d
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-3d.png"
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-3d.pdf"
 #+begin_src latex -n -r :results raw :exports none
 \begin{tikzpicture}
 \definecolor{mycolor}{RGB}{139,0,0};
@@ -1196,7 +1196,7 @@ P_{\infty}&=& \lim_{N\to\infty} \frac{1}{2N+1} \sum_{n=-N}^{N} \big((\tfrac{1}{2
 #+end_src
 
 #+RESULTS: figprob1-3d
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-3d.png]]
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-3d.pdf]]
 
 
 #+ATTR_HTML:  :width 80% :align center
@@ -1507,38 +1507,23 @@ For signal \(\mathbf{( e )}: x(t/3)\), we have:
 t/3 < 3
 \end{equation*}
 Then, \(t<9\). The signal is strtched by \(3\).
+
 **** Problem 1.6
-     [2020-01-21 Tue 21:36]
 
-**** Problem 1.7
-     [2020-01-22 Wed 06:35]
-
-     #+ATTR_LATEX: :options []{prob:1-7}
-     #+NAME: prob:1-7
+     #+ATTR_LATEX: :options []{prob:1-6}
+     #+NAME: prob:1-6
      #+begin_prob
-     For each signal given below, determine all the values of the independent
-     variable at which the even part of the signal is guaranteed to be zero.
+     Determine whether or not each of the following signals is periodic:
 
-     \begin{equation*}
-     \small
-     \begin{array}{ll}
-      \mathbf{(a)}: x_{1}[n] = u[n] - u[n-4] \qquad  &   \mathbf{(b)}: x_{2}(t) = \sin(\tfrac{1}{2} t) \qquad   \\
-       \mathbf{(c)}: x_{3}[n] = (\frac{1}{2})^{n} u[n-3] \qquad &  \mathbf{(d)}: x_{4}(t) = e^{-5t}u(t+2) \\
-     \end{array}
-     \end{equation*}
+\begin{eqnarray*}
+&&  \mathbf{(a)}: x_{1}(t) = 2e^{i(t+\pi/4)}u(t) \\
+&&  \mathbf{( b )}: x_{2}[n] = u[n] + u[-n]  \\
+&&  \mathbf{(c)}: x_{3}[n] = \sum_{k=-\infty}^{\infty} \{ \delta[n-4k] - \delta[n-1-4k] \}
+\end{eqnarray*}
+
      #+end_prob
 
 
-
-**** Problem 1.6
-Determine whether or not each of the following signals is periodic:
-
-\begin{equation*}
-\begin{array}{lll}
-\mathbf{(a)}: x_{1}(t) = 2e^{i(t+\pi/4)}u(t)   &  \mathbf{( b )}: x_{2}[n] = u[n] + u[-n]  &\\
-\mathbf{(c)}: x_{3}[n] = \sum_{k=-\infty}^{\infty} \{ \delta[n-4k] - \delta[n-1-4k] \} &  & \\
-\end{array}
-\end{equation*}
 
 - \(x_{1}(t)\) is not periodic because \(u(t) = 0, t<0\)
 - \(x_{2}[n]\) is not periodic because
@@ -1564,7 +1549,7 @@ Determine whether or not each of the following signals is periodic:
 
   #+caption: caption
   #+name: figprob1-6
-  #+header: :file  "../../img/tikz/figprob1-6.pdf"
+  #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-6.pdf"
   #+begin_src latex -n -r :results raw :exports none
   \begin{tikzpicture}
   \definecolor{mycolor}{RGB}{139,0,0};
@@ -1577,29 +1562,56 @@ Determine whether or not each of the following signals is periodic:
      \draw[mycolor,very thick,-{Circle},] (\x,0)  -- +(0,1) node[right] {$1$};
     }
   \foreach \x in {-9,-8,-7,...,8}
-   \node[semitransparent,green] at (\x,-0.3) {$\x$};
+   \node[semitransparent,] at (\x,-0.3) {$\x$};
   \end{tikzpicture}
   #+end_src
 
   #+RESULTS: figprob1-6
-  [[file:../../img/tikz/figprob1-6.pdf]]
+  [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-6.pdf]]
 
   #+ATTR_HTML:  :width 800 :align center
   #+ATTR_LATEX: :width 0.5\textwidth :align center
   {{{if-latex(figprob1-6.pdf,figprob1-6.png)}}}
 
+**** Problem 1.7
+     [2020-01-22 Wed 06:35]
+
+     #+ATTR_LATEX: :options []{prob:1-7}
+     #+NAME: prob:1-7
+     #+begin_prob
+     For each signal given below, determine all the values of the independent
+     variable at which the even part of the signal is guaranteed to be zero.
+
+     \begin{equation*}
+     \small
+     \begin{array}{ll}
+      \mathbf{(a)}: x_{1}[n] = u[n] - u[n-4] \qquad  &   \mathbf{(b)}: x_{2}(t) = \sin(\tfrac{1}{2} t) \qquad   \\
+       \mathbf{(c)}: x_{3}[n] = (\frac{1}{2})^{n} u[n-3] \qquad &  \mathbf{(d)}: x_{4}(t) = e^{-5t}u(t+2) \\
+     \end{array}
+     \end{equation*}
+     #+end_prob
+
+
+
 **** DONE Problem 1.8
 [2020-01-22 Wed 15:18]
 
+#+ATTR_LATEX: :options []{prob:1-8}
+#+NAME: prob:1-8
+#+begin_prob
 Express the real part of each of the following signals in the form
 \(Ae^{-at}\cos(\omega t + \phi)\), where \(A,a,\omega, \phi\) are real numbers
 with \(A>0\) and \(-\pi < \phi \leq \pi \):
 \begin{equation*}
+\small
 \begin{array}{ll}
   \mathbf{( a )}: x_{1}(t) = -2 &  \mathbf{( b )}: x_{2}(t) = \sqrt{2}e^{i\pi/4}\cos(3t + 2\pi) \\
   \mathbf{( c )}: x_{3}(t) = e^{-t}\sin(3t + \pi) & \mathbf{( d )}: x_{4}(t) = i e^{(-2+i100)t}
 \end{array}
 \end{equation*}
+#+end_prob
+
+
 
 a. \(\mathcal{R}\{x_{1}(t)\} = -2 = 2e^{-0t}\cos(0t + \pi) \) with \(A = 2,
    a=0, \omega = 0, \phi = \pi\)
@@ -1612,19 +1624,27 @@ d. \( \mathcal{R} \{x_{4}(t)\}   = \mathcal{R} \{
    e^{i\pi/2} e^{(-2+i100)t} \} = \mathcal{R}\{ e^{(-2 + i100)t + i\pi/2} \} =
    e^{-2t}\cos(100t + \pi/2) \) with\(A = 1\), \(a=2\), \(\omega=100\), \(\phi=\pi/2\)
 
-**** Problem 1.9
+**** DONE Problem 1.9
 [2020-01-22 Wed 16:23]
 
+
+#+ATTR_LATEX: :options []{prob:1-9}
+#+NAME: prob:1-9
+#+begin_prob
 Determine whether or not each of the following signals is periodic. If a signal
 is periodic, specify its fundamental period.
 
 \begin{equation*}
 \begin{array}{ll}
-  \mathbf{( a )}: x_{1}(t) = ie^{i10t} &  \mathbf{( b )}: x_{2}(t) = e^{(-1 + i)t}\\
-  \mathbf{( c )}: x_{3}[n] = e^{i7\pi n} & \mathbf{( d )}: x_{4}[n] = 3e^{i3\pi (n + 1/2)/5} \\
-  \mathbf{( e )}: x_{5}[n] = 3e^{i3/5(n+1/2)}
+\mathbf{( a )}: x_{1}(t) = ie^{i10t} &  \mathbf{( b )}: x_{2}(t) = e^{(-1 + i)t} \\
+\mathbf{( c )}: x_{3}[n] = e^{i7\pi n} & \mathbf{( d )}: x_{4}[n] = 3e^{i3\pi \frac{n + \tfrac{1}{2}}{5}} \\
+\mathbf{( e )}: x_{5}[n] = 3e^{\frac{i3}{5(n+\tfrac{1}{2})}} &
 \end{array}
 \end{equation*}
+
+#+end_prob
+
+
 
 During figuring all the problems, we have to keep in mind that for a complex
 number after rotating \(2\pi \) around the origin the number returns to itself.
@@ -1641,8 +1661,68 @@ d. For \(x_{4}[n]\), we have:
    \frac{3\pi N}{5} = 2\pi m
    \end{equation*}
    Then \(N = \frac{10m}{3}\), So fundamental period \(N=10\) when \(m=3\).
-e. For \(x_{5}[n]\), because \(m\frac{2\pi}{3/5}\) is an irrational number, so
+e. For \(x_{5}[n]\), because \( m\frac{2\pi \times 5}{ 3 } \) is an irrational number, so
    the signal is not periodic.
+**** DONE Problem 1.10
+     [2020-01-23 Thu 20:02]
+
+     #+ATTR_LATEX: :options []{prob:1-10}
+     #+NAME: prob:1-10
+     #+begin_prob
+     Determine the fundamental period of the signal \(x(t) = 2\cos(10t + 1) -
+     \sin(4t -1)\)
+     #+end_prob
+
+     \(x(t)\) consists two parts, \(2\cos(10t + 1)\) and \(-\sin(4t -1)\).
+     First, We figure out the fundamental period for these two signals
+     respectively. For \(cos(10t + 1)\), \(10T_{1} = 2\pi \to T_{1} =
+     \frac{\pi}{5}\);  For \(-\sin(4t -1)\) , we have \( 4T_{2} = 2\pi \to T_{2}
+     = \frac{\pi}{2} \)  . Then, the fundamental period \(T = mT_{1} = nT_{2}\)
+     ,So when \(m=5\) and  \(n=2\) , we have \(T=\pi\)
+
+
+#+name: figprob1-10
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-10.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+\begin{axis}
+[axis lines=middle,ymin=-3,ymax=5,
+samples=300,
+extra x ticks={0},
+tick label style={font=\footnotesize}]
+\addplot [mycolor,mark color=mycolor,domain=-4:4] { 2*cos(deg( 10*x +1 ))  };
+\node at (-1.9,3.5) {\small$\color{mycolor} x_{1}(t) = 2\cos(10t + 1) $};
+\end{axis}
+\begin{axis}
+[axis lines=middle,ymin=-3,ymax=5,
+samples=300,
+extra x ticks={0},
+tick label style={font=\footnotesize}]
+\addplot [black,domain=-4:4] { - sin(deg( 4*x -1 )) };
+\node at (2,3.5) {\small$x_{2}(t) = - \sin(4t -1) $};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+\begin{axis}
+[axis lines=middle,ymin=-3,ymax=5,
+samples=300,
+extra x ticks={0},
+tick label style={font=\footnotesize}]
+\addplot [mycolor,mark color=mycolor,domain=-4:4] { 2*cos(deg( 10*x +1 )) - sin(deg( 4*x -1 )) };
+\node at (-1,3.5) {\small$ x(t) = { \color{mycolor}2\cos(10t + 1) } - \sin(4t -1) $};
+\end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figprob1-10
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-10.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figprob1-10.pdf,figprob1-10.png)}}}
 
 
 * Projects                                         :project:
