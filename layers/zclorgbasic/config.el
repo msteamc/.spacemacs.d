@@ -55,4 +55,6 @@
   (define-key org-mode-map (kbd "C-c t") 'org-toggle-blocks)
   (setq org-startup-indented t
         org-hide-leading-stars nil)
+
+  (setq org-startup-indented nil)
   )

@@ -73,7 +73,7 @@
                '("org-article"
                  "\\documentclass{org-article}
 \\usepackage{tikz}
-\\usetikzlibrary{arrows,decorations.pathmorphing,,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.misc,mindmap,calendar,shadows,mindmap,calendar,graphdrawing,trees}
+\\usetikzlibrary{arrows,decorations.pathmorphing,,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.misc,mindmap,calendar,shadows,mindmap,calendar,graphdrawing,trees,shapes.misc,quotes,angles}
                [NO-DEFAULT-PACKAGES]
                [PACKAGES]
                [EXTRA]"
@@ -140,7 +140,7 @@
 
 ;; (add-to-list 'org-latex-packages-alist
 ;;              '("" "tikz" t))
-(setq org-latex-create-formula-image-program 'imagemagick)
+(setq org-preview-latex-default-process 'imagemagick)
 (eval-after-load "preview"
   '(add-to-list 'preview-default-preamble "\\PreviewEnvironment{tikzpicture}" t))
 (setq exec-path (append exec-path '("/usr/local/texlive/2019/bin/x86_64-darwin/")))
@@ -149,15 +149,15 @@
  '((latex . t)))
 
 
-(setq org-image-actual-width 600)
+(setq org-image-actual-width 800)
 
 (add-to-list 'image-type-file-name-regexps '("\\.pdf\\'" . imagemagick))
 (add-to-list 'image-file-name-extensions "pdf")
 
 
 ;; customize the title command
-(setq org-latex-title-command (concat ""))
-(setq org-latex-toc-command (concat ""))
+(setq org-latex-title-command "")
+(setq org-latex-toc-command "")
 (setq org-imagemagick-display-command "convert -density 600  \"%s\" -transparent white -flatten  -thumbnail \"%sx%s>\" \"%s\"")
 (defun org-display-inline-images (&optional include-linked refresh beg end)
   "Display inline images.

@@ -375,6 +375,9 @@ layers configuration. You are free to put any user code."
     (add-to-list 'org-agenda-files org-journal-dir)
     (setq org-journal-enable-agenda-integration t)
     )
+  (require 'org-indent)
+  (org-indent-mode -1)
+
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
