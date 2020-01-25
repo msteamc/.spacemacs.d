@@ -1723,6 +1723,37 @@ tick label style={font=\footnotesize}]
 #+ATTR_HTML:  :width 80% :align center
 #+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex(figprob1-10.pdf,figprob1-10.png)}}}
+**** DONE Problem 1.11
+[2020-01-25 Sat 16:04]
+
+#+ATTR_LATEX: :options []{prob:1-10}
+#+NAME: prob:1-10
+#+begin_prob
+Determine the fundamental period of the singal \(x[n] = 1 + e^{i4\pi n/7} -
+e^{i2\pi n/5}\)
+#+end_prob
+
+\(x[n]\) consists of two main parts, \( e^{i4\pi n/7} \) and \(e^{i2\pi n/5}\).
+We have to figure out the two fundamental periods respectively then calculate
+the least common multiple of the two fundamental periods.
+
+For the first part we have:
+\begin{equation*}
+N_{1} = m \frac{2\pi}{ 4\pi /7 } = m\frac{7}{2}
+\end{equation*}
+
+So when \(m=2\), we have \(N_{1} = 7\).
+
+For the second part we have:
+\begin{equation*}
+N_{2} = m \frac{2\pi}{ 2\pi /5 }
+\end{equation*}
+
+So when \(m=1\), we have \(N_{2} = 5\). The lease common multiple of \(N_{1}\)
+and \(N_{2}\) is 35, i.e. the fundamental period of \(x[n]\)
+
+It is easy to validate it. We have \(x[0] = 1 = x[35]\)
+
 
 
 * Projects                                         :project:
