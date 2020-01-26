@@ -1305,7 +1305,7 @@ tick label style={font=\footnotesize}]
    m=n+4&>&4
    \end{eqnarray*}
    Then, we have \(n<-6\ \mathrm{and}\ n>0\) from which we can see that the new
-   signal is a left shift four relative to the origin singal, i.e. new
+   signal is a left shift four relative to the origin signal, i.e. new
    signal is advanced with four.
 
 #+name: figProb1-4b
@@ -1506,7 +1506,7 @@ For signal \(\mathbf{( e )}: x(t/3)\), we have:
 \begin{equation*}
 t/3 < 3
 \end{equation*}
-Then, \(t<9\). The signal is strtched by \(3\).
+Then, \(t<9\). The signal is streched by \(3\).
 
 **** DONE Problem 1.6
 
@@ -1573,7 +1573,7 @@ Then, \(t<9\). The signal is strtched by \(3\).
   #+ATTR_LATEX: :width 0.5\textwidth :align center
   {{{if-latex(figprob1-6.pdf,figprob1-6.png)}}}
 
-**** Problem 1.7
+**** DONE Problem 1.7
      [2020-01-22 Wed 06:35]
 
      #+ATTR_LATEX: :options []{prob:1-7}
@@ -1590,6 +1590,240 @@ Then, \(t<9\). The signal is strtched by \(3\).
      \end{array}
      \end{equation*}
      #+end_prob
+
+***** Problem 1.7a \(\mathbf{(a)}: x_{1}[n] = u[n] - u[n-4] \)
+
+Any signal \(x_{1}(t)\) consists of two parts, even part \(\mathrm{Ev}
+\{x_{1}(t)\} \) and odd part \( \mathrm{Od} \{ x_{1}(t)\} \). For signal \(
+\mathbf{(a)} \), when the signal is zero, we have the domain of the independent
+value \( n< 0 \) and \( n \geq 4   \) , so the even part of the signal will be
+zero when \( n\leq 4 \) and \(n\geq 4\). \(x_{t}(t)\) and its even part and odd
+part can be illustrated as:
+
+
+#+name: figprob1-7
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-7.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}[scale=3]
+\definecolor{mycolor}{RGB}{139,0,0};
+\pgfplotsset{every axis title/.style={at={(0.5,1.02)},above,yshift=6pt}}
+\begin{axis}
+[axis lines=middle,ymin=-1.3,ymax=1.3,xmin=-5.5,xmax=5.5,
+title = {\(\color{mycolor}\mathbf{(a)}: x_{1}[n] = u[n] - u[n-4] \)},
+extra x ticks = {-5,-3,-1,0,1,3,5}]
+\addplot[ycomb,mycolor,mark=*,mark color=mycolor,mark size=1.4pt] coordinates { (-5,0) (-4,0) (-3,0) (-2,0) (-1,0) (0,1) (1,1) (2,1) (3,1) (4,0) (5,0) } ;
+% \node at (-3,1.2) {\small$ \color{mycolor}x[n] = u[n] - u[n-4]$};
+\end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figprob1-7
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-7.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figprob1-7.pdf,figprob1-7.png)}}}
+
+#+name: figprob1-7ab
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-7ab.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}[scale=3]
+\definecolor{mycolor}{RGB}{139,0,0};
+\pgfplotsset{every axis title/.style={at={(0.5,1.02)},above,yshift=6pt}}
+\begin{axis}
+[axis lines=middle,ymin=-1.3,ymax=1.3,xmin=-5.5,xmax=5.5,
+title={$ \color{mycolor} \mathrm{Ev}  \{x[n] = u[n] - u[n-4]\} $},
+extra x ticks = {-5,-3,-1,0,1,3,5}]
+\addplot[ycomb,mycolor,mark=*,mark color=mycolor,mark size=1.4pt] coordinates { (-5,0) (-4,0) (-3,0.5) (-2,0.5) (-1,0.5) (0,0.5) (1,0.5) (2,0.5) (3,0.5) (4,0) (5,0) } ;
+% \node at (-2,1.2) {\small$ \color{mycolor} \mathrm{Ev}  \{x[n] = u[n] - u[n-4]\} $};
+\end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figprob1-7ab
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-7ab.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figprob1-7ab.pdf,figprob1-7ab.png)}}}
+
+#+name: figprob1-7ac
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-7ac.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}[scale=3]
+\definecolor{mycolor}{RGB}{139,0,0};
+\pgfplotsset{every axis title/.style={at={(0.5,1.02)},above,yshift=6pt}}
+\begin{axis}
+[axis lines=middle,ymin=-1.3,ymax=1.3,xmin=-5.5,xmax=5.5,
+title={$ \color{mycolor} \mathrm{Od} \{x[n] = u[n] - u[n-4]\}  $},
+extra x ticks = {-5,-3,-1,0,1,3,5}]
+\addplot[ycomb,mycolor,mark=*,mark color=mycolor,mark size=1.4pt] coordinates { (-5,0) (-4,0) (-3,-0.5) (-2,-0.5) (-1,-0.5) (0,0.5) (1,0.5) (2,0.5) (3,0.5) (4,0) (5,0) } ;
+% \node at (-2,1.2) {\small $ \color{mycolor} \mathrm{Od} \{x[n] = u[n] - u[n-4]\}  $};
+\end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figprob1-7ac
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figprob1-7ac.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figprob1-7ac.pdf,figprob1-7ac.png)}}}
+
+***** Problem 1.7b \(\mathbf{(b)}: x_{2}(t) = \sin(\tfrac{1}{2} t) \)
+For signal \(x_{2}(t) = \sin (\frac{1}{2} t)\), because it is an odd signal, so
+for all \(t\), the even part of \(x_{2}(t)\) is zero.
+
+#+name: fig1-7b
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/fig1-7b.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+\pgfplotsset{every axis title/.style={at={(0.5,1.05)},above,yshift=6pt}}
+\begin{axis}
+[samples=600,
+ymin=-1,
+ymax=1,
+title = {\(\color{mycolor}\mathbf{(b)}: x_{2}(t) = \sin(\tfrac{1}{2} t) \)},
+axis lines=middle,
+extra x ticks = {0},
+xtick = {-3.14*4, -3.14*2, 0,...,3.14*2,3.14*4},
+xticklabels={$-4\pi$,$-2\pi$,$0$, $2\pi$,$4\pi$},
+tick label style={font=\footnotesize},
+]
+\addplot[mycolor,domain=-16:16] { sin(deg(1/2*x)) };
+\end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: fig1-7b
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/fig1-7b.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(fig1-7b.pdf,fig1-7b.png)}}}
+
+Notice that for \(\sin(\frac{1}{2}t)\), the signal can be obtained by streching
+\(\sin(t)\) with a factor \(2\). In particular, the fundamental period is \(4\pi\).
+
+***** Problem 1.7c \(\mathbf{(c)}: x_{3}[n] = ( \frac{1}{2} )^{n} u[n-3] \)
+
+For signal \(x_{3}[n] = ( \frac{1}{2} )^{n} u[n-3] \), which will be zeros for
+\(n<3\). By definition, the even part of \(x_{3}[n]\) will be zeros for \(|n| <
+3\). Actually, we do not visualize the signal to draw such a conclusion. For the
+sake of visualization, I illustrate the signal as below:
+
+#+name: figProb1-7ca
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-7ca.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}[scale=3]
+\definecolor{mycolor}{RGB}{139,0,0}
+\pgfplotsset{mycombstyle/.style={mycolor,ycomb,mark=*,very thick},
+title style={at={(0.5,1.05)}}}
+\begin{axis}[axis lines=middle,
+extra x ticks={0},
+scaled y ticks=base 10:2,
+title={$\color{mycolor}{ ( \frac{1}{2} )^{n} u [n-3] } $},
+]
+\addplot [mycombstyle,domain=-4:2,samples=7] {0};
+\addplot [mycombstyle,domain=3:10,samples=8] { (1/2)^(x) };
+\end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figProb1-7ca
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-7ca.pdf]]
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-7ca.pdf,figProb1-7ca.png)}}}
+
+
+#+name: figProb1-7cb
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-7cb.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}[scale=3]
+\definecolor{mycolor}{RGB}{139,0,0}
+\pgfplotsset{mycombstyle/.style={mycolor,ycomb,mark=*,very thick},
+title style={at={(0.5,1.05)}}}
+\begin{axis}[axis lines=middle,
+extra x ticks={0},
+title={  $ {\color{mycolor}{ \mathrm{Even} \{ (\frac{1}{2} )^{n} u [n-3]}\}  } $},
+]
+\addplot [mycombstyle,domain=-10:-3,samples=8] { (1/2)^(-x+1) };
+\addplot [mycombstyle,domain=-2:2,samples=5] { 0 };
+\addplot [mycombstyle,domain=3:10,samples=8] { (1/2)^(x+1) };
+\end{axis}
+\end{tikzpicture}
+
+#+end_src
+
+#+RESULTS: figProb1-7cb
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-7cb.pdf]]
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-7cb.pdf,figProb1-7cb.png)}}}
+
+#+name: figProb1-7cc
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-7cc.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}[scale=3]
+\definecolor{mycolor}{RGB}{139,0,0}
+\pgfplotsset{mycombstyle/.style={mycolor,ycomb,mark=*,very thick},
+title style={at={(0.5,1.05)}}}
+\begin{axis}[axis lines=middle,
+extra x ticks={0},
+title={  $ {\color{mycolor}{ \mathrm{Odd} \{ (\frac{1}{2} )^{n} u [n-3]}\}  } $},
+]
+\addplot [mycombstyle,domain=-10:-3,samples=8] { -(1/2)^(-x+1) };
+\addplot [mycombstyle,domain=-2:2,samples=5] { 0 };
+\addplot [mycombstyle,domain=3:10,samples=8] { (1/2)^(x+1) };
+\end{axis}
+\end{tikzpicture}
+
+#+end_src
+
+#+RESULTS: figProb1-7cc
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-7cc.pdf]]
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-7cc.pdf,figProb1-7cc.png)}}}
+
+***** Problem 1.7d \(\mathbf{(d)}: x_{4}(t) = e^{-5t}u(t+2) \)
+
+For signal \(\mathbf{(d)}: x_{4}(t) = e^{-5t}u(t+2) \), we have \(x_{4}(t) = 0,\
+t<-2\). Because the even and odd part is symmetrical with y-axis, there is no
+\(t\) at which the even and odd part of will be zero.
+
+#+name: figProb1-7da
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-7da.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\pgfplotsset{every axis title/.style={at={(0.5,1.1)},above,yshift=6pt}}
+\begin{axis}[axis lines=middle,
+title= {\(\color{mycolor}\mathbf{(d)}: x_{4}(t) = e^{-5t}u(t+2) \)} ]
+
+\addplot [mycolor,domain=-4:-2,samples=300,very thick] {0};
+\addplot [mycolor,domain=-2:4,samples=300,very thick] {exp(-5*x)};
+\end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figProb1-7da
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-7da.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-7da.pdf,figProb1-7da.png)}}}
+
 
 
 
@@ -1637,10 +1871,11 @@ is periodic, specify its fundamental period.
 \begin{equation*}
 \begin{array}{ll}
 \mathbf{( a )}: x_{1}(t) = ie^{i10t} &  \mathbf{( b )}: x_{2}(t) = e^{(-1 + i)t} \\
-\mathbf{( c )}: x_{3}[n] = e^{i7\pi n} & \mathbf{( d )}: x_{4}[n] = 3e^{i3\pi \frac{n + \tfrac{1}{2}}{5}} \\
-\mathbf{( e )}: x_{5}[n] = 3e^{\frac{i3}{5(n+\tfrac{1}{2})}} &
+\mathbf{( c )}: x_{3}[n] = e^{i7\pi n} & \mathbf{( d )}: x_{4}[n] = 3e^{i( 3\pi ( n + 0.5 ) ) / 5} \\
+\mathbf{( e )}: x_{5}[n] = 3e^{ i3/5(n+ 0.5 )} & \
 \end{array}
 \end{equation*}
+
 
 #+end_prob
 
@@ -1729,7 +1964,7 @@ tick label style={font=\footnotesize}]
 #+ATTR_LATEX: :options []{prob:1-10}
 #+NAME: prob:1-10
 #+begin_prob
-Determine the fundamental period of the singal \(x[n] = 1 + e^{i4\pi n/7} -
+Determine the fundamental period of the signal \(x[n] = 1 + e^{i4\pi n/7} -
 e^{i2\pi n/5}\)
 #+end_prob
 
