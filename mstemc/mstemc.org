@@ -2051,7 +2051,86 @@ yticklabels={$1$},
 Then, by the definition of unit step function, we have \(M=-1\) and \(n_{0}=
 -3\) . We can see that \(x[n]\) can be obtained by flipping the unit step signal
 then right shifting it with \(3\).
+**** DONE Problem 1.13
+     [2020-01-26 Sun 21:24]
 
+     #+ATTR_LATEX: :options []{prob:1-13}
+     #+NAME: prob:1-13
+     #+begin_prob
+     Consider the continuous-time signal
+     \begin{equation*}
+     x(t) = \delta(t+2) - \delta(t-2)
+     \end{equation*}
+     Calculate the value of \(E_{\infty}\) for the signal
+     \begin{equation*}
+     y(t) = \int_{-\infty}^{t} x(\tau) \mathrm{d} \tau
+     \end{equation*}
+     #+end_prob
+
+
+First let's visualize \(x(t)\) which can be shown as below
+
+
+#+name: figProb1-13a
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-13a.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\draw[->] (-3,0) -- (3,0) node[below] {$t$};
+\draw[-Stealth,mycolor,very thick] (-2,0) node[below]{$-2$}-- (-2,1) node[right]{$1$};
+\draw[-Stealth,mycolor,very thick] (2,0) node[above]{$2$} -- (2,-1) node[right]{$-1$};
+\draw (0,0) -- (0,1.5) node[above] {$x(t)$};
+\node[below,mycolor] at (0,0) { $0$ };
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figProb1-13a
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-13a.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-13a.pdf,figProb1-13a.png)}}}
+
+
+Notice the "\(1\)" along with the end of the impulses at \((-2,0)\) and \((2,0)\)  only
+represent that the area of the impulse is \(1\).
+
+For \(y(t)\), we have:
+\begin{eqnarray*}
+y(t)&=& \int_{-\infty}^{t} x(\tau) \mathrm{d} \tau\\
+&=&
+\begin{cases}
+0 & t < -2 \\
+1 & -2 \leq t < 2 \\
+0 & 2 \leq t
+\end{cases}
+\end{eqnarray*}
+
+Then,
+\begin{equation*}
+E_{\infty} = \lim_{T\to\infty} \int_{-T}^{T} |y(t)|^{2} \mathrm{d}t = 4
+\end{equation*}
+
+#+name: figProb1-13b
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-13b.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\draw[->] (-3,0) -- (3,0) node[below] {$t$};
+\draw (0,0) -- (0,1.5) node[above] {$y(t)$};
+\node[below,mycolor] at (0,0) { $0$ };
+\draw[mycolor,very thick] (-2,0) node[below]{$-2$} |- (0,1) -| (2,0) node[below]{$2$} ;
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figProb1-13b
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-13b.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-13b.pdf,figProb1-13b.png)}}}
 
 
 
