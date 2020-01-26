@@ -74,6 +74,7 @@
                  "\\documentclass{org-article}
 \\usepackage{tikz}
 \\usetikzlibrary{arrows,decorations.pathmorphing,,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.misc,mindmap,calendar,shadows,mindmap,calendar,graphdrawing,trees,shapes.misc,quotes,angles}
+\\definecolor{mycolor}{RGB}{139,0,0}
                [NO-DEFAULT-PACKAGES]
                [PACKAGES]
                [EXTRA]"
