@@ -2277,16 +2277,16 @@ S_{2}:\quad  y_{2}[n]&=& x_{2}[n-2] + \frac{1}{2}x_{2}[n-3]
 
 
 ***** \(S_{1}\) is followed by \(S_{2}\)
-Because \(S_{1}\) is followed by \(S_{2}\), then the output of \(S_{1}\) behaves
-as the input of \(S_{2}\) i.e.,   \(y_{1}[n]\) can be treated as \(x_{2}[n]\) ,
-So,
+Because \(S_{1}\) is followed by \(S_{2}\), then the output of \(S_{1}\) is the
+input of \(S_{2}\) i.e., \(y_{1}[n]\) can be treated as \(x_{2}[n]\) , So,
 \begin{eqnarray*}
 y_{2}[n]&=& x_{2}[n-2] + \frac{1}{2}x_{2}[n-3] \\
-&=& \underbrace{2x_{1}[n-2] + 4x_{1}[n-2-1]}_{y_{1}[n-2]}  + \underbrace{\tfrac{1}{2} ( 2x_{1}[n-3] + 4x_{1}[n-3-1] )}_{\frac{1}{2}y_{1}[n-3]} \\
+&=& \underbrace{2x_{1}[n-2] + 4x_{1}[n-2-1]}_{y_{1}[n-2]}  + \underbrace{\tfrac{1}{2} \Big( 2x_{1}[n-3] + 4x_{1}[n-3-1] \Big)}_{\frac{1}{2}y_{1}[n-3]} \\
 &=& 2x_{1}[n-2] + 5x_{1}[n-3] + 2x_{1}[n-4]
 \end{eqnarray*}
 
-\(y_{2}\) is the final input of system \(S\), and \(x_{1}[n]\) the input.
+\(y_{2}\) is the final output of system \(S\), and \(x_{1}[n]\) the input.
+
 ***** \(S_{2}\) is followed by \(S_{1}\)
       [2020-01-27 Mon 11:48]
 
@@ -2296,7 +2296,7 @@ the input.
 
 \begin{eqnarray*}
 y_{1}[n]&=& 2x_{1}[n] + 4x_{1}[n-1] \\
-&=& \underbrace{2 ( x_{2}[n-2]  + \tfrac{1}{2} x_{2}[n-3])}_{2{y_{2}[n]}} + \underbrace{4 ( x_{2}[n-1-2] + \tfrac{1}{2}x_{2}[n-3-1] )}_{4y_{2}[n]}   \\
+&=& \underbrace{2 \Big( x_{2}[n-2]  + \tfrac{1}{2} x_{2}[n-3] \Big)}_{2{y_{2}[n]}} + \underbrace{4 \Big( x_{2}[n-1-2] + \tfrac{1}{2}x_{2}[n-3-1] \Big)}_{4y_{2}[n]}   \\
 &=& 2x_{2}[n-2] + 5x_{2}[n-3] + 2x_{2}[n-4]
 \end{eqnarray*}
 
@@ -2306,6 +2306,48 @@ identical, no matter who ( either \(S_{1}\) or \(S_{2}\)) comes first.
 Later we will learn that for any number of linear systems, the input-output
 relationship does not change no matter what order by which they are
 concatenated.
+**** DONE Problem 1.16
+     CLOSED: [2020-01-27 Mon 14:09]
+     [2020-01-27 Mon 12:08]
+
+     #+ATTR_LATEX: :options []{prob:1-16}
+     #+NAME: prob:1-16
+     #+begin_prob
+     Consider a discrete-time system with input \(x[n]\) and output \(y[n]\).
+     The input-output relationship for this system is
+     \begin{equation*}
+     y[n] = x[n]x[n-2]
+     \end{equation*}
+
+     1. Is the system memoryless?
+     2. Determine the output of the system when the input is \(A\delta[n]\),
+        where \(A\) is any real or complex number.
+     3. Is the system invertible?
+     #+end_prob
+
+     1. Is the system memoryless?
+
+        By definition, a system is memoryless if its output for each value of
+        the independent variable at a given time is dependent on the input at
+        only the same time. Obviously, the output \(y[n]\) is dependent on not
+        only the current time \(x[n]\) but also \(x[n-2]\). So the system is not
+        memoryless.
+
+     2. The output of the system \(y[n] = x[n]x[n-2] = A \delta[n] A \delta[n-2]
+        = A^{2} \delta[n]\delta[n-2]\). By the definition of \(\delta[n]\), we
+        have \(y[n] = 0\)
+
+     3. Is the system invertible?
+
+        A system is said to be invertible if distinct inputs lead to distinct
+        outputs. We can take it as the input and output has one-to-one map. For
+        the given system, if we get one positive value, we cannot determine
+        where the sign come from. i.e. it can be have a positive \(x[n]\) and a
+        positive \(x[n-2]\) or a negative \(x[n]\) and a negative \(x[n-2]\). So
+        the system is not invertible.
+
+
+
 
 
 * Projects                                         :project:
