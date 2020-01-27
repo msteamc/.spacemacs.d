@@ -2448,6 +2448,98 @@ y[n] &=& \sum_{k=n-n_{0}}^{n+n_{0}} x[k] \\
 &=& ( 2n_{0} + 1 ) B
 \end{eqnarray*}
 So we have \(C \leq ( 2n_{0} +1 )B\).
+**** Problem 1.19
+      [2020-01-27 Mon 18:44]
+
+      #+ATTR_LATEX: :options []{prob:1-19}
+      #+NAME: prob:1-19
+      #+begin_prob
+      For each of the following input-output relationships, determine whether
+      the corresponding system is linear, time invariant or both
+      \begin{eqnarray*}
+      \mathbf{(a)}\quad y(t)&=& t^{2} x(t-1) \\
+      \mathbf{(b)}\quad y[n]&=& x^{2}[n-2] \\
+      \mathbf{(c)}\quad y[n]&=& x[n+1] - x[n-1] \\
+      \mathbf{(d)}\quad y[n]&=& \mathrm{Odd}\{ x(t) \}
+      \end{eqnarray*}
+      #+end_prob
+
+***** Problem 1.19a  \(\mathbf{(a)}: y(t)= t^{2} x(t-1) \)
+
+Suppose that \(y_{1}(t)\) and \(y_{2}(t)\) are the responses for input
+\(x_{1}(t)\) and \(x_{2}(t)\), respectively. Given \(x_{3}(t) = ax_{1}(t) +
+bx_{2}(t)\), then we have:
+\begin{equation*}
+  y_{3}(t) = t^{2}x_{3}(t-1) = t^{2} \Big( ax_{1}(t-1) + bx_{2}(t-1) \Big) = ay_{1}(t) + by_{2}(t)
+\end{equation*}
+
+ *So the system is linear.*
+
+ To check whether this system is time invariant, we must
+determine whether the time-invariant property holds for any input and any time
+shift \(t_{0}\). Suppose when \(x_{1}(t)\) is applied we have output \(y_{1}(t)
+= t^{2}x_{1}(t-1)\). We shfit \(x_{1}(t)\) with \(t_{0}\) to get
+\(x_{2}(t-t_{0})\) and apply it to the system. Then we have \(y_{2}(t) =
+t^{2}x_{2}(t-t_{0}-1)\) which is not the shifted version of \(y_{1}(t)\) which
+is \(y_{1}(t-t_{0}) = (t-t_{0})^{2} x_{2}(t-t_{0}-1) \).  *So the system is not time invariant.*
+
+
+***** Problem 1.19b  \(\mathbf{(b)}: y[n]= x^{2}[n-2] \)
+
+To check whether the system is linear or not, suppose \(x_{3}[n] = ax_{1}[n] +
+bx_{2}[n]\)  then
+\begin{eqnarray*}
+y_{3}[n] &=& x_{3}^{2}[n-2] \\
+&=& ( ax_{1}[n-2] + bx_{2}[n-2] )^{2} \\
+&=& a^{2} x_{1}^{2}[n-2] + b^{2}x_{2}^{2}[n-2] + 2abx_{1}[n-2]x_{2}[n-2] \\
+&\neq& ay_{1}[n] + by_{2}[n]
+\end{eqnarray*}
+
+*So the system is not linear*
+
+ \(x_{1}[n]\) will generate output \(y_{1}[n] = x_{1}^{2}[n-2]\). Suppose
+ \(x_{2}[n] = x_{1}[n-n_{0}]\), then we have \(y_{2}[n] = x_{2}^{2}[n-2] =
+ x_{1}^{2}[n-n_{0}-2] = y_{1}[n-n_{0}]\) , i.e. when the input shift with
+ \(n_{0}\) the output will all shift with \(n_{0}\). *So this system is time invariant*
+***** Problem 1.19c \(   \mathbf{(c)}: y[n]= x[n+1] - x[n-1] \)
+      [2020-01-27 Mon 20:49]
+
+First, we check whether or not the system is linear. consider
+\begin{eqnarray*}
+x_{1}[n]&\to& y_{1}[n] \\
+x_{2}[n]&\to& y_{2}[n]
+\end{eqnarray*}
+Let \(x_{3}[n] = ax_{1}[n] + bx_{2}[n]\), then
+\begin{eqnarray*}
+y_{3}[n]&=& x_{3}[n+1] - x_{3}[n-1] \\
+&=& ax_{1}[n+1] + bx_{2}[n+1] - ( ax_{1}[n-1] + bx_{2}[n-1] ) \\
+&=& a(x_{1}[n+1] - ax_{1}[n-1]) + b(x_{2}[n+1] - x_{2}[n-2]) \\
+&=& a y_{1}[n] + by_{2}[n]
+\end{eqnarray*}
+
+So
+\begin{equation*}
+ax_{1}[n] + bx_{2}[n] \to ay_{1}[n] + by_{2}[n]
+\end{equation*}
+*The system is linear.*
+
+Second, we check whether or not the system is time invariant. let \(x_{2}[n] =
+x_{1}[n-n0]\) then
+we have
+\begin{equation*}
+y_{2}[n] = x_{2}[n+1] - x_{2}[n-1] = x_{1}[n-n_{0} + 1] - x_{1}[n-n_{0} -1] = y_{1}[n-n_{0}]
+\end{equation*}
+
+So the system's output and input see the same time shift. *The system is time
+invariant*
+
+***** Problem 1.19d \(     \mathbf{(d)}: y[n]= \mathrm{Odd}\{ x(t) \}\)
+
+First, we check whether or not the system is linear. Considering two inputs
+\(x_{1}(t)\) and \(x_{2}(t)\), we have,
+
+
+
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
