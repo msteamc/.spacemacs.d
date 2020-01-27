@@ -755,8 +755,6 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 *** Basic Problems With Answers
 [2020-01-08 Wed 21:19]
 
-
-
 **** DONE Problem 1.1
      [2020-01-12 Sun 12:45]
 
@@ -2369,13 +2367,87 @@ system based on the history of the input. When it comes to \(y(t) = x(\sin(t))\)
 , we can have \(y(-\pi) = x(0), t=-\pi\). i.e. \(y(-\pi)\) is determined by
 an input from the future. So the system is not causual.
 
-A system is linear we have:
+If a system is linear, we have:
 1. The response to \(x_{1}(t) + x_{2}(t)\) is \(y_{1}(t) + y_{2}(t)\).
 2. The response to \(ax_{1}(t) \) is \(ay_{1}(t)\), where \(a\) is any complex
    constant.
 
 When the input is \(a_{1}x_{1}(\sin(t)) + a_{2}x_{2}(\sin(t)) \), the output
 will be \(a_{1}y_{1}(t) + a_{2}y_{2}(t)\) . The system is linear.
+**** DONE Problem 1.18
+     CLOSED: [2020-01-27 Mon 18:41]
+     [2020-01-27 Mon 15:02]
+
+     #+ATTR_LATEX: :options []{prob:1-18}
+     #+NAME: prob:1-18
+     #+begin_prob
+     Consider a discrete-time system with input \(x[n]\) and output \(y[n]\)
+     related by
+     \begin{equation*}
+     y[n] = \sum_{k=n-n_{0}}^{n+n_{0}} x[k]
+     \end{equation*}
+     where \(n_{0}\) is a finite positive integer.
+     1. Is this system linear?
+     2. Is this system time-invariant?
+     3. If \(x[n]\) is known to be bounded by a finite integer \(B\) , (i.e.
+        \(|x[n]| < B\) for all \(n\)), it can be shown that \(y[n]\) is bounded
+        by a finite number \(C\). We conclude that the given system is stable.
+        Express \(C\) in terms of \(B\) and \(n_{0}\).
+     #+end_prob
+***** linearity
+According to definition of linearity, suppose we have two inputs \(x_{1}[n]\)
+and \(x_{2}[n]\), the reponse is \(y_{1}[n]\) and \(y_{2}[n]\). i.e.
+\begin{eqnarray*}
+y_{1}[n]&=& \sum_{k=n-n_{0}}^{n+n_{0}} x_{1}[k] \\
+y_{2}[n]&=& \sum_{k=n-n_{0}}^{n+n_{0}} x_{2}[k] \\
+\end{eqnarray*}
+Then for \(x_{3}[n] = x_{1}[n] + x_{2}[n]\), we have
+\begin{eqnarray*}
+y_{3}[n]&=& \sum_{k=n-n_{0}}^{n+n_{0}} x_{3}[k]   \\
+&=& \sum_{k=n-n_{0}}^{n+n_{0}} (x_{1}[k] + x_{2}[k]) \\
+&=&\sum_{k=n-n_{0}}^{n+n_{0}} x_{1}[k]   + \sum_{k=n-n_{0}}^{n+n_{0}} x_{2}[k]   \\
+&=& y_{1}[n] + y_{2}[n]
+\end{eqnarray*}
+
+When \(x_{3}[n] = ax_{1}[n]\),
+\begin{eqnarray*}
+y_{3}[n] &=& \sum_{k=n-n_{0}}^{n+n_{0}} x_{3}[k]   \\
+&=& \sum_{k=n-n_{0}}^{n+n_{0}} ax_{1}[k] \\
+&=& a y_{1}[n]
+\end{eqnarray*}
+
+So that the system is linear.
+***** time invariant
+
+If a system is time invariant, the output does not change if you input the
+same signal at any time. No matter when you repeat the same experiment, you will
+get the same output.
+
+For an input \(x_{1}[n]\), we have
+\begin{equation*}
+y_{1}[n] = \sum_{k=n-n_{0}}^{n+n_{0}} x_{1}[k]
+\end{equation*}
+Suppose we have another input \(x_{2}[n] = x_{1}[n-n_{1}]\), so
+
+\begin{eqnarray*}
+y_{2}[n]&=& \sum_{k=n-n_{0}}^{n+n_{0}} x_{2}[k]  \\
+&=& \sum_{k=n-n_{0}}^{n+n_{0}} x_{1}[k-n_{1}] \\
+&=& \sum_{k=n-n_{1}-n_{0}}^{n-n_{1}+n_{0}} x_{1}[k] \\
+&=& y_{1}[n-n_{1}]
+\end{eqnarray*}
+
+So when we have \(x_{2}[n] = x_{1}[n- n_{1}]\), then we have \(y_{2}[n] =
+y_{1}[n- n_{1}]\). So, the system is time invariant.
+
+***** find \(C\)
+
+we know that \(x[n] \leq B\), then
+\begin{eqnarray*}
+y[n] &=& \sum_{k=n-n_{0}}^{n+n_{0}} x[k] \\
+&\leq &  \sum_{k=n-n_{0}}^{n+n_{0}} B \\
+&=& ( 2n_{0} + 1 ) B
+\end{eqnarray*}
+So we have \(C \leq ( 2n_{0} +1 )B\).
 
 * Projects                                         :project:
 [2019-10-05 Sat 16:53]
