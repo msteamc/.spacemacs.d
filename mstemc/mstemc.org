@@ -2131,8 +2131,127 @@ E_{\infty} = \lim_{T\to\infty} \int_{-T}^{T} |y(t)|^{2} \mathrm{d}t = 4
 #+ATTR_HTML:  :width 80% :align center
 #+ATTR_LATEX: :width 0.8\textwidth :align center
 {{{if-latex(figProb1-13b.pdf,figProb1-13b.png)}}}
+**** DONE Problem 1.14
+     CLOSED: [2020-01-27 Mon 11:00]
+     :LOGBOOK:
+     - CLOSING NOTE [2020-01-27 Mon 11:00]
+     CLOCK: [2020-01-27 Mon 07:51]--[2020-01-27 Mon 11:00] =>  3:09
+     :END:
+     [2020-01-27 Mon 07:49]
+
+     #+ATTR_LATEX: :options []{prob:1-14}
+     #+NAME: prob:1-14
+     #+begin_prob
+     Consider a periodic signal
+     \begin{equation*}
+     x(t) =
+     \begin{cases}
+     1, & 0\leq t\leq 1 \\
+     -2, & 1 < t <2
+     \end{cases}
+     \end{equation*}
+     with period \(T=2\), The derivative of this signal is related to the
+     "impulse train"
+     \begin{equation*}
+     g(t) = \sum_{k=-\infty}^{\infty} \delta(t-2k)
+     \end{equation*}
+     with period \(T=2\). It can be shown that
+     \begin{equation*}
+     \frac{\mathrm{d}x(t)}{\mathrm{d}t} = A_{1}g(t-t_{1}) + A_{2} g(t-t_{2})
+     \end{equation*}
+     Determine the values of \(A_{1},t_{1},A_{2}\) and \(t_{2}\)
+     #+end_prob
+
+First let's visualize \(x(t)\) and \(g(t)\) :
+
+#+name: figProb1-14a
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-14a.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\draw[->] (-4.4,0) -- (4.4,0);
+\draw (0,-2.5) -- (0,1.5);
+\draw[mycolor,very thick] (-4.4,0) -- (-4,0) -- (-4,1) -- (-3,1) -- (-3,-2) -- (-2,-2) -- ( -2,1) -- (-1,1) -- (-1,-2) -- (0,-2) -- (0,1) -- (1,1) -- (1,-2) -- (2,-2) -- (2,1)--(3,1) -- (3,-2) -- (4,-2)-- (4,0) -- (4.4,0);
+\foreach \x in {-4,-3,...,4}
+\node[below,semitransparent,blue] at(\x,0) {$\x$};
+
+\node[left] at (0,1) {$1$};
+\node[right] at (0,-2) {$-2$};
+\node[above] at (0,1.8) {\color{mycolor} \[ x(t) =     \begin{cases}      1, & 0\leq t\leq 1 \\     -2, & 1 < t <2     \end{cases}     \]};
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figProb1-14a
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-14a.pdf]]
 
 
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-14a.pdf,figProb1-14a.png)}}}
+
+#+name: figProb1-14b
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-14b.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\draw[->] (-4.4,0) -- (4.4,0);
+\draw (0,-1.5) -- (0,1.5);
+\node[below,semitransparent,blue] at(\x,0) {$\x$};
+
+\node[left] at (0,1) {$1$};
+\node[above] at (0,1.8) {\color{mycolor}$g(t)= \sum_{k=-\infty}^{\infty} \delta(t-2k)$};
+
+\foreach \x in{-4,-2,0,2,4}
+\draw[-Stealth,mycolor,very thick] (\x,0) node[below] {\color{black}$\x$}  -- (\x,1);
+
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figProb1-14b
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-14b.pdf]]
+
+Then we try to figure out \(\frac{\mathrm{d}x(t)}{\mathrm{d}t}\) . By definition
+of \(\delta (t)\) in section of the textbook, we know that,
+\begin{equation*}
+\frac{\mathrm{d}x(t)}{\mathrm{d}t} = 3\sum_{k=-\infty}^{\infty} \sigma(t-2k )  -3 \sum_{k=-\infty}^{\infty} \sigma(t-2k -1)
+\end{equation*}
+
+#+name: figProb1-14c
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-14c.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\draw[->] (-4.4,0) -- (4.4,0);
+\draw (0,-1.5) -- (0,1.5);
+\node[below,semitransparent,blue] at(\x,0) {$\x$};
+
+\node[above] at (0,1) {$3$};
+\node[above] at (0,1.8) {\color{mycolor}$\frac{\mathrm{d}x(t)}{\mathrm{d}t} = 3\sum_{k=-\infty}^{\infty} \sigma(t-2k )  -3 \sum_{k=-\infty}^{\infty} \sigma(t-2k -1)$};
+
+\foreach \x in{-4,-2,0,2,4}
+\draw[-Stealth,mycolor,very thick] (\x,0) node[below] {\color{black}$\x$}  -- (\x,1);
+\foreach \x in{-3,-1,1,3}
+\draw[-Stealth,mycolor,very thick] (\x,0) node[below] {\color{black}$\x$}  -- (\x,-1);
+\node[below] at (1,-1) {$-3$};
+
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figProb1-14c
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-14c.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-14c.pdf,figProb1-14c.png)}}}
+
+
+Compared the result with \(g(t)\), then we have \(A_{1} = 3\), \(A_{2} = -3\),
+\(t_{1} = 0\) ,\(t_{2} = 1\)
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-14b.pdf,figProb1-14b.png)}}}
 
 
 * Projects                                         :project:
