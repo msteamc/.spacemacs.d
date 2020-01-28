@@ -2769,8 +2769,58 @@ y_{1}(t-t_{0}) = \frac{ x_{1}(t-t_{0}) - x_{1}(-t + t_{0}) }{2}
 \end{equation*}
 
 Because \(y_{2}(t) \neq y_{1}(t- t_{0})\), therefore the system is not time invariant.
+**** DONE Problem 1.20
+      [2020-01-28 Tue 16:48]
 
 
+      #+ATTR_LATEX: :options []{prob:1-2020}
+      #+NAME: prob:1-2020
+      #+begin_prob
+      A continuous-time linear system \(S\) with input \(x(t)\) and output
+      \(y(t)\) yields the following input-output pairs:
+
+      \begin{eqnarray*}
+      x(t)&=& e^{i2t} \xrightarrow{S} y(t) = e^{i3t} \\
+      x(t)&=& e^{-i2t} \xrightarrow{S} y(t) = e^{-i3t}
+      \end{eqnarray*}
+
+      a. If \(x_{1}(t) = \cos(2t)\), determine the corresponding output
+         \(y_{1}(t)\) for system \(S\).
+      b. If \(x_{2}(t) = \cos(2(t-\frac{1}{2}))\), determine the corresponding
+         output \(y_{2}(t)\) for system \(S\).
+
+      #+end_prob
+
+*****  \(x_{1}(t) = \cos(2t)\)
+
+      Because
+      \begin{equation*}
+      x_{1}(t) = \cos(2t) = \frac{ e^{i2t} + e^{-i2t} }{2}
+      \end{equation*}
+
+      The system \(S\) is linear system, so the output should be
+      \begin{equation*}
+      y_{1}(t) = \frac{ e^{i3t} + e^{-i3t} }{2} = \cos(3t)
+      \end{equation*}
+
+***** \(x_{2}(t) = \cos(2(t-\frac{1}{2}))\)
+      [2020-01-28 Tue 17:15]
+
+
+Using Euler's formula, we represent \(x_{2}(t)\) using the exponential form.
+
+\begin{eqnarray*}
+ x_{2}(t) &=& \frac{ e^{i(2(t-\frac{1}{2}))}  + e^{-i(2(t-\frac{1}{2}))} }{2} \\
+&=& \frac{1}{2} e^{-i}e^{i2t} + \frac{1}{2}e^{i}e^{-i2t}
+\end{eqnarray*}
+
+Because \(\frac{1}{2}e^{i}\) and \(\frac{1}{2}e^{-i}\) are complex constants and
+the system is linear, so we have the output
+\begin{equation*}
+y_{2}(t) = \frac{1}{2}e^{-i}e^{i3t} + \frac{1}{2}e^{i}e^{-i3t} = \frac{ e^{i3(t-\tfrac{1}{3})}  + e^{-i3(t-\tfrac{1}{3})}}{2} = \cos(3(t- \tfrac{1}{3}))
+\end{equation*}
+
+Therefore we have \(y_{2}(t) = \cos(3(t-\tfrac{1}{3}))\).
 
 
 
