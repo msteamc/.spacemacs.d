@@ -2448,7 +2448,8 @@ y[n] &=& \sum_{k=n-n_{0}}^{n+n_{0}} x[k] \\
 &=& ( 2n_{0} + 1 ) B
 \end{eqnarray*}
 So we have \(C \leq ( 2n_{0} +1 )B\).
-**** Problem 1.19
+**** DONE Problem 1.19
+     CLOSED: [2020-01-28 Tue 16:46]
       [2020-01-27 Mon 18:44]
 
       #+ATTR_LATEX: :options []{prob:1-19}
@@ -2460,7 +2461,7 @@ So we have \(C \leq ( 2n_{0} +1 )B\).
       \mathbf{(a)}\quad y(t)&=& t^{2} x(t-1) \\
       \mathbf{(b)}\quad y[n]&=& x^{2}[n-2] \\
       \mathbf{(c)}\quad y[n]&=& x[n+1] - x[n-1] \\
-      \mathbf{(d)}\quad y[n]&=& \mathrm{Odd}\{ x(t) \}
+      \mathbf{(d)}\quad y( t )&=& \mathrm{Odd}\{ x(t) \}
       \end{eqnarray*}
       #+end_prob
 
@@ -2524,7 +2525,7 @@ ax_{1}[n] + bx_{2}[n] \to ay_{1}[n] + by_{2}[n]
 *The system is linear.*
 
 Second, we check whether or not the system is time invariant. let \(x_{2}[n] =
-x_{1}[n-n0]\) then
+x_{1}[n-n_{0}]\) then
 we have
 \begin{equation*}
 y_{2}[n] = x_{2}[n+1] - x_{2}[n-1] = x_{1}[n-n_{0} + 1] - x_{1}[n-n_{0} -1] = y_{1}[n-n_{0}]
@@ -2533,10 +2534,242 @@ y_{2}[n] = x_{2}[n+1] - x_{2}[n-1] = x_{1}[n-n_{0} + 1] - x_{1}[n-n_{0} -1] = y_
 So the system's output and input see the same time shift. *The system is time
 invariant*
 
-***** Problem 1.19d \(     \mathbf{(d)}: y[n]= \mathrm{Odd}\{ x(t) \}\)
+***** Problem 1.19d \(     \mathbf{(d)}: y(t)= \mathrm{Odd}\{ x(t) \}\)
 
 First, we check whether or not the system is linear. Considering two inputs
-\(x_{1}(t)\) and \(x_{2}(t)\), we have,
+\(x_{1}(t)\) and \(x_{2}(t)\), we have:
+\begin{eqnarray*}
+y_{1}(t)&=& \mathrm{Odd}\{ x_{1}(t) \}  \\
+y_{2}(t) &=& \mathrm{Odd} \{ x_{2}(t) \}
+\end{eqnarray*}
+Let \(x_{3}(t) = ax_{1}(t) + bx_{2}(t)\), then
+\begin{eqnarray*}
+y_{3}(t)&=& \mathrm{Odd} \{ x_{3}(t) \} \\
+&=& \mathrm{Odd} \{ ax_{1}(t) + bx_{2}(t) \} \\
+&=& \mathrm{Odd} \{ax_{1}(t) \} + \mathrm{Odd} \{ bx_{2}(t) \} \\
+&=& ay_{1}(t) + by_{2}(t)
+\end{eqnarray*}
+
+*The system is linear*.
+
+Second we check whether or not the system is time-invariant. A system is time
+invariant if a time shift in the input signal results in an identical shift in
+the output signal.
+
+If we shift the input \(x(t)\) and get \(x(t-t_{0})\) then the result \(y(t)\)
+we become as \(y(t-t_{0})\). Before we check the property of time-invarant,
+let's first check one example. Suppose
+\begin{equation*}
+x_{1}(t) =
+\begin{cases}
+t, & 0\leq t \leq 4 \\
+0, & \mathrm{otherwise}
+\end{cases}
+\end{equation*}
+
+Then
+\begin{equation*}
+y_{1}(t) = \mathrm{Odd}\{x_{1}(t)\} = \frac{x_{1}(t)-x_{1}(-t)}{2} =
+\begin{cases}
+\frac{1}{2}t & -4 \leq t \leq 4 \\
+0  & \mathrm{otherwise}
+\end{cases}
+\end{equation*}
+
+We can visualize \(x_{1}(t)\) and \(y_{1}(t)\) as follows:
+
+#+name: fig1-19d
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/fig1-19d.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+\draw[->] (-5,0) -- (5,0) node[below]{$t$};
+\draw[->] (0,-2) -- (0,5) node[right]{$x_{1}(t)$};
+\draw[,very thick, mycolor] (-5,0) -- (0,0) node[below=0.3cm,right] {$0$} -- (4,4) -- (4,0) node[below,black]{$4$} -- (5,0);
+\node[right]at (0,4) {$4$};
+\node at (-3,3) {\color{mycolor}\[ x_{1}(t) =
+\begin{cases}
+t, & 0\leq t \leq 4 \\
+0, & \mathrm{otherwise}
+\end{cases}
+ \]}
+\end{tikzpicture}
+#+end_src
+
+
+#+RESULTS: fig1-19d
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/fig1-19d.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(fig1-19d.pdf,fig1-19d.png)}}}
+
+
+#+name: fig1-19db
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/fig1-19db.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+\draw[->] (-5,0) -- (5,0) node[below]{$t$};
+\draw[->] (0,-3) -- (0,5) node[right]{$y_{1}(t)$};
+\draw[,very thick, mycolor] (-5,0) -- (-4,0) node[above,black] {$-4$} -- (-4,-2) -- (4,2) -- (4,0) node[below,black]{$4$} -- (5,0);
+\node[below=0.3cm,right] at(0,0) {$0$};
+\node at (-3,3) {\color{mycolor}\small \[
+y_{1}(t) = \mathrm{Odd}\{x_{1}(t)\}  =
+\begin{cases}
+\frac{1}{2}t & -4 \leq t \leq 4 \\
+0  & \mathrm{otherwise}
+\end{cases}
+ \]}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: fig1-19db
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/fig1-19db.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(fig1-19db.pdf,fig1-19db.png)}}}
+
+If we shift \(x_{1}(t)\) by \(2\) to obtain \(x_{2}(t) = x_{1}(t-2)\), then we have
+
+
+#+name: figProb1-19dc
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-19dc.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+\draw[->] (-5,0) -- (7,0) node[below]{$t$};
+\draw[->] (0,-2) -- (0,5) node[right]{$x_{2}(t)=x_{1}(t-2)$};
+\draw[,very thick, mycolor] (-5,0) -- (0,0) node[below=0.3cm,right] {$0$} --(2,0) node[below,black]{$2$}-- (6,4) -- (6,0) node[below,black]{$6$} -- (7,0);
+\node[right]at (0,4) {$4$};
+\node at (-3,3) {\color{mycolor}\[ x_{2}(t)=x_{1}(t-2) =
+\begin{cases}
+t, & 2 \leq t \leq 6 \\
+0, & \mathrm{otherwise}
+\end{cases}
+ \]}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figProb1-19dc
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-19dc.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-19dc.pdf,figProb1-19dc.png)}}}
+
+Then we have \(y_{2}(t)\),
+\begin{equation*}
+y_{2}(t) =
+\begin{cases}
+0, & t < -6 \\
+\tfrac{1}{2}( t+2 ), & -6 \leq t \leq -2 \\
+0, & -2 < t \leq 2 \\
+\frac{1}{2} (t-2), & 2 < t \leq 6 \\
+0, & 6 < t
+\end{cases}
+\end{equation*}
+
+Then, we visualize \( y_{2}(t) \),
+
+#+name: figProb1-19dd
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-19dd.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+\draw[->] (-7,0) -- (7,0) node[below]{$t$};
+\draw[->] (0,-3) -- (0,5) node[right]{$y_{2}(t)$};
+\draw[,very thick, mycolor] (-7,0) -- (-6,0) node[above,black] {$-6$} -- (-6,-2) -- (-2,0) node[above,black]{$-2$} -- (0,0) node[below=0.3cm,right,black]{$0$} -- (2,0) node [below,black] {$2$}--(6,2)--(6,0) node[below,black] {$6$} --(7,0);
+\node[below=0.3cm,right] at(0,0) {$0$};
+\node[right] at (0,2){$2$};
+\node[right] at (0,-2){$-2$};
+\node at (-3.5,3) {\color{mycolor}\small \[
+y_{2}(t) = \mathrm{Odd}\{x_{2}(t)\} =
+\begin{cases}
+0, & t < -6 \\
+\tfrac{1}{2}( t+2 ), & -6 \leq t \leq -2 \\
+0, & -2 < t \leq 2 \\
+\frac{1}{2} (t-2), & 2 < t \leq 6 \\
+0, & 6 < t
+\end{cases}
+ \]}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figProb1-19dd
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-19dd.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-19dd.pdf,figProb1-19dd.png)}}}
+
+Notice, by shifting \(y_{1}(t)\) by \(2\) , we have \(y_{1}(t-2)\)
+\begin{equation*}
+y_{1}(t-2) =
+\begin{cases}
+\frac{1}{2} (t-2) &  -2 \leq t \leq 6 \\
+0 & \mathrm{otherwise}
+\end{cases}
+\end{equation*}
+
+Now, we can derive that  \(y_{1}(t-2) \neq y_{2}(t)\) . Hence, *The system is
+not time invariant* .
+
+Also we can visualize \(y_{1}(t-2)\) to see how different
+\(y_{1}(t-2)\) and \(y_{2}(t)\) are.
+
+#+name: figProb1-19de
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-19de.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+\draw[->] (-7,0) -- (7,0) node[below]{$t$};
+\draw[->] (0,-3) -- (0,5) node[right]{$y_{1}(t-2)$};
+
+\draw[,very thick, mycolor] (-7,0) -- (-2,0) node[above,black] {$-2$} -- (-2,-2) -- (6,2)  -- (6,0) node[below,black]{$6$} -- (7,0) ;
+\node[below=0.3cm,right] at(0,0) {$0$};
+\node[right] at (0,2){$2$};
+\node[right] at (0,-2){$-2$};
+\node at (-3.5,3) {\color{mycolor}\small \[
+y_{1}(t-2) =
+\begin{cases}
+\frac{1}{2} (t-2) &  -2 \leq t \leq 6 \\
+0 & \mathrm{otherwise}
+\end{cases}
+ \]}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figProb1-19de
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-19de.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-19de.pdf,figProb1-19de.png)}}}
+
+Now, we deduce that the system is time-invariant. For \(x_{1}(t)\), we have,
+\begin{equation*}
+y_{1}(t) = \mathrm{Odd}\{ x_{1}(t) \} = \frac{ x_{1}(t) - x_{1}(-t) }{2}
+\end{equation*}
+
+Now, let \(x_{2}(t) = x_{1}(t-t_{0})\) , then
+\begin{equation*}
+y_{2}(t) = \mathrm{Odd}\{ x_{2}(t) \} = \frac{ x_{2}(t) - x_{2}(-t) }{2} = \frac{ x_{1}(t-t_{0})  - x_{1}(-t - t_{0}) }{2}
+\end{equation*}
+
+Also, we have
+\begin{equation*}
+y_{1}(t-t_{0}) = \frac{ x_{1}(t-t_{0}) - x_{1}(-t + t_{0}) }{2}
+\end{equation*}
+
+Because \(y_{2}(t) \neq y_{1}(t- t_{0})\), therefore the system is not time invariant.
+
 
 
 
