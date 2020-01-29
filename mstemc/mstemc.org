@@ -32,7 +32,7 @@ CLOCK: [2019-10-06 Sun 08:21]--[2019-10-06 Sun 08:33] =>  0:12
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_dataset "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :image '((caption . " [**Watch**](https://youtube.com)") (preview_only . "false"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :image '((caption . " [**Watch**](https://youtube.com)") (preview_only . "true"))
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video" "how-do-i-make-a-video")
 :EXPORT_DESCRIPTION: An introduction to setup the TikZ environment in Emacs Org File. So that in Org file, you can generate either vector graph of =pdf=  format or raster graph of =png= format. Furthermore, you can export the vector graph when latex is called and otherwise raster graph.
 :ORDERED:  t
