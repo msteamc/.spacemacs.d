@@ -160,7 +160,7 @@
 ;; customize the title command
 (setq org-latex-title-command "")
 (setq org-latex-toc-command "")
-(setq org-imagemagick-display-command "convert -density 600  \"%s\" -transparent white -flatten  -thumbnail \"%sx%s>\" \"%s\"")
+(setq org-imagemagick-display-command "convert -density 600  \"%s\" -transparent white   -thumbnail \"%sx%s>\" \"%s\"")
 (defun org-display-inline-images (&optional include-linked refresh beg end)
   "Display inline images.
 Normally only links without a description part are inlined, because this
