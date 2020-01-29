@@ -365,19 +365,6 @@ layers configuration. You are free to put any user code."
   (setq pyim-page-length 6)
   (setenv "LANG" "en_US.UTF-8")
 
-  ;; org journal(do not delete and must appear here)
-  ;; https://github.com/bastibe/org-journal/issues/20
-  (with-eval-after-load 'org-journal
-    (setq org-journal-file-type 'weekly)
-    (setq org-journal-dir "~/Dropbox/zorg/Journal/")
-    ;; When =org-journal-file-pattern= has the default value, this would be the regex.
-    (setq org-agenda-file-regexp "\\`\\\([^.].*\\.org\\\|[0-9]\\\{8\\\}\\\(\\.gpg\\\)?\\\)\\'")
-    (add-to-list 'org-agenda-files org-journal-dir)
-    (setq org-journal-enable-agenda-integration t)
-    )
-  (require 'org-indent)
-  (org-indent-mode -1)
-
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
