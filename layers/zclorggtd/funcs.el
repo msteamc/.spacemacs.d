@@ -508,7 +508,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_FILE_NAME: " "index")
                    ,(concat ":LATEX_TITLE: " title)
                    ,(concat ":EXPORT_HUGO_SECTION: " "project")
-                   ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
+                   ,(concat ":EXPORT_HUGO_BUNDLE: " "project-" fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this project")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
@@ -532,7 +532,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_FILE_NAME: " "index")
                    ,(concat ":LATEX_TITLE: " title)
                    ,(concat ":EXPORT_HUGO_SECTION: " "project")
-                   ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
+                   ,(concat ":EXPORT_HUGO_BUNDLE: " "course-" fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this course")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
@@ -541,7 +541,6 @@ See `org-capture-templates' for more information."
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
-
 
   )
 

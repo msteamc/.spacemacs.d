@@ -67,7 +67,6 @@
           ("d" "diary" entry (file+datetree "~/Dropbox/zorg/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)
           ("j" "Journal entry" entry (function org-journal-find-location)
            "* %(format-time-string org-journal-time-format)%^{Title}\n Added:%T\n %?")))
-
   (add-hook 'org-clock-out-hook 'bh/remove-empty-drawer-on-clock-out 'append)
   ;;;; Targets include this file and any file contributing to the agenda - up to 9 levels deep
   ;;;; Use full outline paths for refile targets - we file directly with IDO
