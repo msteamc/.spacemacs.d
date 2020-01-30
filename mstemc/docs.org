@@ -1,0 +1,41 @@
+#+title: make STEAM clear
+#+setupfile: ~/Dropbox/zorg/org-templates/enpost.org
+
+
+* Signals and Systems
+
+** Signals and Systems
+ [2019-10-05 Sat 16:53]
+*** TODO signals and systems 2 :index:
+    :PROPERTIES:
+    :EXPORT_FILE_NAME: _index
+    :LATEX_TITLE: signals and systems 2
+    :EXPORT_HUGO_SECTION: /courses/signalsandsystems
+    :EXPORT_DESCRIPTION: summary of this course.
+    :EXPORT_HUGO_TAGS: "signals and systems" "bbbf"
+    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :linktitle solutions to basic problems in chapter 1
+    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :toc true
+    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :type docs
+    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :menu.signalsandsystems '( (name . "signals and systems export") (weight . "1") )
+    :END:
+    :LOGBOOK:
+    CLOCK: [2020-01-29 Wed 16:39]--[2020-01-29 Wed 16:50] =>  0:11
+    :END:
+  <2020-01-29 Wed 16:39>
+
+This is the index file for signals and systems
+
+*** TODO solutions
+    :PROPERTIES:
+    :EXPORT_FILE_NAME: chapter-1-basic-prolems
+    :EXPORT_HUGO_SECTION: /courses/signalsandsystems
+    :LATEX_TITLE: solutions to basic problems in chapter 1
+    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :linktitle solutions to basic problems in chapter 1 4
+    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :toc true
+    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :type docs
+    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :menu.signalsandsystems '( (parent . "chapter 6 advanced problems") (weight . "1") )
+    :END:
+   <2020-01-30 Thu 19:12>
+
+
+ #+INCLUDE: "./post/technology/SignalsAndSystems/Chapter1BasicProblems1.org"

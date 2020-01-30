@@ -201,7 +201,7 @@ The generated figure is shown as:
    position can be calculated as intersections of two paths.
 4. Once paths and nodes are ready, you can execute an action on it. An action
    can be =draw, fill, filldraw, pattern, shade, shadedraw, clip,
-      useasboundingbox= . Do not be nervous. You will get familiar with them when
+         useasboundingbox= . Do not be nervous. You will get familiar with them when
    you use them.
 5. For the paths, nodes and actions, many options are available.
 6. The options appear in =[]=. No matter it is an object or an operation, the
@@ -755,7 +755,7 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 
 #+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems1.org"
 
-* Projects                                         :project:
+* Projects                                                             :project:
 [2019-10-05 Sat 16:53]
 
 ** TODO my workflow of creating a video
@@ -772,7 +772,7 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 
 #+include: "./project/my-workflow-of-creating-a-video.org"
 
-* Courses                                          :course:
+* Courses                                                               :course:
 [2019-10-05 Sat 16:53]
 
 
@@ -783,48 +783,13 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 :EXPORT_HUGO_SECTION: project
 :EXPORT_HUGO_BUNDLE: course-signals-and-systems-basic-problmes
 :EXPORT_DESCRIPTION: solutions to the basic problems in chapter 1 of signals and systems
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :external_link /courses/signalsandsystems/
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :external_link /courses/
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("signals and systems")
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("" "")
 :END:
 :LOGBOOK:
 CLOCK: [2020-01-30 Thu 22:11]--[2020-01-30 Thu 22:12] =>  0:01
 :END:
 <2020-01-30 Thu 22:11>
-
-
-
-
-* Docs
-[2019-10-05 Sat 16:53]
-** TODO signals and systems 2
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: _index
-   :LATEX_TITLE: signals and systems 2
-   :EXPORT_HUGO_SECTION: /courses/signalsandsystems
-   :EXPORT_HUGO_BUNDLE: course-signals-and-systems-2
-   :EXPORT_DESCRIPTION: summary of this course. collection of all the articles, problems and solutions, projects generated during my learning of Signals and Systems.
-   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :external_link "/courses/signalsandsystems/"
-   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("signals and systems")
-   :END:
-   :LOGBOOK:
-   CLOCK: [2020-01-29 Wed 16:39]--[2020-01-29 Wed 16:50] =>  0:11
-   :END:
- <2020-01-29 Wed 16:39>
-
-** TODO solutions
-    :PROPERTIES:
-    :EXPORT_FILE_NAME: chapter-1-basic-prolems
-    :LATEX_TITLE: solutions to basic problems in chapter 1
-    :EXPORT_DESCRIPTION: summary of this Doc
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :linktitle solutions to basic problems in chapter 1
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :toc true
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :type docs
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :menu.signalsandsystems '( (parent . "chapter 4 advanced problems") (weight . "1") )
-    :END:
-  <2020-01-30 Thu 19:12>
-
-
-#+INCLUDE: "./post/technology/SignalsAndSystems/Chapter1BasicProblems1.org"
