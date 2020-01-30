@@ -534,7 +534,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_SECTION: " "project")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " "course-" fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this course")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":external_link " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":external_link " "/courses/")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
@@ -553,18 +553,14 @@ See `org-capture-templates' for more information."
                  `(
                    ,(concat "* TODO " title)
                    ":PROPERTIES:"
-                   ,(concat ":EXPORT_FILE_NAME: " "index")
+                   ,(concat ":EXPORT_FILE_NAME: " fname)
                    ,(concat ":LATEX_TITLE: " title)
-                   ,(concat ":EXPORT_HUGO_SECTION: " "course/")
+                   ,(concat ":EXPORT_HUGO_SECTION: " "courses/")
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this Doc")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":linktitle " fname)
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":linktitle " title)
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":toc " "true")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":type " "docs")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":menu " "'(parent . \"\") (weight . \"1\")")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":external_link " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":menu.signalsandsystems " "'( (parent . \"\") (weight . \"1\") )")
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
