@@ -776,12 +776,32 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 [2019-10-05 Sat 16:53]
 
 
+** TODO signals and systems
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:LATEX_TITLE: signals and systems
+:EXPORT_HUGO_SECTION: project
+:EXPORT_HUGO_BUNDLE: course-signals-and-systems-basic-problmes
+:EXPORT_DESCRIPTION: solutions to the basic problems in chapter 1 of signals and systems
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :external_link /courses/signalsandsystems/
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("signals and systems")
+:END:
+:LOGBOOK:
+CLOCK: [2020-01-30 Thu 22:11]--[2020-01-30 Thu 22:12] =>  0:01
+:END:
+<2020-01-30 Thu 22:11>
 
-* Docs                                             :course:
+
+
+
+* Docs
 [2019-10-05 Sat 16:53]
 ** TODO signals and systems 2
    :PROPERTIES:
-   :EXPORT_FILE_NAME: index
+   :EXPORT_FILE_NAME: _index
    :LATEX_TITLE: signals and systems 2
    :EXPORT_HUGO_SECTION: /courses/signalsandsystems
    :EXPORT_HUGO_BUNDLE: course-signals-and-systems-2
