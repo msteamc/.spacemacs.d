@@ -534,10 +534,37 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_SECTION: " "project")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " "course-" fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this course")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":external_link " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
+                   ":END:"
+                   "%T\n\n%?\n")                ;Place the cursor here finally
+                 "\n")))
+  ;;Doc
+  ;;;###autoload
+  (defun org-hugo-new-subtree-doc-capture-template ()
+    "Returns `org-capture' template string for new Hugo Doc.
+See `org-capture-templates' for more information."
+    (let* ((title (read-from-minibuffer "Doc Title: ")) ;Prompt to enter the Doc title
+           (fname (org-hugo-slug title)))
+      (mapconcat #'identity
+                 `(
+                   ,(concat "* TODO " title)
+                   ":PROPERTIES:"
+                   ,(concat ":EXPORT_FILE_NAME: " "index")
+                   ,(concat ":LATEX_TITLE: " title)
+                   ,(concat ":EXPORT_HUGO_SECTION: " "course/")
+                   ,(concat ":EXPORT_DESCRIPTION: "  "summary of this Doc")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":linktitle " fname)
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":toc " "true")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":type " "docs")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":menu " "'(parent . \"\") (weight . \"1\")")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":external_link " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))

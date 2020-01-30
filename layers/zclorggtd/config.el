@@ -63,41 +63,27 @@
            entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Courses")
            (function org-hugo-new-subtree-course-capture-template)
            :clock-in t :clock-resume t)
+          ("d" "Hugo:Docs"
+           entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Courses")
+           (function org-hugo-new-subtree-doc-capture-template)
+           :clock-in t :clock-resume t)
           ;; ("g" "my Log Time" entry (file+datetree "~/Dropbox/zorg/base/ztimelog.org" ) "** %T - %?  :timelog:" :clock-in t :clock-resume t)
-          ("d" "diary" entry (file+datetree "~/Dropbox/zorg/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)
+          ("D" "diary" entry (file+datetree "~/Dropbox/zorg/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)
           ("j" "Journal entry" entry (function org-journal-find-location)
            "* %(format-time-string org-journal-time-format)%^{Title}\n Added:%T\n %?")))
   (add-hook 'org-clock-out-hook 'bh/remove-empty-drawer-on-clock-out 'append)
-  ;;;; Targets include this file and any file contributing to the agenda - up to 9 levels deep
-  ;;;; Use full outline paths for refile targets - we file directly with IDO
   (setq org-refile-use-outline-path t)
-  ;;;; Targets complete directly with IDO
   (setq org-outline-path-complete-in-steps nil)
 
   ;;;; Allow refile to create parent tasks with confirmation
   (setq org-refile-allow-creating-parent-nodes (quote confirm))
-
-  ;;;; Use IDO for both buffer and file completion and ido-everywhere to t
-  ;; ido is imcompatible with idos
-  ;;
-  ;; (setq org-completion-use-ido t)
-  ;; (setq ido-everywhere t)
-  ;; (setq ido-max-directory-size 100000)
-  ;; (ido-mode (quote both))
-  ;; Use the current window when visiting files and buffers with ido
-  ;; (setq ido-default-file-method 'selected-window)
-  ;; (setq ido-default-buffer-method 'selected-window)
   ;; Use the current window for indirect buffer display
   (setq org-indirect-buffer-display 'current-window)
-
   (setq org-refile-target-verify-function 'bh/verify-refile-target)
-
   ;;;; Do not dim blocked tasks
   (setq org-agenda-dim-blocked-tasks nil)
-
   ;;;; Compact the block agenda view
   (setq org-agenda-compact-blocks t)
-
   ;;;; Custom agenda command definitions
   (setq org-agenda-custom-commands
         (quote (
@@ -610,13 +596,10 @@
                                    ("/" italic "<i>" "</i>")
                                    ("_" underline "<span style=\"text-decoration:underline;;\">" "</span>")
                                    ("=" org-code "<code>" "</code>" verbatim)
+                                   ("+" (:strike-through t))
                                    ("~" org-verbatim "<code>" "</code>" verbatim))))
-
   (setq org-use-sub-superscripts nil)
-
   (setq org-odd-levels-only nil)
-
   (run-at-time "00:59" 3600 'org-save-all-org-buffers)
-
   (setq org-log-done 'note);;
   )
