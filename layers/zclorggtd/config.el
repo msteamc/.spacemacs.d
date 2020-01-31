@@ -64,9 +64,14 @@
            (function org-hugo-new-subtree-course-capture-template)
            :clock-in t :clock-resume t)
           ("d" "Hugo:Docs"
-           entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Courses")
+           entry (file+olp "~/Dropbox/zorg/mstemc/docs.org" "Docs")
            (function org-hugo-new-subtree-doc-capture-template)
            :clock-in t :clock-resume t)
+          ("i" "Hugo:Docs index"
+           entry (file+olp "~/Dropbox/zorg/mstemc/docs.org" "Docs")
+           (function org-hugo-new-subtree-doc-index-capture-template)
+           :clock-in t :clock-resume t)
+
           ;; ("g" "my Log Time" entry (file+datetree "~/Dropbox/zorg/base/ztimelog.org" ) "** %T - %?  :timelog:" :clock-in t :clock-resume t)
           ("D" "diary" entry (file+datetree "~/Dropbox/zorg/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)
           ("j" "Journal entry" entry (function org-journal-find-location)

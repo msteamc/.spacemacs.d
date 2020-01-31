@@ -535,13 +535,37 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_BUNDLE: " "course-" fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this course")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":external_link " "/courses/")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
+  ;;Doc index
+  ;;org capture generate the doc index automatically which will be exported as _index.md
+  ;;under the sub-directory of the course directory. Typically, the _index.md will
+  ;; be stored as /content/courses/<yourCoursesName>/_index.md
+  ;;;###autoload
+  (defun org-hugo-new-subtree-doc-index-capture-template ()
+    "Returns `org-capture' template string for new Hugo Doc.
+See `org-capture-templates' for more information."
+    (let* ((title (read-from-minibuffer "Doc Title: ")) ;Prompt to enter the Doc title
+           (fname (org-hugo-slug title)))
+      (mapconcat #'identity
+                 `(
+                   ,(concat "* TODO " title)
+                   ":PROPERTIES:"
+                   ,(concat ":EXPORT_FILE_NAME: " "_index")
+                   ,(concat ":LATEX_TITLE: " title)
+                   ,(concat ":EXPORT_HUGO_SECTION: " "courses/")
+                   ,(concat ":EXPORT_DESCRIPTION: "  "summary of this Doc")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":linktitle " title)
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":toc " "true")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":type " "docs")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":menu.signalsandsystems " "'( (name . " "\"" title "\"" ") (weight . \"1\") )")
+                   ":END:"
+                   "%T\n\n%?\n")                ;Place the cursor here finally
+                 "\n")))
+
+
   ;;Doc
   ;;;###autoload
   (defun org-hugo-new-subtree-doc-capture-template ()

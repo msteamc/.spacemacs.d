@@ -11,11 +11,13 @@
       :defer t
       :init
       ))
-(defun zclorgbasic/post-init-ox-hugo()
+
+(defun zclorgbasic/init-ox-hugo()
   (use-package ox-hugo
-    :defer t
+    ;;:defer t
     :init
     ))
+
 (defun zclorgbasic/post-init-org()
   (use-package org
     ;;:defer t

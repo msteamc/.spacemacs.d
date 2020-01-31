@@ -1,7 +1,7 @@
 (setq zclorgexport-packages
       '(
         (org )
-        ox-hugo
+       ox-hugo
               ))
 
 (defun zclorgexport/init-ox-hugo()
