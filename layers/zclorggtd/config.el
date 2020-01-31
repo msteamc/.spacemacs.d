@@ -20,7 +20,9 @@
   (setq org-refile-targets (quote (
             ("~/Dropbox/zorg/base/zwork.org" :maxlevel . 6)
             ("~/Dropbox/zorg/base/zlife.org" :maxlevel . 6)
-            ("~/Dropbox/mstemc_hugo/content_org/mstemc.org" :maxlevel . 6))))
+            ("~/Dropbox/zorg/mstemc/mstemc.org" :maxlevel . 6)
+            ("~/Dropbox/zorg/mstemc/docs.org" :maxlevel . 6)
+            )))
 
   (setq org-agenda-use-tag-inheritance t)
   (setq org-todo-keywords
