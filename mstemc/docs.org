@@ -1,6 +1,21 @@
 #+title: make STEAM clear
 #+setupfile: ~/Dropbox/zorg/org-templates/enpost.org
 
+* Docs
+
+** TODO signals and systems
+:PROPERTIES:
+:EXPORT_FILE_NAME: _index
+:LATEX_TITLE: signals and systems
+:EXPORT_HUGO_SECTION: courses/signalsandsystems
+:EXPORT_DESCRIPTION: summary of this Doc from capture
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :linktitle signals and systems
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :toc true
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :type docs
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :menu.signalsandsystems '( (name . "signals and systems") (weight . "1") )
+:END:
+<2020-01-31 Fri 11:45>
+
 
 * Signals and Systems
 
