@@ -33,3 +33,46 @@
                 (if (re-search-forward "^[ \t]*:END:" limit t)
                   (outline-flag-region start (point-at-eol) t)
                   (user-error msg))))))))))
+
+(defun org-toggle-tag-visibility (state)
+  "Run in `org-cycle-hook'."
+  (message "%s" state)
+  (cond
+   ;; global cycling
+   ((memq state '(overview contents showall))
+    (org-map-entries
+     (lambda ()
+       (let ((tagstring (nth 5 (org-heading-components)))
+         start end)
+     (when tagstring
+       (save-excursion
+         (beginning-of-line)
+         (re-search-forward tagstring)
+         (setq start (match-beginning 0)
+           end (match-end 0)))
+       (cond
+        ((memq state '(overview contents))
+         (outline-flag-region start end t))
+        (t
+         (outline-flag-region start end nil))))))))
+   ;; local cycling
+   ((memq state '(folded children subtree))
+    (save-restriction
+      (org-narrow-to-subtree)
+      (org-map-entries
+       (lambda ()
+     (let ((tagstring (nth 5 (org-heading-components)))
+           start end)
+       (when tagstring
+         (save-excursion
+           (beginning-of-line)
+           (re-search-forward tagstring)
+           (setq start (match-beginning 0)
+             end (match-end 0)))
+         (cond
+          ((memq state '(folded children))
+           (outline-flag-region start end t))
+          (t
+           (outline-flag-region start end nil)))))))))))
+
+(add-hook 'org-cycle-hook 'org-toggle-tag-visibility)
