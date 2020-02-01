@@ -34,6 +34,9 @@
                   (outline-flag-region start (point-at-eol) t)
                   (user-error msg))))))))))
 
+(add-hook 'org-cycle-hook 'org-cycle-hide-drawers)
+
+;; org toggle tag visibility
 (defun org-toggle-tag-visibility (state)
   "Run in `org-cycle-hook'."
   (message "%s" state)
