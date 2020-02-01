@@ -462,15 +462,17 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"facebook\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"reddit\") (icon_pack . \"fab\")  (name . \"Listen\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"instagram\") (icon_pack . \"fab\")  (name . \"Inst\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weibo\") (icon_pack . \"fab\")  (name . \"Weibo\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"wexin\") (icon_pack . \"fab\")  (name . \"Wexin\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"facebook\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
 
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
@@ -493,16 +495,17 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"facebook\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"reddit\") (icon_pack . \"fab\")  (name . \"Listen\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"instagram\") (icon_pack . \"fab\")  (name . \"Inst\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weibo\") (icon_pack . \"fab\")  (name . \"Weibo\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"wexin\") (icon_pack . \"fab\")  (name . \"Wexin\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"facebook\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"reddit\") (icon_pack . \"fab\")  (name . \"listen\")  (url . \"/course/example/\" ) )")
 
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
@@ -532,6 +535,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"facebook\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"reddit\") (icon_pack . \"fab\")  (name . \"listen\")  (url . \"/course/example/\" ) )")
 
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
@@ -554,16 +558,17 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_BUNDLE: " "course-" fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this course")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":external_link " "/courses/")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"facebook\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"reddit\") (icon_pack . \"fab\")  (name . \"Listen\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"instagram\") (icon_pack . \"fab\")  (name . \"Inst\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weibo\") (icon_pack . \"fab\")  (name . \"Weibo\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"wexin\") (icon_pack . \"fab\")  (name . \"Wexin\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"facebook\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"reddit\") (icon_pack . \"fab\")  (name . \"Listen\")  (url . \"/course/example/\" ) )")
 
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
