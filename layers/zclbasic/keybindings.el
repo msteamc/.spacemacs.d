@@ -58,8 +58,8 @@
 (spacemacs/set-leader-keys "xo" 'delete-blank-lines)
 (spacemacs/set-leader-keys "xll" 'qiang-copy-line)
 (spacemacs/set-leader-keys "by" 'spacemacs/copy-whole-buffer-to-clipboard)
-(spacemacs/set-leader-keys "fi" (lambda() (interactive)(find-file "~/Dropbox/zcl.space-learning/index.org")))
-(spacemacs/set-leader-keys "fm" (lambda() (interactive)(find-file "~/Dropbox/zorg/mstemc/mstemc.org")))
+(spacemacs/set-leader-keys "fm" (lambda() (interactive)(find-file "/Users/chaolongzhang/Dropbox/zorg/mstemc/mstemc.org")))
+(spacemacs/set-leader-keys "fd" (lambda() (interactive)(find-file "/Users/chaolongzhang/Dropbox/zorg/mstemc/docs.org")))
 
 (spacemacs/set-leader-keys
   "{" 'org-cdlatex-environment-indent
