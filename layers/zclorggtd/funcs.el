@@ -461,11 +461,17 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_SECTION: " "publication")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_project " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"instagram\") (icon_pack . \"fab\")  (name . \"Inst\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weibo\") (icon_pack . \"fab\")  (name . \"Weibo\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"wechat\") (icon_pack . \"fab\")  (name . \"Wechat\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"facebook\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
@@ -486,11 +492,18 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_SECTION: " "post")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_project " "\"#\"")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"instagram\") (icon_pack . \"fab\")  (name . \"Inst\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weibo\") (icon_pack . \"fab\")  (name . \"Weibo\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"wechat\") (icon_pack . \"fab\")  (name . \"Wechat\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"facebook\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"reddit\") (icon_pack . \"fab\")  (name . \"listen\")  (url . \"/course/example/\" ) )")
+
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
@@ -510,10 +523,16 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_SECTION: " "project")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " "project-" fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this project")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_pdf " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_code " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":url_video " "\"#\"")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"instagram\") (icon_pack . \"fab\")  (name . \"Inst\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weibo\") (icon_pack . \"fab\")  (name . \"Weibo\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"wechat\") (icon_pack . \"fab\")  (name . \"Wechat\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"facebook\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
@@ -535,10 +554,21 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_BUNDLE: " "course-" fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this course")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":external_link " "/courses/")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"instagram\") (icon_pack . \"fab\")  (name . \"Inst\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weibo\") (icon_pack . \"fab\")  (name . \"Weibo\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"wechat\") (icon_pack . \"fab\")  (name . \"Wechat\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"facebook\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"reddit\") (icon_pack . \"fab\")  (name . \"Listen\")  (url . \"/course/example/\" ) )")
+
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
+
   ;;Doc index
   ;;org capture generate the doc index automatically which will be exported as _index.md
   ;;under the sub-directory of the course directory. Typically, the _index.md will
