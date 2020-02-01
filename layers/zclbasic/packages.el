@@ -13,6 +13,7 @@
       '(
         matlab-mode
         highlight-symbol
+        dired-git-info
        ;; company-jedi
         ssh-agency
         ;;cygwin-mount
@@ -25,6 +26,11 @@
     :init
     (progn
       )))
+(defun zclbasic/init-dired-git-info()
+  (use-package dired-git-info
+    :ensure t
+    :bind (:map dired-mode-map
+                (")" . dired-git-info-mode))))
 (defun zclbasic/init-cygwin-mount()
   (use-package cygwin-mount
     :defer t

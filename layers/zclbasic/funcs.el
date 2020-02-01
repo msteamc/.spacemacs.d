@@ -145,3 +145,9 @@ Version 2015-07-30"
                            (match-end 0)
                            '(invisible t)))
     (when state (setq buffer-read-only t))))
+
+;;;;;always turn dired-hide-details-mode when enter a dired buffer
+(defun xah-dired-mode-setup ()
+  "to be run as hook for `dired-mode'."
+  (dired-hide-details-mode 1))
+(add-hook 'dired-mode-hook 'xah-dired-mode-setup)
