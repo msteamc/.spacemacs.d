@@ -36,6 +36,7 @@
   ;;              (delete '("\\.pdf\\'" . default) org-file-apps)
   ;;              (add-to-list 'org-file-apps '("\\.pdf\\'" . "qpdfview %s"))))
 
+  ;;(org-cycle-hide-drawers 'all)
   (setq org-hide-macro-markers t)
   ;; Replace org-set-tags with org-set-tags-command in keybinding
   (spacemacs/set-leader-keys-for-major-mode 'org-mode ":" 'org-set-tags-command)
