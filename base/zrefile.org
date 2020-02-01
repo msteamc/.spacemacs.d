@@ -29,3 +29,147 @@ CLOCK: [2019-12-14 Sat 22:13]--[2019-12-14 Sat 22:16] =>  0:03
 a beautiful theorem environment package
 
 [[https://ctan.org/pkg/mdframed?lang=en][CTAN: Package mdframed]]
+* TODO external link links to my own course
+:LOGBOOK:
+CLOCK: [2020-01-29 Wed 06:58]--[2020-01-29 Wed 06:59] =>  0:01
+:END:
+ Added:<2020-01-29 Wed 06:58>
+* DONE drop down menu
+CLOSED: [2020-01-29 Wed 07:14]
+:LOGBOOK:
+- CLOSING NOTE [2020-01-29 Wed 07:14] \\
+
+  By adding the following in the menus.toml
+
+  [[main]]
+    name = "STEAM"
+    identifier="parent1"
+    weight = 33
+
+  [[main]]
+    name = "Science"
+    parent="parent1"
+    url = "#msc_courses"
+    weight = 1
+  [[main]]
+    name = "Technology"
+    parent="parent1"
+    url = "#msc_courses"
+    weight = 2
+  [[main]]
+    name = "Engineering"
+    parent="parent1"
+    url = "#msc_courses"
+    weight = 3
+  [[main]]
+    name = "Art"
+    parent="parent1"
+    url = "#msc_courses"
+    weight = 4
+  [[main]]
+    name = "Math"
+    parent="parent1"
+    url = "#msc_courses"
+    weight = 5
+:END:
+ Added:<2020-01-29 Wed 06:59>
+* TODO start a issue
+:LOGBOOK:
+CLOCK: [2020-01-29 Wed 21:03]--[2020-01-29 Wed 21:04] =>  0:01
+:END:
+ Added:<2020-01-29 Wed 21:03>
+
+ ## Actual Behavior
+
+I use the begin_src and end_src block to export tomal tables of table as you mentioned in the manual  https://ox-hugo.scripter.co/doc/custom-front-matter/
+
+But no extra font matter export as expected
+
+
+## How to Reproduce the Issue
+My Org-version is 9.2.6
+and ox-hugo is the same as 20200122 which is now avaiable at melpa
+Emacs 26.3 I use spacemace at the master branch which is stable.
+
+
+### Example Org File
+```
+** TODO test 2
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: index
+   :LATEX_TITLE: test 2
+   :EXPORT_HUGO_SECTION: project
+   :EXPORT_HUGO_BUNDLE: test-2
+   :EXPORT_DESCRIPTION: summary of this test.
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_dataset "#"
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :external_link "/courses/example/"
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("signals and systems")
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :image '((caption . " [**Watch**](https://youtube.com)") (preview_only . "true"))
+   :END:
+   :LOGBOOK:
+   CLOCK: [2020-01-29 Wed 16:39]--[2020-01-29 Wed 16:50] =>  0:11
+   :END:
+ <2020-01-29 Wed 16:39>
+
+#+begin_src toml :front_matter_extra t
+[[links]]
+icon = "youtube"
+icon_pack = "fab"
+name = "Watch It"
+url = "/courses/example/"
+
+[[links]]
+icon = "instagram"
+icon_pack = "fab"
+name = "Inst"
+url = "/courses/example/"
+
+[[links]]
+icon = "weibo"
+icon_pack = "fab"
+name = "Weibo"
+url = "/courses/example/"
+
+[[links]]
+icon = "wechat"
+icon_pack = "fab"
+name = "Wechat"
+url = "/courses/example/"
+#+end_src
+
+
+Thanks for your help.
+* TODO issue ox-hugo
+ Added:<2020-01-30 Thu 16:53>
+
+I walkaround this problem by using the methods mentioned here:
+
+https://github.com/gcushen/hugo-academic/issues/682
+
+In summary, two steps:
+1. define [[main.menu]] in menus.toml as
+
+```
+[[main.menu]]
+  name = "Teaching"
+  url= "/courses/"
+```
+2. use
+
+```
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :menu.signalsandsystems '((parent . "chapter 4 advanced problems") (weight . "1") )
+```
+in the property of subtree, and the front-matter will be exported as
+
+```
+[menu.signalsandsystems]
+  parent = "chapter 3 advanced problems"
+  weight = 2.0
+```
+
+Sir, If you find it difficult to support toml table, I am ok with the method metioned above.
+
+Now, I am happy.

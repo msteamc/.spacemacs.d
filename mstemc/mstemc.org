@@ -1,7 +1,7 @@
 #+title: make STEAM clear
 #+setupfile: ~/Dropbox/zorg/org-templates/enpost.org
 
-* Videos                                                                 :video:
+* Videos                                :video:
 :LOGBOOK:
 CLOCK: [2019-10-20 Sun 17:06]--[2019-10-20 Sun 17:23] =>  0:17
 CLOCK: [2019-10-09 Wed 22:09]--[2019-10-20 Sun 17:03] => 258:54
@@ -18,22 +18,41 @@ CLOCK: [2019-10-06 Sun 08:21]--[2019-10-06 Sun 08:33] =>  0:12
 [2019-10-05 Sat 16:52]
 
 
+** TODO video 1
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:LATEX_TITLE: video 1
+:EXPORT_HUGO_SECTION: publication
+:EXPORT_HUGO_BUNDLE: video-1
+:EXPORT_DESCRIPTION: summary of this post
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("project-my-workflow-of-creating-a-video")
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "instagram") (icon_pack . "fab")  (name . "Inst")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weibo") (icon_pack . "fab")  (name . "Weibo")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "wechat") (icon_pack . "fab")  (name . "Wechat")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "github") (icon_pack . "fab")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "file-pdf") (icon_pack . "fas")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "slideshare") (icon_pack . "fas")  (name . "Slides")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "twitter") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "facebook") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:END:
+:LOGBOOK:
+CLOCK: [2020-02-01 Sat 11:54]--[2020-02-01 Sat 11:55] =>  0:01
+:END:
+<2020-02-01 Sat 11:54>
+
+
 * Posts
 [2019-10-05 Sat 16:52]
 
 
-** TODO Set up the TikZ in Emacs Org               :@Tools:Emacs:Org:TikZ:LaTeX:
+** TODO Set up the TikZ in Emacs Org    :@Tools:Emacs:Org:TikZ:LaTeX:
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
 :EXPORT_HUGO_SECTION: post
 :EXPORT_HUGO_BUNDLE: set-up-the-tikz-in-emacs-org
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_dataset "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :image '((caption . " [**Watch**](https://youtube.com)") (preview_only . "true"))
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video" "how-do-i-make-a-video")
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("project-my-workflow-of-creating-a-video" "project-how-do-i-make-a-video")
 :EXPORT_DESCRIPTION: An introduction to setup the TikZ environment in Emacs Org File. So that in Org file, you can generate either vector graph of =pdf=  format or raster graph of =png= format. Furthermore, you can export the vector graph when latex is called and otherwise raster graph.
 :ORDERED:  t
 :END:
@@ -50,10 +69,6 @@ CLOCK: [2019-12-05 Thu 23:12]--[2019-12-05 Thu 23:35] =>  0:23
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: post
 :EXPORT_HUGO_BUNDLE: export-markdown-and-latex-using-emacs-org
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
 :EXPORT_DESCRIPTION: set up the Emacs org and ox-hugo to export the org files in markdown and latex format.
 :EXPORT_FILE_NAME: index
@@ -72,10 +87,6 @@ CLOCK: [2019-12-07 Sat 07:46]--[2019-12-07 Sat 07:48] =>  0:02
 :VISIBILITY: folded
 :EXPORT_HUGO_BUNDLE: drawing-graphs-using-tikz-in-emacs-org
 :EXPORT_DESCRIPTION: This post collects working examples of drawing graphs using TikZ in Emacs Org
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
 :END:
 :LOGBOOK:
@@ -245,10 +256,6 @@ bibliographystyle:unsrt
 :EXPORT_HUGO_SECTION: post
 :EXPORT_HUGO_BUNDLE: walk-through-the-petri-net-in-tikz-tutorial
 :EXPORT_DESCRIPTION: Analyze the Petri-Net tutorial in Chapter 3 of the TikZ manual line by line.
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
 :END:
 :LOGBOOK:
@@ -432,10 +439,6 @@ are used, such as =arrows= , =decorations.pathmorphing= , =backgrounds= ,
 :EXPORT_HUGO_SECTION: post
 :EXPORT_HUGO_BUNDLE: walk-through-the-tutorial-4-of-tikz-manual
 :EXPORT_DESCRIPTION: Analyze the Elements Example in Chapter 3 of the TikZ manual line by line.
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
 :END:
 :LOGBOOK:
@@ -682,10 +685,6 @@ CLOCK: [2019-12-19 Thu 22:36]--[2019-12-19 Thu 22:37] =>  0:01
 :EXPORT_HUGO_SECTION: post
 :EXPORT_HUGO_BUNDLE: walk-through-the-tutorial-5-of-tikz-manual
 :EXPORT_DESCRIPTION: summary of this post
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
 :END:
 :LOGBOOK:
@@ -735,61 +734,163 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 #+attr_latex: :width 0.8\textwidth :align center
 {{{if-latex(diagram.pdf,diagram.png)}}}
 
-** TODO Signals and Systems Chapter 1 Problems
+** TODO Signals and Systems Chapter 1 Problems Part 1 (1.1-1.20)
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
 :LATEX_TITLE: Signal and System Chapter 1 Problems
 :EXPORT_HUGO_SECTION: post
-:EXPORT_HUGO_BUNDLE: signal-and-system-chapter-1-problems
-:EXPORT_DESCRIPTION: This post consists of all the solutions to the problems in chapter 1 of the book Signals and Systems by Oppenheim ,Willsky and Nawab.
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_project "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("signal and systems")
+:EXPORT_HUGO_BUNDLE: signal-and-system-chapter-1-problems-part-1--1-dot-1-1-dot-21
+:EXPORT_DESCRIPTION: This post consists of solutions to problems from 1.1 to 1.21 in chapter 1 of the book Signals and Systems by Oppenheim ,Willsky and Nawab.
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("project-solution-manual-of-signals-and-systems-by-oppenheim")
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "instagram") (icon_pack . "fab")  (name . "Inst")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weibo") (icon_pack . "fab")  (name . "Weibo")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "wechat") (icon_pack . "fab")  (name . "Wechat")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "github") (icon_pack . "fab")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "file-pdf") (icon_pack . "fas")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "slideshare") (icon_pack . "fas")  (name . "Slides")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "twitter") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "facebook") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "reddit") (icon_pack . "fab")  (name . "listen")  (url . "/course/example/" ) )
 :END:
 <2020-01-02 Thu 23:32>
 
 {{{titlepage(eulerEquation)}}}
 
+#+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems1.org"
+
+
+** TODO Signals and Systems Chapter 1 Problems Part 2 (1.21-1.31)
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:LATEX_TITLE: Signals and System Chapter 1 Problems Part 2 (1.21-1.31)
+:EXPORT_HUGO_SECTION: post
+:EXPORT_HUGO_BUNDLE: signals-and-system-chapter-1-problems-part-2--1-dot-21-1-dot-31
+:EXPORT_DESCRIPTION: This post consists of solutions to problems from 1.21 to 1.31 in chapter 1 of the book Signals and Systems by Oppenheim ,Willsky and Nawab.
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("project-solution-manual-of-signals-and-systems-by-oppenheim")
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "instagram") (icon_pack . "fab")  (name . "Inst")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weibo") (icon_pack . "fab")  (name . "Weibo")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "wechat") (icon_pack . "fab")  (name . "Wechat")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "github") (icon_pack . "fab")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "file-pdf") (icon_pack . "fas")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "slideshare") (icon_pack . "fas")  (name . "Slides")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "twitter") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "facebook") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "reddit") (icon_pack . "fab")  (name . "listen")  (url . "/course/example/" ) )
+:END:
+:LOGBOOK:
+CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
+:END:
+<2020-02-01 Sat 16:02>
+
+
+{{{titlepage(eulerEquation)}}}
 
 #+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems1.org"
 
-* Projects                                                             :project:
+* Projects    :project:
 [2019-10-05 Sat 16:53]
 
 ** TODO my workflow of creating a video
 :PROPERTIES:
-:EXPORT_HUGO_BUNDLE: my-workflow-of-creating-a-video
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_BUNDLE: project-my-workflow-of-creating-a-video
 :EXPORT_HUGO_SECTION: project
 :EXPORT_DESCRIPTION: This collection of Videos and Posts describes my workflow of creating a video. Usage of some tools and methods are covered.
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("a")
-:EXPORT_FILE_NAME: index
 :END:
+
+
 
 #+include: "./project/my-workflow-of-creating-a-video.org"
 
-* Courses                                                               :course:
+
+** TODO Solution Manual of Signals and Systems By Oppenheim
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:LATEX_TITLE: Solution Manual of Signals and Systems By Oppenheim
+:EXPORT_HUGO_SECTION: project
+:EXPORT_HUGO_BUNDLE: project-solution-manual-of-signals-and-systems-by-oppenheim
+:EXPORT_DESCRIPTION: Solution manual of signals and systems by Oppenheim. All the problems are solved and many problems are visualized. During drawing the figures, I get a deep undertanding of concepts appearing in signals and systems. I hope this solution manual can help you achieve the same understanding.
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "instagram") (icon_pack . "fab")  (name . "Inst")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weibo") (icon_pack . "fab")  (name . "Weibo")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "wexin") (icon_pack . "fab")  (name . "Wexin")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "github") (icon_pack . "fab")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "file-pdf") (icon_pack . "fas")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "slideshare") (icon_pack . "fas")  (name . "Slides")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "twitter") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "facebook") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:END:
+:LOGBOOK:
+CLOCK: [2020-02-01 Sat 16:09]--[2020-02-01 Sat 16:10] =>  0:01
+:END:
+<2020-02-01 Sat 16:09>
+
+
+
+This is the solution manual of signals and systems by Oppenheim cite:oppenheim_signals_1997
+
+
+bibliography:~/Dropbox/research_library/zcl.bib
+bibliographystyle:unsrt
+
+
+* Courses           :course:
 [2019-10-05 Sat 16:53]
 
 
-** TODO signals and systems
+** DONE signals and systems
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
 :LATEX_TITLE: signals and systems
 :EXPORT_HUGO_SECTION: project
 :EXPORT_HUGO_BUNDLE: course-signals-and-systems-basic-problmes
 :EXPORT_DESCRIPTION: solutions to the basic problems in chapter 1 of signals and systems
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :external_link /courses/
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_pdf "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_code "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :url_video "#"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("" "")
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :external_link /courses/signalsandsystems/
 :END:
 :LOGBOOK:
 CLOCK: [2020-01-30 Thu 22:11]--[2020-01-30 Thu 22:12] =>  0:01
 :END:
 <2020-01-30 Thu 22:11>
+
+
+#+begin_src toml :front_matter_extra t
+[[links]]
+icon = "youtube"
+icon_pack = "fab"
+name = "Watch It"
+url = "/courses/example/"
+
+[[links]]
+icon = "instagram"
+icon_pack = "fab"
+name = "Inst"
+url = "/courses/example/"
+
+[[links]]
+icon = "weibo"
+icon_pack = "fab"
+name = "Weibo"
+url = "/courses/example/"
+
+[[links]]
+icon = "wechat"
+icon_pack = "fab"
+name = "Wechat"
+url = "/courses/example/"
+#+end_src
+
+Right now, the begin_src block still does not work.
+** TODO information theory
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:LATEX_TITLE: information theory
+:EXPORT_HUGO_SECTION: project
+:EXPORT_HUGO_BUNDLE: course-information-theory
+:EXPORT_DESCRIPTION: summary of this course
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :external_link /courses/informationtheory
+:END:
+<2020-01-31 Fri 14:42>
+
+this is the information theory
