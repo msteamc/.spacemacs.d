@@ -1,5 +1,6 @@
 #+title: make STEAM clear
 #+setupfile: ~/Dropbox/zorg/org-templates/enpost.org
+#+OPTIONS: d:figure,sub-problem,bibli
 
 * Videos                                :video:
 :LOGBOOK:
@@ -742,13 +743,13 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 :EXPORT_HUGO_BUNDLE: signal-and-system-chapter-1-problems-part-1--1-dot-1-1-dot-21
 :EXPORT_DESCRIPTION: This post consists of solutions to problems from 1.1 to 1.21 in chapter 1 of the book Signals and Systems by Oppenheim ,Willsky and Nawab.
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("project-solution-manual-of-signals-and-systems-by-oppenheim")
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "github") (icon_pack . "fab")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "file-pdf") (icon_pack . "fas")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "slideshare") (icon_pack . "fas")  (name . "Slides")  (url . "/course/example/" ) )
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "instagram") (icon_pack . "fab")  (name . "Inst")  (url . "/course/example/" ) )
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weibo") (icon_pack . "fab")  (name . "Weibo")  (url . "/course/example/" ) )
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "wechat") (icon_pack . "fab")  (name . "Wechat")  (url . "/course/example/" ) )
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "github") (icon_pack . "fab")  (name . "Source")  (url . "/course/example/" ) )
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "file-pdf") (icon_pack . "fas")  (name . "Source")  (url . "/course/example/" ) )
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "slideshare") (icon_pack . "fas")  (name . "Slides")  (url . "/course/example/" ) )
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "twitter") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "facebook") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "reddit") (icon_pack . "fab")  (name . "listen")  (url . "/course/example/" ) )
@@ -766,7 +767,7 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 :LATEX_TITLE: Signals and System Chapter 1 Problems Part 2 (1.21-1.31)
 :EXPORT_HUGO_SECTION: post
 :EXPORT_HUGO_BUNDLE: signals-and-system-chapter-1-problems-part-2--1-dot-21-1-dot-31
-:EXPORT_DESCRIPTION: This post consists of solutions to problems from 1.21 to 1.31 in chapter 1 of the book Signals and Systems by Oppenheim ,Willsky and Nawab.
+:EXPORT_DESCRIPTION: This post consists of solutions to problems from 1.21 to 1.31 in chapter 1 of the book Signals and Systems by Oppenheim ,Willsky and Nawab.cite:oppenheim_signals_1997
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("project-solution-manual-of-signals-and-systems-by-oppenheim")
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "instagram") (icon_pack . "fab")  (name . "Inst")  (url . "/course/example/" ) )
@@ -785,9 +786,1358 @@ CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
 <2020-02-01 Sat 16:02>
 
 
-{{{titlepage(eulerEquation)}}}
+{{{titlepage(figProb1-21-0)}}}
+*** Problem 1.21
+[2020-02-01 Sat 19:28]
 
-#+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems1.org"
+
+#+ATTR_LATEX: :options []{prob:1-21}
+#+NAME: prob:1-21
+#+begin_prob
+A continuout-time signal \(x(t)\) is shown below. Sketch and label carefully
+each of the following signals:
+\begin{equation*}
+\begin{array}{ll}
+\mathbf{(a)}: x(t-1) & \mathbf{(b)}: x(2-t) \\
+\mathbf{(c)}: x(2t + 1) & \mathbf{(d)}: x(4-\frac{t}{2}) \\
+\mathbf{(e)}: [x(t) + x(-t)] u(t) & \mathbf{(f)}: x(t)\delta(t +\frac{3}{2}) - \delta(t-\frac{3}{2})
+\end{array}
+\end{equation*}
+:figure:
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21-0.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+\draw[] (-2.5,0) -- (2.5,0) node[below]{$t$};
+\draw[] (0,-2.5) -- (0,2.5) node[above]{\color{mycolor}$x(t)$};
+\draw[,very thick, mycolor] (-2,0) -- (-2,-1) -- (-1,0) -- (-1,1) -- (0,1) -- (0,2) -- (1,2) -- (1,1) -- (2,0);
+
+\node [below=0.1cm,] at(-2,0) {$-2$};
+\node [below=0.1cm,] at (-1,0) {$-1$};
+\node [right] at (0,1) {$1$};
+\node [below=0.1cm, ] at (0,0) {$0$};
+\node [left] at (0,2) {$2$};
+\node [below=0.1cm,] at (1,0) {$1$};
+\node [below=0.1cm,] at (2,0) {$2$};
+\node [right] at (0,-1) {$-1$};
+\end{tikzpicture}
+#+end_src
+
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21-0.pdf]]
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.5\textwidth :align center
+{{{if-latex(figProb1-21-0.pdf,figProb1-21-0.png)}}}
+:end:
+#+end_prob
+
+
+
+Before we figure all the sub-problem out. Let's review how \(a\) and \(b\)
+affect \(x(at+b)\) . we know that:
+
+1.  when \(|a| < 1\), \(x(t)\) will be linearly stretched;
+2.  when \(|a|>1\), \(x(t)\) will be linearly compressed;
+3.  when \(a < 0\), \(x(t)\) will be reversed;
+4.  when \(b\neq 0\) , \(x(t)\) will be shifted in time.
+5.  when \(a>0, b>0\), \(x(t)\) will be shifted left.
+6.  when \(a>0,b<0\), \(x(t)\) will be shifted right.
+7.  when \(a<0,b>0\), \(x(t)\) will be reversed first then shifted right.
+8.  when \(a<0,b<0\), \(x(t)\) will be reversed first, then shifted left.
+
+:sub-problem:
+*Problem 1.21a*
+
+ Based on the conclusion given above, we know that \(x(t-1)\) can be obtained by right
+ shifting \(x(t)\) with step \(1\). So the result can be visualized as follows.
+
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21a.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    xmin = -2,
+    xmax = 3.5,
+    ymin = -2,
+    ymax = 2.5,
+    title = {\color{mycolor}$x(t)$},
+    ]
+    \addplot[mycolor,very thick,domain=-3.5:3.5] coordinates {
+    (-2,0)  (-2,-1)  (-1,0)  (-1,1)  (0,1)  (0,2)  (1,2)  (1,1)  (2,0);
+    };
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    xmin = -2,
+    xmax = 3.5,
+    ymin = -2,
+    ymax = 2.5,
+    title = {\color{mycolor}$x(t-1)$},
+    ]
+    \addplot[mycolor,very thick,domain=-3.5:3.5] coordinates {
+    (-1,0)  (-1,-1)  (0,0)  (0,1)  (1,1)  (1,2)  (2,2)  (2,1)  (3,0);
+    };
+  \end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21a.pdf]]
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-21a.pdf,figProb1-21a.png)}}}
+:end:
+
+:sub-problem:
+*Problem 1.21b*
+
+For \(x(2-t)\), we re-write it as \(x(-(t-2))\) which can be obtained by first
+reversing \(x(t)\) then right shifting it with step \(2\). The result can be
+shown as follows
+
+#+name: figProblem1-21b
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProblem1-21b.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    xmin = -2,
+    xmax = 3.5,
+    ymin = -2,
+    ymax = 2.5,
+    title = {\color{mycolor}$x(t)$},
+    ]
+    \addplot[mycolor,very thick,domain=-3.5:3.5] coordinates {
+    (-2,0)  (-2,-1)  (-1,0)  (-1,1)  (0,1)  (0,2)  (1,2)  (1,1)  (2,0);
+    };
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    xmin = -1,
+    xmax = 4.5,
+    ymin = -2,
+    ymax = 2.5,
+    title = {\color{mycolor}$x(-t+2)$},
+    ]
+    \addplot[mycolor,very thick,domain=-3.5:3.5] coordinates {
+    (4,0)  (4,-1)  (3,0)  (3,1)  (2,1)  (2,2)  (1,2)  (1,1)  (0,0);
+    };
+  \end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figProblem1-21b
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProblem1-21b.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProblem1-21b.pdf,figProblem1-21b.png)}}}
+:end:
+
+:sub-problem:
+*Problem 1.21c*
+
+\(x(2t + 1)\) can be re-written as \(x(2(t+\frac{1}{2}))\) which means that
+\(x(2t+1)\) can be obtained by first linearly compressing \(x(t)\) with factor 2
+then left shifting compressed signal by \(\frac{1}{2}\).
+
+#+caption: caption
+#+name: figProb1-21c
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21c.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    xmin = -2,
+    xmax = 3.5,
+    ymin = -2,
+    ymax = 2.5,
+    title = {\color{mycolor}$x(t)$},
+    ]
+    \addplot[mycolor,very thick,domain=-3.5:3.5] coordinates {
+    (-2,0)  (-2,-1)  (-1,0)  (-1,1)  (0,1)  (0,2)  (1,2)  (1,1)  (2,0);
+    };
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    xmin = -2,
+    xmax = 1,
+    ymin = -2,
+    ymax = 2.5,
+    title = {\color{mycolor}$x(2t+1)$},
+    ]
+    \addplot[mycolor,very thick,domain=-3.5:3.5] coordinates {
+    (-1-0.5,0)  (-1-0.5,-1)  (-0.5-0.5,0)  (-0.5-0.5,1)  (0-0.5,1)  (0-0.5,2)  (0.5-0.5,2)  (0.5-0.5,1)  (1-0.5,0);
+    };
+  \end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS: figProb1-21c
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21c.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-21c.pdf,figProb1-21c.png)}}}
+:end:
+
+:sub-problem:
+*Problem 1.21d*
+
+\(x(4-\frac{t}{2})\) can be re-written as \(x( -\frac{1}{2}( t - 8 ) )\) which
+means that \(x(4-\frac{t}{2})\)  can be obtained by first linearly stretching
+\(x(t)\) by factor \(2\) then right shifting it with step \(8\).
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21d.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    xmin = -2,
+    xmax = 3.5,
+    ymin = -2,
+    ymax = 2.5,
+    title = {\color{mycolor}$x(t)$},
+    ]
+    \addplot[mycolor,very thick,domain=-3.5:3.5] coordinates {
+    (-2,0)  (-2,-1)  (-1,0)  (-1,1)  (0,1)  (0,2)  (1,2)  (1,1)  (2,0);
+    };
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    xmin =2,
+    xmax = 14,
+    ymin = -2,
+    ymax = 2.5,
+    title = {\color{mycolor}$x(4-\frac{t}{2})$},
+    ]
+    \addplot[mycolor,very thick,domain=0:14] coordinates {
+    (-2*(-2) + 8,0)  (-2*(-2) + 8,-1)  (-1*(-2) + 8,0)  (-1*(-2) + 8,1)  (0+ 8,1)  (0+8,2)  (1*(-2) + 8,2)  (1*(-2)+8,1)  (2*(-2) + 8,0);
+    };
+  \end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21d.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-21d.pdf,figProb1-21d.png)}}}
+
+:end:
+
+:sub-problem:
+*Problem 1.21e*
+
+At first glance, \(\big[x(t) + x(-t)\big] u(t) \) is \(0\) if \( t<0 \) .
+
+If \(
+t > 0 \), we have to figure out \( x( -t ) \). After obtaining \( x(-t) \), we
+add the right part of \(x(t)\) and left part of \(x(-t)\) then we have \( [x(t) +
+x(-t)]u(t) \)
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProblem1-21e.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    xmin = -2,
+    xmax = 3.5,
+    ymin = -2,
+    ymax = 2.5,
+    title = {\color{mycolor}$x(t)$},
+    ]
+    \addplot[mycolor,very thick,domain=-3.5:3.5] coordinates {
+    (-2,0)  (-2,-1)  (-1,0)  (-1,1)  (0,1)  (0,2)  (1,2)  (1,1)  (2,0);
+    };
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    ymin = -2,
+    ymax = 2.5,
+    title = {\color{mycolor}$x(-t)$},
+    ]
+    \addplot[mycolor,very thick,] coordinates {
+    (-2*(-1) + 0,0)  (-2*(-1) + 0,-1)  (-1*(-1) + 0,0)  (-1*(-1) + 0,1)  (0+ 0,1)  (0+0,2)  (1*(-1) + 0,2)  (1*(-1)+0,1)  (2*(-1) + 0,0);
+    };
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    xmax = 3,
+    ymin = -1,
+    ymax = 3.5,
+    title = {\color{mycolor}$[x(t) + x(-t)]u(t)$},
+    ]
+    \addplot[mycolor,very thick,] coordinates {
+    (0,0) (0,3) (1,3) (1,0)  };
+  \end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProblem1-21e.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProblem1-21e.pdf,figProblem1-21e.png)}}}
+
+:end:
+
+:sub-problem:
+\(x(t)\delta(t +\frac{3}{2}) - \delta(t-\frac{3}{2})\) only have two points with
+non-negative values: \(t=\frac{3}{2}\) and \(t=-\frac{3}{2}\).
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21f.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    xmin = -2,
+    xmax = 3.5,
+    ymin = -2,
+    ymax = 2.5,
+    title = {\color{mycolor}$x(t)$},
+    ]
+    \addplot[mycolor,very thick,domain=-3.5:3.5] coordinates {
+    (-2,0)  (-2,-1)  (-1,0)  (-1,1)  (0,1)  (0,2)  (1,2)  (1,1)  (2,0);
+    };
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    samples=300,
+    axis lines=middle,
+    extra x ticks = {0},
+    xmin = -2,
+    xmax = 2,
+    ymin = -0.5,
+    ymax = 0.5,
+    title = {\color{mycolor}$x(t)\delta(t +\frac{3}{2}) - \delta(t-\frac{3}{2})$},
+    ]
+    \addplot[->,mycolor,very thick,] coordinates {
+    (-1.5,0) (-1.5, -0.5 )
+    };
+    \addplot[->,mycolor,very thick,] coordinates {
+    (1.5,0) (1.5, -0.5 )
+    };
+  \end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21f.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-21f.pdf,figProb1-21f.png)}}}
+
+:end:
+
+
+*** Problem 1.22
+    [2020-02-02 Sun 11:50]
+
+    #+ATTR_LATEX: :options []{prob:1-22}
+    #+NAME: prob:1-22
+    #+begin_prob
+    A discrete-time signal is shown in below figure. Sketch and label carefully
+    each of the following signals:
+
+    \begin{equation*}
+    \begin{array}{ll}
+    \mathbf{(a)}: x[n-4] & \mathbf{(b)}: x[3-n] \\
+    \mathbf{(c)}: x[3n] & \mathbf{(d)}: x[3n + 1] \\
+    \mathbf{(e)}: x[n]u[3-n] & \mathbf{(f)}: x[n-2]\delta[n-2]\\
+    \mathbf{(g)}: \frac{1}{2}x[n] + \frac{1}{2}(-1)^{n}x[n] &     \mathbf{(h)}: x[(n-1)^{2}]
+    \end{array}
+    \end{equation*}
+
+    :figure:
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProbl1-22-0.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5,-3,-1,0,1,3,5},
+    xmin = -6,
+    xmax = 6,
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$x[n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-5,0) (-4,-1) (-3,-0.5) (-2,0.5) (-1,1) (0,1) (1,1) (2,1) (3,0.5) (4,0) (5,0)
+    };
+  \node[above] at (-5.6,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (5.6,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProbl1-22-0.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProbl1-22-0.pdf,figProbl1-22-0.png)}}}
+:end:
+
+    #+end_prob
+
+
+:sub-problem:
+*Problem 1.22a*
+
+\(x[n-4]\)  can be obtained by right shifting \(x[n]\) with step \(4\).
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22a.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5,-3,-1,0,1,3,5},
+    xmin = -6,
+    xmax = 6,
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$x[n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-5,0) (-4,-1) (-3,-0.5) (-2,0.5) (-1,1) (0,1) (1,1) (2,1) (3,0.5) (4,0) (5,0)
+    };
+  \node[above] at (-5.6,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (5.6,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5+4,0,-3+4,-1+4,0+4,1+4,3+4,5+4},
+    ymin = -1,
+    ymax = 1.3,
+    xmin = -2,
+    xmax = 10,
+    title = {\color{mycolor}$x[n-4]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-5+4,0) (-4+4,-1) (-3+4,-0.5) (-2+4,0.5) (-1+4,1) (0+4,1) (1+4,1) (2+4,1) (3+4,0.5) (4+4,0) (5+4,0)
+    };
+  \node[above] at (-5.6+4,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (5.6+4,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22a.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-22a.pdf,figProb1-22a.png)}}}
+
+:end:
+
+:sub-problem:
+*Problem 1.22b*
+
+\(x[3-n]\) can be obtained by reversing \(x[n]\) first then right shifting the
+reversed signal with step \(3\)
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22b.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5,-3,-1,0,1,3,5},
+    xmin = -6,
+    xmax = 6,
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$x[n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-5,0) (-4,-1) (-3,-0.5) (-2,0.5) (-1,1) (0,1) (1,1) (2,1) (3,0.5) (4,0) (5,0)
+    };
+  \node[above] at (-5.6,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (5.6,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5,0,-3,-1,0,1,3,5},
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$x[3-n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (5+3,0) (4+3,-1) (3+3,-0.5) (2+3,0.5) (1+3,1) (0+3,1) (-1+3,1) (-2+3,1) (-3+3,0.5) (-4+3,0) (-5+3,0)
+    };
+  \node[above] at (-1,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (8,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22b.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-22b.pdf,figProb1-22b.png)}}}
+
+:END:
+
+:sub-problem:
+*Problem 1.22c*
+
+\(x[3n]\) can be obtained by downsampling \(x[n]\) with a factor \(3\). Notice
+that downsampling discrete-time signal is different with compressing
+continuous-time signal because discrete-time signal only have integers as
+independent variables.
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22c.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5,-3,-1,0,1,3,5},
+    xmin = -6,
+    xmax = 6,
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$x[n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-5,0) (-4,-1) (-3,-0.5) (-2,0.5) (-1,1) (0,1) (1,1) (2,1) (3,0.5) (4,0) (5,0)
+    };
+  \node[above] at (-5.6,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (5.6,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    xtick = {0,-1,0,1,2},
+    ymin = -1, ymax = 1.3,
+    xmin = -2.4, xmax = 2.4,
+    title = {\color{mycolor}$x[3n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-2,0) (-1,-0.5)  (0,1) (1,0.5) (2,0)
+    };
+  \node[above] at (5.6+3,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (-5.6+3,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22c.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-22c.pdf,figProb1-22c.png)}}}
+
+
+:END:
+
+:sub-problem:
+*Problem 1.22d*
+
+\(x[3n+1]\) can be obtained by downsampling \(x[n]\) with a factor \(3\) and a
+delay \(1\).
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22d.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5,-3,-1,0,1,3,5},
+    xmin = -6,
+    xmax = 6,
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$x[n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-5,0) (-4,-1) (-3,-0.5) (-2,0.5) (-1,1) (0,1) (1,1) (2,1) (3,0.5) (4,0) (5,0)
+    };
+  \node[above] at (-5.6,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (5.6,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    xtick = {-1,0,1},
+    extra x ticks = {0},
+    ymin = -1, ymax = 1.3,
+    xmin = -2.4, xmax = 2.4,
+    title = {\color{mycolor}$x[3n+1]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-2,0)  (-1,0.5)  (0,1) (1,0)
+    };
+  \node[above] at (-1.5,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (2,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22d.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-22d.pdf,figProb1-22d.png)}}}
+
+:end:
+
+:sub-problem:
+
+*Problem 1.22e*
+
+\(x[n]u[3-n]\) consists of two parts: \(x[n]\) and \(u[3-n]\). \(u[3-n]\), which
+can be obtained by reversing \(u[n]\) then right shifting \(3\) decides whether
+the result is zero or not.
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22e.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5,-3,-1,0,1,3,5},
+    xmin = -6,
+    xmax = 6,
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$x[n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-5,0) (-4,-1) (-3,-0.5) (-2,0.5) (-1,1) (0,1) (1,1) (2,1) (3,0.5) (4,0) (5,0)
+    };
+  \node[above] at (-5.6,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (5.6,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5,-3,-1,0,1,3,5},
+    ymin = -1, ymax = 1.3,
+    title = {\color{mycolor}$x[n]u[3-n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-5,0) (-4,-1) (-3,-0.5) (-2,0.5) (-1,1) (0,1) (1,1) (2,1) (3,0.5) (4,0) (5,0)
+    };
+    \node[above] at (-5,0.2) {\color{mycolor}$\cdots$};
+    \node[above] at (4,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22e.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-22e.pdf,figProb1-22e.png)}}}
+
+Notice that \(x[n]u[3-n]\) is the same as \(x[n]\) which is due to that
+\(u[3-n]\) is \(0\) if \(n>3\) and \(x[n]\) is also \(0\)  if \(n>3\).
+
+:END:
+
+:sub-problem:
+
+*Problem 1.22f*
+
+\(x[n-2]\delta[n-2]\) can be obtained by sampling \(x[n]\) at \(n=2\).
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22f.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5,-3,-1,0,1,3,5},
+    xmin = -6,
+    xmax = 6,
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$x[n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-5,0) (-4,-1) (-3,-0.5) (-2,0.5) (-1,1) (0,1) (1,1) (2,1) (3,0.5) (4,0) (5,0)
+    };
+  \node[above] at (-5.6,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (5.6,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    xtick = {1,2,3},
+    xmin = -2.4,xmax=3.4,
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$x[n-2]\delta[n-2]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (1,0) (2,1) (3,0)
+    };
+    \node[above] at (0,0.2) {\color{mycolor}$\cdots$};
+    \node[above] at (3,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22f.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-22f.pdf,figProb1-22f.png)}}}
+
+:END:
+
+:sub-problem:
+
+*Problem 1.22g*
+
+\begin{equation*}
+\frac{1}{2}x[n] + \frac{1}{2}(-1)^{n}x[n] =
+\begin{cases}
+0    & n \mathrm{\ is\ odd} \\
+x[n] & n \mathrm{\ is\ even} \\
+\end{cases}
+\end{equation*}
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22g.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5,-3,-1,0,1,3,5},
+    xmin = -6,
+    xmax = 6,
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$x[n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-5,0) (-4,-1) (-3,-0.5) (-2,0.5) (-1,1) (0,1) (1,1) (2,1) (3,0.5) (4,0) (5,0)
+    };
+  \node[above] at (-5.6,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (5.6,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5,-3,-1,0,1,3,5},
+    xmin = -6,
+    xmax = 6,
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$\frac{1}{2}x[n] + \frac{1}{2}(-1)^{n}x[n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-5,0) (-4,-1) (-3,0) (-2,0.5) (-1,0) (0,1) (1,0) (2,1) (3,0) (4,0) (5,0)
+    };
+  \node[above] at (-5.6,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (5.6,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22g.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-22g.pdf,figProb1-22g.png)}}}
+
+
+
+
+:END:
+
+:sub-problem:
+*Problem 1.22h*
+
+\(x[(n-1)^{2}]\) can be obtained by sampling \(x[n]\) with sampling index
+\((n-1)^{2}\).
+
+Let \(y[n] = x[(n-1)^{2}]\), we have
+\begin{eqnarray*}
+y[-1]&=&x[4] = 0 \\
+y[0] &=&x[1] = 1 \\
+y[1] &=&x[0] = 1 \\
+y[2] &=&x[1] = 1 \\
+y[3] &=&x[4] = 0
+\end{eqnarray*}
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22h.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    extra x ticks = {-5,-3,-1,0,1,3,5},
+    xmin = -6,
+    xmax = 6,
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$x[n]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-5,0) (-4,-1) (-3,-0.5) (-2,0.5) (-1,1) (0,1) (1,1) (2,1) (3,0.5) (4,0) (5,0)
+    };
+  \node[above] at (-5.6,0.2) {\color{mycolor}$\cdots$};
+  \node[above] at (5.6,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+  \begin{axis}
+    [
+    axis lines=middle,
+    xtick = {0,1,2},
+    extra x ticks = {0},
+    xmin = -1.6,xmax=3.4,
+    ymin = -1,
+    ymax = 1.3,
+    title = {\color{mycolor}$x[(n-1)^{2}]$},
+    ]
+    \addplot[ycomb,mycolor,mark=*,mark color = mycolor,very thick] coordinates {
+    (-1,0) (0,1) (1,1) (2,1) (3,0)
+    };
+    \node[above] at(-1,0.2) {\color{mycolor}$\cdots$};
+    \node[above] at(3,0.2) {\color{mycolor}$\cdots$};
+  \end{axis}
+\end{tikzpicture}
+
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-22h.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-22h.pdf,figProb1-22h.png)}}}
+
+:END:
+
+*** Problem 1.23
+    [2020-02-02 Sun 16:21]
+
+    #+ATTR_LATEX: :options []{prob:1-23}
+    #+NAME: prob:1-23
+    #+begin_prob
+    Determine and sketch the even and odd parts of the signals shown below.
+    Label your sketches carefully
+    :figure:
+    #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-23-0.pdf"
+    #+begin_src latex -n -r :results raw :exports none
+    \begin{tikzpicture}
+
+    \definecolor{mycolor}{RGB}{139,0,0};
+    \begin{scope}
+    \draw[] (-3,0) -- (3,0) node[below]{$t$};
+    \draw[] (0,0) -- (0,1.4)node[above]{$x(t)$};
+    \draw[mycolor,very thick] (0,0) -- (1,1) -- (2,0) ;
+    \node[left] at (0,1) {$1$};
+    \node[below] at (1,0) {$1$};
+    \node[below] at (2,0) {$2$};
+    \node[below] at (0,-0.2) {$(a)$};
+    \draw[gray] (0,1) -- (0.2,1);
+    \draw[gray] (1,0) -- (1,0.2);
+    \draw[gray] (2,0) -- (2,0.2);
+    \end{scope}
+    \begin{scope}[yshift=-3cm]
+    \draw[] (-3,0) -- (3,0) node[below]{$t$};
+    \draw[] (0,0) -- (0,1.4)node[above]{$x(t)$};
+    \draw[mycolor,very thick] (-2,0) -- (-1,1) -- (0,0) -- (1,1) -- (3,1) ;
+    \node[left] at (0,1) {$1$};
+    \node[below] at (-2,0) {$-2$};
+    \node[below] at (-1,0) {$-1$};
+    \node[below] at (1,0) {$1$};
+    \node[below] at (2,0) {$2$};
+    \node[below] at (-2,0) {$-2$};
+    \node[below] at (0,-0.2) {$(b)$};
+    \draw[gray] (0,1) -- (0.2,1);
+    \foreach \x in {-2,-1,1,2}
+    {\draw[gray] (\x,0)--(\x,0.2); }
+    \end{scope}
+    \begin{scope}[yshift=-6.8cm]
+    \draw[] (-3,0) -- (3,0) node[below]{$t$};
+    \draw[] (0,0) -- (0,2.2)node[above]{$x(t)$};
+    \draw[mycolor,very thick] (-1,2) -- (0,0) -- (2,2);
+
+    \node[left] at (0,1) {$1$};
+    \node[left] at (0,2) {$2$};
+    \node[below] at (-1,0) {$-1$};
+    \node[below] at (1,0) {$1$};
+    \node[below] at (2,0) {$2$};
+    \node[below] at (0,-0.2) {$(c)$};
+    \foreach \x in {-1,1,2}
+    {\draw[gray] (\x,0)--(\x,0.2); }
+    \foreach \x in {1,2}
+    {\draw[gray] (0,\x) -- (0.2,\x);}
+    \node[mycolor] at(-2,2.1) {\small $x(t)=-2t,t<0$};
+    \node[mycolor] at(2,2.1) {\small $x(t)=t,t>0$};
+    \end{scope}
+
+    \end{tikzpicture}
+    #+end_src
+
+    #+RESULTS:
+    [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-23-0.pdf]]
+
+
+    #+ATTR_HTML:  :width 80% :align center
+    #+ATTR_LATEX: :width 0.8\textwidth :align center
+    {{{if-latex(figProb1-23-0.pdf,figProb1-23-0.png)}}}
+    :END:
+    #+end_prob
+
+Before we figure them out, let's review the definition of odd and even part of
+one signal.
+
+Any signal can be seperated into two parts: the even part and the odd part.
+\begin{eqnarray*}
+x_{e}(t) = \mathrm{Even}\{x(t)\}&=& \frac{1}{2} [ x(t) + x(-t) ] \\
+x_{o}(t) = \mathrm{Odd}\{x(t)\}&=& \frac{1}{2} [ x(t) - x(-t) ] \\
+\end{eqnarray*}
+
+:sub-problem:
+*Problem 1.23a*
+
+If \(t\le 0\), we have \(x_{e}(t) = \frac{1}{2} x(-t) \) ;
+
+ if \(t > 0 \) , we have \(x_{e}(t) = \frac{1}{2} x(t) \); So, we illustrate \(x_{e}(t)\) as follows
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-23a.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+\begin{scope}
+\draw[] (-3,0) -- (3,0) node[below]{$t$};
+\draw[] (0,0) -- (0,1.4)node[above]{$x_{e}(t)$};
+\draw[mycolor,very thick] (0,0) -- (1,0.5) -- (2,0) ;
+\draw[mycolor,very thick] (0,0) -- (-1,0.5) -- (-2,0) ;
+
+\node[left] at (0,1) {$1$};
+\node[left] at (0,0.5) {$\frac{1}{2}$};
+\node[below] at (1,0) {$1$};
+\node[below] at (2,0) {$2$};
+\node[below] at (-1,0) {$-1$};
+\node[below] at (-2,0) {$-2$};
+\node[below] at (0,-0.2) {$(a)$};
+\draw[gray] (0,1) -- (0.2,1);
+\draw[gray] (0,0.5) -- (0.2,0.5);
+\draw[gray] (1,0) -- (1,0.2);
+\draw[gray] (2,0) -- (2,0.2);
+\draw[gray] (-1,0) -- (-1,0.2);
+\draw[gray] (-2,0) -- (-2,0.2);
+
+\end{scope}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-23a.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-23a.pdf,figProb1-23a.png)}}}
+
+
+If \(t<0\), we have \(x_{o}(t) = - \frac{1}{2} x(-t) \) ;
+
+if \(t > 0 \) , we have \(x_{o}(t) = \frac{1}{2} x(t) \); So, we illustrate \(x_{o}(t)\) as follows
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-23ae.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+\begin{scope}
+\draw[] (-3,0) -- (3,0) node[below]{$t$};
+\draw[] (0,-0.6) -- (0,1.4)node[above]{$x_{o}(t)$};
+\draw[mycolor,very thick] (0,0) -- (1,0.5) -- (2,0) ;
+\draw[mycolor,very thick] (0,0) -- (-1,-0.5) -- (-2,0) ;
+
+\node[left] at (0,1) {$1$};
+\node[left] at (0,0.5) {$\frac{1}{2}$};
+\node[left] at (0,-0.5) {$-\frac{1}{2}$};
+\node[below] at (1,0) {$1$};
+\node[below] at (2,0) {$2$};
+\node[below] at (-1,0) {$-1$};
+\node[below] at (-2,0) {$-2$};
+\node[below] at (0,-0.7) {$(a)$};
+\draw[gray] (0,1) -- (0.2,1);
+\draw[gray] (0,0.5) -- (0.2,0.5);
+\draw[gray] (0,-0.5) -- (0.2,-0.5);
+\draw[gray] (1,0) -- (1,0.2);
+\draw[gray] (2,0) -- (2,0.2);
+\draw[gray] (-1,0) -- (-1,0.2);
+\draw[gray] (-2,0) -- (-2,0.2);
+
+\end{scope}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-23ae.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-23ae.pdf,figProb1-23ae.png)}}}
+
+:END:
+
+:sub-problem:
+*Problem 1.23b*
+
+To draw the \(x_{e}(t)\) , get \(\frac{1}{2} x(t)\) , \(\frac{1}{2}x(-t)\) and \(-\frac{1}{2}x(-t)\)
+first.
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-23b1.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\begin{scope}
+\draw[] (-3,0) -- (3,0) node[below]{$t$};
+\draw[] (0,0) -- (0,1.4)node[above]{$\frac{1}{2}x(t)$};
+\draw[mycolor,very thick] (-2,0) -- (-1,0.5) -- (0,0) -- (1,0.5) -- (3,0.5) ;
+\node[left] at (0,1) {$1$};
+\node[left] at (0,0.5) {$\frac{1}{2}$};
+\node[below] at (-2,0) {$-2$};
+\node[below] at (-1,0) {$-1$};
+\node[below] at (1,0) {$1$};
+\node[below] at (2,0) {$2$};
+\node[below] at (-2,0) {$-2$};
+\draw[gray] (0,1) -- (0.2,1);
+\draw[gray] (0,0.5) -- (0.2,0.5);
+\foreach \x in {-2,-1,1,2}
+{\draw[gray] (\x,0)--(\x,0.2); }
+\end{scope}
+\begin{scope}[yshift=-3cm]
+\draw[] (-3,0) -- (3,0) node[below]{$t$};
+\draw[] (0,0) -- (0,1.4)node[above]{$\frac{1}{2}x(-t)$};
+\draw[mycolor,very thick] (2,0) -- (1,0.5) -- (0,0) -- (-1,0.5) -- (-3,0.5) ;
+\node[left] at (0,1) {$1$};
+\node[left] at (0,0.5) {$\frac{1}{2}$};
+\node[below] at (-2,0) {$-2$};
+\node[below] at (-1,0) {$-1$};
+\node[below] at (1,0) {$1$};
+\node[below] at (2,0) {$2$};
+\node[below] at (-2,0) {$-2$};
+\draw[gray] (0,1) -- (0.2,1);
+\draw[gray] (0,0.5) -- (0.2,0.5);
+\foreach \x in {-2,-1,1,2}
+{\draw[gray] (\x,0)--(\x,0.2); }
+\end{scope}
+\begin{scope}[yshift=-6cm]
+\draw[] (-3,0) -- (3,0) node[below]{$t$};
+\draw[] (0,-1.0) -- (0,1.4)node[above]{$-\frac{1}{2}x(-t)$};
+\draw[mycolor,very thick] (2,0) -- (1,-0.5) -- (0,0) -- (-1,-0.5) -- (-3,-0.5) ;
+\node[left] at (0,1) {$1$};
+\node[left] at (0,0.5) {$\frac{1}{2}$};
+\node[below] at (-2,0) {$-2$};
+\node[below] at (-1,0) {$-1$};
+\node[left] at (0,-0.5) {$-\frac{1}{2}$};
+\node[below] at (1,0) {$1$};
+\node[below] at (2,0) {$2$};
+\node[below] at (-2,0) {$-2$};
+\draw[gray] (0,1) -- (0.2,1);
+\draw[gray] (0,0.5) -- (0.2,0.5);
+\foreach \x in {-2,-1,1,2}
+{\draw[gray] (\x,0)--(\x,0.2); }
+\end{scope}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-23b1.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-23b1.pdf,figProb1-23b1.png)}}}
+
+So we have \(x_{e}(t)\) and \(x_{o}(t)\) as below:
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-23b2.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\begin{scope}
+\draw[] (-3,0) -- (3,0) node[below]{$t$};
+\draw[] (0,0) -- (0,1.4)node[above]{$x_{e}(t)$};
+
+\draw[mycolor,very thick] (-3,0.5) -- (-2,0.5) -- (-1,1) -- (0,0) -- (1,1) -- (2,0.5) -- (3,0.5);
+\node[left] at (0,1) {$1$};
+\node[left] at (0,0.5) {$\frac{1}{2}$};
+\node[below] at (-2,0) {$-2$};
+\node[below] at (-1,0) {$-1$};
+\node[below] at (1,0) {$1$};
+\node[below] at (2,0) {$2$};
+\node[below] at (-2,0) {$-2$};
+\draw[gray] (0,1) -- (0.2,1);
+\draw[gray] (0,0.5) -- (0.2,0.5);
+\foreach \x in {-2,-1,1,2}
+{\draw[gray] (\x,0)--(\x,0.2); }
+\end{scope}
+\begin{scope}[yshift=-3cm]
+\draw[] (-3,0) -- (3,0) node[below]{$t$};
+\draw[] (0,-1.4) -- (0,1.4)node[above]{$x_{o}(-t)$};
+\draw[mycolor,very thick] (-3,-0.5) -- ( -2,-0.5 ) -- (-1,0) -- (1,0) -- (2,0.5) -- (3,0.5) ;
+\node[left] at (0,1) {$1$};
+\node[left] at (0,0.5) {$\frac{1}{2}$};
+\node[left] at (0,-0.5) {$-\frac{1}{2}$};
+\node[below] at (-2,0) {$-2$};
+\node[below] at (-1,0) {$-1$};
+\node[below] at (1,0) {$1$};
+\node[below] at (2,0) {$2$};
+\node[below] at (-2,0) {$-2$};
+\draw[gray] (0,1) -- (0.2,1);
+\draw[gray] (0,0.5) -- (0.2,0.5);
+\draw[gray] (0,-0.5) -- (0.2,-0.5);
+\foreach \x in {-2,-1,1,2}
+{\draw[gray] (\x,0)--(\x,0.2); }
+\end{scope}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-23b2.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-23b2.pdf,figProb1-23b2.png)}}}
+
+:END:
+
+:sub-problem:
+*Problem 1.23c*
+
+I decide to figure this problem in a algebraic instead of geometrical way.
+because we have:
+
+\begin{equation*}
+x(t) =
+\begin{cases}
+-2t & t< 0\\
+t & t > 0
+\end{cases}
+\end{equation*}
+
+So
+\begin{equation*}
+x(-t) =
+\begin{cases}
+-t & t < 0 \\
+2t & t> 0
+\end{cases}
+\end{equation*}
+
+Then,
+\begin{eqnarray*}
+x_{e}(t)&=&
+\begin{cases}
+\frac{3}{2}t & t> 0\\
+-\frac{3}{2}t & t < 0
+\end{cases}
+ \\
+x_{o}(t)&=&
+\begin{cases}
+-\frac{1}{2}t & t> 0\\
+-\frac{1}{2}t & t< 0
+\end{cases}
+\end{eqnarray*}
+
+Then we can draw them
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-23c.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+    \begin{scope}
+    \draw[] (-3,0) -- (3,0) node[below]{$t$};
+    \draw[] (0,0) -- (0,1.5)node[above]{$x_{e}(t)$};
+    \draw[mycolor,very thick] (-1,1.5) -- (0,0) -- (1,1.5);
+
+    \node[left] at (0,1) {$1$};
+    \node[below] at (-1,0) {$-1$};
+    \node[below] at (1,0) {$1$};
+    \node[below] at (0,-0.2) {$(c)$};
+    \foreach \x in {-1,1}
+    {\draw[gray] (\x,0)--(\x,0.2); }
+    \foreach \x in {1}
+    {\draw[gray] (0,\x) -- (0.2,\x);}
+    \node[mycolor] at(-2,2.1) {\small $x_{e}(t)=-\frac{3}{2}t,t<0$};
+    \node[mycolor] at(2,2.1) {\small $x_{e}(t)= \frac{3}{2},t>0$};
+    \end{scope}
+    \begin{scope}[yshift=-4cm]
+    \draw[] (-3,0) -- (3,0) node[below]{$t$};
+    \draw[] (0,-1.5) -- (0,1.5)node[above]{$x_{o}(t)$};
+    \draw[mycolor,very thick] (-1,0.5) -- (0,0) -- (1,-0.5);
+
+    \node[left] at (0,1) {$1$};
+    \node[left] at (0,0.5) {$\frac{1}{2}$};
+    \node[left] at (0,-0.5) {$-\frac{1}{2}$};
+    \node[below] at (-1,0) {$-1$};
+    \node[below] at (1,0) {$1$};
+    \node[left] at (0,-1) {$-1$};
+    \node[below] at (0,-1.4) {$(c)$};
+    \foreach \x in {-1,1}
+    {\draw[gray] (\x,0)--(\x,0.2); }
+    \foreach \x in {-1,-0.5,0.5,1}
+    {\draw[gray] (0,\x) -- (0.2,\x);}
+    \node[mycolor] at(-2,2.1) {\small $x_{e}(t)=-\frac{1}{2}t,t<0$};
+    \node[mycolor] at(2,2.1) {\small $x_{e}(t)=- \frac{1}{2},t>0$};
+    \end{scope}
+
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-23c.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-23c.pdf,figProb1-23c.png)}}}
+
+:END:
+
+
+*** Reference
+
+:bibli:
+ bibliography:~/Dropbox/research_library/zcl.bib
+ bibliographystyle:unsrt
+:end:
+
 
 * Projects    :project:
 [2019-10-05 Sat 16:53]
