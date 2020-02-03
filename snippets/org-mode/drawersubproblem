@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name:drawersubproblem
+# key: drawersubproblem
+# --
+:$1:
+$0
+:END:
