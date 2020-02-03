@@ -2,10 +2,7 @@
 # name: figureTikZ
 # --
 
-:$1:
-#+caption: ${2:caption}
-#+name: $1
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/${1:figname}.pdf"
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb${1:figname}.pdf"
 #+begin_src latex -n -r :results raw :exports none
 \begin{tikzpicture}
 $0
@@ -15,5 +12,4 @@ $0
 
 #+ATTR_HTML:  :width 80% :align center
 #+ATTR_LATEX: :width 0.8\textwidth :align center
-{{{if-latex($1.pdf,$1.png)}}}
-:end:
+{{{if-latex(figProb$1.pdf,figProb$1.png)}}}
