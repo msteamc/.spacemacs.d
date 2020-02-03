@@ -89,6 +89,7 @@
   "gT" 'helm-gtags-find-tag-other-window
   "gu" 'helm-gtags-update-tags
   "gw" 'helm-gtags-dwim
+  "jm" 'helm-imenu
   "sp" 'spacemacs/helm-project-smart-do-search-region-or-symbol
   "sP" 'spacemacs/helm-project-smart-do-search
   "sq" 'query-replace

@@ -60,7 +60,7 @@
 (spacemacs/set-leader-keys "ot" 'bh/org-todo)
 
 (spacemacs/set-leader-keys "oa" 'org-agenda)
-(spacemacs/set-leader-keys "ob" 'previous-buffer)
+(spacemacs/set-leader-keys "ob" 'org-babel-mark-block)
 (spacemacs/set-leader-keys "oC" 'calendar)
 (spacemacs/set-leader-keys "od" 'bh/show-org-agenda)
 (spacemacs/set-leader-keys "of" 'org-fill-paragraph)
