@@ -16,6 +16,10 @@
 ;; define-key copied  from the init.el
 (define-key evil-motion-state-map "j" 'evil-next-visual-line)
 (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
+(define-key evil-motion-state-map (kbd "C-j") 'evil-scroll-page-down)
+(define-key evil-motion-state-map (kbd "C-k") 'evil-scroll-page-up)
+(define-key evil-motion-state-map "k" 'evil-previous-visual-line)
+
 (define-key evil-motion-state-map (kbd "C-e") 'end-of-line)
 (define-key evil-motion-state-map (kbd "C-q") 'undo-tree-visualize)
 ;; Also in visual mode
