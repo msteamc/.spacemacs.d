@@ -51,5 +51,5 @@
           (lambda ()
             (define-key dired-mode-map (kbd "i")
               (lambda () (interactive) (find-alternate-file "..")))))
-(push '("*SDCV" . emacs) evil-buffer-regexps)
-(evil-set-initial-state 'sdcv-mode 'emacs)
+
+;;(evil-set-initial-state 'sdcv-mode 'emacs)

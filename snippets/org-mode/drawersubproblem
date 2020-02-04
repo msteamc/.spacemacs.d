@@ -2,6 +2,6 @@
 # name:drawersubproblem
 # key: drawersubproblem
 # --
-:$1:
+:sub-problem:
 $0
 :END:
