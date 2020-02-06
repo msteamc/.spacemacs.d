@@ -51,5 +51,3 @@
           (lambda ()
             (define-key dired-mode-map (kbd "i")
               (lambda () (interactive) (find-alternate-file "..")))))
-
-;;(evil-set-initial-state 'sdcv-mode 'emacs)

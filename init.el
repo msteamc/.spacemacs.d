@@ -364,6 +364,7 @@ layers configuration. You are free to put any user code."
   ;; 选词框显示5个候选词
   (setq pyim-page-length 6)
   (setenv "LANG" "en_US.UTF-8")
+  (evil-set-initial-state 'sdcv-mode 'emacs)
 
   )
 ;; Do not write anything past this comment. This is where Emacs will
