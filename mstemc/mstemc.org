@@ -2798,8 +2798,233 @@ x_{1}( \frac{t}{3} - t_{0} )\) which is not equal with \(y_{1}(t-t_{0}) = x(\fra
    signal is not differentiable.
 
 :END:
+*** Problem 1.28
+    [2020-02-07 Fri 10:52]
+
+    #+ATTR_LATEX: :options []{prob:1.28}
+    #+NAME: prob:1.28
+    #+begin_prob
+    Determine which of the properties listed in Problem 1.27 hold and which do
+    not hold for each of the following discrete-time systems. Justify your
+    answers. In each example, \(y[n]\) denotes the system output and \(x[n]\) is
+    the system input.
+
+    \begin{eqnarray*}
+    \mathbf{(a)} y[n]&=& x[-n] \\
+    \mathbf{(b)} y[n]&=& x[n-2] -2x[n-8] \\
+    \mathbf{(c)} y[n]&=& nx[n] \\
+    \mathbf{(d)} y[n]&=& \mathrm{Even} \{ x[n-1] \} \\
+    \mathbf{(e)} y[n]&=&
+    \begin{cases}
+    x[n], & n\geq 1\\
+    0, & n=0 \\
+    x[n+1], & n\leq -1
+    \end{cases} \\
+    \mathbf{(f)} y[n] &=&
+    \begin{cases}
+    x[n], & n\geq 1\\
+    0, & n=0 \\
+    x[n], & n\leq -1
+    \end{cases} \\
+    \mathbf{(g)} y[n] &=& x[4n+1]
+    \end{eqnarray*}
+    #+end_prob
+
+:prefix:
+*Memoryless* : A system is memoryless if its output for each value of the
+independent variable at a give time is dependent on the input at only that same
+time.
+
+*Time invariant*: A system is time invariant if the behavior and characteristics
+of the system are fixed over time. Time invariance can be justified very simply.
+A system is time invariant if a time shift in the input signal results in an
+identical time shift in the output signal.
+
+*Linear*: A system is linear if it possesses the property of superposition: if an
+input consists of the weighted sum of several signals, then the output is the
+superposition.
+
+*Causality*: A system is causal if the output at any time depends on values of
+the input at only the present and past time.
+
+*Stability*: A system is stable if small inputs lead to response that do not
+diverge.
+
+:END:
+
+# a
+:sub-problem:
+*Problem 1.28a*
 
 
+1. The system has memory.
+2. The system time variant.
+3. The system is linear.
+4. The system is not causal because \(y[-2]=x[2]\)
+5. The system is stable.
+
+Now, Let me justify the property of time variant. Let \(x_{1}[n]\) be an
+arbitary singal and hence the output \(y_{1}[n] = x_{1}[-n]\). Let \(x_{2}[n] =
+x_{1}[n-n_{0}]\) and hence \(y_{2}[n] = x_{2}[-n] = x_{1}[-n-n_{0}]\) which is
+not equal with \(y_{1}[n-n_{0}] = x_{1}[-(n-n_{0})]\).  Hence, the time shift in
+the input signal does not result in the same time shift in the output signal.
+
+The process of justifing can be visualized as below:
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-28a.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\begin{axis}[
+axis lines = middle,
+xmin=-8,xmax=8,ymin=0,ymax=1.2,
+ytick={1},
+title = {\color{mycolor}$x_{1}[n]$},
+]
+\addplot[ycomb,mark=*,mycolor,domain=1:4,samples=4,very thick] {1};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\begin{axis}[
+axis lines = middle,
+xmin=-8,xmax=8,ymin=0,ymax=1.2,
+ytick={1},
+title = {\color{mycolor}$y_{1}[n]$},
+]
+\addplot[ycomb,mark=*,mycolor,domain=-1:-4,samples=4,very thick] {1};
+\end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-28a.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-28a.pdf,figProb1-28a.png)}}}
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-28a3.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\begin{axis}[
+axis lines = middle,
+xmin=-8,xmax=8,ymin=0,ymax=1.2,
+ytick={1},
+title = {\color{mycolor}$y_{1}[n-2]$},
+]
+\addplot[ycomb,mark=*,mycolor,domain=-2:1,samples=4,very thick] {1};
+\end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-28a3.pdf]]
+
+
+#+ATTR_HTML:  :width 60% :align center
+#+ATTR_LATEX: :width 0.6\textwidth :align center
+{{{if-latex(figProb1-28a3.pdf,figProb1-28a3.png)}}}
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-28a2.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\begin{axis}[
+axis lines = middle,
+xmin=-8,xmax=8,ymin=0,ymax=1.2,
+ytick={1},
+title = {\color{mycolor}$x_{2}[n]=x_{1}[n-2]$},
+]
+\addplot[ycomb,mark=*,mycolor,domain=3:6,samples=4,very thick] {1};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+\begin{axis}[
+axis lines = middle,
+xmin=-8,xmax=8,ymin=0,ymax=1.2,
+ytick={1},
+title = {\color{mycolor}$y_{2}[n]= x_{2}[-n]$},
+]
+\addplot[ycomb,mark=*,mycolor,domain=-3:-6,samples=4,very thick] {1};
+\end{axis}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-28a2.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-28a2.pdf,figProb1-28a2.png)}}}
+
+As we can see \(y_{2}[n]\neq y_{1}[n-2]\) i.e. the time shift ( here \(2\)) in
+input signal does not result in the identical time shift in the result.
+
+:END:
+# b
+:sub-problem:
+*Problem 1.28b*
+
+1. The system has memory.
+2. The system is time invariant.
+3. The system is linear.
+4. The system is causal.
+5. The system is stable.
+:END:
+# c
+:sub-problem:
+*Problem 1.28c*
+
+1. The system is memoryless.
+2. The system is time variant.
+3. The system is linear.
+4. The system is causal.
+5. The system is not stable.
+
+:END:
+# d
+:sub-problem:
+*Problem 1.28d*
+
+
+:END:
+# e
+:sub-problem:
+*Problem 1.28e*
+
+1. The system has memory.
+2. The system is time variant
+3. The system is linear.
+4. The system is not causal.
+5. The system is stable.
+:END:
+# f
+:sub-problem:
+*Problem 1.28f*
+
+1. The system has no memory.
+2. The system is time variant.
+3. The system is linear.
+4. The system is causal.
+5. The system is stable.
+:END:
+# g
+:sub-problem:
+*Problem 1.28g*
+
+1. The system has memory.
+2. The system is time variant.
+3. The system is linear.
+4. The system is not causal.
+5. The system is stable.
+:END:
+*** Problem 1.29
+    [2020-02-07 Fri 20:08]
 
 
 
