@@ -2991,6 +2991,11 @@ input signal does not result in the identical time shift in the result.
 :sub-problem:
 *Problem 1.28d*
 
+1. The system has memory.
+2. The system is time variant.
+3. The system is linear.
+4. The system is not causal.
+5. The system is stable.
 
 :END:
 # e
@@ -3025,6 +3030,124 @@ input signal does not result in the identical time shift in the result.
 :END:
 *** Problem 1.29
     [2020-02-07 Fri 20:08]
+
+    #+ATTR_LATEX: :options []{prob:1-29}
+    #+NAME: prob:1-29
+    #+begin_prob
+    a. Show that the discrete-time system whose input \(x[n]\) and output
+       \(y[n]\) are related by \(y[n] = \mathrm{Re} \{x[n]\} \) is additive.
+       Does this system remain additive if its input-output relationship is
+       changed to \(y[n] = \mathrm{Re} \{ e^{i\pi n/4}x[n] \}  \)?  (Do not
+       assume that \(x[n]\) is real in this problem.)
+    b. In the text, we discussed the fact that the property of linearity for a
+       system is equivalent to the system possessing both the additive property
+       and homogeneity property. Determine whether each of the systems defined
+       below is additive and/or homogeneous. Justify your answers by providing a
+       proof for each property if it holds or a counterexample if it does not.
+
+           \begin{eqnarray*}
+           \mathrm{(i)}: y(t) &=&\frac{1}{x(t)} \big[ \frac{dx(t)}{dt} \big]^{2} \\
+           \mathrm{(ii)}: y[n] &=&
+           \begin{cases}
+           \frac{x[n]x[n-2]}{x[n-1]}, & x[n-1] \neq 0 \\
+           0, & x[n-1] = 0
+           \end{cases}
+           \end{eqnarray*}
+
+    #+end_prob
+
+:sub-problem:
+*Problem 1.29a*
+
+Let \(x[n] = x_{r}[n] + i x_{i}[n]\) where \(x_{r}[n]\) and \(x_{i}[n]\) stand
+for the real part and imagary part of \(x[n]\) respectively. Let \(x_{1}[n] =
+x_{1r}[n] + ix_{1i}[n]\) and \(x_{2}[n] = x_{2r}[n] + i x_{2i}[n]\), so
+\(y_{1}[n] = \mathrm{Re} \{x_{1}[n]\} = x_{1r}[n]\)  and \(y_{2}[n] =
+\mathrm{Re}\{x_{2}[n]\} =x_{1r}[n]  \). Let \(x_{3}[n] = x_{1}[n] + x_{2}[n] = (
+x_{1r}[n] + x_{2r}[n]) + i( x_{1i}[n] + x_{2i}[n] )\). Then we have \(y_{3}[n] =
+x_{1r}[n] + x_{2r}[n] = y_{1}[n] + y_{2}[n]\). So the the relationship \(y[n] =
+\mathrm{Re}\{ x[n]\}\) between \(x[n]\) and \(y[n]\) is additive.
+
+Next Let's check whether or not the additive property of \(y[n] =\mathrm{Re} \{
+e^{i\pi n/4}x[n] \}  \) holds. First Let \(x[n] = x_{r}[n] + ix_{i}[n]\) like
+before. Then,
+\begin{eqnarray*}
+y[n]&=& \mathrm{Re} \{ e^{i\pi n/4}x[n] \}   \\
+&=& \mathrm{Re} \{ (\cos(\tfrac{\pi n}{4} ) + i\sin(\tfrac{\pi n}{4})) ( x_{r}[n] + ix_{i}[n] ) \} \\
+&=& \cos(\tfrac{\pi n}{4})x_{r}[n] -\sin( \tfrac{\pi n}{4} )x_{i}[n]
+\end{eqnarray*}
+
+The additive property holds in a straightforward way.
+
+:END:
+
+:sub-problem:
+*Problem 1.29b(i)*
+
+First let's check whether the additive property holds or not. Suppose
+\begin{eqnarray*}
+y_{1}(t)&=&  \frac{1}{x_{1}(t)} \big[ \frac{dx_{1}(t)}{dt} \big]^{2} \\
+y_{2}(t)&=&  \frac{1}{x_{2}(t)} \big[ \frac{dx_{2}(t)}{dt} \big]^{2} \\
+\end{eqnarray*}
+and \(x_{3}(t) = x_{1}(t) + x_{2}(t)\), then,
+\begin{eqnarray*}
+y_{3}(t)&=&  \frac{1}{x_{3}(t)} \big[ \frac{dx_{3}(t)}{dt} \big]^{2} \\
+&=&  \frac{1}{x_1(t) + x_2(t)} \big[ \frac{d( x_1(t) + x_2(t) )}{dt} \big]^{2} \\
+&\neq& y_{1}(t) + y_{2}(t)
+\end{eqnarray*}
+So the additive property does not holds.
+
+Second, let's check the property of homogeneity. Suppose \(x_{4}(t) =
+ax_{1}(t)\), then
+\begin{eqnarray*}
+y_{4}(t)&=&  \frac{1}{x_{4}(t)} \big[ \frac{dx_{4}(t)}{dt} \big]^{2} \\
+&=& \frac{1}{ax_{1}(t)} \big[ \frac{dax_{1}(t)}{dt} \big]^{2} \\
+&=& a\frac{1}{x_{1}(t)} \big[ \frac{dx_{1}(t)}{dt} \big]^{2} \\
+&=& ay_{1}(t)
+\end{eqnarray*}
+So the homogeneity property holds.
+
+:END:
+
+:sub-problem:
+*Problem 1.29b(ii)*
+
+Let
+\begin{eqnarray*}
+y_{1}[n] &=&
+           \begin{cases}
+           \frac{x_{1}[n]x_{1}[n-2]}{x_{1}[n-1]}, & x_{1}[n-1] \neq 0 \\
+           0, & x_{1}[n-1] = 0
+           \end{cases} \\
+y_{2}[n] &=&
+           \begin{cases}
+           \frac{x_{2}[n]x_{2}[n-2]}{x_{2}[n-1]}, & x_{2}[n-1] \neq 0 \\
+           0, & x_{2}[n-1] = 0
+           \end{cases}
+\end{eqnarray*}
+
+and let \(x_{3}[n] = x_{1}[n] + x_{2}[n]\), we have
+
+\begin{eqnarray*}
+y_{3}[n] &=&
+           \begin{cases}
+           \frac{x_{3}[n]x_{3}[n-2]}{x_{3}[n-1]}, & x_{3}[n-1] \neq 0 \\
+           0, & x_{3}[n-1] = 0
+           \end{cases} \\
+&=&
+           \begin{cases}
+           \frac{(x_1[n]+x_2[n]) ( x_{1}[n-2] + x_{2}[n-2] )}{x_{1}[n-1] + x_{2}[n-1]}, & x_{1}[n-1] + x_{2}[n-1]\neq 0 \\
+           0, & x_{1}[n-1] + x_{2}[n-1]= 0
+           \end{cases}
+\end{eqnarray*}
+
+We cannot reach the conclusion that \(y_{3}[n]= y_{1}[n] + y_{2}[n]\). So the
+additive property does not hold.
+
+Second Let's check whether the homogeneity property holds. Let \(x_{4}[n] =
+ax_{1}[n]\) , It's easy to check the system is homogeneous. i.e. \(y_{4}[n] = ay_{1}[n]\)
+
+:END:
 
 
 
