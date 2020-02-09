@@ -63,7 +63,7 @@ CLOCK: [2019-12-05 Thu 23:12]--[2019-12-05 Thu 23:35] =>  0:23
 
 {{{titlepage(petrinetfinal)}}}
 
-#+include: "./post/set-up-the-tikz-in-emacs-org-mode.org"
+#+include: "./post/tool/set-up-the-tikz-in-emacs-org-mode.org"
 
 
 ** TODO Export Markdown and latex using Emacs Org :Emacs:Org:Hugo:LaTeX:Markdown:
@@ -79,9 +79,9 @@ CLOCK: [2019-12-07 Sat 07:46]--[2019-12-07 Sat 07:48] =>  0:02
 :END:
 <2019-12-07 Sat 07:46>
 
-#+include: "./post/export-markdown-and-latex-using-emacs-org.org"
+#+include: "./post/tool/export-markdown-and-latex-using-emacs-org.org"
 
-** TODO Drawing Graphs Using TikZ in Emacs Org
+** TODO Drawing Graphs Using TikZ in Emacs Org            :Emacs:Org:TikZ:LaTeX:
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
 :EXPORT_HUGO_SECTION: post
@@ -95,647 +95,11 @@ CLOCK: [2019-12-08 Sun 17:30]--[2019-12-08 Sun 17:33] =>  0:03
 :END:
 <2019-12-08 Sun 17:30>
 
+{{{titlepage(example3)}}}
 
-*** Drawing a TikZ picture in Emacs Org Mode
-[2019-12-11 Wed 11:35]
+#+include: "./post/tool/draw-graphs-using-tikz-in-emacs-org.org"
 
-#+caption: a minimum working example
-#+name: a-minimum-working-example
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example3.pdf"
-#+begin_src latex -n -r :results raw :exports code
-\usetikzlibrary{intersections,arrows.meta}
-\begin{tikzpicture}[thin]
-\draw (-1.5,0) -- (1.5,0);
-\draw (0,-1.5) -- (0,1.5);
-\filldraw[fill = green!20, draw = green!50!black] (0,0) circle[radius = 1cm];
-\draw[help lines,very thin,step=.5cm,color=gray] (-1.5,-1.5) grid (1.5,1.5);
-\draw (0,0) rectangle (.5,.5);
-\draw (0,0) rectangle (-0.5,-0.5);
-% relative coordinate
-\draw[blue, very thick] (30:1) ++ (0,-0.5) --(0,0);
-% name a path without drawing it
-\path[name path = upward line] (1,0) -- (1,1);    (ref:path)
-\path[name path = sloped line] (0,0) -- (30:1.5cm);
-% use intersection of two path
-\draw[name intersections={of = upward line and sloped line, by=x}]
-     [very thick, orange] (1,0) -- (x);            (ref:intersections)
-% use arrow
-\draw[<->>] (0,0) -- (145:1);                      (ref:arrow1)
-\draw[<-{Triangle[fill=red]}] (0,0) -- (30:1);     (ref:arrow2)
-% use scope
-\begin{scope}[very thick]                          (ref:scope1)
-\draw (-0.4,0.4) -- (0.4,0.4);
-\draw (-0.4,-0.4) -- (0.4,-0.4);
-\end{scope}                                      (ref:scope2)
-% use foreach
-\foreach \x in {-1cm,-0.5cm,1cm}                 (ref:foreach1)
-    \draw[red] (\x,-3pt) -- (\x,3pt);
-\foreach \y in {-1cm,-0.5cm,1cm}
-    \draw[red](-3pt,\y) -- (3pt,\y);             (ref:foreach2)
-% using node
-\draw (0,0)+(0.2,-0.2) node {\tiny $(0,0)$ };    (ref:node1)
-\end{tikzpicture}
-#+end_src
-
-#+results: a-minimum-working-example
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example3.pdf]]
-
-
-{{{newline}}}
-The generated figure is shown as:
-#+attr_html: :width 800 :align center
-#+attr_latex: :width 0.5\textwidth :align center
-{{{if-latex(example3.pdf,example3.png)}}}
-
-1. In [[a-minimum-working-example][the minimum working example]] line [[(path)]] , a path is named  without drawing
-   it.
-2. Line [[(intersections)]] gives an example of using library =intersections=. Note
-   that you need to add the library using =\usetikzlibrary{intersections}=
-   otherwise an error occurs during \LaTeX compiling.
-3. Line [[(arrow1)]] and [[(arrow2)]] gives an example of using arrow. To make it work,
-   =\usetikzlibrary{arrows.meta}= is needed. The library =arrows.meta= provides tons
-   of types of arrows whick shock me when I see them the first time.
-4. Line [[(scope1)]] to [[(scope2)]] gives an example of =scope= . In the environment, all
-   the lines are drawn in the =very thick= style.
-5. Line [[(foreach1)]] to [[(foreach2)]] gives an examplt of =foreach= . =foreach= is handy
-   when you want to draw a list of objects. In [[a-minimum-working-example][the minimum working example]] , I
-   draw a list of short red sticks along with the x-axis and y-axis.
-6. Line [[(node1)]] is an example of =node=. The keyword =node= is typically followed by
-   some options between =[]= and then some text between ={}=. Every node has flexible
-   anchor options to decide where the text should be placed.
-*** Another Example
-[2019-12-12 Thu 20:15]
-
-The code is shown as:
-#+caption: another minimum working example
-#+name: another-minimum-working-example
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/example4.pdf"
-#+begin_src latex -n -r :results raw :exports code
-\usetikzlibrary{intersections,arrows.meta}
-\begin{tikzpicture}[scale=3]
-  \clip (-0.6,-0.2) rectangle (0.6,1.51);
-  \draw[step = .5cm, help lines] (-1.4,-1.4) grid (1.4,1.4);
-  \filldraw[fill=green!20,draw = green!50!black] (0,0) -- (3mm,0mm)
-  arc [start angle = 0, end angle = 30,radius = 3mm] -- cycle;
-  \draw[->] (-1.5,0) -- (1.5,0);
-  \draw[->] (0,-1.5) -- (0,1.5);
-  \draw (0,0) circle [radius=1cm];
-  \foreach \x in {-1,-0.5,1}
-  \draw(\x cm, 1pt) -- (\x cm, -1 pt) node [anchor = north] {$\x$};
-  \foreach \y in {-1,-0.5,1}
-  \draw(1pt,\y cm) -- (-1pt, \y cm) node[anchor = east] {$\y$};
-\end{tikzpicture}
-#+end_src
-
-#+results: another-minimum-working-example
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/example4.pdf]]
-
-The generated figure is shown as:
-#+attr_html: :width 800 :align center
-#+attr_latex: :width 0.5\textwidth :align center
-{{{if-latex(example4.pdf,example4.png)}}}
-
-
-*** Some Basic Rules in TikZ
-[2019-12-12 Thu 14:16]
-
-1. The basic three steps to draw a figure: 1. name a path; 2. add some
-   objects along the path; 3. execute an action. At each step, many options are
-   available to render your figure.
-2. A path can be a =rectangle= =circle= =ellipse= =arc= =grid= =parabola, to= . Of course,
-   the path can be just =move to= which is =--= . One more thing, you can specified
-   horizontal and vertical lines just using =-|= or vertical then horizontal lines
-   using =|-= . Notice that you can add options following =to= , but =--= cannot have
-   options.
-3. Along the path, nodes can be added at certain position. The position can be
-   specified by absolute coordinates or relative coordinates. The coordinates
-   can be specified by either xy-coordinates or polar system. Furthermore, the
-   position can be calculated as intersections of two paths.
-4. Once paths and nodes are ready, you can execute an action on it. An action
-   can be =draw, fill, filldraw, pattern, shade, shadedraw, clip,
-         useasboundingbox= . Do not be nervous. You will get familiar with them when
-   you use them.
-5. For the paths, nodes and actions, many options are available.
-6. The options appear in =[]=. No matter it is an object or an operation, the
-   contents in the following  =[]= serve as options.
-
-   Options =[]= can be at the very beginning of the environment =tikzpicture=
-   following the operation, following the object.
-
-7. Coordinates can be specified in x-y format, polar format.
-   - The easiest way is =(x,y)= which means =x= cm in the x-axis and =y= cm in the
-     y-axis;
-   - =(a:x)= is the polar format which means =x= cm in direction =a= degree.
-8. =(<p> |- <q>)= is another way to specify coordinates for example =(30:1 |- 0,0)=
-   which means the interaction of a vertical line through =(30:1)= and a
-   horizontal line through =(0,0)= .
-9. Relative coordinates are possible with =+= and =++= in front of =(x,y)= and =(a:x)= .
-   =+= is relative to the very first coordinate whereas =++= is relative to the last
-   coordinate of current path.
-
-
-*** Some tips for in TikZ
-[2019-12-12 Thu 15:14]
-
-1. Walking through the *Part Tutorials and Guidelines* and *Chapter 11 Design
-   Principles* in the TikZ manual, You can draw most figures you want. Diving
-   into *Part 3* you can render your figures more beautiful. *Part V Libraries*
-   provide many predefined patterns to save your time.
-2. To use =intersections= to specify a coordinate, you need to include the
-   library, i.e. =\usetikzlibrary{intersections}= is a must.
-3. =\filldraw= is a good command. It draws a closed loop and fill it with color or
-   pattern. The colors for filling and drawing can be different.
-
-
-
-bibliography:~/Dropbox/research_library/zcl.bib
-bibliographystyle:unsrt
-
-** TODO Walk Through the Petri-Net In TiKZ Tutorial
-:PROPERTIES:
-:EXPORT_FILE_NAME: index
-:EXPORT_HUGO_SECTION: post
-:EXPORT_HUGO_BUNDLE: walk-through-the-petri-net-in-tikz-tutorial
-:EXPORT_DESCRIPTION: Analyze the Petri-Net tutorial in Chapter 3 of the TikZ manual line by line.
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
-:END:
-:LOGBOOK:
-CLOCK: [2019-12-14 Sat 15:07]--[2019-12-14 Sat 15:21] =>  0:14
-:END:
-<2019-12-14 Sat 15:07>
-
-{{{titlepage(petrinetfinal)}}}
-
-Chapter 3 of the TikZ tutorial gives an example of Petri net. In this post, let
-me work through the code line by line. During this example, more tikz libraries
-are used, such as =arrows= , =decorations.pathmorphing= , =backgrounds= ,
-=positioning= , =fit=, =petri= . These libraries should be added before the
-=tikzpicture= environment.
-
-#+caption: the petri net code
-#+name: the-petri-net-code
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/petrinetfinal.png"
-#+begin_src latex -n -r :results raw :exports none
-\begin{tikzpicture}
-  [node distance=1.3cm,on grid,>=stealth',bend angle=45,auto,
-  every place/.style= {minimum size=6mm,thick,draw=blue!75,fill=blue!20},
-  every transition/.style={thick,draw=black!75,fill=black!20},
-  red place/.style= {place,draw=red!75,fill=red!20},
-  every label/.style= {blue}]
-  \node [place,tokens=1] (w1) {};
-  \node [place] (c1) [below=of w1] {};
-  \node [place] (s) [below=of c1,label=above:$s\le 3$] {};
-  \node [place] (c2) [below=of s] {};
-  \node [place,tokens=1] (w2) [below=of c2] {};
-  \node [transition] (e1) [left=of c1] {}
-  edge [pre,bend left] (w1)
-  edge [post,bend right] (s)
-  edge [post] (c1);
-  \node [transition] (e2) [left=of c2] {}
-  edge [pre,bend right] (w2)
-  edge [post,bend left] (s)
-  edge [post] (c2);
-  \node [transition] (l1) [right=of c1] {}
-  edge [pre] (c1)
-  edge [pre,bend left] (s)
-  edge [post,bend right] node[swap] {2} (w1);
-  \node [transition] (l2) [right=of c2] {}
-  edge [pre] (c2)
-  edge [pre,bend right] (s)
-  edge [post,bend left] node {2} (w2);
-
-  \begin{scope}[xshift=6cm]
-    \node [place,tokens=1] (w1') {};
-    \node [place] (c1') [below=of w1'] {};
-    \node [red place] (s1') [below=of c1',xshift=-5mm]
-    [label=left:$s$] {};
-    \node [red place,tokens=3] (s2') [below=of c1',xshift=5mm]
-    [label=right:$\bar s$] {};
-    \node [place] (c2') [below=of s1',xshift=5mm] {};
-    \node [place,tokens=1] (w2') [below=of c2'] {};
-    \node [transition] (e1') [left=of c1'] {}
-    edge [pre,bend left] (w1')
-    edge [post] (s1')
-    edge [pre] (s2')
-    edge [post] (c1');
-    \node [transition] (e2') [left=of c2'] {}
-    edge [pre,bend right] (w2')
-    edge [post] (s1')
-    edge [pre] (s2')
-    edge [post] (c2');
-    \node [transition] (l1') [right=of c1'] {}
-    edge [pre] (c1')
-    edge [pre] (s1')
-    edge [post] (s2')
-    edge [post,bend right] node[swap] {2} (w1');
-    \node [transition] (l2') [right=of c2'] {}
-    edge [pre] (c2')
-    edge [pre] (s1')
-    edge [post] (s2')
-    edge [post,bend left] node {2} (w2');
-  \end{scope}
-  \begin{scope}[on background layer]
-    \node (r1) [fill=black!10,rounded corners,fit=(w1)(w2)(e1)(e2)(l1)(l2)] {};
-    \node (r2) [fill=black!10,rounded corners,fit=(w1')(w2')(e1')(e2')(l1')(l2')] {};
-  \end{scope}
-  \draw [shorten >=1mm,-to,thick,decorate,
-  decoration={snake,amplitude=.4mm,segment length=2mm,
-    pre=moveto,pre length=1mm,post length=2mm}]
-  (r1) -- (r2) node [above=1mm,midway,text width=3cm,align=center]
-  {replacement of the \textcolor{red}{capacity} by \textcolor{red}{two places}};
-\end{tikzpicture}
-#+end_src
-
-
-#+attr_html: :width 800 :align center
-#+attr_latex: :width 0.8\textwidth :align center
-{{{if-latex(petrinet.pdf,petrinet.png)}}}
-*** Walk Through It
-[2019-12-17 Tue 22:48]
-
-#+caption: walk through the code
-#+name: walk through the code
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/petrinetdetail.png"
-#+begin_src latex -n -r :results raw :exports code
-\begin{tikzpicture}
-  [node distance = 1.3cm, on grid, >=stealth', bend angel = 45, auto,
-  every place/.style= {minimum size = 6mm, thick,draw=blue!75,fill=blue!20},
-  every transition/.style={thick,draw=black!75,fill=black!20},
-  red place/.style = {place,draw = red!75,fill = red!20},
-  every label/.style = {red}]
-  \node [place,tokens=1] (w1)           {};
-  \node [place]          (c1)  [below=of w1] {};
-  \node [place]          (s)   [below=of c1,label=above:$s\le 3$] {};
-  \node [place]          (c2)  [below=of s]                       {};
-  \node [place]          (w2)  [below=of c2]                      {};
-
-  \node [transition] (e1) [left = of c1] {}
-    edge[pre,bend left]               (w1)
-    edge[post,bend right]             (s)
-    edge[post]                        (c1);
-  \node [transition] (e2) [left = of c2] {}
-    edge[pre,bend right]              (w2)
-    edge[post,bend left]              (s)
-    edge[post]                        (c2);
-  \node [transition] (l1) [right = of c1] {}
-  edge[pre]                         (c1)
-  edge[pre,bend left]               (s)
-  edge[post,bend right] node[swap] {2} (w1);
-  \node [transition] (l2) [right = of c2] {}
-  edge[pre]                         (c2)
-  edge[pre,bend right] (s)
-  edge[post,bend left] node{2} (w2);
-\begin{scope}[xshift=6cm]
-  \node [place,tokens=1] (w1')           {};
-  \node [place]          (c1')  [below=of w1'] {};
-  \node [red place]          (s1')   [below=of c1',,xshift=-5mm,label=left:$s$] {};
-  \node [red place,tokens=3]          (s2')  [below=of c1',xshift=5mm,label=right:$\bar s$] {};
-  \node [place]  (c2') [below=of s1',xshift=5mm] {};
-  \node [place]  (w2') [below=of c2'] {};
-
-  \node [transition] (e1') [left = of c1'] {}
-  edge [pre,bend left] (w1')
-  edge [post] (s1')
-  edge [pre] (s2')
-  edge [post] (c1');
-  \node [transition] (e2') [left=of c2'] {}
-  edge [pre,bend right] (w2')
-  edge [post] (s1')
-  edge [pre] (s2')
-  edge [post] (c2');
-  \node [transition] (l1') [right=of c1'] {}
-  edge [pre] (c1')
-  edge [pre] (s1')
-  edge [post] (s2')
-  edge [post,bend right] node[swap] {2} (w1');
-  \node [transition] (l2') [right=of c2'] {}
-  edge [pre] (c2')
-  edge [pre] (s1')
-  edge [post] (s2')
-  edge [post,bend left] node {2} (w2');
-\end{scope}
-\begin{scope}[on background layer]
-  \node (r1) [fill=black!40,rounded corners,fit = (w1)(w2)(e1)(e2)(l1)(l2)] {};
-  \node (r2) [fill=black!40,rounded corners,fit=(w1')(w2')(e1')(e2')(l1')(l2')] {};
-\end{scope}
-\draw [shorten >=1mm,-to, thick, decorate, decoration ={snake,amplitude=.4mm,segment length=2mm,pre=moveto, pre length=1mm, post length = 2mm}]
-(r1) -- (r2) node [above=1mm,midway,text width = 3cm, align = center]
-{replacement of the \textcolor{red}{capacity} by \textcolor{red}{two places}};
-\end{tikzpicture}
-#+end_src
-
-#+results: walk through the code
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/petrinetdetail.png]]
-
-
-#+attr_html: :width 800 :align center
-#+attr_latex: :width 0.8\textwidth :align center
-{{{if-latex(petrinetdetail.pdf,petrinetdetail.png)}}}
-
-
-** TODO Walk Through the Tutorial 4 of TikZ Manual
-:PROPERTIES:
-:EXPORT_FILE_NAME: index
-:LATEX_TITLE: Walk Through the Tutorial 4 of TikZ Manual
-:EXPORT_HUGO_SECTION: post
-:EXPORT_HUGO_BUNDLE: walk-through-the-tutorial-4-of-tikz-manual
-:EXPORT_DESCRIPTION: Analyze the Elements Example in Chapter 3 of the TikZ manual line by line.
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
-:END:
-:LOGBOOK:
-CLOCK: [2019-12-19 Thu 22:36]--[2019-12-19 Thu 22:37] =>  0:01
-:END:
-<2019-12-19 Thu 22:36>
-
-{{{titlepage(elements)}}}
-
-#+caption: Euclid Amber version of the Elements
-#+name: Euclid Amber version of the Elements
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/elements.png"
-#+begin_src latex -n -r :results raw :exports code
-\begin{tikzpicture}
-  [thick,help lines/.style={thin,draw=black!50}]
-  \def\A{\textcolor{input}{$A$}}
-  \def\B{\textcolor{input}{$B$}}
-  \def\C{\textcolor{output}{$C$}}
-  \def\D{$D$}
-  \def\E{$E$}
-
-  \colorlet{input}{blue!80!black}
-  \colorlet{output}{red!70!black}
-  \colorlet{triangle}{orange}
-
-  \coordinate [label=left:\A] (A) at ($(0,0) + .0*(rand,rand)$);
-  \coordinate [label=right:\B] (B) at ($(1.25,0.25) + .0*(rand,rand)$);
-
-  \draw [input] (A) -- (B);
-
-  \node [name path=D,help lines,draw,label=left:\D] (D) at (A) [circle through = (B)] {};
-  \node [name path=E,help lines,draw,label=right:\E] (E) at (B) [circle through = (A)] {};
-
-  \path [name intersections = {of =D and E, by={[label=above:\C]C}}];
-  \draw [output] (A) -- (C) -- (B);
-
-  \foreach \point in {A,B,C}
-  \fill[black,opacity=.5] (\point) circle (2pt);
-  \begin{pgfonlayer}{background}
-    \fill[triangle!80] (A) -- (C) -- (B) -- cycle;
-  \end{pgfonlayer}
-
-  % \node [below right, text width = 10cm,align = justify] at (4,3) {
-  %   \small\textbf{Proposition I} \par
-  %   \emph{To construct an \textcolor{triangle}{equilateral triangle}
-  %     on a given \textcolor{input}{finite straight line.}}
-  %   \par \vskip 1em
-  %   Let \A\B\ be the given \textcolor{input}{finite straight line}. \dots
-  % };
-
-\end{tikzpicture}
-#+end_src
-
-#+results: Euclid Amber version of the Elements
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/elements.png]]
-
-
-
-#+attr_html: :width 800 :align center
-#+attr_latex: :width 0.8\textwidth :align center
-{{{if-latex(elements.pdf,elements.png)}}}
-*** Proposition II
-[2019-12-20 Fri 21:01]
-
-#+caption: Proposition II
-#+name: Proposition II
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/propositionII.pdf"
-#+begin_src latex -n -r :results raw :exports none
-\begin{tikzpicture}
-[thick,help lines./style={thin,draw=black!50}]
-\def\A{\textcolor{orange}{$A$}}
-\def\B{\textcolor{input}{$B$}}
-\def\C{\textcolor{input}{C}}
-\def\D{$D$}
-\def\E{$E$}
-\def\F{$F$}
-\def\G{$G$}
-\def\H{$H$}
-\def\K{$K$}
-\def\L{\textcolor{output}{$L$}}
-
-\colorset{input}{blue!80!black}
-\colorset{output}{red!70!black}
-
-\coordinate [label=left:\A] (A) at (0,0) ;
-\coordinate [label=right:\B] (B) at (1,0.2);
-\coordinate [label=above:\C] (C) at (1,2);
-
-\draw [input] (B) -- (C);
-\draw [help lines] (A) -- (B);
-
-\coordinate [label=above:\D] (D) at ($(A)!.5!(B)!{sin(60)*2}!90:(B)$);
-
-\draw [help lines] (D) -- ($(D)!3.75!(A)$) coordinate [label=-135:\E] (E);
-\draw [help lines] (D) -- ($(D)!3.75!(B)$) coordinate [label=-45:\F] (F);
-
-\node (H) at (B) [name path =H, help lines, circle through=(C),draw,label=135:\H] {};
-\path [name path=B--F] (B) -- (F);
-\path [name intersections = {of= H and B--F,by = {[label=right:\G]G}}];
-
-\node (K) at (D) [name path =K,help lines,circle through = (G),draw,label=135:\K]{};
-\path [name path = A--E] (A) -- (E);
-
-\path [name intersections = {of = K and A--E,by={[label=below:\L]L}}];
-
-\draw [outptu] (A) -- (L);
-\foreach \point in {A,B,C,D,G,L}
-\fill [black,opacity=0.5] (\point) circle (2pt);
-
-\end{tikzpicture}
-#+end_src
-
-
-#+results: Proposition II
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/propositionII.pdf]]
-
-
-#+attr_html: :width 800 :align center
-#+attr_latex: :width 0.8\textwidth :align center
-{{{if-latex(propositionII.pdf,propositionII.png)}}}
-*** A Lecture Map Tutorial
-[2019-12-22 Sun 07:45]
-
-#+caption: A Lecture Map Tutorial
-#+name: A Lecture Map Tutorial
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/lecturemap.pdf"
-#+begin_src latex -n -r :results raw :exports none
-\def\lecture#1#2#3#4#5#6{
-  \node [annotation,#3, scale=0.65,text width=4cm, inner sep = 2mm] at (#4){
-    Lecture #1:\textcolor{orange}{\textbf{#2}}
-    \list{--}{\topsep=2pt\itemsep=0pt\parsep=0pt
-    \parskip=0pt\labelwidth=8pt\leftmargin=8pt
-    \itemindent=0pt\labelsep=2pt}
-  #5
-  \endlist
-};
-\node[anchor=base west] at (cal-#6.base east) {\textcolor{orange}{\textbf{#2}}};
-}
-\noindent
-
-\begin{tikzpicture}[scale=1.4]
-\begin{scope}
-  [mindmap,
-  every node/.style={concept, circular drop shadow,execute at begin node=\hskip0pt},
-  root concept/.append style={concept color=black,fill=white,line width=1ex, text=black,font=\large\scshape},
-  text=white,
-  computational problems/.style={concept color=red,faded/.style={concept color=red!50}},
-  computational models/.style={concept color=blue,faded/.style={concept color=blue!50}},
-  measuring complexity/.style={concept color=orange,faded/.style={concept color=orange!50}},
-  solving problems/.style={concept color=green!50!black,faded/.style={concept color=green!50!black!50}},
-  grow cyclic,
-  level 1/.append style={level distance=4.5cm,sibling angle=90,font=\scshape},
-  level 2/.append style={level distance=3cm,sibling angle=45,font=\large}]
-
-  \node [root concept](Computational Complexity) {Computational Complexity}
-  child [computational problems] {node [yshift=-1cm] (Computational Problems){Computational Problems}
-    child {node (Problem Measures) {Problem Measures}}
-    child {node (Problem Aspects) {Problem Aspects}}
-    child[faded] {node (Problem Domains) {Problem Domains}}
-    child {node (Key Problems) {Key Problems}}
-  }
-  child [computational models] {node [yshift=-1cm] (Computational Models){Computational Models}
-    child {node (Turing Machine){ Turing Machines}}
-    child[faded] {node (Random-Access Machines) {Random-Access Machies}}
-    child {node (Circuits){Circuits}}
-    child[faded] {node (Binary Decision Diagrams){Binary Decision Diagrams}}
-    child {node (Oracle Machine){Oracle Machines}}
-    child {node (Programming in Logic){Programming in Logic}}
-  }
-  child [measuring complexity]{node [yshift=1cm](Measuring Complexity){Measuring Complexity}
-    child {node (Complexity Measures) {Complexity Measures}}
-    child {node (Classifying Complexity) {Classifying Complexity}}
-    child {node (Comparing Complexity) {Comparing Complexity}}
-    child[faded] {node (Describing Complexity) {Describing Complexity}}
-  }
-  child [solving problems] {node [yshift=1cm](Solving Problems) {Solving Problems}
-    child {node (Exact Algorithms){Exact Algorithms}}
-    child {node (Randomization){Randomization}}
-    child {node (Fixed-parameter Algorithms){Fixed-parameter Algorithms}}
-    child {node (Parallel Computation){Parallel Computation}}
-    child {node (Partial Solutions){Partial Solutions}}
-    child {node (Approximation){Approximation}}
-  };
-\end{scope}
-\tiny
-\calendar[day list downward,
-          month text=\textcolor{red}{\%mt} \%y-,
-          month yshift=3.5em,
-          name=cal,
-          at={(-.5\textwidth-5mm,.5\textheight)},
-          dates=2009-04-01 to 2009-06-last]
- if(weekend)
-     [black!25]
- if(day of month=1){
-   \node at(0pt,1.5em) [anchor=base west] {\small\tikzmonthtext};
-};
-  \lecture{1}{Computational Problems}{above,xshift=-5mm,yshift=5mm}{Computational Problems.north}{
-  \item Knowledge of several key problems
-  \item Knowledge of problem encodings
-  \item Being able to formalize problems
-  }{2009-04-08}
-  \lecture{2}{Computational Models}{above left}{Computational Models.west}{
-  \item Knowledge of Turing machines
-  \item Being able to compare the computational power of different models
-  }{2009-04-15}
-  \begin{pgfonlayer}{background}
-      \clip[xshift=-1cm] (-.5\textwidth,-.5\textheight) rectangle ++(1.1\textwidth,1.1\textheight);
-
-    \colorlet{upperleft}{green!50!black!25}
-    \colorlet{upperright}{orange!25}
-    \colorlet{lowerleft}{red!25}
-    \colorlet{lowerright}{blue!25}
-
-    \fill [upperleft] (Computational Complexity) rectangle ++(-20,20);
-    \fill [upperright] (Computational Complexity) rectangle ++(20,20);
-    \fill [lowerleft] (Computational Complexity) rectangle ++(-20,-20);
-    \fill [lowerright] (Computational Complexity) rectangle ++(20,-20);
-
-    \shade[left color=upperleft,right color=upperright]
-    ([xshift=-1cm]Computational Complexity) rectangle ++(2,20);
-    \shade[left color=lowerleft,right color=lowerright]
-    ([xshift=-1cm]Computational Complexity) rectangle ++(2,-20);
-    \shade[top color=upperleft,bottom color=lowerleft]
-    ([yshift=-1cm]Computational Complexity) rectangle ++(-20,2);
-    \shade[top color=upperright,bottom color=lowerright]
-    ([yshift=-1cm]Computational Complexity) rectangle ++(20,2);
-  \end{pgfonlayer}
-\end{tikzpicture}
-#+end_src
-
-#+results: A Lecture Map Tutorial
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/lecturemap.pdf]]
-
-
-
-#+attr_html: :width 800 :align center
-#+attr_latex: :width 0.9\textwidth :align center
-{{{if-latex(lecturemap.pdf,lecturemap.png)}}}
-
-** TODO Walk Through the Tutorial 5 of TikZ Manual
-:PROPERTIES:
-:EXPORT_FILE_NAME: index
-:LATEX_TITLE: Walk Through the Tutorial 5 of TikZ Manual
-:EXPORT_HUGO_SECTION: post
-:EXPORT_HUGO_BUNDLE: walk-through-the-tutorial-5-of-tikz-manual
-:EXPORT_DESCRIPTION: summary of this post
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("my-workflow-of-creating-a-video")
-:END:
-:LOGBOOK:
-CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
-:END:
-<2019-12-23 Mon 22:03>
-
-{{{titlepage(diagram)}}}
-
-#+caption: Diagrams as Simple Graphs
-#+name: Diagrams as Simple Graphs
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/diagram.png"
-#+begin_src latex -n -r :results raw :exports none
-\begin{tikzpicture}
-  [>=stealth',black!50,text=black,thick,
-  every new ->/.style       = {shorten >=1pt},
-  graphs/every graph/.style = {edges=rounded corners},
-  skip loop/.style          = {to path={-- ++(0,#1) -| (\tikztotarget)}},
-  hv path/.style            = {to path={-| (\tikztotarget)}},
-  vh path/.style            = {to path={|- (\tikztotarget)}},
-  nonterminal/.style        ={
-    rectangle, minimum size=6mm,very thick,draw=red!50!black!50,top color=white,bottom color=red!50!black!20,font=\itshape,text height=1.5ex,text depth=.25ex},
-  terminal/.style           ={
-    rounded rectangle,minimum size=6mm,very thick,draw=black!50,top color=white,bottom color=black!20,font=\ttfamily,text height=1.5ex,text depth=.25ex},
-  shape                     = coordinate
-  ]
-  \graph [grow right sep, branch down=7mm,simple]{
-    / -> unsigned integer[nonterminal] -- p1 -> "." [terminal] -- p2 -> digit[terminal] -- p3 -- p4 -- p5 -> E[terminal] -- q1 -> [vh path]
-    {[nodes={yshift=7mm}]
-      "+"[terminal], q2, "="[terminal]
-    } -> [hv path]
-    q3 -- /unsigned integer [nonterminal] -- p6 -> /;
-    p1 ->[skip loop=5mm] p4;
-    p3 ->[skip loop=-5mm] p2;
-    p5 ->[skip loop=-11mm] p6;
-    q1 -- q2 -- q3;
-  };
-\end{tikzpicture}
-#+end_src
-
-#+results: Diagrams as Simple Graphs
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/diagram.png]]
-
-
-
-#+attr_html: :width 800 :align center
-#+attr_latex: :width 0.8\textwidth :align center
-{{{if-latex(diagram.pdf,diagram.png)}}}
-
-** TODO Signals and Systems Chapter 1 Problems Part 1 (1.1-1.20)
+** TODO Signals and Systems Chapter 1 Problems Part 1 (1.1-1.20) :SignalsAndSystems:
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
 :LATEX_TITLE: Signal and System Chapter 1 Problems
@@ -760,8 +124,7 @@ CLOCK: [2019-12-23 Mon 22:03]--[2019-12-23 Mon 22:04] =>  0:01
 
 #+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems1.org"
 
-
-** TODO Signals and Systems Chapter 1 Problems Part 2 (1.21-1.31)
+** TODO Signals and Systems Chapter 1 Problems Part 2 (1.21-1.31) :SignalsAndSystems:
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
 :LATEX_TITLE: Signals and System Chapter 1 Problems Part 2 (1.21-1.31)
@@ -785,10 +148,17 @@ CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
 :END:
 <2020-02-01 Sat 16:02>
 
-
 {{{titlepage(figProb1-21-0)}}}
 
 #+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems2.org"
+
+
+*** Reference
+
+:bibli:
+ bibliography:~/Dropbox/research_library/zcl.bib
+ bibliographystyle:unsrt
+:end:
 
 * Projects    :project:
 [2019-10-05 Sat 16:53]
@@ -801,10 +171,7 @@ CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
 :EXPORT_DESCRIPTION: This collection of Videos and Posts describes my workflow of creating a video. Usage of some tools and methods are covered.
 :END:
 
-
-
 #+include: "./project/my-workflow-of-creating-a-video.org"
-
 
 ** TODO Solution Manual of Signals and Systems By Oppenheim
 :PROPERTIES:
@@ -829,9 +196,7 @@ CLOCK: [2020-02-01 Sat 16:09]--[2020-02-01 Sat 16:10] =>  0:01
 <2020-02-01 Sat 16:09>
 
 
-
 This is the solution manual of signals and systems by Oppenheim cite:oppenheim_signals_1997
-
 
 bibliography:~/Dropbox/research_library/zcl.bib
 bibliographystyle:unsrt
@@ -840,58 +205,24 @@ bibliographystyle:unsrt
 * Courses           :course:
 [2019-10-05 Sat 16:53]
 
-
-** DONE signals and systems
-:PROPERTIES:
-:EXPORT_FILE_NAME: index
-:LATEX_TITLE: signals and systems
-:EXPORT_HUGO_SECTION: project
-:EXPORT_HUGO_BUNDLE: course-signals-and-systems-basic-problmes
-:EXPORT_DESCRIPTION: solutions to the basic problems in chapter 1 of signals and systems
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :external_link /courses/signalsandsystems/
-:END:
-:LOGBOOK:
-CLOCK: [2020-01-30 Thu 22:11]--[2020-01-30 Thu 22:12] =>  0:01
-:END:
-<2020-01-30 Thu 22:11>
-
-
-#+begin_src toml :front_matter_extra t
-[[links]]
-icon = "youtube"
-icon_pack = "fab"
-name = "Watch It"
-url = "/courses/example/"
-
-[[links]]
-icon = "instagram"
-icon_pack = "fab"
-name = "Inst"
-url = "/courses/example/"
-
-[[links]]
-icon = "weibo"
-icon_pack = "fab"
-name = "Weibo"
-url = "/courses/example/"
-
-[[links]]
-icon = "wechat"
-icon_pack = "fab"
-name = "Wechat"
-url = "/courses/example/"
-#+end_src
-
-Right now, the begin_src block still does not work.
-** TODO information theory
-:PROPERTIES:
-:EXPORT_FILE_NAME: index
-:LATEX_TITLE: information theory
-:EXPORT_HUGO_SECTION: project
-:EXPORT_HUGO_BUNDLE: course-information-theory
-:EXPORT_DESCRIPTION: summary of this course
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :external_link /courses/informationtheory
-:END:
-<2020-01-31 Fri 14:42>
-
-this is the information theory
+** TODO Solution Manual of Signals and Systems by Oppenheim etc. :C_SignalsAndSystems:
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: index
+   :LATEX_TITLE: Solution Manual of Signals and Systems by Oppenheim etc.
+   :EXPORT_HUGO_SECTION: project
+   :EXPORT_HUGO_BUNDLE: course-solution-manual-of-signals-and-systems-by-oppenheim
+   :EXPORT_DESCRIPTION: Collection of all the posts generated during figuring out all the problems in the textbook.
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :external_link /courses/signalsandsystemssolution
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "github") (icon_pack . "fab")  (name . "Source")  (url . "/course/signalsandsystemssolution/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "file-pdf") (icon_pack . "fas")  (name . "Docs")  (url . "/course/signalsandsystemssolution/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "slideshare") (icon_pack . "fas")  (name . "Slides")  (url . "/course/signalsandsystemssolution/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/signalsandsystemssolution/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "twitter") (icon_pack . "fab")  (name . "Follow")  (url . "/course/signalsandsystemssolution/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "facebook") (icon_pack . "fab")  (name . "Follow")  (url . "/course/signalsandsystemssolution/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "reddit") (icon_pack . "fab")  (name . "Listen")  (url . "/course/signalsandsystemssolution/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/signalsandsystemssolution/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "instagram") (icon_pack . "fab")  (name . "Inst")  (url . "/course/signalsandsystemssolution/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weibo") (icon_pack . "fab")  (name . "Weibo")  (url . "/course/signalsandsystemssolution/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "wexin") (icon_pack . "fas")  (name . "Wexin")  (url . "/course/signalsandsystemssolution/" ) )
+   :END:
+ <2020-02-08 Sat 16:58>
