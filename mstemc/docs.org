@@ -1,5 +1,6 @@
 #+title: make STEAM clear
-#+setupfile: ~/Dropbox/zorg/org-templates/enpost.org
+#+setupfile: ~/Dropbox/zorg/org-templates/endocs.org
+#+OPTIONS: d:figure,sub-problem,bibli,prefix,
 
 * Docs
 
@@ -20,56 +21,53 @@
 * Signals and Systems
 
 ** Signals and Systems
- [2019-10-05 Sat 16:53]
+[2019-10-05 Sat 16:53]
 
-*** TODO signals and systems 2 :index:
-    :PROPERTIES:
-    :EXPORT_FILE_NAME: _index
-    :LATEX_TITLE: signals and systems 2
-    :EXPORT_HUGO_SECTION: /courses/signalsandsystems
-    :EXPORT_DESCRIPTION: summary of this course.
-    :EXPORT_HUGO_TAGS: "signals and systems"
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :linktitle solutions to basic problems in chapter 1
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :toc true
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :type docs
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :menu.signalsandsystems '( (name . "signals and systems export") (weight . "1") )
-    :END:
-    :LOGBOOK:
-    CLOCK: [2020-01-29 Wed 16:39]--[2020-01-29 Wed 16:50] =>  0:11
-    :END:
-  <2020-01-29 Wed 16:39>
+*** TODO solution manual of signals and systems                          :index:
+:PROPERTIES:
+:EXPORT_FILE_NAME: _index
+:LATEX_TITLE: solution manual of signals and systems
+:EXPORT_HUGO_SECTION: /courses/signalsandsystemssolution
+:EXPORT_DESCRIPTION: Collection of posts generated during figuring out all the problems of signals and systems by Oppenheim etc..
+:EXPORT_HUGO_TAGS: "signals and systems"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :linktitle solution manual of signals and systems
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :toc true
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :type docs
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :menu.signalsandsystemssolution '( (name . "solution manual of signals and systems by Oppenheim") (weight . "1") )
+:END:
+:LOGBOOK:
+CLOCK: [2020-01-29 Wed 16:39]--[2020-01-29 Wed 16:50] =>  0:11
+:END:
+<2020-01-29 Wed 16:39>
 
 This is the index file for signals and systems
 
 
-*** TODO solutions
-    :PROPERTIES:
-    :EXPORT_FILE_NAME: chapter-1-basic-prolems
-    :EXPORT_HUGO_SECTION: /courses/signalsandsystems
-    :LATEX_TITLE: solutions to basic problems in chapter 1
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :linktitle solutions to basic problems in chapter 1 4
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :toc true
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :type docs
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :menu.signalsandsystems '( (parent . "chapter 6 advanced problems") (weight . "1") )
-    :END:
-   <2020-01-30 Thu 19:12>
+*** TODO solution of chapter 1 problems 1.1-1.20
+:PROPERTIES:
+:EXPORT_FILE_NAME: chapter-1-prolems-1-dot-1-to-1-dot-20
+:EXPORT_HUGO_SECTION: /courses/signalsandsystemssolution
+:LATEX_TITLE: solutions to basic problems in chapter 1
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :linktitle 1.1-1.20
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :toc true
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :type docs
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :menu.signalsandsystemssolution '( (parent . "chapter 1") (weight . "1") )
+:END:
+<2020-01-30 Thu 19:12>
 
 
- #+INCLUDE: "./post/technology/SignalsAndSystems/Chapter1BasicProblems1.org"
-*** TODO doc from capture
-    :PROPERTIES:
-    :EXPORT_FILE_NAME: doc-from-capture
-    :LATEX_TITLE: doc from capture
-    :EXPORT_HUGO_SECTION: courses/signalsandsystems
-    :EXPORT_DESCRIPTION: summary of this Doc
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :linktitle doc from capture
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :toc true
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :type docs
-    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :menu.signalsandsystems '( (parent . "docs from capture") (weight . "1") )
-    :END:
-    :LOGBOOK:
-    CLOCK: [2020-01-31 Fri 14:52]--[2020-01-31 Fri 14:53] =>  0:01
-    :END:
-  <2020-01-31 Fri 14:52>
+#+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems1.org"
 
- doc from capture content
+*** TODO solution of chapter 1 problems 1.21-1.31
+:PROPERTIES:
+:EXPORT_FILE_NAME: chapter-1-prolems-1-dot-1-to-21-dot-31
+:EXPORT_HUGO_SECTION: /courses/signalsandsystemssolution
+:LATEX_TITLE: solutions to basic problems in chapter 1
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :linktitle 1.21-1.31
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :toc true
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :type docs
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :menu.signalsandsystemssolution '( (parent . "chapter 1") (weight . "1") )
+:END:
+<2020-01-30 Thu 19:12>
+
+#+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems2.org"
