@@ -29,6 +29,10 @@
   (add-hook 'org-mode-hook
             (lambda () (setq truncate-lines nil)))
   (add-hook 'org-mode-hook 'turn-on-org-cdlatex);
+
+  (setq cdlatex-env-alist
+        '(("equation*" "\\begin{equation*}\n?\n\\end{equation*}\n" nil)))
+
   (add-hook 'org-mode-hook 'turn-on-reftex)
   (spacemacs|diminish org-cdlatex-mode "Ⓞ" "O")
   ;; code执行免应答（Eval code without confirm）
