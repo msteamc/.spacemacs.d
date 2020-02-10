@@ -463,7 +463,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Docs\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
@@ -472,7 +472,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"instagram\") (icon_pack . \"fab\")  (name . \"Inst\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weibo\") (icon_pack . \"fab\")  (name . \"Weibo\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"wexin\") (icon_pack . \"fab\")  (name . \"Wexin\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weixin\") (icon_pack . \"fab\")  (name . \"Weixin\")  (url . \"/course/example/\" ) )")
 
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
@@ -505,7 +505,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"instagram\") (icon_pack . \"fab\")  (name . \"Inst\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weibo\") (icon_pack . \"fab\")  (name . \"Weibo\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"wexin\") (icon_pack . \"fab\")  (name . \"Wexin\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weixin\") (icon_pack . \"fab\")  (name . \"Weixin\")  (url . \"/course/example/\" ) )")
 
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
@@ -529,9 +529,9 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"instagram\") (icon_pack . \"fab\")  (name . \"Inst\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weibo\") (icon_pack . \"fab\")  (name . \"Weibo\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"wexin\") (icon_pack . \"fab\")  (name . \"Wexin\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weixin\") (icon_pack . \"fab\")  (name . \"Weixin\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Docs\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"facebook\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
@@ -559,7 +559,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this course")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":external_link " "/courses/")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Docs\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
@@ -568,7 +568,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"instagram\") (icon_pack . \"fab\")  (name . \"Inst\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weibo\") (icon_pack . \"fab\")  (name . \"Weibo\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"wexin\") (icon_pack . \"fab\")  (name . \"Wexin\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weixin\") (icon_pack . \"fab\")  (name . \"Weixin\")  (url . \"/course/example/\" ) )")
 
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
@@ -583,6 +583,7 @@ See `org-capture-templates' for more information."
     "Returns `org-capture' template string for new Hugo Doc.
 See `org-capture-templates' for more information."
     (let* ((title (read-from-minibuffer "Doc Title: ")) ;Prompt to enter the Doc title
+           (coursename (read-from-minibuffer "Course Name: "))
            (fname (org-hugo-slug title)))
       (mapconcat #'identity
                  `(
@@ -590,12 +591,12 @@ See `org-capture-templates' for more information."
                    ":PROPERTIES:"
                    ,(concat ":EXPORT_FILE_NAME: " "_index")
                    ,(concat ":LATEX_TITLE: " title)
-                   ,(concat ":EXPORT_HUGO_SECTION: " "courses/")
+                   ,(concat ":EXPORT_HUGO_SECTION: " "courses/" coursename)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this Doc")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":linktitle " title)
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":toc " "true")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":type " "docs")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":menu.signalsandsystems " "'( (name . " "\"" title "\"" ") (weight . \"1\") )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":menu." coursename  " '( (name . " "\"" title "\"" ") (weight . \"1\") )")
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
@@ -607,6 +608,7 @@ See `org-capture-templates' for more information."
     "Returns `org-capture' template string for new Hugo Doc.
 See `org-capture-templates' for more information."
     (let* ((title (read-from-minibuffer "Doc Title: ")) ;Prompt to enter the Doc title
+           (coursename (read-from-minibuffer "Course Name: "))
            (fname (org-hugo-slug title)))
       (mapconcat #'identity
                  `(
@@ -614,12 +616,12 @@ See `org-capture-templates' for more information."
                    ":PROPERTIES:"
                    ,(concat ":EXPORT_FILE_NAME: " fname)
                    ,(concat ":LATEX_TITLE: " title)
-                   ,(concat ":EXPORT_HUGO_SECTION: " "courses/")
+                   ,(concat ":EXPORT_HUGO_SECTION: " "courses/" coursename)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this Doc")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":linktitle " title)
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":toc " "true")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":type " "docs")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":menu.signalsandsystems " "'( (parent . \"\") (weight . \"1\") )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":menu." coursename " '( (parent . \"\") (weight . \"1\") )")
                    ":END:"
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
