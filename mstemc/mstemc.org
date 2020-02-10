@@ -143,6 +143,106 @@ CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
  bibliographystyle:unsrt
 :end:
 
+** TODO Signals and Systems Chapter 1 Problems Part 3 (1.32-1.47) :SignalsAndSystems:
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: index
+   :LATEX_TITLE: Signals and Systems Chapter 1 Problems Part 3 (1.32-1.47)
+   :EXPORT_HUGO_SECTION: post
+   :EXPORT_HUGO_BUNDLE: signals-and-systems-chapter-1-problems-part-3--1-dot-32-1-dot-47
+   :EXPORT_DESCRIPTION: This post consists of solutions to problems from 1.21 to 1.31 in chapter 1 of the book Signals and Systems by Oppenheim ,Willsky and Nawab.cite:oppenheim_signals_1997
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("project-solution-manual-of-signals-and-systems-by-oppenheim")
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "github") (icon_pack . "fab")  (name . "Source")  (url . "/course/example/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "file-pdf") (icon_pack . "fas")  (name . "Source")  (url . "/course/example/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "slideshare") (icon_pack . "fas")  (name . "Slides")  (url . "/course/example/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "twitter") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "facebook") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "reddit") (icon_pack . "fab")  (name . "Listen")  (url . "/course/example/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "instagram") (icon_pack . "fab")  (name . "Inst")  (url . "/course/example/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weibo") (icon_pack . "fab")  (name . "Weibo")  (url . "/course/example/" ) )
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weixin") (icon_pack . "fab")  (name . "Weixin")  (url . "/course/example/" ) )
+   :END:
+ <2020-02-09 Sun 10:24>
+
+*** Problem 1.32
+    [2020-02-09 Sun 10:43]
+
+    #+ATTR_LATEX: :options []{prob:1-32}
+    #+NAME: prob:1-32
+    #+begin_prob
+    Let \(x(t)\) be a continuous-time signal, and let
+    \begin{equation*}
+    y_{1}(t) = x(2t) \ \mathrm{and} \ y_{2}(t) = x(t/2)
+    \end{equation*}
+    The signal \(y_{1}(t)\) represents a speeded up version of \(x(t)\) in the
+    sense that the duration of the signal is cut in half. Similarly,
+    \(y_{2}(t)\) represents a slowed down version of \(x(t)\) in the sense that
+    the duration of the signal is doubled. Consider the following statements:
+
+    1. If \(x(t)\) is periodic, then \(y_{1}(t)\) is periodic.
+    2. If \(y_{1}(t)\) is periodic, then \(x(t)\) is periodic.
+    3. If \(x(t)\) is periodic, then \(y_{2}(t)\) is periodic.
+    4. If \(y_{2}(t)\) is periodic, then \(x(t)\) is periodic.
+
+    For each of these statements, determine whether it is true, and if so,
+    determine the relationship between the fundamental periods of the two
+    signals considered in the statement. If the statement is not true, produce a
+    counterexample to it.
+    #+end_prob
+
+:sub-problem:
+*Problem 1.32a* <<Problem 1.32a>>
+
+Let \(T\) be the fundamental period of \(x(t)\), then we have \(x(t+T) = x(t)\).
+So \( y_{1}(t) = x(2t) = x(2t + T) = x(2(t+ \frac{T}{2} ))=
+y_{1}(t+\frac{T}{2})\), \(y_{1}(t)\) is periodic and the fundamental period is
+\( \frac{T}{2} \) which is consistent with our commonsense that \(y_{1}(t)\) is an
+speeded up version of \(x(t)\).
+
+:END:
+
+:sub-problem:
+*Problem 1.32b*
+
+Let \(T\) be the fundamental period of \(y_{1}(t)\), then based on the analysis
+of [[Problem 1.32a][Problem 1.32a]] , we have \(x(t)\) is a slowed down version of \(y_{1}(t)\),
+hense \(x(t)\) is periodic and has fundamental period \(2T\).
+
+:END:
+
+:sub-problem:
+*Problem 1.32c*
+
+Let \(T\) be the fundamental period of \(x(t)\), then we have \(x(t+T) = x(t)\).
+So \( y_{2}(t) = x(\tfrac{t}{2}) = x(\tfrac{t}{2} + T) = x(\frac{t+ 2T}{2})=
+y_{2}(t+2T)\), \(y_{2}(t)\) is periodic and the fundamental period is
+\(2T \) which is consistent with our commonsense that \(y_{2}(t)\) is an
+slowed down version of \(x(t)\).
+
+:END:
+
+:sub-problem:
+*Problem 1.32d*
+
+Let \(T\) be the fundamental period of \(y_{2}(t)\), then based on the analysis
+of [[Problem 1.32c][Problem 1.32c]] , we have \(x(t)\) is a speeded up version of \(y_{2}(t)\),
+hense \(x(t)\) is periodic and has fundamental period \(\frac{T}{2}\).
+
+:END:
+*** Problem 1.33
+    [2020-02-10 Mon 11:08]
+
+    #+ATTR_LATEX: :options []{prob:1-33}
+    #+NAME: prob:1-33
+    #+begin_prob
+    Let \(x[n]\) be a discrete-time signal, and let
+    \begin{equation*}
+
+    \end{equation*}
+    #+end_prob
+
+
 * Projects    :project:
 [2019-10-05 Sat 16:53]
 
