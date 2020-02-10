@@ -105,6 +105,7 @@
   "M" 'org-toggle-inline-images
   "o" 'org-export-dispatch
   "w" 'widen
+  "iL" 'org-store-link
   )
 ;;(spacemacs/declare-prefix "ao" "org");; define prefix
 ;; (spacemacs/set-leader-keys
