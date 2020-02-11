@@ -2694,10 +2694,3 @@ Notice that \(x_{3}(t) = x_{1}(t+1) + x_{1}(t)\).  So the output \(y_{3}(t)
 {{{if-latex(figProb1-31b.pdf,figProb1-31b.png)}}}
 
 :END:
-
-*** Reference
-
-:bibli:
- bibliography:~/Dropbox/research_library/zcl.bib
- bibliographystyle:unsrt
-:end:

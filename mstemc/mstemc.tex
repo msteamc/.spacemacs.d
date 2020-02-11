@@ -1,13 +1,14 @@
 % Intended LaTeX compiler: lualatex
 \documentclass[koma,a4paper,utopia,12pt,listings-color,microtype,paralist,colorlinks,urlcolor=red]{org-article}
 \usepackage{tikz}
-\usetikzlibrary{arrows,decorations.pathmorphing,,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.misc,mindmap,calendar,shadows,mindmap,calendar,graphdrawing,trees}
+\usetikzlibrary{arrows,decorations.pathmorphing,,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.misc,mindmap,calendar,shadows,mindmap,calendar,graphdrawing,trees,shapes.misc,quotes,angles}
+\definecolor{mycolor}{RGB}{139,0,0}
 \author{Eason}
 \date{\today}
-\title{Problem 1.4}
+\title{Problem 1.21}
 \hypersetup{
  pdfauthor={Eason},
- pdftitle={Problem 1.4},
+ pdftitle={Problem 1.21},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={Emacs 26.3 (Org mode 9.2.6)},
@@ -16,114 +17,95 @@
 
 
 
-\begin{prob}[]{prob:1-4}
- Problem 1.4 Let \(x[n]\) be a signal with \(x[n]=0\) for\(n< -2\) and \(n>4\),
-for each signal given below, determine the values of \(n\) for which it is
-guaranteed to be zero.
-\begin{eqnarray*}
-\mathbf{ (a) } & & x[n-3] \\
-\mathbf{ (b) } & & x[n+4] \\
-\mathbf{ (c) } & & x[-n]  \\
-\mathbf{ (d) } & & x[-n+2] \\
-\mathbf{ (e) } & & x[-n-2]
-\end{eqnarray*}
-\label{prob:1-4}
+
+\begin{prob}[]{prob:1-21}
+A continuout-time signal \(x(t)\) is shown below. Sketch and label carefully
+each of the following signals:
+\begin{equation*}
+\begin{array}{ll}
+\mathbf{(a)}: x(t-1) & \mathbf{(b)}: x(2-t) \\
+\mathbf{(c)}: x(2t + 1) & \mathbf{(d)}: x(4-\frac{t}{2}) \\
+\mathbf{(e)}: [x(t) + x(-t)] u(t) & \mathbf{(f)}: x(t)\delta(t +\frac{3}{2}) - \delta(t-\frac{3}{2})
+\end{array}
+\end{equation*}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21-0.pdf}
+\end{center}
+\label{prob:1-21}
 \end{prob}
 
-For the given signals \(\mathbf{(a)}\) to \(\mathbf{(e)}\), the transformations
-of the variable \(n\) will change the interval in which the signals are zero.
-For the convenience of calculation, we write the origin signal as:
-\begin{equation*}
-x[m] = 0, m< -2 \quad \mathrm{and} \quad m>4
-\end{equation*}
 
-We can visualize \(x(m)\) as below (I just give an example, you can name any
-signal that satisfy \(x[m] = 0, m< -2 \ \mathrm{and} \ m>4\)):
+
+Before we figure all the sub-problem out. Let's review how \(a\) and \(b\)
+affect \(x(at+b)\) . we know that:
+
+\begin{enumerate}
+\item when \(|a| < 1\), \(x(t)\) will be linearly stretched;
+\item when \(|a|>1\), \(x(t)\) will be linearly compressed;
+\item when \(a < 0\), \(x(t)\) will be reversed;
+\item when \(b\neq 0\) , \(x(t)\) will be shifted in time.
+\item when \(a>0, b>0\), \(x(t)\) will be shifted left.
+\item when \(a>0,b<0\), \(x(t)\) will be shifted right.
+\item when \(a<0,b>0\), \(x(t)\) will be reversed first then shifted right.
+\item when \(a<0,b<0\), \(x(t)\) will be reversed first, then shifted left.
+\end{enumerate}
+
+\textbf{Problem 1.21a}
+
+Based on the conclusion given above, we know that \(x(t-1)\) can be obtained by right
+shifting \(x(t)\) with step \(1\). So the result can be visualized as follows.
+
 
 \begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-4.pdf}
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21a.pdf}
 \end{center}
 
+\textbf{Problem 1.21b}
 
-\(\mathbf{(a)}:x[n-3]\)
-
-For signal \(\mathbf{(a)}\), to get the interval where \(x[n-3] = 0\), we have:
-\begin{eqnarray*}
-  t=n-3 &<& -2 \\
-  t=n-3 &>& 4
-\end{eqnarray*}
- Then, we have \(n < 1 \ \mathrm{and} \ n > 7\) from which we can
-see that the new signal is a right shift with step three relative to the origin
-signal. The new signal is delayed with three.
-
+For \(x(2-t)\), we re-write it as \(x(-(t-2))\) which can be obtained by first
+reversing \(x(t)\) then right shifting it with step \(2\). The result can be
+shown as follows
 
 \begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-4a.pdf}
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProblem1-21b.pdf}
 \end{center}
 
-\(\mathbf{(b)}:x[n+4]\)
+\textbf{Problem 1.21c}
 
-For signal \(\mathbf{(b)}\), we have:
-\begin{eqnarray*}
-t=n+4&<&-2 \\
-t=n+4&>&4
-\end{eqnarray*}
-Then, we have \(n<-6\ \mathrm{and}\ n>0\) from which we can see that the new
-signal is a left shift with step four relative to the origin singal. The new
-signal is advanced with four.
+\(x(2t + 1)\) can be re-written as \(x(2(t+\frac{1}{2}))\) which means that
+\(x(2t+1)\) can be obtained by first linearly compressing \(x(t)\) with factor 2
+then left shifting compressed signal by \(\frac{1}{2}\).
 
 \begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-4b.pdf}
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21c.pdf}
 \end{center}
 
+\textbf{Problem 1.21d}
 
-\(\mathbf{(c)}: x[-n]\)
-
-For signal \(\mathbf{( c )}\), we have:
-\begin{eqnarray*}
-t=-n&<&-2 \\
-t=-n&>&4
-\end{eqnarray*}
-
-Then, we have \(n>2\ \mathrm{and} \ n<-4\) from which we can see that the new
-signal is a reversal of the origin signal.
+\(x(4-\frac{t}{2})\) can be re-written as \(x( -\frac{1}{2}( t - 8 ) )\) which
+means that \(x(4-\frac{t}{2})\)  can be obtained by first linearly stretching
+\(x(t)\) by factor \(2\) then right shifting it with step \(8\).
 
 \begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-4c.pdf}
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21d.pdf}
 \end{center}
 
+\textbf{Problem 1.21e}
 
-\(\mathbf{(d)}: x[-n+2]\)
+At first glance, \(\big[x(t) + x(-t)\big] u(t)\) is \(0\) if \(t<0\) .
 
-for signal \(\mathbf{(d)}\), we have:
-\begin{eqnarray*}
-t=-n+2&<&-2 \\
-t=-n+2&>&4
-\end{eqnarray*}
-Then, we have \(n>4\ \mathrm{and}\ n<-2\). For \(x[-n+2]\), we can first
-flip the original signal then right shift the flipped signal by 2. Notice the
-contents in the brackets \(-(n+2)\). I would like treat it as \(-(n-2)\), by
-which I know that the minus symbol means reversal and \(-2\) means right
-shift by 2.
+If \(t > 0\), we have to figure out \(x( -t )\). After obtaining \(x(-t)\), we
+add the right part of \(x(t)\) and left part of \(x(-t)\) then we have \([x(t) +
+x(-t)]u(t)\)
 
 \begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-4d.pdf}
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProblem1-21e.pdf}
 \end{center}
 
-
-
-\(\mathbf{(e)}: x[-n-2]\)
-
-For signal \(\mathbf{(e)}\), we have:
-
-\begin{eqnarray*}
-t=-n-2&<&-2 \\
-t=-n-2&>&4
-\end{eqnarray*}
-Then, we have \(n>0 \ \mathrm{and}\ n<-6\). To get the new signal, we have
-to filp the original signal first then left shift the flipped one by two.
+\(x(t)\delta(t +\frac{3}{2}) - \delta(t-\frac{3}{2})\) only have two points with
+non-negative values: \(t=\frac{3}{2}\) and \(t=-\frac{3}{2}\).
 
 \begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-4e.pdf}
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21f.pdf}
 \end{center}
 \end{document}

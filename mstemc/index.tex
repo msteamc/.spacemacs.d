@@ -1,386 +1,273 @@
 % Intended LaTeX compiler: lualatex
 \documentclass[koma,a4paper,utopia,12pt,listings-color,microtype,paralist,colorlinks,urlcolor=red]{org-article}
 \usepackage{tikz}
-\usetikzlibrary{arrows,decorations.pathmorphing,,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.misc,mindmap,calendar,shadows,mindmap,calendar,graphdrawing,trees}
+\usetikzlibrary{arrows,decorations.pathmorphing,,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.misc,mindmap,calendar,shadows,mindmap,calendar,graphdrawing,trees,shapes.misc,quotes,angles}
+\definecolor{mycolor}{RGB}{139,0,0}
 \author{Eason}
 \date{\today}
-\title{Signals and Systems Chapter 1 Problems}
+\title{Signals and Systems Chapter 1 Problems Part 3 (1.32-1.47)}
 \hypersetup{
  pdfauthor={Eason},
- pdftitle={Signals and Systems Chapter 1 Problems},
+ pdftitle={Signals and Systems Chapter 1 Problems Part 3 (1.32-1.47)},
  pdfkeywords={},
- pdfsubject={summary of this post},
+ pdfsubject={This post consists of solutions to problems from 1.21 to 1.31 in chapter 1 of the book Signals and Systems by Oppenheim ,Willsky and Nawab.\cite{oppenheim_signals_1997}},
  pdfcreator={Emacs 26.3 (Org mode 9.2.6)},
  pdflang={English}}
 \begin{document}
 
 
 
-
- \thispagestyle{empty}
- \begingroup
-\begin{center}
- \vspace{\baselineskip}
- \textbf{\Huge Signal and System Chapter 1 Problems} \par
- \vspace{2\baselineskip}  \newline
- \textbf{\large Eason Zhang with www.makesteamclear.com \par}
- \vspace{\baselineskip} \newline
-  \today \par
- \vspace{\baselineskip}
-  \vfill
- \setlength{\unitlength}{3pt}
- \includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/eulerEquation.pdf}
- \vfill \vspace{\baselineskip}
- \href{WWW.MAKESTEAMCLEAR.COM}{\Large WWW.MAKESTEAMCLEAR.COM} \par\newline
-  makesteamclear is a free project, run by Eason Zhang, to make videos about STEAM in a more approachable way. If you find the contents in this article or the site or the youtube channel helpful, please consider \href{www.makesteamclear.com}{\ensuremath \heartsuit support me\ensuremath\heartsuit }, thanks \par
- \end{center}
- \endgroup
-
- \newpage \thispagestyle{empty} \textbf{copyright page} \newpage \tableofcontents \newpage
-\hspace{0pt}\\
-
-summary of this post
-
-\section{Basic Problems With Answers}
-\label{sec:org66bb87c}
+\section{Problem 1.32}
+\label{sec:org919e435}
 
 
-\subsection{Problem 1.1 and Problem 1.2}
-\label{sec:org2a3de1e}
-
-
-
-\begin{prob}[]{prob:1.3}
-Problem 1.1: Express each of the following complex numbers in \emph{Cartesian} form \(x+iy\):
+\begin{prob}[]{prob:1-32}
+Let \(x(t)\) be a continuous-time signal, and let
 \begin{equation*}
-\begin{array}{ccc}
- \frac{1}{2}e^{i\pi}  & \frac{1}{2}e^{-i\pi}  & e^{i\pi/2}  \\
- e^{-i\pi/2}         & e^{i5\pi/2}  & \sqrt{2}e^{i\pi/4}  \\
- \sqrt{2}e^{i9\pi/4} & \sqrt{2}e^{-i9\pi/4}  & \sqrt{2} e^{-i\pi/4}
-\end{array}
+y_{1}(t) = x(2t) \ \mathrm{and} \ y_{2}(t) = x(t/2)
 \end{equation*}
-\label{prob11}
-\end{prob}
+The signal \(y_{1}(t)\) represents a speeded up version of \(x(t)\) in the
+sense that the duration of the signal is cut in half. Similarly,
+\(y_{2}(t)\) represents a slowed down version of \(x(t)\) in the sense that
+the duration of the signal is doubled. Consider the following statements:
 
-\begin{prob}[]{prob:1.3}
-Problem 1.2: Express each of the following complex numbers in \emph{polar} form (\(re^{i\theta},
- -\pi < \theta \leq \pi\)):
-\begin{equation*}
-\begin{array}{c{3cm}c{3cm}c{3cm}}
-5 & -2 & -3i \\
-\frac{1}{2} - i \frac{\sqrt{3}}{2} & 1+i & (1-i)^{2} \\
-i(1-i)  & \frac{1+i}{1-i}  & \frac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}}
-\end{array}
-\end{equation*}
-\label{prob12}
-\end{prob}
-
-First, let's figure them out using the Euler's formula. For the nine complex
-numbers in  \hyperref[prob11]{Problem 1.1}, we have:
-\begin{eqnarray*}
-\tfrac{1}{2} e^{i\pi } &=&  \tfrac{1}{2} (\cos(\pi) + i\sin(\pi) ) = \tfrac{1}{2} \cos(\pi) = -\tfrac{1}{2} \\
-\tfrac{1}{2} e^{-i\pi} &=& \tfrac{1}{2}  (\cos(-\pi) + i\sin(-\pi) ) = \tfrac{1}{2} \cos(-\pi) = -\tfrac{1}{2} \\
-e^{i\pi/2} &=& \cos(\pi/2) + i \sin(\pi/2) = i \\
-e^{-i\pi/2} &=& \cos(-\pi/2) + i \sin(-\pi/2) = -i \\
-e^{i5\pi/2} &=& \cos(5\pi/2) + i \sin(5\pi/2) = \cos(2\pi + \pi/2) + i \sin(2\pi + \pi/2) = i \sin(\pi/2) = i \\
-\sqrt{2}e^{i\pi/4} &=& \sqrt{2} ( \cos(\pi/4) + i \sin(\pi/4) ) = \sqrt{2} ( \tfrac{\sqrt{2}}{2} + i\tfrac{\sqrt{2}}{2}  ) = 1 + i \\
- \sqrt{2} e^{i9 \pi/4} &=& \sqrt{2} ( \cos(9\pi/4) + i \sin(9\pi/4) ) = 1 + i \\
- \sqrt{2} e^{-i9 \pi/4} &=& \sqrt{2} ( \cos(-9\pi/4) + i \sin(-9\pi/4) ) = 1 - i \\
- \sqrt{2} e^{-i \pi/4} &=& \sqrt{2} ( \cos(-\pi/4) + i \sin(-\pi/4) ) = 1 - i
-\end{eqnarray*}
-
-For the nine complex numbers in  \hyperref[prob12]{Problem 1.2} , we have:
-
-\begin{eqnarray*}
- 5 &=& 5 e^{i0} = 5 e^{i(2\pi n)}, n\in \{\ldots, -2,-1,0,1,2,\ldots \} \\
- -2 &=& 2 e^{i\pi} = -2 e^{i0} \\
- -3i &=& 3 e^{-i\pi} \\
- \tfrac{1}{2} - i \tfrac{\sqrt{3}}{2}  &=& e^{-i\pi/3} \\
- 1+i &=& \sqrt{2} e^{i\pi/4} \\
- (1-i)^{2} &=& ( \sqrt{2} e^{-i\pi/4} )^{2} = 2 e^{-i\pi/2} \\
- i(1-i) &=& 1 - i = \sqrt{2} e^{-i\pi/4} \\
- \tfrac{1+i}{1-i} &=& \tfrac{ \sqrt{2}e^{i\pi/4} } { \sqrt{2}e^{-i\pi/4} } = e^{i\pi/2} \\
- \tfrac{\sqrt{2} + i \sqrt{2}}{1+i\sqrt{3}} &=& \tfrac{ 2e^{i\pi/4} }{ 2 e^{i\pi/3} } = e^{-i\pi/12}
-\end{eqnarray*}
-
-
-Every complex number \(a+ib\) can be visualized in the complex plane
-\(\mathbb{C}\). It can be viewed either as the point with the coordinate
-\((a,b)\) or as a vector starting from \(0,0\) to the point \((a,b)\).
-
-Also every complex number \(a+ib\) can be represented in the exponential form
-conveniently by using the Euler's formula \(e^{i\alpha} = \cos\alpha +
- i\sin\alpha\). One complex number have unique Cartesian form but do not have a
-unique expoential form. Taking \(1+i\) for example, its expoential form can be
-\(\sqrt{2}e^{i(\pi/4 + 2n\pi)}, n\in \{ \ldots, -2,-1,0,1,2,\ldots \}\). When we
-express a complex number in expoential form, it helps to keep a concept of
-rotation in mind. In the complex plane \(\mathbb{C}\), a complex number will
-return to itself if it rotates a multiple of \(2\pi\) around the origin point
-with radius equal to its modulus. please keep the concept of roatation in mind
-and it will become increasingly important during our later study.
-
-In the development of complex analysis, \(a+ib\) has another form \(r\angle
- \theta\), where \(r\) is the modulus and \(\theta\) the argument (or the angle).
-Obviously, this notation is not as good as the expoential form, espacialy when
-we want to do complex analysis such as differentiation and integration. We just
-mention it here for the sake of completion. The expoential form will be deployed
-from now on.
-
-
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/eulerEquation.pdf}
-\end{center}
-
-Now, let's go back to \hyperref[prob11]{Problem 1.1} and Problem \hyperref[prob12]{Problem
-1.2}. It's easy to figure the answers out using the Euler's formula. Let's do
-more to show them on the complex plane keeping the concept of rotation in mind.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/problem1_1.pdf}
-\caption{\label{problem1-1}
-visualized the complex numbers from Problem \hyperref[prob11]{Problem 1.1} in the complex plan}
-\end{figure}
-
-From Figure \ref{problem1-1} , taking \(\color{green}{\tfrac{1}{2}e^{i\pi}}\) and
-\(\color{red}{\tfrac{1}{2}e^{-i\pi}}\) for example, in the complex plane, they
-are the same point \(-\tfrac{1}{2}\) which means \(-\tfrac{1}{2}\) can be
-reached by rotating \(\tfrac{1}{2}\) with angle \(\pi\) clockwise or with angle
-\(-\pi\) anti-clockwise. Essentially, this is because that \(e^{i\theta} =
- e^{i(\theta + 2n\pi)}, n\in \{\ldots,-2,-1,0,1,2,\ldots\}\). It's
-straightforward that \(e^{i\pi} = e^{i(\pi + 2(-1)\pi)} = e^{-i\pi}\).
-
-In the end of \hyperref[prob11]{Problem 1.1} and \hyperref[prob12]{Problem 1.2}, I want to say
-more about expressing \(\tfrac{1+i}{1-i}\) in its polar form. There are two
-methods to get the polar form:
 \begin{enumerate}
-\item multiply the fraction's numerator and denominator by \(( 1 + i )\)
-
-So we have:
-\begin{eqnarray*}
-\frac{1+i}{1-i}& = & \frac{(1+i)(1+i)}{(1-i)(1+i)} \\
-&=& \frac{2i}{2} = i
-\end{eqnarray*}
-
-\item express the numerator and denominator in expoential form first, then do the
-following calculation.
-
-\begin{eqnarray*}
-\frac{1+i}{1-i} &=& \frac{\sqrt{2}e^{i\pi/4}}{\sqrt{2}e^{-i\pi/4}}  \\
-&=& e^{i2\pi/4} = e^{i\pi/2} = i
-\end{eqnarray*}
+\item If \(x(t)\) is periodic, then \(y_{1}(t)\) is periodic.
+\item If \(y_{1}(t)\) is periodic, then \(x(t)\) is periodic.
+\item If \(x(t)\) is periodic, then \(y_{2}(t)\) is periodic.
+\item If \(y_{2}(t)\) is periodic, then \(x(t)\) is periodic.
 \end{enumerate}
-\subsection{Problem 1.3}
-\label{sec:orge16e8d1}
 
-
-\begin{prob}[]{prob:1.3}
-Problem 1.3: Determine the values of \(P_{\infty}\) and \(E_{\infty}\) for each
-of the following signals:
-\begin{equation*}
-\begin{array}{ll}
-\mathrm{(a)} \quad x_{1}(t) = e^{-2t}u(t) & \mathrm{(b)} \quad x_{2}(t) = e^{i(2t + \pi/4)} \\
- \mathrm{(c)} \quad x_{3}(t) = \cos(t) & \mathrm{(d)} \quad x_{1}[n] = (\tfrac{1}{2})^{n} u[n] \\
- \mathrm{( e )} \quad x_{2}[n] = e^{i(\pi/2n + \pi/8)} & \mathrm{(f)} \quad x_{3}[n] = \cos(\tfrac{\pi}{4}n)
-\end{array}
-\end{equation*}
-\label{prob13}
+For each of these statements, determine whether it is true, and if so,
+determine the relationship between the fundamental periods of the two
+signals considered in the statement. If the statement is not true, produce a
+counterexample to it.
+\label{prob:1-32}
 \end{prob}
 
-Before solving this problem, let's review the definition of \(P_{\infty}\) and
-\(E_{\infty}\). For a continuous time signal \(x(t)\), we have
-\begin{eqnarray}
-\label{eq:2}
-E_{\infty}&=& \lim_{T\to \infty} \int_{-T}^{T} |x(t)|^{2}\mathrm{d}t \\
-P_{\infty}&=& \lim_{T\to \infty} \frac{1}{2T}\int_{-T}^{T} |x(t)|^{2}\mathrm{d}t = \lim_{T\to\infty} \frac{E_{\infty}}{2T}
-\end{eqnarray}
-For a discrete time signal \(x[n]\), we have:
-\begin{eqnarray}
-\label{eq:3}
-E_{\infty}&=& \lim_{N\to \infty} \sum_{n=-N}^{+N} |x[n]|^{2} \\
-P_{\infty}&=& \lim_{N\to \infty} \frac{1}{2N+1} \sum_{n=-N}^{+N} |x[n]|^{2} = \lim_{N\to\infty} \frac{E_{\infty}}{2N+1}
-\end{eqnarray}
+\textbf{Problem 1.32a} \label{Problem 1.32a}
 
-Equation (\ref{eq:2})(\ref{eq:3}) are not only mathmatical definitions but also
-related to physical quantities such as power and energy in a physical system.
-For an electric circuit, taking the voltage \(v(t)\) and current \(i(t)\) across
-a resistor for example, the power at time \(t\) can be calculated by:
-\begin{equation}
-\label{eq:4}
-p(t) = v(t)i(t) = \frac{v^{2}(t)}{R}
-\end{equation}
-Let's go back to equation (\ref{eq:2}) and equation(\ref{eq:3}), if
-\(E_{\infty}< \infty\) we say that the signal has finite energy otherwise
-infinite energy. If \(P_{\infty} <\infty\) we say that the signal has finite
-power otherwise infinite power.
+Let \(T\) be the fundamental period of \(x(t)\), then we have \(x(t+T) = x(t)\).
+So \(y_{1}(t) = x(2t) = x(2t + T) = x(2(t+ \frac{T}{2} ))=
+y_{1}(t+\frac{T}{2})\), \(y_{1}(t)\) is periodic and the fundamental period is
+\(\frac{T}{2}\) which is consistent with our commonsense that \(y_{1}(t)\) is an
+speeded up version of \(x(t)\).
 
-Next let's determine the values of \(P_{\infty}\) and \(E_{\infty}\) for the
-given signals.
+\textbf{Problem 1.32b}
 
-\(\mathbf{(a)}: x_{1}(t)= e^{-2t}u(t)\) :
+Let \(T\) be the fundamental period of \(y_{1}(t)\), then based on the analysis
+of \hyperref[Problem 1.32a]{Problem 1.32a} , we have \(x(t)\) is a slowed down version of \(y_{1}(t)\),
+hense \(x(t)\) is periodic and has fundamental period \(2T\).
 
-\begin{eqnarray*}
-E_{\infty}  & =  & \int_{\infty}^{\infty} |e^{-2t}u(t)|^{2} \mathrm{d}t \\
-&=& \int_{0}^{\infty} e^{-4t} \mathrm{d}t \\
-&=& \frac{1}{4}
-\end{eqnarray*}
-So, it's straightforward that:
-\begin{equation}
-\label{eq:5}
-P_{\infty} = \lim_{T\to \infty} \frac{E_{\infty}}{2T}  = 0
-\end{equation}
+\textbf{Problem 1.32c} \label{Problem 1.32c}
+
+Let \(T\) be the fundamental period of \(x(t)\), then we have \(x(t+T) = x(t)\).
+So \(y_{2}(t) = x(\tfrac{t}{2}) = x(\tfrac{t}{2} + T) = x(\frac{t+ 2T}{2})=
+y_{2}(t+2T)\), \(y_{2}(t)\) is periodic and the fundamental period is
+\(2T\) which is consistent with our commonsense that \(y_{2}(t)\) is an
+slowed down version of \(x(t)\).
+
+\textbf{Problem 1.32d}
+
+Let \(T\) be the fundamental period of \(y_{2}(t)\), then based on the analysis
+of \hyperref[Problem 1.32c]{Problem 1.32c} , we have \(x(t)\) is a speeded up version of \(y_{2}(t)\),
+hense \(x(t)\) is periodic and has fundamental period \(\frac{T}{2}\).
+\section{Problem 1.33}
+\label{sec:org7dadf9d}
 
 
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figprob1-3.pdf}
-\end{center}
+\begin{prob}[]{prob:1-33}
+Let \(x[n]\) be a discrete-time signal, and let
+\begin{equation*}
+y_{1}[n] = x[2n] \ \mathrm{and}\ y_{2}[n] =
+\begin{cases}
+x[n/2], & n\ \mathrm{even} \\
+0, & n\ \mathrm{odd}
+\end{cases}
+\end{equation*}
+The signals \(y_{1}[n]\) and \(y_{2}[n]\) respectively represent in some
+sense the speeded  up and slowed down versions of \(x[n]\). However, it
+should be noted that the discrete-time notions of speeded up and slowed down
+have subtle differences with respect to their continuous-time counterparts.
+Consider the following statements:
 
-
-
-\(\mathbf{(b)}: x_{2}(t)= e^{i(2t+\pi/4)}\)
-
-We have \(|e^{i(2t+\pi/4)}| = 1\) , therefore
-\begin{eqnarray*}
-E_{\infty}&=& \int_{\infty}^{\infty} |x_{2}(t)= e^{i(2t+\pi/4)}|^{2} \mathrm{d}t \\
-&=& \infty
-\end{eqnarray*}
-
-For power \(P_{\infty}\), we have:
-\begin{eqnarray*}
-P_{\infty}&= &\lim_{T\to\infty} \frac{1}{2T}\int_{-T}^{T} |x_{2}(t)|^{2} \mathrm{d}t  \\
-&=& 1
-\end{eqnarray*}
-
-This signal has constant power. If you keep the concept of rotation mentioned in
-Problem \ref{prob11}, you will notice immediately that all the points generated by
-\(x_{2}(t)\) lies on the unit circle.
-
-\(\mathbf{(c)}:x_{3}(t)=\cos(t)\)
-
-\begin{eqnarray*}
-E_{\infty}&=& \lim_{T\to\infty} \int_{-\infty}^{\infty} |x_{3}(t)|^{2} \mathrm{d}t \\
-&=& \int_{\infty}^{\infty} \cos(t)^{2} \mathrm{d}t = \infty
-\end{eqnarray*}
-
-\begin{eqnarray*}
-P_{\infty}&=& \lim_{T\to\infty} \frac{1}{2T}\int_{-T}^{T} |x_{3}(t)|^{2} \mathrm{d}t  \\
-&=& \lim_{T\to\infty} \int_{-T}^{T} \cos(t)^{2} \mathrm{d}t \\
-&=& \lim_{T\to\infty}  \int_{-T}^{T} \frac{1+\cos(2t)}{2} \mathrm{d}t = \frac{1}{2}
-\end{eqnarray*}
-
-\subsection{Problem 1.4}
-\label{sec:org719025d}
-
-
-\begin{prob}[]{prob:1-4}
- Problem 1.4: Let \(x[n]\) be a signal with \(x[n]=0\) for\(n< -2\) and \(n>4\),
-for each signal given below, determine the values of \(n\) for which it is
-guaranteed to be zero.
-\begin{eqnarray*}
-\mathbf{ (a) } & & x[n-3] \\
-\mathbf{ (b) } & & x[n+4] \\
-\mathbf{ (c) } & & x[-n]  \\
-\mathbf{ (d) } & & x[-n+2] \\
-\mathbf{ (e) } & & x[-n-2]
-\end{eqnarray*}
-\label{prob:1-4}
+\begin{enumerate}
+\item If \(x[n]\) is periodic, then \(y_{1}[n]\) is periodic.
+\item If \(y_{1}[n]\) is periodic, then \(x[n]\) is periodic.
+\item If \(x[n]\) is periodic, then \(y_{2}[n]\) is periodic.
+\item If \(y_{2}[n]\) is periodic, then \(x[n]\) is periodic.
+\end{enumerate}
+\label{prob:1-33}
 \end{prob}
 
-For the given signals \(\mathbf{(a)}\) to \(\mathbf{(e)}\), the transformations
-of the variable \(n\) will change the interval in which the signals are zero.
-For the convenience of calculation, we write the origin signal as:
+\textbf{Problem 1.33a}
+
+Let \(N\) be the fundamental period of \(x[n]\), then \(x[n+N] = x[n]\), and
+\(y_{1}[n] = x[2n] = x[2n+N] = y_{1}[n+ \frac{N}{2}]\). If \(N\) is even, then
+\(y_{1}[n]\) has fundamental period \(\frac{N}{2}\).  It is a little tricky
+that when \(N\) is odd \(\frac{N}{2}\) has no meaning. If \(N\) is odd, we have
+to express \(y_{1}[n] = x[2n] = x[2n+2N] = y_{1}[n+ N]\) hence \(y_{1}[n]\) has
+fundamental period \(N\) if \(N\) is odd.
+
+\textbf{Problem 1.33b}
+
+We can see \(y_{1}[n]\) is not only a speeded up version but also a down
+sampling version of \(x[n]\). we cannot determine whether or not \(y_{1}[n]\)
+is periodic based on that \(x[n]\) is periodic. We can only tell that the even
+indexed value of \(x[n]\) is period. we know nothing about the odd indexed value
+of \(x[n]\). An example is given below:
+
+The given \(x[n]\) is periodic at \(2n\) but is random at \(2n+1\).
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-33b.pdf}
+\end{center}
+
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-33b.pdf}
+\end{center}
+
+\textbf{Problem 1.33c} \label{Problem 1.33c}
+
+\(y_{2}[n]\) can treated as interpolation of \(x[n]\) with zero. So \(y_{2}[n]\)
+is periodic with fundamental period \(2N\) where \(N\) is fundamental period of
+\(x[n]\).
+
+\textbf{Problem 1.33d}
+
+Based on analysis of \hyperref[Problem 1.33c]{Problem 1.33c} , \(y_{2}[n]\) has fundamental period \(2N\)
+where \(N\) is the fundamental period of \(x[n]\).
+
+Based on the fact that only integer is valid for the independent variable of
+discrete-time signal, \(y_{2}[n]\) contains all the value of \(x[n]\) at the
+even index whereas at the odd index \(y_{2}[n]= 0\).
+\section{Problem 1.34}
+\label{sec:org20cd069}
+
+
+\begin{prob}[]{prob:1-34}
+In this problem, we explore several of the properties of even and odd
+signals.
+
+\begin{enumerate}
+\item Show that if \(x[n]\) is an odd signal, then
 \begin{equation*}
-x[m] = 0, m< -2 \quad \mathrm{and} \quad m>4
+\sum_{n=-\infty}^{+\infty} x[n] =0
+\end{equation*}
+\item Show that if \(x_{1}[n]\) is an odd signal and \(x_{2}[n]\) is an even
+signal, then \(x_{1}[n]x_{2}[n]\) is an odd signal.
+\item Let \(x[n]\) be an arbitrary signal with even and odd parts denoted by
+\begin{equation*}
+x_{e}[n] = \mathrm{Even}\{ x[n] \}
+\end{equation*}
+and
+\begin{equation*}
+x_{o}[n] = \mathrm{Odd} \{ x[n] \}
+\end{equation*}
+Show that
+\begin{equation*}
+\sum_{n=-\infty}^{+\infty} x^{2}[n] = \sum_{n=-\infty}^{+\infty} x_{e}^{2}[n] +  \sum_{n=-\infty}^{+\infty} x_{o}^{2}[n]
+\end{equation*}
+\item Although parts 1-3 have been stated in terms of discrete-time
+signals, the analogous properties are also valid in continuous time. To
+demonstrate this, show that
+\begin{equation*}
+\int_{-\infty}^{+\infty}x^{2}(t)dt = \int_{-\infty}^{+\infty} x_{e}^{2}(t)dt + \int_{-\infty}^{+\infty} x_{o}^{2}(t)dt
+\end{equation*}
+where \(x_{e}(t)\) and \(x_{o}(t)\) are, respectively, the even and odd
+parts of \(x(t)\).
+\end{enumerate}
+\label{prob:1-34}
+\end{prob}
+
+\textbf{Problem 1.34a}
+
+If \(x[n]\) is an odd signal, then we have \(x[n] = -x[-n]\) and \(x[0]=0\), so
+\begin{eqnarray*}
+\sum_{n=-\infty}^{+\infty} x[n] &=& \sum_{n=0}^{+\infty} x[n] + \sum_{-\infty}^{0} x[n] \\
+&=& \sum_{n=0}^{\infty} \big( x[n] + x[-n] \big)  \\
+&=& 0
+\end{eqnarray*}
+
+\textbf{Problem 1.34b}
+
+Because \(x_{1}[n]\) is an odd signal, \(x_{1}[n] = -x_{1}[-n]\). Because
+\(x_{2}[n]\) is an even signal, \(x_{2}[n] = x_{2}[-n]\). we have
+
+\begin{equation*}
+x_{1}[n]x_{2}[n] = -x_{1}[-n]x_{2}[-n] \\
 \end{equation*}
 
-We can visualize \(x(m)\) as below (I just give an example, you can name any
-signal that satisfy \(x[m] = 0, m< -2 \ \mathrm{and} \ m>4\)):
+i.e. \(x_{1}[n]x_{2}[n]\) is an odd signal.
 
-\begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-4.pdf}
-\end{center}
-
-
-\(\mathbf{(a)}:x[n-3]\)
-
-For signal \(\mathbf{(a)}\), to get the interval where \(x[n-3] = 0\), we have:
-\begin{eqnarray*}
-  t=n-3 &<& -2 \\
-  t=n-3 &>& 4
-\end{eqnarray*}
- Then, we have \(n < 1 \ \mathrm{and} \ n > 7\) from which we can see that
-the new signal is a right shift three relative to the origin signal, i.e. new
-signal is delayed with three.
-
-
-\begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-4a.pdf}
-\end{center}
-
-\(\mathbf{(b)}:x[n+4]\)
-
-For signal \(\mathbf{(b)}\), we have:
-\begin{eqnarray*}
-t=n+4&<&-2 \\
-t=n+4&>&4
-\end{eqnarray*}
-Then, we have \(n<-6\ \mathrm{and}\ n>0\) from which we can see that the new
-signal is a left shift four relative to the origin singal, i.e. new
-signal is advanced with four.
-
-\begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-4b.pdf}
-\end{center}
-
-
-\(\mathbf{(c)}: x[-n]\)
-
-For signal \(\mathbf{( c )}\), we have:
-\begin{eqnarray*}
-t=-n&<&-2 \\
-t=-n&>&4
-\end{eqnarray*}
-
-Then, we have \(n>2\ \mathrm{and} \ n<-4\) from which we can see that the new
-signal is a reversal of the origin signal.
-
-\begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-4c.pdf}
-\end{center}
-
-
-\(\mathbf{(d)}: x[-n+2]\)
-
-for signal \(\mathbf{(d)}\), we have:
-\begin{eqnarray*}
-t=-n+2&<&-2 \\
-t=-n+2&>&4
-\end{eqnarray*}
-Then, we have \(n>4\ \mathrm{and}\ n<-2\). For \(x[-n+2]\), we can first
-flip the original signal then right shift the flipped signal by 2. Notice the
-contents in the brackets \(-(n+2)\). I would like treat it as \(-(n-2)\), by
-which I know that the minus symbol means reversal and \(-2\) means right
-shift by 2.
-
-\begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-4d.pdf}
-\end{center}
-
-
-
-\(\mathbf{(e)}: x[-n-2]\)
-
-For signal \(\mathbf{(e)}\), we have:
+\textbf{Problem 1.34c}
 
 \begin{eqnarray*}
-t=-n-2&<&-2 \\
-t=-n-2&>&4
+x_{e}[n] &=& \frac{x[n] + x[-n]}{2} \\
+x_{o}[n] &=& \frac{x[n] - x[-n]}{2}
+\end{eqnarray*}
+Then we have
+\begin{eqnarray*}
+\sum_{n=-\infty}^{+\infty} x_{e}^{2}[n]  &=& \sum_{n=-\infty}^{+\infty} \bigg(  \frac{ x[n] + x[-n] }{2} \bigg)^{4}   \\
+&=& \sum_{n=-\infty}^{+\infty} \bigg(  \frac{ x^{2}[n]  + x^{2}[-n] + 2x[n]x[-n]}{2} \bigg)
+\end{eqnarray*}
+\begin{eqnarray*}
+\sum_{n=-\infty}^{+\infty} x_{o}^{2}[n]  &=& \sum_{n=-\infty}^{+\infty} \bigg(  \frac{ x[n] - x[-n] }{2} \bigg)^{2}   \\
+&=& \sum_{n=-\infty}^{+\infty} \bigg(  \frac{ x^{2}[n]  + x^{2}[-n] - 2x[n]x[-n]}{4} \bigg)
+\end{eqnarray*}
+Then we add the above two equations and get
+\begin{eqnarray*}
+\sum_{n=-\infty}^{+\infty} x_{e}^{2}[n] +  \sum_{n=-\infty}^{+\infty} x_{o}^{2}[n]  &=& \sum_{n=-\infty}^{+\infty} \frac{x^{2}[n] + x^{2}[-n]}{2} \\
+&=& \sum_{n=-\infty}^{+\infty} x^{2}[n]
 \end{eqnarray*}
 
-Then, we have \(n>0 \ \mathrm{and}\ n<-6\). To get the new signal, we have
-to filp the original signal first then left shift the flipped signal by two.
+This conclusion tells us that even we seperate the signal into two parts(even
+part and odd part), the sum of energy from the even part and odd part is the
+total energy of the original signal.
 
-\begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-4e.pdf}
-\end{center}
+Let
+\begin{eqnarray*}
+\int_{-\infty}^{+\infty} x^{2}(t) dt &=& \int_{-\infty}^{+\infty} ( x_{e}(t) + x_{o}(t) )^{2}dt  \\
+&=& \int_{-\infty}^{+\infty} x_{e}^{2}(t)dt + \int_{-\infty}^{+\infty} x_{o}^{2}(t) dt + \int_{-\infty}^{+\infty} x_{e}(t)x_{o}(t) dt \\
+&=& \int_{-\infty}^{+\infty} x_{e}^{2}(t)dt + \int_{-\infty}^{+\infty} x_{o}^{2}(t) dt
+\end{eqnarray*}
+
+Notice that \(x_{e}(t)x_{o}(t)\) is and odd signal, so \(\int_{-\infty}^{+\infty} x_{e}(t)x_{o}(t) dt = 0\)
+\section{Problem 1.35}
+\label{sec:orgcf4d953}
+
+
+\begin{prob}[]{prob:1-35}
+Consider the periodic discrete-time exponential time signal
+\begin{equation*}
+x[n] = e^{im(2\pi/N)n}
+\end{equation*}
+Show that the fundamental period of this signal is
+\begin{equation*}
+N_{0} = N / \mathrm{gcd}(m,N)
+\end{equation*}
+where \(\mathrm{gcd}(m,N)\) is the greatest common divisor of \(m\) and
+\(N\)----that is, the largest integer that divides both \(m\) and \(N\) an
+integral number of times. For example,
+\begin{equation*}
+\mathrm{gcd}(2,1) = 1, \mathrm{gcd}(2,4) = 2, \mathrm{gcd}(8,12) = 4
+\end{equation*}
+Note that \(N_{0} = N\) if \(m\) and \(N\) have no factors in common.
+\label{prob:1-35}
+\end{prob}
+
+\begin{prf}[]{}
+Let \(N_{0}\) the fundamental period of \(x[n]\), so that
+\begin{equation*}
+m(2\pi / N) N_{0} = l\times 2\pi
+\end{equation*}
+So, we have \(N_{0} = \frac{lN}{m}\) . If \(m\) and \(N\) have no factors in
+common, we have \(N_{0} = N\) when \(l = m\). If \(m\) and \(N\) have factors in
+common, the fundamental period should be
+\begin{equation*}
+N_{0} = l \frac{N/ \mathrm{gcd}(m,N) }{m/ \mathrm{gcd}(m,N)}
+\end{equation*}
+
+When \(l = m/ \mathrm{gcd}(m,N)\), we have \(N_{0} = \frac{N}{ \mathrm{gcd}(m,N) }\).
+\end{prf}
 \end{document}

@@ -173,3 +173,12 @@ in the property of subtree, and the front-matter will be exported as
 Sir, If you find it difficult to support toml table, I am ok with the method metioned above.
 
 Now, I am happy.
+* TODO draw mindmap and use it as cover
+:LOGBOOK:
+CLOCK: [2020-02-02 Sun 06:56]--[2020-02-02 Sun 06:57] =>  0:01
+:END:
+ Added:<2020-02-02 Sun 06:56>
+* TODO Emacs python notebook
+ Added:<2020-02-10 Mon 10:08>
+* TODO html footer
+ Added:<2020-02-10 Mon 10:12>
