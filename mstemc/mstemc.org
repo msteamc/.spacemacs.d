@@ -644,6 +644,63 @@ recover the baseband signal without alias. i.e. we must sample \(x(t) =
 
     #+end_prob
 
+# a
+:sub-problem:
+*Problem 1.37a* <<Problem 1.37a>>
+
+by the definition of correlation, we have
+\begin{equation*}
+\phi_{yx} = \int_{-\infty}^{+\infty} y(t + \tau)x(\tau) d \tau
+\end{equation*}
+
+we set \(t+ \tau = s\), then
+\begin{eqnarray*}
+\phi_{yx}(t) &=& \int_{-\infty}^{+\infty} y(t + \tau)x(\tau) d \tau \\
+&=& \int_{-\infty}^{+\infty} x(s-t) y(s) ds \\
+&=& \phi_{xy}(-t)
+\end{eqnarray*}
+
+Using the same procedure, we can also have \( \phi_{xy}(t) = \phi_{yx}(-t) \).
+
+:END:
+# b
+:sub-problem:
+*Problem 1.37b*
+
+we have
+\begin{equation*}
+\phi_{xx}(t) = \int_{-\infty}^{+\infty} x(t+\tau)x(\tau) d\tau
+\end{equation*}
+the odd part of \(\phi_{xx}(t)\) can be expressed as
+\begin{equation*}
+\phi_{oxx}(t) = \frac{\phi_{xx}(t) - \phi_{xx}(-t)}{2}
+\end{equation*}
+
+Based on [[Problem 1.37a][Problem 1.37a]], we have \( \phi_{xx}(t) = \phi_{xx}(-t) \) , so
+\(\phi_{oxx}(t) = 0\). which means that \(\phi_{oxx}(t)\) is an even signal.
+
+:END:
+
+# c
+:sub-problem:
+
+\begin{eqnarray*}
+\phi_{xy}(t) &=& \int_{-\infty}^{+\infty} x(t+ \tau) y(\tau)d\tau \\
+&=& \int_{-\infty}^{+\infty} x(t+ \tau) x(\tau + T)d\tau \\
+&=& \int_{-\infty}^{+\infty} x(t + s -T) x(s) ds
+\end{eqnarray*}
+So we have \(\phi_{xy}(t) = \phi_{xx}(t-T)\).
+
+\begin{eqnarray*}
+\phi_{yy}(t) &=& \int_{-\infty}^{+\infty} y(t+ \tau) y(\tau)d\tau \\
+&=& \int_{-\infty}^{+\infty} x(t+ \tau + T) x(\tau + T)d\tau \\
+&=& \int_{-\infty}^{+\infty} x(t + s) x(s) ds
+\end{eqnarray*}
+So we have \(\phi_{yy}(t) = \phi_{xx}(t)\).
+
+
+:END:
+
 
 * Projects    :project:
 [2019-10-05 Sat 16:53]
