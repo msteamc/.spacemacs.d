@@ -18,4 +18,3 @@
   (and (buffer-file-name)
        (file-exists-p (buffer-file-name))
        (reftex-parse-all)))
-

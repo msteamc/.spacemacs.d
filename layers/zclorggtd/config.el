@@ -603,7 +603,7 @@
                                    ("/" italic "<i>" "</i>")
                                    ("_" underline "<span style=\"text-decoration:underline;;\">" "</span>")
                                    ("=" org-code "<code>" "</code>" verbatim)
-                                   ("+" (:strike-through t))
+                                   ;; ("+" (:strike-through t))
                                    ("~" org-verbatim "<code>" "</code>" verbatim))))
   (setq org-use-sub-superscripts nil)
   (setq org-odd-levels-only nil)

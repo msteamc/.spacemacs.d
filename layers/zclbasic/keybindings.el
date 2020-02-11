@@ -102,6 +102,7 @@
   "dc" 'calc
   "dC" 'clc-clear-the-command-window
   "dd" 'sp-unwrap-sexp
+  "de" 'powerthesaurus-lookup-word-dwim
   "df" 'spaceline-toggle-helm-follow-on
   "dg" 'magit-status
   "di" 'sdcv-search-input
