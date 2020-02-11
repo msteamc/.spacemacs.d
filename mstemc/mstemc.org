@@ -180,10 +180,10 @@ CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
     \(y_{2}(t)\) represents a slowed down version of \(x(t)\) in the sense that
     the duration of the signal is doubled. Consider the following statements:
 
-    1. If \(x(t)\) is periodic, then \(y_{1}(t)\) is periodic.
-    2. If \(y_{1}(t)\) is periodic, then \(x(t)\) is periodic.
-    3. If \(x(t)\) is periodic, then \(y_{2}(t)\) is periodic.
-    4. If \(y_{2}(t)\) is periodic, then \(x(t)\) is periodic.
+    a. If \(x(t)\) is periodic, then \(y_{1}(t)\) is periodic.
+    b. If \(y_{1}(t)\) is periodic, then \(x(t)\) is periodic.
+    c. If \(x(t)\) is periodic, then \(y_{2}(t)\) is periodic.
+    d. If \(y_{2}(t)\) is periodic, then \(x(t)\) is periodic.
 
     For each of these statements, determine whether it is true, and if so,
     determine the relationship between the fundamental periods of the two
@@ -212,7 +212,7 @@ hense \(x(t)\) is periodic and has fundamental period \(2T\).
 :END:
 
 :sub-problem:
-*Problem 1.32c*
+*Problem 1.32c* <<Problem 1.32c>>
 
 Let \(T\) be the fundamental period of \(x(t)\), then we have \(x(t+T) = x(t)\).
 So \( y_{2}(t) = x(\tfrac{t}{2}) = x(\tfrac{t}{2} + T) = x(\frac{t+ 2T}{2})=
@@ -238,8 +238,267 @@ hense \(x(t)\) is periodic and has fundamental period \(\frac{T}{2}\).
     #+begin_prob
     Let \(x[n]\) be a discrete-time signal, and let
     \begin{equation*}
-
+    y_{1}[n] = x[2n] \ \mathrm{and}\ y_{2}[n] =
+    \begin{cases}
+    x[n/2], & n\ \mathrm{even} \\
+    0, & n\ \mathrm{odd}
+    \end{cases}
     \end{equation*}
+    The signals \(y_{1}[n]\) and \(y_{2}[n]\) respectively represent in some
+    sense the speeded  up and slowed down versions of \(x[n]\). However, it
+    should be noted that the discrete-time notions of speeded up and slowed down
+    have subtle differences with respect to their continuous-time counterparts.
+    Consider the following statements:
+
+    a. If \(x[n]\) is periodic, then \(y_{1}[n]\) is periodic.
+    b. If \(y_{1}[n]\) is periodic, then \(x[n]\) is periodic.
+    c. If \(x[n]\) is periodic, then \(y_{2}[n]\) is periodic.
+    d. If \(y_{2}[n]\) is periodic, then \(x[n]\) is periodic.
+    #+end_prob
+
+:sub-problem:
+*Problem 1.33a*
+
+Let \(N\) be the fundamental period of \(x[n]\), then \(x[n+N] = x[n]\), and
+\(y_{1}[n] = x[2n] = x[2n+N] = y_{1}[n+ \frac{N}{2}]\). If \(N\) is even, then
+\(y_{1}[n]\) has fundamental period \(\frac{N}{2}\).  It is a little tricky
+that when \(N\) is odd \(\frac{N}{2}\) has no meaning. If \(N\) is odd, we have
+to express \(y_{1}[n] = x[2n] = x[2n+2N] = y_{1}[n+ N]\) hence \(y_{1}[n]\) has
+fundamental period \(N\) if \(N\) is odd.
+:END:
+# b
+:sub-problem:
+*Problem 1.33b*
+
+We can see \(y_{1}[n]\) is not only a speeded up version but also a down
+sampling version of \(x[n]\). we cannot determine whether or not \(y_{1}[n]\)
+is periodic based on that \(x[n]\) is periodic. We can only tell that the even
+indexed value of \(x[n]\) is period. we know nothing about the odd indexed value
+of \(x[n]\). An example is given below:
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-33b.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0}
+
+\draw (-6.2,0)  -- (7.5,0)node[below] {$n$};
+\draw (0,0) -- (0,2);
+\foreach \x in {-6,-4,-2,...,6}
+{
+  \draw [mycolor,very thick] (\x,0) -- (\x,1);
+  \draw[green,very thick] (\x+1,0) -- (\x+1, rand*2 ) node[at end, fill=green,shape=circle,minimum size=6pt,inner sep=0pt,outer sep=0pt]{} ;
+  \draw[mycolor,fill=mycolor] (\x,1) circle[radius=3pt,] ;
+}
+\foreach \x in {-6,-5,...,7}
+{
+  \node[below=0.2cm] at (\x,0) {$\x$};
+}
+\node[right] at (0,1) {$1$};
+
+\end{tikzpicture}
+#+end_src
+
+The given \(x[n]\) is periodic at \(2n\) but is random at \(2n+1\).
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-33b.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-33b.pdf,figProb1-33b.png)}}}
+
+:END:
+
+# c
+:sub-problem:
+*Problem 1.33c* <<Problem 1.33c>>
+
+\(y_{2}[n]\) can treated as interpolation of \(x[n]\) with zero. So \(y_{2}[n]\)
+is periodic with fundamental period \(2N\) where \(N\) is fundamental period of
+\(x[n]\).
+
+:END:
+
+# d
+:sub-problem:
+*Problem 1.33d*
+
+Based on analysis of [[Problem 1.33c][Problem 1.33c]] , \(y_{2}[n]\) has fundamental period \(2N\)
+where \(N\) is the fundamental period of \(x[n]\).
+
+Based on the fact that only integer is valid for the independent variable of
+discrete-time signal, \(y_{2}[n]\) contains all the value of \(x[n]\) at the
+even index whereas at the odd index \(y_{2}[n]= 0\).
+:END:
+*** Problem 1.34
+    [2020-02-10 Mon 16:49]
+
+    #+ATTR_LATEX: :options []{prob:1-34}
+    #+NAME: prob:1-34
+    #+begin_prob
+    In this problem, we explore several of the properties of even and odd
+    signals.
+
+    a. Show that if \(x[n]\) is an odd signal, then
+       \begin{equation*}
+       \sum_{n=-\infty}^{+\infty} x[n] =0
+       \end{equation*}
+    b. Show that if \(x_{1}[n]\) is an odd signal and \(x_{2}[n]\) is an even
+       signal, then \(x_{1}[n]x_{2}[n]\) is an odd signal.
+    c. Let \(x[n]\) be an arbitrary signal with even and odd parts denoted by
+       \begin{equation*}
+       x_{e}[n] = \mathrm{Even}\{ x[n] \}
+       \end{equation*}
+       and
+       \begin{equation*}
+       x_{o}[n] = \mathrm{Odd} \{ x[n] \}
+       \end{equation*}
+       Show that
+       \begin{equation*}
+       \sum_{n=-\infty}^{+\infty} x^{2}[n] = \sum_{n=-\infty}^{+\infty} x_{e}^{2}[n] +  \sum_{n=-\infty}^{+\infty} x_{o}^{2}[n]
+       \end{equation*}
+    d. Although parts 1-3 have been stated in terms of discrete-time
+       signals, the analogous properties are also valid in continuous time. To
+       demonstrate this, show that
+       \begin{equation*}
+       \int_{-\infty}^{+\infty}x^{2}(t)dt = \int_{-\infty}^{+\infty} x_{e}^{2}(t)dt + \int_{-\infty}^{+\infty} x_{o}^{2}(t)dt
+       \end{equation*}
+       where \(x_{e}(t)\) and \(x_{o}(t)\) are, respectively, the even and odd
+       parts of \(x(t)\).
+    #+end_prob
+
+# a
+:sub-problem:
+*Problem 1.34a*
+
+If \(x[n]\) is an odd signal, then we have \(x[n] = -x[-n]\) and \(x[0]=0 \), so
+\begin{eqnarray*}
+\sum_{n=-\infty}^{+\infty} x[n] &=& \sum_{n=0}^{+\infty} x[n] + \sum_{-\infty}^{0} x[n] \\
+&=& \sum_{n=0}^{\infty} \big( x[n] + x[-n] \big)  \\
+&=& 0
+\end{eqnarray*}
+:END:
+# b
+:sub-problem:
+*Problem 1.34b*
+
+Because \(x_{1}[n]\) is an odd signal, \(x_{1}[n] = -x_{1}[-n]\). Because
+\(x_{2}[n]\) is an even signal, \(x_{2}[n] = x_{2}[-n]\). we have
+
+\begin{equation*}
+x_{1}[n]x_{2}[n] = -x_{1}[-n]x_{2}[-n] \\
+\end{equation*}
+
+i.e. \(x_{1}[n]x_{2}[n]\) is an odd signal.
+:END:
+# c
+:sub-problem:
+*Problem 1.34c*
+
+\begin{eqnarray*}
+x_{e}[n] &=& \frac{x[n] + x[-n]}{2} \\
+x_{o}[n] &=& \frac{x[n] - x[-n]}{2}
+\end{eqnarray*}
+Then we have
+\begin{eqnarray*}
+\sum_{n=-\infty}^{+\infty} x_{e}^{2}[n]  &=& \sum_{n=-\infty}^{+\infty} \bigg(  \frac{ x[n] + x[-n] }{2} \bigg)^{4}   \\
+&=& \sum_{n=-\infty}^{+\infty} \bigg(  \frac{ x^{2}[n]  + x^{2}[-n] + 2x[n]x[-n]}{2} \bigg)
+\end{eqnarray*}
+\begin{eqnarray*}
+\sum_{n=-\infty}^{+\infty} x_{o}^{2}[n]  &=& \sum_{n=-\infty}^{+\infty} \bigg(  \frac{ x[n] - x[-n] }{2} \bigg)^{2}   \\
+&=& \sum_{n=-\infty}^{+\infty} \bigg(  \frac{ x^{2}[n]  + x^{2}[-n] - 2x[n]x[-n]}{4} \bigg)
+\end{eqnarray*}
+Then we add the above two equations and get
+\begin{eqnarray*}
+\sum_{n=-\infty}^{+\infty} x_{e}^{2}[n] +  \sum_{n=-\infty}^{+\infty} x_{o}^{2}[n]  &=& \sum_{n=-\infty}^{+\infty} \frac{x^{2}[n] + x^{2}[-n]}{2} \\
+&=& \sum_{n=-\infty}^{+\infty} x^{2}[n]
+\end{eqnarray*}
+
+This conclusion tells us that even we seperate the signal into two parts(even
+part and odd part), the sum of energy from the even part and odd part is the
+total energy of the original signal.
+:END:
+# d
+:sub-problem:
+Let
+\begin{eqnarray*}
+\int_{-\infty}^{+\infty} x^{2}(t) dt &=& \int_{-\infty}^{+\infty} ( x_{e}(t) + x_{o}(t) )^{2}dt  \\
+&=& \int_{-\infty}^{+\infty} x_{e}^{2}(t)dt + \int_{-\infty}^{+\infty} x_{o}^{2}(t) dt + \int_{-\infty}^{+\infty} x_{e}(t)x_{o}(t) dt \\
+&=& \int_{-\infty}^{+\infty} x_{e}^{2}(t)dt + \int_{-\infty}^{+\infty} x_{o}^{2}(t) dt
+\end{eqnarray*}
+
+Notice that \(x_{e}(t)x_{o}(t)\) is and odd signal, so \(
+\int_{-\infty}^{+\infty} x_{e}(t)x_{o}(t) dt = 0 \)
+:END:
+*** Problem 1.35
+    [2020-02-10 Mon 19:50]
+
+    #+ATTR_LATEX: :options []{prob:1-35}
+    #+NAME: prob:1-35
+    #+begin_prob
+    Consider the periodic discrete-time exponential time signal
+    \begin{equation*}
+    x[n] = e^{im(2\pi/N)n}
+    \end{equation*}
+    Show that the fundamental period of this signal is
+    \begin{equation*}
+    N_{0} = N / \mathrm{gcd}(m,N)
+    \end{equation*}
+    where \(\mathrm{gcd}(m,N)\) is the greatest common divisor of \(m\) and
+    \(N\)----that is, the largest integer that divides both \(m\) and \(N\) an
+    integral number of times. For example,
+    \begin{equation*}
+    \mathrm{gcd}(2,1) = 1, \mathrm{gcd}(2,4) = 2, \mathrm{gcd}(8,12) = 4
+    \end{equation*}
+    Note that \(N_{0} = N\) if \(m\) and \(N\) have no factors in common.
+    #+end_prob
+
+#+ATTR_LATEX: :options []{}
+#+begin_prf
+Let \(N_{0}\) the fundamental period of \(x[n]\), so that
+\begin{equation*}
+m(2\pi / N) N_{0} = l\times 2\pi
+\end{equation*}
+So, we have \(N_{0} = \frac{lN}{m}\) . If \(m\) and \(N\) have no factors in
+common, we have \(N_{0} = N\) when \(l = m\). If \(m\) and \(N\) have factors in
+common, the fundamental period should be
+\begin{equation*}
+N_{0} = l \frac{N/ \mathrm{gcd}(m,N) }{m/ \mathrm{gcd}(m,N)}
+\end{equation*}
+
+When \(l = m/ \mathrm{gcd}(m,N) \), we have \(N_{0} = \frac{N}{ \mathrm{gcd}(m,N) }\).
+#+end_prf
+*** Problem 1.36
+    [2020-02-11 Tue 09:55]
+
+    #+ATTR_LATEX: :options []{prob:1-36}
+    #+NAME: prob:1-36
+    #+begin_prob
+    Let \(x(t)\) be the continuous-time complex exponential signal:
+    \begin{equation*}
+    x(t) = e^{i\omega_{0}t}
+    \end{equation*}
+    with fundamental frequency \(\omega_{0}\) and fundamental period \(T_{0} =
+    2\pi /\omega_{0}\). Consider the discrete-time signal obtained by taking
+    equally spaced samples of \(x(t)\) ---- that is,
+    \begin{equation*}
+    x[n] = x(nT) = e^{i\omega_{0}nT}
+    \end{equation*}
+
+    a. Show that \(x[n]\) is periodic if and only if \(T/T_{0}\) is a rational
+       number -- that is, if and only if some multiple of the sampling interval
+       exactly equals a multiple of the period of \(x(t)\).
+    b. Suppose that \(x[n]\) is periodic ---- that is, that
+       \begin{equation}
+       \label{eq:1-36-1}
+       \frac{T}{T_{0}} = \frac{p}{q}
+       \end{equation}
+       where \(p\) and \(q\) are integers. What are the fundamental period and
+       fundamental frequency of \(x[n]\)? Express the fundamental frequency as a
+       fraction of \(\omega_{0}T\)
+    c. Again assuming that \(T/T_{0}\) satifies eq (\ref{eq:1-36-1}), determine
+       precisely how many periods of \(x(t)\) are needed to obtain the samples
+       that form a single period of \(x[n]\).
     #+end_prob
 
 
@@ -281,6 +540,7 @@ CLOCK: [2020-02-01 Sat 16:09]--[2020-02-01 Sat 16:10] =>  0:01
 
 This is the solution manual of signals and systems by Oppenheim cite:oppenheim_signals_1997
 
+
 bibliography:~/Dropbox/research_library/zcl.bib
 bibliographystyle:unsrt
 
@@ -288,7 +548,7 @@ bibliographystyle:unsrt
 * Courses           :course:
 [2019-10-05 Sat 16:53]
 
-** TODO Solution Manual of Signals and Systems by Oppenheim etc. :C_SignalsAndSystems:
+** TODO Solution Manual of Signals and Systems by Oppenheim :C_SignalsAndSystems:
    :PROPERTIES:
    :EXPORT_FILE_NAME: index
    :LATEX_TITLE: Solution Manual of Signals and Systems by Oppenheim etc.
