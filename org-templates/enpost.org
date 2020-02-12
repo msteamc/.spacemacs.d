@@ -24,6 +24,9 @@
 #+MACRO: begin_warning @@html:{{% alert warning %}}@@
 #+MACRO: end_warning @@html:{{% /alert %}}@@
 #+MACRO: youtube @@html:{{< youtube $1 >}}@@
+#+MACRO: iconfab @@html:{{< icon name="$1" pack="fab" >}}@@
+#+MACRO: iconfas @@html:{{< icon name="$1" pack="fas" >}}@@
+
 
 #+MACRO: lispnewline   (eval "\n")
 #+MACRO: titlepagecore  \thispagestyle{empty} {{{lispnewline}}} \begingroup {{{lispnewline}}}\begin{center} {{{lispnewline}}} \vspace{\baselineskip} {{{lispnewline}}} \textbf{\Huge {{{property(LATEX_TITLE)}}}} \par {{{lispnewline}}} \vspace{2\baselineskip}  \newline {{{lispnewline}}} \textbf{\large Eason Zhang with www.makesteamclear.com \par} {{{lispnewline}}} \vspace{\baselineskip} \newline {{{lispnewline}}}  \today \par {{{lispnewline}}} \vspace{\baselineskip} {{{lispnewline}}}  \vfill {{{lispnewline}}} \setlength{\unitlength}{3pt} {{{lispnewline}}} \includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/$1.pdf} {{{lispnewline}}} \vfill \vspace{\baselineskip} {{{lispnewline}}} \href{WWW.MAKESTEAMCLEAR.COM}{\Large WWW.MAKESTEAMCLEAR.COM} \par\newline {{{lispnewline}}}  makesteamclear is a free project, run by Eason Zhang, to make videos about STEAM in a more approachable way. If you find the contents in this article or the site or the youtube channel helpful, please consider \href{www.makesteamclear.com}{\ensuremath \heartsuit support me\ensuremath\heartsuit }, thanks \par {{{lispnewline}}} \end{center} {{{lispnewline}}} \endgroup {{{lispnewline}}} {{{lispnewline}}} \newpage \thispagestyle{empty} \textbf{copyright page} \newpage \tableofcontents \newpage
