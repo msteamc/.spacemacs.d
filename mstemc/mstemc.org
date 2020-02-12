@@ -683,6 +683,7 @@ Based on [[Problem 1.37a][Problem 1.37a]], we have \( \phi_{xx}(t) = \phi_{xx}(-
 
 # c
 :sub-problem:
+*Problem 1.37c*
 
 \begin{eqnarray*}
 \phi_{xy}(t) &=& \int_{-\infty}^{+\infty} x(t+ \tau) y(\tau)d\tau \\
@@ -700,6 +701,698 @@ So we have \(\phi_{yy}(t) = \phi_{xx}(t)\).
 
 
 :END:
+*** Problem 1.38
+    [2020-02-11 Tue 19:07]
+
+    #+ATTR_LATEX: :options []{prob:1-38}
+    #+NAME: prob:1-38
+    #+begin_prob
+    In this problem, we examine a few of the properties of the unit impulse
+    function.
+    a. show that
+       \begin{equation*}
+       \delta(2t) = \frac{1}{2} \delta(t)
+       \end{equation*}
+       Hint: Examine \(\delta_{\Delta}(t)\). (See Figure 1.34 in the textbook).
+    b. In Section 1.4, we defined the continuous-time unit impulse as the limit
+       of the signal \(\delta_{\Delta}(t)\). More precisely, we defined several
+       of the properties of \(\delta(t)\) by examining the corresponding
+       properties of \(\delta_{\Delta}(t)\). For example, since the signal
+       \begin{equation*}
+       u_{\Delta}(t) = \int_{-\infty}^{t}\delta_{\Delta}(\tau)d\tau
+       \end{equation*}
+       converges to the unit step:
+       \begin{equation*}
+       u(t) = \lim_{\Delta\to 0} u_{\Delta}(t),
+       \end{equation*}
+       we could interpret \(\delta(t)\) through the equation
+       \begin{equation}
+       \label{eq:problem1-38-1}
+       u(t) = \int_{-\infty}^{t} \delta(\tau)d\tau
+       \end{equation}
+       or by viewing \(\delta(t)\) as the formal derivative of \(u(t)\).
+
+       This type of discussion is important, as we are in effect trying to
+       define \(\delta(t)\) through its properties rather than by specifying its
+       value for each \(t\), which is not possible. In Chapter 2, we provide a
+       very simple characterization of the behavior of the unit impulse that is
+       extremely useful in the study of linear time-invariant systems. For the
+       present, however, we concentrate on demonstrating that the important
+       concept in using the unit impulse is to understand how it behave. To do
+       this, consider the six signals depicted in Figure shown below. Show that
+       each "behaves like an impulse" as \(\Delta\to 0\) in that, if we let
+       \begin{equation*}
+       u_{\Delta}^{i}(t) = \int_{-\infty}^{t} r_{\Delta}^{i}(\tau)d\tau,
+       \end{equation*}
+       then
+       \begin{equation*}
+       \lim_{\Delta\to 0} u_{\Delta}^{i}(t) = u(t)
+       \end{equation*}
+       In each case, sketch and label carefully the signal
+       \(u_{\Delta}^{i}(t)\). Note that
+       \begin{equation*}
+       r_{\Delta}^{2}(0) = r_{\Delta}^{4}(0) = 0 \ \forall \Delta
+       \end{equation*}
+       Therefore, it is not enough to define or to think of \(\delta(t)\) as
+       being zero for \(t\neq 0\) and infinite for \(t=0\). Rather, it is
+       properties such as equation (\ref{eq:problem1-38-1}) that define the
+       impulse. In Section 2.5 we will define a whole class of signals known as
+       singularity function, which are related to the unit impulse and which are
+       also defined in terms of their properties rather than their values.
+
+       :figure:
+
+       #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38-2.pdf"
+       #+begin_src latex -n -r :results raw :exports none
+       \begin{tikzpicture}
+       \definecolor{mycolor}{RGB}{139,0,0}
+       \begin{scope}
+       \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+       \draw (0,0) -- (0,3) node[above] {$r_{\Delta}^{1}(t)$};
+
+       \draw[very thick, mycolor] (-0.3,0) -- (-0.3,1) -- (0.3,1) -- (0.3,0);
+
+       \node[left] at (-0.3,1) {$\frac{1}{\Delta}$};
+       \node[below] at (-0.3,0) {$-\frac{\Delta}{2}$};
+       \node[below] at (0.3,0) {$\frac{\Delta}{2}$};
+
+       \end{scope}
+
+       \begin{scope}[xshift=7cm]
+       \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+       \draw (0,0) -- (0,3) node[above] {$r_{\Delta}^{2}(t)$};
+
+       \draw[very thick, mycolor] (0.3,0) -- (0.3,1) -- (0.9,1) -- (0.9,0);
+
+       \node[left] at (0,1) {$\frac{1}{\Delta}$};
+
+       \node[below] at (0.3,0) {$\Delta$};
+       \node[below] at (0.9,0) {$2\Delta$};
+
+       \end{scope}
+
+       \begin{scope}[xshift=0cm,yshift=-5cm]
+       \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+       \draw (0,0) -- (0,3) node[above] {$r_{\Delta}^{3}(t)$};
+
+       \draw[very thick, mycolor] (-0.3,0) -- (0.0,1)-- (0.3,0);
+
+       \node[left] at (0,1) {$\frac{1}{\Delta}$};
+
+       \node[below] at (-0.3,0) {$-\Delta$};
+       \node[below] at (0.3,0) {$\Delta$};
+
+       \end{scope}
+
+       \begin{scope}[xshift=7cm,yshift=-5cm]
+       \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+       \draw (0,0) -- (0,3) node[above] {$r_{\Delta}^{4}(t)$};
+
+       \draw[very thick, mycolor] (-0.3,0) -- (-0.3,1) -- (0,0) -- (0.3,1)-- (0.3,0);
+
+       \node[left] at (0,1) {$\frac{1}{\Delta}$};
+
+       \node[below] at (-0.3,0) {$-\Delta$};
+       \node[below] at (0.3,0) {$\Delta$};
+
+       \end{scope}
+
+       \begin{scope}[xshift=0cm,yshift=-10cm]
+       \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+       \draw (0,-1) -- (0,3) node[above] {$r_{\Delta}^{5}(t)$};
+
+       \draw[very thick, mycolor] (-0.3,0) -- (-0.3,-1) -- (0,-1) -- (0.0,2)-- (0.3,2) -- (0.3,0);
+
+       \node[left] at (0,2) {$\frac{2}{\Delta}$};
+       \node[left] at (0,1) {$\frac{1}{\Delta}$};
+       \node[left] at (0,-1) {$-\frac{1}{\Delta}$};
+       \node[above] at (-0.3,0) {$-\Delta$};
+       \node[below] at (0.3,0) {$\Delta$};
+
+       \end{scope}
+
+       \begin{scope}[xshift=7cm,yshift=-10cm]
+       \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+       \draw (0,-1) -- (0,3) node[above] {$r_{\Delta}^{6}(t) = \frac{1}{2\Delta} e^{-|t|/\Delta}$};
+
+       \draw[very thick, mycolor] (-0.5,0.02) .. controls (-0.1,0.2) .. (0,1);
+       \draw[very thick, mycolor] (0,1) .. controls (0.1,0.2) .. (0.5,0.02);
+
+       \node[left] at (0,2) {$\frac{1}{\Delta}$};
+       \node[left] at (0,1) {$\frac{1}{2\Delta}$};
+       \node[below] at (-0.3,0) {$-\Delta$};
+       \node[below] at (0.3,0) {$\Delta$};
+
+       \end{scope}
+
+       \end{tikzpicture}
+       #+end_src
+
+       #+RESULTS:
+       [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38-2.pdf]]
+
+
+       #+ATTR_HTML:  :width 80% :align center
+       #+ATTR_LATEX: :width 0.8\textwidth :align center
+       {{{if-latex(figProb1-38-2.pdf,figProb1-38-2.png)}}}
+
+       :END:
+
+
+    #+end_prob
+# 1-38-0
+:figure:
+    #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38-0.pdf"
+    #+begin_src latex -n -r :results raw :exports none
+    \begin{tikzpicture}
+    \definecolor{mycolor}{RGB}{139,0,0}
+
+    \begin{scope}
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,0) -- (0,3) node[left] {$\delta_{\Delta}(t) $};
+
+    \draw[very thick,mycolor] (0,0) -- (0,1) -- (0.3,1) -- (0.3,0);
+
+    \node[below] at (0.3,0) {$\Delta$};
+    \node[left] at (0,1) {$\tfrac{1}{\Delta}$};
+    \node[below] at (0,0) {$0$};
+    \end{scope}
+
+    \end{tikzpicture}
+    #+end_src
+
+    #+RESULTS:
+    [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38-0.pdf]]
+
+    #+NAME: figProb1-38-0
+    #+ATTR_HTML:  :width 80% :align center
+    #+ATTR_LATEX: :width 0.8\textwidth :align center
+    {{{if-latex(figProb1-38-0.pdf,figProb1-38-0.png)}}}
+
+:END:
+
+# a
+:sub-problem:
+*Problem 1.38a*
+
+Base on fig [[figProb1-38-0]] , \(\delta(2t)\) can be visualized as follows
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38-1.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+    \definecolor{mycolor}{RGB}{139,0,0}
+    \begin{scope}
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,0) -- (0,3) node[left] {$\delta_{\Delta}(2t)$};
+
+    \draw[very thick,mycolor] (0,0) -- (0,1) -- (0.15,1) -- (0.15,0);
+
+    \node[below] at (0.15,0) {\tiny$\tfrac{\Delta}{2}$};
+    \node[left] at (0,1) {$\tfrac{1}{\Delta}$};
+    \node[below] at (0,0) {\tiny$0$};
+    \end{scope}
+
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38-1.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-38-1.pdf,figProb1-38-1.png)}}}
+
+Based on the fact \(\delta(t)\) has unit area, so \(\delta(2t)\) will have
+\(\frac{1}{2}\) . So \(\delta(2t) = \frac{1}{2}\delta(t)\).
+
+:END:
+
+# b, r1
+:sub-problem:
+*Problem 1.38b*
+
+Because
+       \begin{equation*}
+       u_{\Delta}(t) = \int_{-\infty}^{t}\delta_{\Delta}(\tau)d\tau
+       \end{equation*}
+We can get \(u_{\Delta}^{1}(t)\) easily.
+
+
+\(r_{\Delta}^{1}(t)\) can be represented as
+\begin{equation*}
+r_{\Delta}^{1}(t) =
+\begin{cases}
+\frac{1}{\Delta}, & -\frac{\Delta}{2} \leq t \leq \frac{\Delta}{2} \\
+               0, & \mathrm{Otherwise}
+\end{cases}
+\end{equation*}
+
+Then during the integration, \(u_{\Delta}^{1}(t)\) can be represented as
+\begin{equation*}
+u_{\Delta}^{1}(t) =
+\begin{cases}
+0, &  t < -\frac{\Delta}{2} \\
+\frac{t}{\Delta}, & -\frac{\Delta}{2} \leq t \leq \frac{\Delta}{2} \\
+1, & t > \frac{\Delta}{2}
+\end{cases}
+
+\end{equation*}
+
+
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38b.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+  \definecolor{mycolor}{RGB}{139,0,0}
+  \begin{scope}
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,0) -- (0,3) node[above] {$r_{\Delta}^{1}(t)$};
+
+    \draw[very thick, mycolor] (-0.3,0) -- (-0.3,1) -- (0.3,1) -- (0.3,0);
+
+    \node[left] at (-0.3,1) {$\frac{1}{\Delta}$};
+    \node[below] at (-0.3,0) {$-\frac{\Delta}{2}$};
+    \node[below] at (0.3,0) {$\frac{\Delta}{2}$};
+  \end{scope}
+  \begin{scope}[xshift=7cm]
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,0) -- (0,3) node[above] {$r_{\Delta}^{1}(t)$};
+
+    \draw[very thick, mycolor] (-3,0) -- (-0.3,0) -- (0,0.5) --  (0.3,1) -- (3,1);
+
+    \node[left] at (0,1) {$1$};
+    \node[left] at (0,0.5) {$\tfrac{1}{2}$};
+    \node[below] at (-0.3,0) {$-\frac{\Delta}{2}$};
+    \node[below] at (0.3,0) {$\frac{\Delta}{2}$};
+  \end{scope}
+
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38b.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-38b.pdf,figProb1-38b.png)}}}
+:END:
+# b, r2
+:sub-problem:
+
+we can express the \(r_{\Delta}^{2}(t)\) as :
+\begin{equation*}
+r_{\Delta}^{2}(t) =
+\begin{cases}
+\frac{1}{\Delta} , & \Delta \leq t \leq 2\Delta \\
+0, & \mathrm{Otherwise}
+\end{cases}
+\end{equation*}
+
+So the \(u_{\Delta}^{2}(t)\) can be expressed as:
+\begin{equation*}
+u_{\Delta}^{2}(t) =
+\begin{cases}
+0, & t < \Delta \\
+\frac{t-\Delta}{\Delta} & \Delta \leq t \leq 2\Delta \\
+1, & t> 2\Delta
+\end{cases}
+\end{equation*}
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38c.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+  \definecolor{mycolor}{RGB}{139,0,0}
+  \begin{scope}
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,0) -- (0,3) node[above] {$r_{\Delta}^{2}(t)$};
+    \draw[very thick, mycolor] (0.3,0) -- (0.3,1) -- (0.9,1) -- (0.9,0);
+    \node[left] at (0,1) {$\frac{1}{\Delta}$};
+    \node[below] at (0.3,0) {$\Delta$};
+    \node[below] at (0.9,0) {$2\Delta$};
+  \end{scope}
+  \begin{scope}[xshift=7cm]
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,0) -- (0,3) node[above] {$u_{\Delta}^{2}(t)$};
+    \draw[very thick, mycolor] (-3,0) -- (0.3,0) -- (0.9,1) -- (3,1);
+    \node[left] at (0,1) {$1$};
+    \node[below] at (0.3,0) {$\Delta$};
+    \node[below] at (0.9,0) {$2\Delta$};
+  \end{scope}
+
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38c.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-38c.pdf,figProb1-38c.png)}}}
+
+
+:END:
+# b, r3
+:sub-problem:
+We express \(r_{\Delta}^{3}(t)\) as:
+\begin{equation*}
+r_{\Delta}^{3}(t) =
+\begin{cases}
+\frac{1}{\Delta^{2}} ( t +  \Delta) , & - \Delta < t \leq 0 \\
+\frac{1}{\Delta^{2}} ( -t + \Delta) , & 0 < t \leq \Delta \\
+0, & \mathrm{otherwise}
+\end{cases}
+\end{equation*}
+and \(u_{\Delta}^{3}(t)\):
+
+\begin{equation*}
+u_{\Delta}^{3}(t) =
+\begin{cases}
+\frac{1}{\Delta^{2}}( \frac{t^{2}}{2} + \Delta t + \frac{\Delta^{2}}{2}) ,& -\Delta < t \leq  0 \\
+\frac{1}{2} + \frac{1}{\Delta^{2}} ( - \frac{t^{2}}{2} + \Delta t ) , & 0 < t < \Delta \\
+1, & t > \Delta
+\end{cases}
+\end{equation*}
+
+So we can visualize them as follows:
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38d.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+  \definecolor{mycolor}{RGB}{139,0,0}
+  \begin{scope}
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,0) -- (0,3) node[above] {$r_{\Delta}^{3}(t)$};
+
+    \draw[very thick, mycolor] (-0.3,0) -- (0.0,1)-- (0.3,0);
+
+    \node[left] at (0,1) {$\frac{1}{\Delta}$};
+
+    \node[below] at (-0.3,0) {$-\Delta$};
+    \node[below] at (0.3,0) {$\Delta$};
+
+  \end{scope}
+  \begin{scope}[xshift=7cm]
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,0) -- (0,3) node[above] {$u_{\Delta}^{3}(t)$};
+    \draw[mycolor,very thick] (-3,0) -- (-0.3,0);
+    \draw[mycolor,very thick,domain=-0.3:0] plot (\x,{ 1/0.09 * ( (\x)*(\x)/2 + 0.3 * \x + 0.09/2 ) } );
+    \draw[mycolor,very thick,domain=0:0.3] plot (\x,{ 0.5 + 1/0.09 * ( -(\x)*(\x)/2 + 0.3 * \x ) } );
+    \draw[mycolor,very thick] (0.3,1) -- (3,1);
+    \node[left] at (0,1) {$1$};
+    \node[left] at (0,0.5) {$\tfrac{1}{2}$};
+
+    \node[below] at (-0.3,0) {$-\Delta$};
+    \node[below] at (0.3,0) {$\Delta$};
+
+  \end{scope}
+
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38d.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-38d.pdf,figProb1-38d.png)}}}
+
+:END:
+# b, r4
+:sub-problem:
+We can represent \(r_{\Delta}^{4}(t)\) as :
+\begin{equation*}
+r_{\Delta}^{4}(t) =
+\begin{cases}
+- \frac{1}{\Delta^{2}} t , &  -\Delta < t \leq 0 \\
+\frac{1}{\Delta^{2}} t , &   0 < t \leq \Delta  \\
+0, & \mathrm{Otherwise}
+\end{cases}
+\end{equation*}
+
+and \(u_{\Delta}^{4}(t)\)
+
+\begin{equation*}
+u_{\Delta}^{4}(t) =
+\begin{cases}
+0, &  t < -\Delta \\
+- \frac{t^{2}}{2\Delta^{2}} + \frac{1}{2}, & - \Delta < t \leq 0\\
+ \frac{t^{2}}{2\Delta^{2}} + \frac{1}{2}, & - \Delta < t \leq 0\\
+1, & t > \Delta
+\end{cases}
+\end{equation*}
+ and we visualize them as:
+
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38e.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+  \definecolor{mycolor}{RGB}{139,0,0}
+  \begin{scope}
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,0) -- (0,3) node[above] {$r_{\Delta}^{4}(t)$};
+
+    \draw[very thick, mycolor] (-0.3,0) -- (-0.3,1) -- (0,0) -- (0.3,1)-- (0.3,0);
+
+    \node[left] at (0,1) {$\frac{1}{\Delta}$};
+
+    \node[below] at (-0.3,0) {$-\Delta$};
+    \node[below] at (0.3,0) {$\Delta$};
+
+  \end{scope}
+  \begin{scope}[xshift=7cm]
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,0) -- (0,3) node[above] {$u_{\Delta}^{4}(t)$};
+    \draw[mycolor,very thick] (-3,0) -- (-0.3,0);
+    \draw[mycolor,very thick,domain=-0.3:0] plot (\x,{ - 1/0.09 * ( (\x)*(\x)/2 ) + 0.5 } );
+    \draw[mycolor,very thick,domain=0:0.3] plot (\x,{ 0.5 + 1/0.09 * ( (\x)*(\x)/2 ) } );
+    \draw[mycolor,very thick] (0.3,1) -- (3,1);
+    \node[left] at (0,1) {$1$};
+    \node[left] at (0,0.5) {$\tfrac{1}{2}$};
+
+    \node[below] at (-0.3,0) {$-\Delta$};
+    \node[below] at (0.3,0) {$\Delta$};
+
+  \end{scope}
+
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38e.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-38e.pdf,figProb1-38e.png)}}}
+
+:END:
+# b, r5
+:sub-problem:
+We can express \(r_{\Delta}^{5}(t)\) as :
+\begin{equation*}
+r_{\Delta}^{5}(t) =
+\begin{cases}
+- \frac{1}{\Delta} , & -\Delta < t \leq 0 \\
+\frac{2}{\Delta} , & 0 < t \leq \Delta \\
+0, & \mathrm{Otherwise}
+\end{cases}
+\end{equation*}
+
+and \(u_{\Delta}^{5}(t)\) as:
+
+\begin{equation*}
+u_{\Delta}^{5}(t) =
+\begin{cases}
+- \frac{t}{\Delta} -1, & -\Delta < t < 0 \\
+-1 + \frac{2t}{\Delta} , & 0 < t \leq \Delta \\
+1,& t > \Delta
+\end{cases}
+\end{equation*}
+So we can visualize them as below:
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38f.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+  \definecolor{mycolor}{RGB}{139,0,0}
+  \begin{scope}
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,-1) -- (0,3) node[above] {$r_{\Delta}^{5}(t)$};
+
+    \draw[very thick, mycolor] (-0.3,0) -- (-0.3,-1) -- (0,-1) -- (0.0,2)-- (0.3,2) -- (0.3,0);
+    \node[left] at (0,2) {$\frac{2}{\Delta}$};
+    \node[left] at (0,1) {$\frac{1}{\Delta}$};
+    \node[left] at (0,-1) {$-\frac{1}{\Delta}$};
+    \node[above] at (-0.3,0) {$-\Delta$};
+    \node[below] at (0.3,0) {$\Delta$};
+  \end{scope}
+  \begin{scope}[xshift=7cm]
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,-1) -- (0,3) node[above] {$u_{\Delta}^{5}(t)$};
+
+    \draw[mycolor,very thick] (-3,0) -- (-0.3,0);
+    \draw[mycolor,very thick,domain=-0.3:0] plot (\x,{ - \x / 0.3 - 1 } );
+    \draw[mycolor,very thick,domain=0:0.3] plot (\x,{ -1 + 2*\x / 0.3 } );
+    \draw[mycolor,very thick] (0.3,1) -- (3,1);
+
+    \node[left] at (0,2) {$2$};
+    \node[left] at (0,1) {$1$};
+    \node[left] at (0,-1) {$-1$};
+    \node[above] at (-0.3,0) {$-\Delta$};
+    \node[below] at (0.3,0) {$\Delta$};
+  \end{scope}
+
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38f.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-38f.pdf,figProb1-38f.png)}}}
+
+:END:
+# b, r6
+:sub-problem:
+We can express \(r_{\Delta}^{6}(t)\) as :
+\begin{equation*}
+r_{\Delta}^{6}(t) = \frac{1}{2\Delta} e^{-|t|/\Delta}
+\end{equation*}
+
+and \(u_{\Delta}^{6}(t)\) as :
+\begin{equation*}
+u_{\Delta}^{6}(t) =
+\begin{cases}
+\frac{1}{2} e^{\frac{t}{\Delta}} , & t< 0 \\
+1 - \frac{1}{2}e^{ \frac{-t}{\Delta}} , & t> 0 \\
+\end{cases}
+\end{equation*}
+So we can visualize them as below:
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38g.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+  \definecolor{mycolor}{RGB}{139,0,0}
+  \begin{scope}
+   \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+   \draw (0,-1) -- (0,3) node[above] {$r_{\Delta}^{6}(t) = \frac{1}{2\Delta} e^{-|t|/\Delta}$};
+
+   \draw[very thick, mycolor] (-0.5,0.02) .. controls (-0.1,0.2) .. (0,1);
+   \draw[very thick, mycolor] (0,1) .. controls (0.1,0.2) .. (0.5,0.02);
+
+   \node[left] at (0,2) {$\frac{1}{\Delta}$};
+   \node[left] at (0,1) {$\frac{1}{2\Delta}$};
+   \node[below] at (-0.3,0) {$-\Delta$};
+   \node[below] at (0.3,0) {$\Delta$};
+  \end{scope}
+  \begin{scope}[xshift=7cm]
+    \draw (-3,0) -- (3,0) node[at end,below] {$t$};
+    \draw (0,-1) -- (0,3) node[above] {$u_{\Delta}^{6}(t)$};
+
+
+    \draw[mycolor,very thick,domain=-3:0] plot (\x,{  0.5* exp(\x / 0.3) } );
+    \draw[mycolor,very thick,domain=0:3] plot (\x,{ 1 - 0.5* exp( -\x / 0.3 ) } );
+
+    \node[left] at (0,2) {$2$};
+    \node[left] at (0,1) {$1$};
+    \node[left] at (0,-1) {$-1$};
+    \node[below] at (-0.3,0) {$-\Delta$};
+    \node[below] at (0.3,0) {$\Delta$};
+  \end{scope}
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-38g.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-38g.pdf,figProb1-38g.png)}}}
+
+:END:
+*** Problem 1.39
+    [2020-02-12 Wed 19:38]
+
+    #+ATTR_LATEX: :options []{prob:1-39}
+    #+NAME: prob:1-39
+    #+begin_prob
+    The role played by \(u(t)\) and \(\sigma(t)\) and other singularity
+    functions in the study of linear time-invariant systems is that of an
+    idealization of a physical phenomenon, and, as we will see, the use of these
+    idealizations allow us to obtain an exceedingly important and very simple
+    representation of such systems. In using singularity functions, we need,
+    however, to be careful. In particular, we must remember that they are
+    idealizations, and thus, whenever we perform a calculation using them, we
+    are implicitly assuming that this calculation represents an accurate
+    description of the behavior of the signals that they are intended to
+    idealize. To illustrate, consider the equation
+    \begin{equation}
+    \label{eq:prob1-39-0}
+    x(t)\sigma(t) = x(0)\sigma(t)
+    \end{equation}
+    This equation is based on the observation that
+    \begin{equation}
+    \label{eq:prob1-39-1}
+    x(t)\sigma_{\Delta}(t) \approx x(0)\sigma_{\Delta}(t)
+    \end{equation}
+    Taking the limit of this relationship then yields the idealized one given by
+    equation (\ref{eq:prob1-39-0}). However, a more careful examination of our
+    derivation of equation (\ref{eq:prob1-39-1}) shows that that equation really
+    makes senses only if \(x(t)\) is continuous at \(t=0\). If it is not, then
+    we will not have \(x(t)\approx x(0)\)  for \(t\) small.
+
+    To make this point clearer, consider the unit step signal \(u(t)\). Recall
+    from the following equation:
+    \begin{equation*}
+    u(t) =
+    \begin{cases}
+      0, & t< 0\\
+      1, & t> 0
+    \end{cases}
+    \end{equation*}
+    that
+
+    1.  \(u(t)= 0\) for \(t<0\)
+    2.  \(u(t) = 1\) for \(t> 0\),
+
+    but that its value at \(t=0\) is not defined. The fact that \(u(0)\) is not
+    defined is not particularly bothersome, as long as the calculations we
+    perform using \(u(t)\) do not rely on a specific choice for \(u(0)\). For
+    example, if \(f(t)\) is a signal that is continuous at \(t=0\), then the
+    value of
+    \begin{equation*}
+    \int_{-\infty}^{+\infty} f(\sigma) u(\sigma) d \sigma
+    \end{equation*}
+    does not depend upon a choice for \(u(0)\). On the other hand, the fact that
+    \(u(0)\) is undefined is significant in that it means that certain
+    calculations involving singularity functions are undefined. Consider trying
+    to define a value for the product \(u(t)\delta(t)\).
+
+    To see that this cannot be defined, show that
+    \begin{equation*}
+    \lim_{\Delta\to 0} [u_{\Delta}(t)\delta(t)] = 0,
+    \end{equation*}
+    but
+    \begin{equation*}
+    \lim_{\Delta\to 0} [u_{\Delta}(t)\delta_{\Delta}(t)] = \frac{1}{2} \delta(t)
+    \end{equation*}
+
+    In general, we can define the product of two signals without any difficulty,
+    as long as the signals do not contain  singularities  ( discontinuities,
+    impulse, or the other singularities introduced in Section 2.5) whose
+    locations coincide. When the locations do coincide, the product is
+    undefined. As an example, show that the signal
+    \begin{equation*}
+    g(t) = \int_{-\infty}^{+\infty} u( \tau )\delta(t-\tau)d\tau
+    \end{equation*}
+    is identical to \(u(t)\); that is, it is \(0\) for \(t < 0\), it equals
+    \(1\) for \(t> 0\), and it is undefined for \(t=0\)
+
+    #+end_prob
 
 
 * Projects    :project:
