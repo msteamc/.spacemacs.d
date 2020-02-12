@@ -2,7 +2,6 @@
       '(
         (org )
         htmlize
-        ox-hugo
         cdlatex
               ))
 
@@ -11,12 +10,6 @@
       :defer t
       :init
       ))
-
-(defun zclorgbasic/init-ox-hugo()
-  (use-package ox-hugo
-    ;;:defer t
-    :init
-    ))
 
 (defun zclorgbasic/post-init-org()
   (use-package org
