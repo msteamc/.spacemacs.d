@@ -1,7 +1,7 @@
 #+AUTHOR:  Eason
 #+LANGUAGE:  en
 #+OPTIONS:   *:t <:nil timestamp:nil toc:t prop:nil
-#+OPTIONS:   H:3 num:t  \n:nil  @:t ::t |:t ^:nil -:t f:t
+#+OPTIONS:   H:2 num:t  \n:nil  @:t ::t |:t ^:nil -:t f:t
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:nil pri:nil tags:nil
 #+STARTUP: overview
 #+STARTUP: showstars
@@ -15,6 +15,19 @@
 #+SEQ_TODO: TODO NEXT DONE
 #+HUGO_AUTO_SET_LASTMOD: t
 #+hugo_front_matter_key_replace: description>summary
+
+#+BEAMER_THEME: CambridgeUS
+#+BEAMER_HEADER: \definecolor{links}{HTML}{8c1515}
+#+BEAMER_HEADER: \hypersetup{colorlinks=,linkcolor=,urlcolor=links}
+#+BEAMER_HEADER: \setbeamertemplate{itemize items}[default]
+#+BEAMER_HEADER: \setbeamertemplate{enumerate items}[default]
+#+BEAMER_HEADER: \setbeamertemplate{items}[default]
+#+BEAMER_HEADER: \setbeamercolor*{local structure}{fg=darkred}
+#+BEAMER_HEADER: \setbeamercolor{section in toc}{fg=darkred}
+#+BEAMER_HEADER: \setlength{\parskip}{\smallskipamount}
+#+BEAMER_HEADER: \institute[INST]{Institute\\\url{http://www.institute.edu}}
+#+BEAMER_HEADER: \titlegraphic{\includegraphics[height=1.5cm]{~/Dropbox/mstemc_hugo/static/img/icon-32.png}}
+
 
 #+MACRO: if-latex (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) (concat "[[file:~/Dropbox/mstemc_hugo/static/img/tikz/"  $1 "]]") (concat "[[file:~/Dropbox/mstemc_hugo/static/img/tikz/"  $2 "]]") ))
 #+MACRO: newline @@latex:\hspace{0pt}\\@@ @@html:<br>@@

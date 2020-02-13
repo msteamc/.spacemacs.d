@@ -165,6 +165,8 @@ CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
    :END:
  <2020-02-09 Sun 10:24>
 
+{{{titlepage(figProb1-21-0)}}}
+
 *** Problem 1.32
     [2020-02-09 Sun 10:43]
 
@@ -1462,6 +1464,8 @@ bibliographystyle:unsrt
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "wexin") (icon_pack . "fas")  (name . "Wexin")  (url . "/course/signalsandsystemssolution/" ) )
    :END:
  <2020-02-08 Sat 16:58>
+
+#+OPTIONS: toc:nil
 * Beamer :beamer:
    [2020-02-13 Thu 09:13]
 ** TODO test beamer
@@ -1470,31 +1474,37 @@ bibliographystyle:unsrt
    :LATEX_TITLE: test beamer
    :EXPORT_LATEX_CLASS: beamer
    :EXPORT_LATEX_CLASS_OPTIONS: [presentation,smaller]
-   :EXPORT_BEAMER_THEME: CambridgeUS
+   :EXPORT_BEAMER_THEME: Madrid
    :EXPORT_BEAMER_COLOR_THEME: default
    :EXPORT_BEAMER_FONT_THEME: default
-   :EXPORT_BEAMER_INNER_THEME: default
+   :EXPORT_BEAMER_INNER_THEME: circles
    :EXPORT_BEAMER_OUTER_THEME: default
-   :EXPORT_DESCRIPTION: summary of this project
    :END:
+
+
  <2020-02-13 Thu 09:14>
-*** level 1
+
+ \maketitle
+
+*** section 1
     [2020-02-13 Thu 09:14]
 
-    level 1
-**** level 1.1
+**** frame 1.1
      [2020-02-13 Thu 09:14]
 
      level 1.1
-*** level 2
+
+    You can also set =EXPORT_LATEX_CLASS_OPTIONS= with =handout= to distribute
+    your presentation in the form of handouts.
+
+*** section 2
     [2020-02-13 Thu 09:15]
 
-    \(\sum_{i=1}^{N}\)
-**** level 2.1
+**** frame 2.1
      [2020-02-13 Thu 09:15]
 
      level 2.1
-**** level 2.2
+**** frame 2.2
      [2020-02-13 Thu 09:15]
 
      level 2.2
@@ -1503,14 +1513,38 @@ bibliographystyle:unsrt
 
       level 2.2.1
 
-*** level 3
+*** section 3
     [2020-02-13 Thu 09:15]
 
-*** A theorem block
-    :PROPERTIES:
-    :BEAMER_env: theorem
-    :BEAMER_act: <2->
-    :END:
+**** frame 3.1
+     [2020-02-13 Thu 11:54]
 
-  The =BEAMER_act= property says to overlay this environment from the
-  second frame onwards.
+***** A theorem block                                                :B_theorem:
+       :PROPERTIES:
+       :BEAMER_env: theorem
+       :END:
+
+     The =BEAMER_act= property says to overlay this environment from the
+     second frame onwards.
+
+***** An example block                                          :B_exampleblock:
+       :PROPERTIES:
+       :BEAMER_env: exampleblock
+       :END:
+
+   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+   tempor incididunt ut labore et dolore magna aliqua.
+
+
+***** A title
+       #+Beamer: \framesubtitle{A subtitle}
+
+     - Bullet 1
+     - Bullet 2
+     - Bullet 3
+***** An alert block                                              :B_alertblock:
+      :PROPERTIES:
+      :BEAMER_env: alertblock
+      :END:
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua.
