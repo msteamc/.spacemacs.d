@@ -300,5 +300,6 @@ BEG and END default to the buffer boundaries."
              (setq kk/org-latex-fragment-last begin))))))
 
 (add-hook 'post-command-hook 'kk/org-latex-fragment-toggle t)
-
+(setq org-export-initial-scope 'subtree)
+(setq org-hugo-export-with-toc t)
 )
