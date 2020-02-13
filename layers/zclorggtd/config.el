@@ -73,6 +73,10 @@
            entry (file+olp "~/Dropbox/zorg/mstemc/docs.org" "Docs")
            (function org-hugo-new-subtree-doc-index-capture-template)
            :clock-in t :clock-resume t)
+          ("m" "Org:Beamer"
+           entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Beamer")
+           (function org-new-subtree-beamer-capture-template)
+           :clock-in t :clock-resume t)
 
           ;; ("g" "my Log Time" entry (file+datetree "~/Dropbox/zorg/base/ztimelog.org" ) "** %T - %?  :timelog:" :clock-in t :clock-resume t)
           ("D" "diary" entry (file+datetree "~/Dropbox/zorg/base/zdiary.org" ) "*  %?\n%T" :clock-in t :clock-resume t)

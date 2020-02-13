@@ -574,6 +574,31 @@ See `org-capture-templates' for more information."
                    "%T\n\n%?\n")                ;Place the cursor here finally
                  "\n")))
 
+  ;;beamer
+;;;###autoload
+  (defun org-new-subtree-beamer-capture-template ()
+    "Returns `org-capture' template string for new beamer.
+See `org-capture-templates' for more information."
+    (let* ((title (read-from-minibuffer "Beamer Title: ")) ;Prompt to enter the post title
+           (fname (org-hugo-slug title)))
+      (mapconcat #'identity
+                 `(
+                   ,(concat "* TODO " title)
+                   ":PROPERTIES:"
+                   ,(concat ":EXPORT_FILE_NAME: " "index")
+                   ,(concat ":LATEX_TITLE: " title)
+                   ,(concat ":EXPORT_LATEX_CLASS: " "beamer")
+                   ,(concat ":EXPORT_LATEX_CLASS_OPTIONS: " "[presentation,smaller]")
+                   ,(concat ":EXPORT_BEAMER_THEME: " "default")
+                   ,(concat ":EXPORT_BEAMER_COLOR_THEME: " "default")
+                   ,(concat ":EXPORT_BEAMER_FONT_THEME: " "default")
+                   ,(concat ":EXPORT_BEAMER_INNER_THEME: " "default")
+                   ,(concat ":EXPORT_BEAMER_OUTER_THEME: " "default")
+                   ,(concat ":EXPORT_DESCRIPTION: "  "summary of this project")
+
+                   ":END:"
+                   "%T\n\n%?\n")                ;Place the cursor here finally
+                 "\n")))
   ;;Doc index
   ;;org capture generate the doc index automatically which will be exported as _index.md
   ;;under the sub-directory of the course directory. Typically, the _index.md will
