@@ -1,6 +1,5 @@
 #+title: make STEAM clear
 #+setupfile: ~/Dropbox/zorg/org-templates/enpost.org
-#+OPTIONS: d:figure,sub-problem,bibli,prefix,suffix
 
 * Videos                                :video:
 :LOGBOOK:
@@ -1396,6 +1395,36 @@ So we can visualize them as below:
 
     #+end_prob
 
+:sub-problem:
+    \begin{equation*}
+    \lim_{\Delta\to 0} [u_{\Delta}(t)\delta(t)] = \lim_{\Delta\to 0} [u_{\Delta}(t)\delta(0)] = 0
+    \end{equation*}
+
+And
+\begin{eqnarray*}
+\lim_{\Delta\to 0} [u_{\Delta}(t)\delta_{\Delta}(t)] &=& \lim_{\Delta\to 0 } \frac{1}{2} \frac{d u_{\Delta}^{2}(t)}{dt} \\
+&=& \frac{1}{2} \delta(t)
+\end{eqnarray*}
+Notice that when \(\Delta\to 0\) the item  \( \frac{u_{\Delta}^{2}(t)}{dt} \)
+also approach to \(\delta(t)\).
+
+for equation:
+    \begin{equation*}
+    g(t) = \int_{-\infty}^{+\infty} u( \tau )\delta(t-\tau)d\tau
+    \end{equation*}
+we have
+\begin{equation*}
+g(t) =
+\begin{cases}
+0, & t< 0 \\
+1, & t> 0 \\
+\mathrm{undefined}, & t = 0
+\end{cases}
+
+\end{equation*}
+So \(g(t)\) has the same property as \(u(t)\)
+:END:
+
 
 * Projects    :project:
 [2019-10-05 Sat 16:53]
@@ -1466,6 +1495,9 @@ bibliographystyle:unsrt
  <2020-02-08 Sat 16:58>
 
 #+OPTIONS: toc:nil
+
+
+#+OPTIONS: toc:nil
 * Beamer :beamer:
    [2020-02-13 Thu 09:13]
 ** TODO test beamer
@@ -1474,77 +1506,14 @@ bibliographystyle:unsrt
    :LATEX_TITLE: test beamer
    :EXPORT_LATEX_CLASS: beamer
    :EXPORT_LATEX_CLASS_OPTIONS: [presentation,smaller]
-   :EXPORT_BEAMER_THEME: Madrid
-   :EXPORT_BEAMER_COLOR_THEME: default
-   :EXPORT_BEAMER_FONT_THEME: default
+   :EXPORT_BEAMER_THEME: Berkeley
+   :EXPORT_BEAMER_COLOR_THEME: spruce
+   :EXPORT_BEAMER_FONT_THEME: structurebold
    :EXPORT_BEAMER_INNER_THEME: circles
    :EXPORT_BEAMER_OUTER_THEME: default
    :END:
-
-
  <2020-02-13 Thu 09:14>
 
  \maketitle
 
-*** section 1
-    [2020-02-13 Thu 09:14]
-
-**** frame 1.1
-     [2020-02-13 Thu 09:14]
-
-     level 1.1
-
-    You can also set =EXPORT_LATEX_CLASS_OPTIONS= with =handout= to distribute
-    your presentation in the form of handouts.
-
-*** section 2
-    [2020-02-13 Thu 09:15]
-
-**** frame 2.1
-     [2020-02-13 Thu 09:15]
-
-     level 2.1
-**** frame 2.2
-     [2020-02-13 Thu 09:15]
-
-     level 2.2
-***** level 2.2.1
-      [2020-02-13 Thu 09:16]
-
-      level 2.2.1
-
-*** section 3
-    [2020-02-13 Thu 09:15]
-
-**** frame 3.1
-     [2020-02-13 Thu 11:54]
-
-***** A theorem block                                                :B_theorem:
-       :PROPERTIES:
-       :BEAMER_env: theorem
-       :END:
-
-     The =BEAMER_act= property says to overlay this environment from the
-     second frame onwards.
-
-***** An example block                                          :B_exampleblock:
-       :PROPERTIES:
-       :BEAMER_env: exampleblock
-       :END:
-
-   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-   tempor incididunt ut labore et dolore magna aliqua.
-
-
-***** A title
-       #+Beamer: \framesubtitle{A subtitle}
-
-     - Bullet 1
-     - Bullet 2
-     - Bullet 3
-***** An alert block                                              :B_alertblock:
-      :PROPERTIES:
-      :BEAMER_env: alertblock
-      :END:
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua.
+#+include: "./beamer/beamerMWE.org"
