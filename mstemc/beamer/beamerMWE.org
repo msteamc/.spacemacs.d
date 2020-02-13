@@ -1,0 +1,63 @@
+
+*** section 1
+    [2020-02-13 Thu 09:14]
+
+**** frame 1.1
+     [2020-02-13 Thu 09:14]
+
+     level 1.1
+
+    You can also set =EXPORT_LATEX_CLASS_OPTIONS= with =handout= to distribute
+    your presentation in the form of handouts.
+
+*** section 2
+    [2020-02-13 Thu 09:15]
+
+**** frame 2.1
+     [2020-02-13 Thu 09:15]
+
+     level 2.1
+**** frame 2.2
+     [2020-02-13 Thu 09:15]
+
+     level 2.2
+***** level 2.2.1
+      [2020-02-13 Thu 09:16]
+
+      level 2.2.1
+
+*** section 3
+    [2020-02-13 Thu 09:15]
+
+**** frame 3.1
+     [2020-02-13 Thu 11:54]
+
+***** A theorem block                                                :B_theorem:
+       :PROPERTIES:
+       :BEAMER_env: theorem
+       :END:
+
+     The =BEAMER_act= property says to overlay this environment from the
+     second frame onwards.
+
+***** An example block                                          :B_exampleblock:
+       :PROPERTIES:
+       :BEAMER_env: exampleblock
+       :END:
+
+   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+   tempor incididunt ut labore et dolore magna aliqua.
+
+
+***** A title
+       #+Beamer: \framesubtitle{A subtitle}
+
+     - Bullet 1
+     - Bullet 2
+     - Bullet 3
+***** An alert block                                              :B_alertblock:
+      :PROPERTIES:
+      :BEAMER_env: alertblock
+      :END:
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua.
