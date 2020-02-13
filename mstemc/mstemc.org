@@ -1462,3 +1462,55 @@ bibliographystyle:unsrt
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "wexin") (icon_pack . "fas")  (name . "Wexin")  (url . "/course/signalsandsystemssolution/" ) )
    :END:
  <2020-02-08 Sat 16:58>
+* Beamer :beamer:
+   [2020-02-13 Thu 09:13]
+** TODO test beamer
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: index
+   :LATEX_TITLE: test beamer
+   :EXPORT_LATEX_CLASS: beamer
+   :EXPORT_LATEX_CLASS_OPTIONS: [presentation,smaller]
+   :EXPORT_BEAMER_THEME: CambridgeUS
+   :EXPORT_BEAMER_COLOR_THEME: default
+   :EXPORT_BEAMER_FONT_THEME: default
+   :EXPORT_BEAMER_INNER_THEME: default
+   :EXPORT_BEAMER_OUTER_THEME: default
+   :EXPORT_DESCRIPTION: summary of this project
+   :END:
+ <2020-02-13 Thu 09:14>
+*** level 1
+    [2020-02-13 Thu 09:14]
+
+    level 1
+**** level 1.1
+     [2020-02-13 Thu 09:14]
+
+     level 1.1
+*** level 2
+    [2020-02-13 Thu 09:15]
+
+    \(\sum_{i=1}^{N}\)
+**** level 2.1
+     [2020-02-13 Thu 09:15]
+
+     level 2.1
+**** level 2.2
+     [2020-02-13 Thu 09:15]
+
+     level 2.2
+***** level 2.2.1
+      [2020-02-13 Thu 09:16]
+
+      level 2.2.1
+
+*** level 3
+    [2020-02-13 Thu 09:15]
+
+*** A theorem block
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :BEAMER_act: <2->
+    :END:
+
+  The =BEAMER_act= property says to overlay this environment from the
+  second frame onwards.
