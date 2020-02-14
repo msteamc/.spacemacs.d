@@ -1704,10 +1704,140 @@ x[ \frac{n}{2} ] + \frac{1}{4} x[ \frac{n-2}{2} ] , & n \ \mathrm{even} \\
 \end{equation*}
 Then we express the interconnection of all the three systems.
 \begin{equation*}
-y[n] = x[ \frac{2n}{2} ] + \frac{1}{4} x[ \frac{2n-2}{2} ] = x[n] + \frac{1}{4} x[n-1]
+y[n] = x[ \tfrac{2n}{2} ] + \tfrac{1}{4} x[ \tfrac{2n-2}{2} ] = x[n] + \tfrac{1}{4} x[n-1]
 \end{equation*}
 So the system is an LTI system.
 :END:
+*** Problem 1.43
+    [2020-02-14 Fri 12:16]
+
+    #+ATTR_LATEX: :options []{prob:1-43}
+    #+NAME: prob:1-43
+    #+begin_prob
+    a. Consider a time-invariant system with input \(x(t)\) and output \(y(t)\).
+       Show that if \(x(t)\) is periodic with period \(T\), then so is \(y(t)\).
+       Show that the analogous result also holds in descrete time.
+    b. Give an example of a time-invariant system and a nonperiodic input signal
+       \(x(t)\) such that the corresponding output \(y(t)\) is periodic.
+    #+end_prob
+
+# a
+:sub-problem:
+*Problem 1.43a*
+
+For a time-invariant system, an arbitrary time shifting \(t_{0}\) in the input
+will result in an identical time shifting in the output. So let the \(t_{0}\) be
+the period \(T\), the the output should also be a time shifting \(T\). Because
+the system is period \(x(t) = x(t+T)\), then the output \(y(t) = y(t+T)\).
+
+For the descrete time, the conclusion also holds.
+:END:
+# b
+:sub-problem:
+Suppose that we have a system:
+\begin{equation*}
+y[n] = 1
+\end{equation*}
+Then this system is time-invariant, any input will not change the property of
+its output.
+:END:
+*** Problem 1.44
+    [2020-02-14 Fri 12:37]
+
+    #+ATTR_LATEX: :options []{prob:1-44}
+    #+NAME: prob:1-44
+    #+begin_prob
+    a. Show that causality for a continuous-time linear system is equivalent to
+       the following statement:
+
+       For any time \(t_{0}\) and any input \(x(t)\) such that \(x(t) = 0\) for
+       \(t<t_{0}\), the corresponding output \(y(t)\) must also be zero for \(t<
+       t_{0}\).
+
+       The analogous statement can be made for a discrete-time linear system.
+
+    b. Find a nonlinear system that satisfies the foregoing condition but is not
+       causal.
+
+    c. Find a nonlinear system that is causal but does not satisfy the
+       condition.
+
+    d. Show that invertibility for a discrete-time linear system is equivalent
+       to be the following statement:
+
+       The only input that produces \(y[n] = 0 \) for all \(n\) is \(x[n]= 0\)
+       for all \(n\).
+
+       The analogous statement is also true for a continuous-time linear system.
+
+    e. Find a nonlinear system that satisfies the condition of part (d) but is
+       not invertible.
+
+    #+end_prob
+# a
+:sub-problem:
+*Problem 1.44a*
+
+A system is causal if the output at any time depends on values of the input at
+only the present and past times.
+
+Let's suppose that \(y(t) \neq 0, t< t_{0} \), which mean for some \(x(t) \neq
+0, t< t_{0}\). However this is not true. So for \(x(t) = 0, t< t_{0}\), it must
+be that \(y(t)= 0 , t< t_{0}\)
+
+:END:
+# b
+:sub-problem:
+\(y(t) = x^{2}(t)x^{2}(t+1)\) where \(x(t) = 0, t< t_{0}\).
+:END:
+# c
+:sub-problem:
+\(y(t) = x(t) + 1\)
+:END:
+# d
+:sub-problem:
+First let's proof that suppose  \(y[n] = 0, \forall n\) if \(x[n]=0 ,\forall n\)
+, then the system is invertible.
+
+let \(x_{1}[n]\) and \(x_{2}[n]\) be two arbitrary inputs and these two inputs
+lead to the same output \(y_{1}[n]\) .
+
+\begin{eqnarray*}
+x_{1}[n] &\xrightarrow{\mathcal{S}}& y_{1}[n] \\
+x_{2}[n] &\xrightarrow{\mathcal{S}}& y_{1}[n]
+\end{eqnarray*}
+Because the system is linear.
+\begin{equation*}
+x_{1}[n] - x_{2}[n] \xrightarrow{\mathcal{S}} y_{1}[n]-y_{1}[n] = 0
+\end{equation*}
+So we must have \(x_{1}[n] = x_{2}[n]\) which is not consist with the
+assumption and means that any output \(y_{1}[n]\) must have single one input.
+i.e. the system is invertible.
+
+
+Next we proof that for a invertible linear system, \(y[n] = 0, \forall n \) if
+and only if \(x[n] = 0, \forall n\)
+
+If \(x[n] = 0\), then we have
+\begin{eqnarray*}
+x[n] = 0 &\xrightarrow{\mathcal{S}} &y[n] \\
+\alpha x[n] = 0 &\xrightarrow{\mathcal{S}}&  \alpha y[n]
+\end{eqnarray*}
+
+where \(\alpha\) is arbitrary constants. Because the system is invertible, so
+the same input \(0\) must lead to the same output, so \(y[n]=\alpha y[n] \).
+then \(y[n] = 0\).
+:END:
+# e
+:sub-problem:
+ \(y[n] = x^{m}[n] , m\neq 1 \ \mathrm{and}\ m\neq 0  \)
+
+\(m=1\) \(y[n] = x[n]\) is a linear system.
+\(m=0\), \(y[n] = 1\) does satisfies that \(y[n]= 0, \forall n\)
+:END:
+
+
+
 
 
 * Projects    :project:
