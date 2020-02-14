@@ -1424,6 +1424,83 @@ g(t) =
 \end{equation*}
 So \(g(t)\) has the same property as \(u(t)\)
 :END:
+*** Problem 1.40
+    [2020-02-14 Fri 07:27]
+
+    #+ATTR_LATEX: :options []{prob:1-40}
+    #+NAME: prob:1-40
+    #+begin_prob
+    a. Show that if a system is either additive or homogeneous, it has the
+       property that if the input is identically zero, then the output is also
+       identically zero.
+    b. Determine a system (either in continuous or discrete time) that is
+       neither additive nor homogeneous but which has a zero output if the input
+       is identically zero.
+    c. From part (a) can you include that if the input to a linear system is
+       zero  between times \(t_{1}\) and \(t_{2}\) in continuous time or between
+       times \(n_{1}\) and \(n_{2}\) in descrete time, then its output must also
+       be zero between these same times? Explain your answer.
+    #+end_prob
+
+# a
+:sub-problem:
+*Problem 1.40a*
+
+#+ATTR_LATEX: :options []{}
+#+begin_prf
+Let \(x_{1}(t)\) and \(x_{2}(t)\) be two input signals of system
+\(\mathcal{S}\), and \(y_{1}(t)\) and \(y_{2}(t)\) two output respectively. The
+system is represented as \(y(t) = f(x(t))\). Then
+\begin{eqnarray*}
+y_{1}(t)&=& f(x_{1}(t)) \\
+y_{2}(t)&=& f(x_{2}(t))
+\end{eqnarray*}
+Let \(x_{3}(t)= x_{1}(t) + x_{2}(t)\), then by the definition of additive
+property
+\begin{equation*}
+y_{3}(t) = f(x_{3}(t)) = f(x_{1}(t) + x_{2}(t)) = y_{1}(t) + y_{2}(t)
+\end{equation*}
+If \(x_{1}(t)= x_{2}(t) = 0\) , then \(x_{3}(t) = 0\) and we have
+\begin{equation*}
+f(0) = 2f(0)
+\end{equation*}
+So, \(f(0) = 0\). i.e. If a system is additive and the input is identically
+zero, then the output is also identically zero.
+
+Next we show that if a system is homogeneous, the property also holds.
+
+Let \(x_{1}(t)\) be input signals of system \(\mathcal{S}\), and \(x_{2}(t)= \alpha
+x_{1}(t)\) another input. we have
+\(y_{1}(t) = f(x_{1}(t))\) and \(y_{2}(t) = f(x_{2}(t)) = \alpha f(x_{1}(t))\).
+If \(x_{1}(t)  = 0 \), then \(x_{2}(t) = 0\) so \(y_{2}(t) = f(0) = \alpha
+f(0)\). Then we have \(f(0) = 0 = y_{2}(t)\). i.e. if a system is homogeneous
+and the input is identically zero, then the output is also identically zero.
+#+end_prf
+
+
+:END:
+
+# b
+:sub-problem:
+*Problem 1.40b*
+
+It is easy to construct such a system, for a continuous-time version, we have
+\(y(t) = x^{2}(t)\) and it discrete-time counterparts \(y[n] = x^{2}[n]\)
+:END:
+
+# c
+:sub-problem:
+We cannot reach that conclusion. Because for a system has memory, a certain
+zero period \(t_{1}\) to \(t_{2}\) does not result the same zero period in the
+output. Let's take \(y[n] = x[n-n_{0}]\) where \(n_{0}\neq 0\), the output will
+have a delay ( \(n_{0}\) is positive) and an advance ( \(n_{0}\) is negative).
+:END:
+
+
+
+
+
+
 
 
 * Projects    :project:
