@@ -1569,8 +1569,145 @@ g[n] + g[n-1] = 1 + (-1)^{n} + 1 + (-1)^{n-1} = 2
 Which means that the system is identical as the system in part (a) and hence the
 system is time invariant.
 :END:
+*** Problem 1.42
+    [2020-02-14 Fri 09:48]
+
+    #+ATTR_LATEX: :options []{prob:1-42}
+    #+NAME: prob:1-42
+    #+begin_prob
+    a. Is the following statement true or false?
+
+       The series interconnection of two linear time-invariant system is itself
+       a linear, time-invariant system.
+
+       Justify your answer.
+
+    b. Is the following statement true or false?
+
+       The series interconnection of two nonlinear systems is itself nonlinear.
+
+       Justify your answer.
+
+    c. Consider three systems with the following input-output relationships:
+
+       System 1:
+
+       \begin{equation*}
+        y[n] =
+        \begin{cases}
+        x[n/2], & n\ \mathrm{even} \\
+        0, & n\ \mathrm{odd}
+        \end{cases}
+       \end{equation*}
+
+       System 2:
+
+       \begin{equation*}
+       y[n]  = x[n] + \frac{1}{2}x[n-1] + \frac{1}{4}x[n-2]
+       \end{equation*}
+
+       System 3:
+       \begin{equation*}
+       y[n] = x[2n]
+       \end{equation*}
+
+       Suppose that these systems are connected in series as depicted in Figure
+       below. Find the input-output relationship for the overall interconnected
+       system. Is this system linear? Is it time invariant?
+
+    #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-42.pdf"
+    #+begin_src latex -n -r :results raw :exports none
+    \begin{tikzpicture}
+    [system/.style={mycolor,very thick,draw},
+    arrow/.style={-Stealth,mycolor,very thick},
+    ]
+    \definecolor{mycolor}{RGB}{139,0,0}
+
+    \node (0) at(0,0) {$x[n]$};
+    \node[system] (system1) [right=of 0] {System 1};
+    \node[system] (system2) [right=of system1] {System 2};
+    \node[system] (system3) [right=of system2] {System 3};
+    \node (end) [right=of system3] {$y[n]$};
+    \draw[arrow] (0) -- (system1);
+    \draw[arrow] (system1) -- (system2);
+    \draw[arrow] (system2) -- (system3);
+    \draw[arrow] (system3) -- (end);
+
+    \end{tikzpicture}
+    #+end_src
+
+    #+RESULTS:
+    [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-42.pdf]]
 
 
+    #+ATTR_HTML:  :width 80% :align center
+    #+ATTR_LATEX: :width 0.8\textwidth :align center
+    {{{if-latex(figProb1-42.pdf,figProb1-42.png)}}}
+    #+end_prob
+
+# a
+:sub-problem:
+Let \(\mathcal{S}_{1}\) and \(\mathcal{S}_{2}\) two connected LTI system. Let
+\(x_{11}(t)\) and \(x_{12}(t)\) arbitrary signals, \(a_{1}\) and \(b_{1}\)
+arbitrary consstants.
+
+Then:
+\begin{eqnarray*}
+x_{11}(t)&\xrightarrow{\mathcal{S}_{1}} & y_{11}(t)  \\
+x_{12}(t)&\xrightarrow{\mathcal{S}_{1}} & y_{12}(t)  \\
+\end{eqnarray*}
+Let \(x_{13}(t) = a_{1} x_{11}(t) + b_{1}x_{12}(t)\), then
+\begin{equation*}
+x_{13}(t)  = a_{1} x_{11}(t) + b_{1}x_{12}(t) \xrightarrow{\mathcal{S}_{1}}  y_{13}(t) = a_{1}y_{11}(t) + b_{1} y_{12}(t)
+\end{equation*}
+
+For System \(\mathcal{S}_{2}\), we have the similar results:
+\begin{eqnarray*}
+x_{21}(t)&\xrightarrow{\mathcal{S}_{2}} & y_{21}(t)  \\
+x_{22}(t)&\xrightarrow{\mathcal{S}_{2}} & y_{22}(t)  \\
+\end{eqnarray*}
+Let \(x_{23}(t) = a_{2} x_{21}(t) + b_{2}x_{22}(t)\), then
+\begin{equation*}
+x_{23}(t)  = a_{2} x_{21}(t) + b_{2}x_{22}(t) \xrightarrow{\mathcal{S}_{2}}  y_{23}(t) = a_{2}y_{21}(t) + b_{2} y_{22}(t)
+\end{equation*}
+Because \(S_{1}\) and \(S_{2}\) are interconnected in series. So let \(
+x_{21}(t) = y_{11}(t) \) and \(x_{22}(t) = y_{12}(t)\) we can see the overall
+system is linear.
+
+Next we check the time invariant property of the overall system. Since
+\(\mathcal{S}_{1}\) and \(S_{2}\) are time invariant. we have
+\begin{eqnarray*}
+x_{1}(t-t_{1})&\xrightarrow{\mathcal{S}_{1}}& y_{1}(t-t_{1}) \\
+x_{2}(t-t_{2})&\xrightarrow{\mathcal{S}_{2}}& y_{2}(t-t_{2})
+\end{eqnarray*}
+Since the two systems are in series, the overall system is time invariant.
+:END:
+# b
+:sub-problem:
+False, we just take one counterexample. Consider the following two nonlinear systems.
+\begin{eqnarray*}
+y_{1}[n] &=& x_{1}[n] + 1 \\
+y_{2}[n] &=& x_{2}[n] - 1
+\end{eqnarray*}
+Since the two systems are in series. Let \(y_{1}[n] = x_{2}[n]\), then we have
+the overall system \(y_{2}[n] = x_{1}[n]\) which is linear.
+:END:
+# c
+:sub-problem:
+First we can express the interconnection of system 1 and system 2 as:
+\begin{equation*}
+y[n] =
+\begin{cases}
+x[ \frac{n}{2} ] + \frac{1}{4} x[ \frac{n-2}{2} ] , & n \ \mathrm{even} \\
+\frac{1}{2} x[ \frac{n-1}{2} ] , & n \ \mathrm{odd}
+\end{cases}
+\end{equation*}
+Then we express the interconnection of all the three systems.
+\begin{equation*}
+y[n] = x[ \frac{2n}{2} ] + \frac{1}{4} x[ \frac{2n-2}{2} ] = x[n] + \frac{1}{4} x[n-1]
+\end{equation*}
+So the system is an LTI system.
+:END:
 
 
 * Projects    :project:
