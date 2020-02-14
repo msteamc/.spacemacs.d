@@ -1835,7 +1835,89 @@ then \(y[n] = 0\).
 \(m=1\) \(y[n] = x[n]\) is a linear system.
 \(m=0\), \(y[n] = 1\) does satisfies that \(y[n]= 0, \forall n\)
 :END:
+*** Problem 1.45
+    [2020-02-14 Fri 15:25]
 
+    #+ATTR_LATEX: :options []{prob:1-45}
+    #+NAME: prob:1-45
+    #+begin_prob
+    In Problem 1.37, we introduced the concept of correlation functions. It is
+    often important in practice to compute the correlation function
+    \(\phi_{hx}(t)\) where \(h(t)\) is a fixed given signal, but where \(x(t)\)
+    may be any of a wide variety of signals. In this case, what is done is to
+    design a system \(\mathcal{S}\) with input \(x(t)\) and output
+    \(\phi_{hx}(t)\).
+
+    a. Is \(\mathcal{S}\) linear ? Is \(\mathcal{S}\) time invariant? Is
+       \(\mathcal{S}\) causal? Explain your answers.
+    b. Do any of your answers to part (a) change if we take as the output
+       \(\phi_{xh}(t)\) rather than \(\phi_{hx}(t)\)?
+    #+end_prob
+
+:prefix:
+First, let's recall the definition of \(\phi_{hx}(t)\):
+\begin{equation*}
+\phi_{hx}(t) = \int_{-\infty}^{+\infty} h(t + \tau)x(\tau)d\tau
+\end{equation*}
+:END:
+
+# a
+# hard:
+:sub-problem:
+*Problem 1.37a*
+
+
+Let \(x_{1}(t)\) and \(x_{2}(t)\) two arbitrary input signals, and \(\alpha\)
+and \(\beta\) two arbitrary constants. Let \(x_{3}(t) = \alpha x_{1}(t) + \beta
+x_{2}(t)  \), then we have
+\begin{eqnarray*}
+\phi_{hx_{1}}(t) &=& \int_{-\infty}^{+\infty} h(t+\tau)x_{1}(\tau)d\tau \\
+\phi_{hx_{2}}(t) &=& \int_{-\infty}^{+\infty} h(t+\tau)x_{2}(\tau)d\tau \\
+\phi_{hx_{3}}(t) &=& \int_{-\infty}^{+\infty} h(t+\tau)x_{3}(\tau)d\tau \\
+&=& \int_{-\infty}^{+\infty} h(t+\tau)( \alpha x_{1}(t) + \beta x_{2}(t) )d\tau \\
+&=& \alpha \int_{-\infty}^{+\infty} h(t+\tau)x_{1}(\tau)d\tau  + \beta \int_{-\infty}^{+\infty} h(t+\tau)x_{2}(\tau)d\tau \\
+&=& \alpha \phi_{hx_{1}}(t) + \beta \phi_{hx_{2}}(t)
+\end{eqnarray*}
+Then we have that the system is linear.
+
+Next we check the property of time invariance.
+
+Let \(x_{4}(t) = x_{1}(t+T_{0})\) So
+\begin{eqnarray*}
+\phi_{hx_{4}}(t) &=& \int_{-\infty}^{+\infty} h(t+\tau)x_{4}(\tau)d\tau \\
+&=& \int_{-\infty}^{+\infty} h(t+\tau)x_{1}(\tau + T_{0})d\tau \\
+&=& \int_{-\infty}^{+\infty} h(t+s-T_{0})x_{1}(s)ds \\
+&=& \phi_{hx_{1}}(t-T_{0})
+\end{eqnarray*}
+We have \(\phi_{hx_{4}}(t)\neq \phi_{hx_{1}}(t+T_{0})\). So the system is not
+time invariant.
+
+The system is not causal, because the output depends on all time of the input.
+
+:END:
+# b
+:sub-problem:
+\(\phi_{xh}(t)\) can be expressed as
+\begin{equation*}
+\phi_{xh}(t) = \int_{-\infty}^{+\infty} x(t+ \tau) h(\tau)d\tau
+\end{equation*}
+
+Based on similar analysis as in part (a), we can conclude that the system is
+linear.
+
+Next, we check the property of time invariance.
+Let \(x_{1}(t)\) be arbitrary input signal and \(x_{4}(t) = x_{1}(t+T_{0})\)
+then we have
+\begin{eqnarray*}
+\phi_{x_{4}h}(t) &=& \int_{-\infty}^{+\infty} x_{4}(t+\tau) h(\tau) d\tau \\
+&=& \int_{-\infty}^{+\infty} x_{1}(t+T_{0}+\tau) h(\tau) d\tau \\
+&=& \phi_{x_{1}h}(t+T_{0}) = \phi_{x_{1}h}(t+T_{0})
+\end{eqnarray*}
+Which means that the system is time invariant.
+
+The system is not causal because the output depends on all the value of \(x(t)\).
+
+:END:
 
 
 
