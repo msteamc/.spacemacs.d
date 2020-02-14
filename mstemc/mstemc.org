@@ -1641,10 +1641,6 @@ bibliographystyle:unsrt
    :END:
  <2020-02-08 Sat 16:58>
 
-#+OPTIONS: toc:nil
-
-
-#+OPTIONS: toc:nil
 * Beamer :beamer:
    [2020-02-13 Thu 09:13]
 ** TODO test beamer
@@ -1652,6 +1648,7 @@ bibliographystyle:unsrt
    :EXPORT_FILE_NAME: index
    :LATEX_TITLE: test beamer
    :EXPORT_LATEX_CLASS: beamer
+   :EXPORT_OPTIONS: toc:nil
    :EXPORT_LATEX_CLASS_OPTIONS: [presentation,smaller]
    :EXPORT_BEAMER_THEME: Berkeley
    :EXPORT_BEAMER_COLOR_THEME: spruce
