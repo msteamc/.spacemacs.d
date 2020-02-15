@@ -496,7 +496,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this post")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":projects " "'(\"\" \"\")")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"github\") (icon_pack . \"fab\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
-                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Source\")  (url . \"/course/example/\" ) )")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"file-pdf\") (icon_pack . \"fas\")  (name . \"Docs\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"slideshare\") (icon_pack . \"fas\")  (name . \"Slides\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"twitter\") (icon_pack . \"fab\")  (name . \"Follow\")  (url . \"/course/example/\" ) )")
@@ -586,7 +586,7 @@ See `org-capture-templates' for more information."
                    ,(concat "* TODO " title)
                    ":PROPERTIES:"
                    ,(concat ":EXPORT_FILE_NAME: " "index")
-                   ,(concat ":LATEX_TITLE: " title)
+                   ,(concat ":EXPORT_OPTIONS: " "toc:nil")
                    ,(concat ":EXPORT_LATEX_CLASS: " "beamer")
                    ,(concat ":EXPORT_LATEX_CLASS_OPTIONS: " "[presentation,smaller]")
                    ,(concat ":EXPORT_BEAMER_THEME: " "default")
