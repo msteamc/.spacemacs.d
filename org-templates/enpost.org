@@ -5,28 +5,31 @@
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:nil pri:nil tags:nil
 #+STARTUP: overview
 #+STARTUP: showstars
+#+OPTIONS: d:figure,sub-problem,bibli,prefix,suffix
+
+
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+LaTeX_CLASS: org-article
 #+LaTeX_CLASS_OPTIONS: [koma,a4paper,utopia,12pt,listings-color,microtype,paralist,colorlinks,urlcolor=red]
-#+PROPERTY: header-args :fit yes :border 0cm :results raw :exports none :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 900 -quality 900 -transparent "#ffffff"  -trim -fuzz 3%  :headers '("\\usepackage{pgfplots} \\pgfplotsset{compat=1.16} \\usepackage{tikz} \\usetikzlibrary{arrows,arrows.meta,decorations.pathmorphing,,decorations.pathreplacing,backgrounds,positioning,fit,petri,calc,intersections,through,mindmap,calendar,shadows,mindmap,calendar,graphs,graphdrawing,trees,shapes.misc,quotes,angles}")
+#+PROPERTY: header-args :fit yes :border 0cm :results raw :exports none :imagemagick t :iminoptions -density 600 :imoutoptions -geometry 900 -quality 900 -transparent "#ffffff"  -trim -fuzz 3%  :headers '("\\usepackage{pgfplots} \\pgfplotsset{compat=1.16} \\usepackage{tikz} \\usetikzlibrary{arrows,arrows.meta,decorations.pathmorphing,,decorations.pathreplacing,backgrounds,positioning,fit,petri,calc,intersections,through,mindmap,calendar,shadows,mindmap,calendar,graphs,graphdrawing,trees,shapes.misc,quotes,angles} \\usepackage{smartdiagram}")
 #+HUGO_BASE_DIR: ../../mstemc_hugo/
 #+HUGO: more
 #+SEQ_TODO: TODO NEXT DONE
 #+HUGO_AUTO_SET_LASTMOD: t
 #+hugo_front_matter_key_replace: description>summary
 
-#+BEAMER_THEME: CambridgeUS
 #+BEAMER_HEADER: \definecolor{links}{HTML}{8c1515}
 #+BEAMER_HEADER: \hypersetup{colorlinks=,linkcolor=,urlcolor=links}
-#+BEAMER_HEADER: \setbeamertemplate{itemize items}[default]
-#+BEAMER_HEADER: \setbeamertemplate{enumerate items}[default]
-#+BEAMER_HEADER: \setbeamertemplate{items}[default]
-#+BEAMER_HEADER: \setbeamercolor*{local structure}{fg=darkred}
-#+BEAMER_HEADER: \setbeamercolor{section in toc}{fg=darkred}
+# #+BEAMER_HEADER: \setbeamertemplate{itemize items}[default]
+# #+BEAMER_HEADER: \setbeamertemplate{enumerate items}[default]
+# #+BEAMER_HEADER: \setbeamertemplate{items}[default]
+# #+BEAMER_HEADER: \setbeamercolor*{local structure}{fg=darkred}
+# #+BEAMER_HEADER: \setbeamercolor{section in toc}{fg=darkred}
+#+BEAMER_HEADER: \titlegraphic{\includegraphics[height=1.5cm]{~/Dropbox/mstemc_hugo/static/img/icon-192.png}}
 #+BEAMER_HEADER: \setlength{\parskip}{\smallskipamount}
-#+BEAMER_HEADER: \institute[INST]{Institute\\\url{http://www.institute.edu}}
-#+BEAMER_HEADER: \titlegraphic{\includegraphics[height=1.5cm]{~/Dropbox/mstemc_hugo/static/img/icon-32.png}}
+#+BEAMER_HEADER: \institute[INST]{Make STEAM Clear\\\url{www.makesteamclear.org}}
+#+BEAMER_HEADER: \logo{\includegraphics[height=1.5cm]{~/Dropbox/mstemc_hugo/static/img/icon-192.png}}
 
 
 #+MACRO: if-latex (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) (concat "[[file:~/Dropbox/mstemc_hugo/static/img/tikz/"  $1 "]]") (concat "[[file:~/Dropbox/mstemc_hugo/static/img/tikz/"  $2 "]]") ))
