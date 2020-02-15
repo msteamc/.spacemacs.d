@@ -2067,6 +2067,380 @@ So the output can be sketched as:
 {{{if-latex(figProb1-46b.pdf,figProb1-46b.png)}}}
 
 :END:
+*** Problem 1.47
+    [2020-02-15 Sat 08:01]
+
+    #+ATTR_LATEX: :options []{prob:1-47}
+    #+NAME: prob:1-47
+    #+begin_prob
+    a. Let \(\mathcal{S}\) denote an incrementally linear system, and let
+       \(x_{1}[n]\) be an arbitrary input signal to \(\mathcal{S}\) with
+       corresponding output \(y_{1}[n]\).  Consider the system illustrated in
+       Figure [[figProb1-47a][1-47(a)]].  Show that this system is linear and that, in fact, the overall
+       input-output relationship between \(x[n]\) and \(y[n]\) does not depend
+       on the particular choice of \(x_{1}[n]\).
+    b. Use the result of part (a) to show that \(\mathcal{S}\) can be
+       represented in the form shown in Figure  [[figProb1-47d][1-48]] .
+    c. Which of the following systems are incrementally linear? Justify your
+       answers, and if a system is incrementally linear, identify the linear
+       system \(L\) and the zero-input response \(y_{0}[n]\) or \(y_{0}(t)\) for
+       the representation of the system as shown in Figure 1.48
+       1. \(y[n] = n + x[n] + 2x[n+4]\)
+       2. The system is shown as below
+          \begin{equation*}
+          y[n] =
+          \begin{cases}
+          n/2, & n\ \mathrm{even}\\
+          (n-1)/2 + \sum_{k=-\infty}^{(n-1)/2} x[k],& n\ \mathrm{odd}
+          \end{cases}
+          \end{equation*}
+
+       3. The system is shown as below
+          \begin{equation*}
+          y[n] =
+          \begin{cases}
+          x[n] - x[n-1]  + 3, & \mathrm{if}\ x[0] \geq 0 \\
+          x[n] - x[n-1]  - 3, & \mathrm{if}\ x[0] < 0
+          \end{cases}
+          \end{equation*}
+       4. The system depicted in Figure [[figProb1-47b][1-47(b)]]
+       5. The system depicted in Figure  [[figProb1-47c][1-47(c)]]
+    d. Suppose that a particular incrementaly linear system has a representation
+       as in figure  [[figProb1-47d][1-48]], with \(\mathcal{L}\) denoting the linear system and
+       \(y_{0}[n]\) the zero input reponse, Show that \(S\) is time invariant if
+       and only if \(\mathcal{L}\) is a time-invariant system and \(y_{0}[n]\) is constant.
+
+
+    #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47a.pdf"
+    #+begin_src latex -n -r :results raw :exports none
+    \begin{tikzpicture}
+    [system/.style={mycolor,very thick,draw},
+    arrow/.style={-Stealth,mycolor,very thick},
+    ]
+    \definecolor{mycolor}{RGB}{139,0,0}
+
+    \node (0) at (0,0) {$x[n]$};
+    \node[shape=circle,system] (oplus) [right=of 0] {$+$};
+    \node[system,minimum size = 1cm] (system1) [right=of oplus] {S};
+    \node[shape=circle,system,] (oplus2) [right=of system1] {$+$};
+    \node (x1n) [below=of oplus] {$x_{1}[n]$};
+    \node (y1n) [below=of oplus2] {$y_{1}[n]$};
+    \node (yn) [right=of oplus2] {$y[n]$};
+    \node (a) [below=of system1] {(a)};
+
+    \draw[arrow] (0) -- (oplus.west) node[near end,above] {$+$};
+    \draw[arrow] (oplus.east) -- (system1.west);
+    \draw[arrow] (system1.east) -- (oplus2.west) node[near end,above] {$+$};
+    \draw[arrow] (oplus2.east) -- (yn) ;
+    \draw[arrow] (x1n.north) -- (oplus.south) node[near end,right] {$+$};
+    \draw[arrow] (y1n.north) -- (oplus2.south) node[near end,right] {$-$};
+
+    \end{tikzpicture}
+    #+end_src
+
+    #+RESULTS:
+    [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47a.pdf]]
+
+    #+NAME: figProb1-47a
+    #+ATTR_HTML:  :width 80% :align center
+    #+ATTR_LATEX: :width 0.8\textwidth :align center
+    {{{if-latex(figProb1-47a.pdf,figProb1-47a.png)}}}
+
+    #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47b.pdf"
+    #+begin_src latex -n -r :results raw :exports none
+    \begin{tikzpicture}
+        [system/.style={mycolor,very thick,draw},
+    arrow/.style={-Stealth,mycolor,very thick},
+    ]
+    \definecolor{mycolor}{RGB}{139,0,0}
+
+    \node (0) at (0,0) {$x(t)$};
+    \node[shape=circle,system] (oplus) [right=of 0] {$\times$};
+    \node (t) [above=of oplus] {$t$};
+    \node[system,minimum size = 1cm] (system1) [right=of oplus] {$y(t) = \frac{dw(t)}{dt}$};
+    \node (yn) [right=of system1] {$y(t)$};
+    \node (a) [below=of system1,xshift=-1cm] {(b)};
+
+    \draw[arrow] (0) -- (oplus.west);
+    \draw[arrow] (t.south) -- (oplus.north);
+    \draw[arrow] (oplus.east) -- (system1.west)node [midway,above] {$w(t)$};
+    \draw[arrow] (system1.east) -- (yn);
+
+    \end{tikzpicture}
+    #+end_src
+
+    #+RESULTS:
+    [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47b.pdf]]
+
+    #+NAME: figProb1-47b
+    #+ATTR_HTML:  :width 80% :align center
+    #+ATTR_LATEX: :width 0.8\textwidth :align center
+    {{{if-latex(figProb1-47b.pdf,figProb1-47b.png)}}}
+
+    #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1.47c.pdf"
+    #+begin_src latex -n -r :results raw :exports none
+    \begin{tikzpicture}
+    [system/.style={mycolor,very thick,draw},
+    arrow/.style={-Stealth,mycolor,very thick},
+    ]
+    \definecolor{mycolor}{RGB}{139,0,0}
+
+    \node (xn) at (0,0) {$x[n]$};
+    \node (joint1) [right=of xn] {};
+    \node[system,shape=circle] (oplus1) [above right=of joint1,xshift=0.5cm] {$+$};
+    \node (cospin) [above=of oplus1] {$\cos(\pi n)$};
+
+    \node[system] (system1) [right=of oplus1] {$z[n] = v^{2}[n]$};
+    \node[system] (system2) [below=of system1,yshift=-.8cm] {$w[n] = x^{2}[n]$};
+    \node [below=of system2,xshift=-1cm] {(c)};
+
+    \node[system,shape=circle] (oplus2) [below right=of system1,xshift=0.5cm,yshift=0.4cm] {$+$};
+    \node (yn) [right=of oplus2] {$y[n]$};
+
+    \draw[very thick,mycolor] (xn) -- (joint1.center);
+    \draw[arrow] (joint1.center) |- (oplus1);
+    \draw[arrow] (cospin) -- (oplus1);
+    \draw[arrow] (joint1.center) |- (system2);
+    \draw[arrow] (oplus1.st) -- (system1.west) node[midway,above] {$v[n]$};
+    \draw[arrow] (system1.east) -| (oplus2) node[very near start,above]{$z[n]$} node[near end,left]{$+$};
+
+    \draw[arrow] (system2.east) -| (oplus2) node[very near start,above]{$w[n]$} node[near end,left]{$-$};
+
+    \draw[arrow] (oplus2.east) -- (yn);
+
+    \end{tikzpicture}
+    #+end_src
+
+    #+RESULTS:
+    [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1.47c.pdf]]
+
+
+
+    #+NAME: figProb1-47c
+    #+ATTR_HTML:  :width 80% :align center
+    #+ATTR_LATEX: :width 0.8\textwidth :align center
+    {{{if-latex(figProb1.47c.pdf,figProb1.47c.png)}}}
+
+    #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47d.pdf"
+    #+begin_src latex -n -r :results raw :exports none
+    \begin{tikzpicture}
+    [system/.style={mycolor,very thick,draw},
+    arrow/.style={-Stealth,mycolor,very thick},
+    ]
+    \definecolor{mycolor}{RGB}{139,0,0}
+
+    \node (xt) at (0,0) {$x(t)$};
+
+    \node[system] (system1) [right=of xt] {Linear System};
+    \node [below=of system1,xshift=0.5cm] {(d)};
+    \node[system,shape=circle] (oplus)  [right=of system1] {$+$};
+    \node (y0t) [above=of oplus] {$y_{0}(t)$};
+    \node (yt) [right=of oplus] {$y(t)$};
+
+    \draw[arrow] (xt) -- (system1);
+    \draw[arrow] (system1) -- (oplus);
+    \draw[arrow] (y0t) -- (oplus);
+    \draw[arrow] (oplus) -- (yt);
+    \end{tikzpicture}
+    #+end_src
+
+    #+RESULTS:
+    [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47d.pdf]]
+
+    #+NAME:figProb1-47d
+    #+ATTR_HTML:  :width 80% :align center
+    #+ATTR_LATEX: :width 0.8\textwidth :align center
+    {{{if-latex(figProb1-47d.pdf,figProb1-47d.png)}}}
+
+    #+end_prob
+
+# a
+:sub-problem:
+*Problem 1.47a*
+
+An incrementally linear system can be expressed as Figure [[figProb1-47d][1-47d]] : a linear
+system followed by another signal equal to the zero-input response of the
+system. Because \(\mathcal{S}\) is an incrementally linear system, the output
+\(y[n] = y^{'}[n] - y_{1}[n]\) where \(y^{'}[n]\) is the output of
+\(\mathcal{S}\). The \(y^{'}[n]\) contains the response of \(x[n]\) and
+\(x_{1}[n]\) i.e. \(y^{'}[n]\) at lease contains \(y_{1}[n]\). So \(y[n] =
+y^{'}[n] - y_{1}[n]\) will not containt the zero-input response of system
+\(\mathcal{S}\). and the overall system from \(x[n]\) to \(y[n]\) only have the
+result of the linear part of system \(\mathcal{S}\) hence the system is linear.
+
+Furthermore, no matter what \(x_{1}[n]\) we choose, its effect will be cancelled
+by substracting \(y_{1}[n]\). hence, the overall input-output relationship
+between \(x[n]\) and \(y[n]\) does not depend on the particular choice of \(x_{1}[n]\).
+:END:
+
+# b
+:sub-problem:
+*Problem 1.47b*
+
+\(\mathcal{S}\) is an incrementally linear system. By substracting its
+zero-input response \(y_{0}[n]\) we have a linear system.
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47b1.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+    [system/.style={mycolor,very thick,draw},
+    arrow/.style={-Stealth,mycolor,very thick},
+    ]
+    \definecolor{mycolor}{RGB}{139,0,0}
+
+    \node (0) at (0,0) {$x[n]$};
+    \node[system,minimum size = 1cm] (system1) [right=of 0] {S};
+    \node[shape=circle,system] (oplus) [right=of system1] {$+$};
+    \node[shape=circle,system,] (oplus2) [right=of oplus] {$+$};
+    \node (x1n) [below=of oplus] {$y_{0}[n]$};
+    \node (y1n) [below=of oplus2] {$y_{0}[n]$};
+    \node (yn) [right=of oplus2] {$y[n]$};
+
+    \draw[arrow] (0) -- (system1.west);
+    \draw[arrow] (system1.east) -- (oplus.west)node [near end,above] {$+$};
+    \draw[arrow] (oplus.east) -- (oplus2.west)node[near start,above] {$y^{'}[n]$} node[near end,above] {$+$};
+    \draw[arrow] (oplus2) -- (yn);
+    \draw[arrow] (x1n.north) -- (oplus.south) node[near end,right] {$-$};
+    \draw[arrow] (y1n.north) -- (oplus2.south) node[near end,right] {$+$};
+
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47b1.pdf]]
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb1-47b1.pdf,figProb1-47b1.png)}}}
+
+The system from \(x[n]\) to \(y^{'}[n]\) is the linear part, and the overall
+input-output is the system \(\mathcal{S}\) represented as incrementally linear system.
+:END:
+# c
+:sub-problem:
+*Problem 1.47c-1*
+
+The system is incrementally linear with the linear part:
+\begin{equation*}
+x[n] \xrightarrow{\mathcal{L}} x[n] + 2x[n+4]
+\end{equation*}
+and the zero-input response
+\begin{equation*}
+y_{0}[n] = n
+\end{equation*}
+
+
+*Problem 1.47c-2*
+
+The system is incrementally linear with the linear part:
+\begin{equation*}
+x[n] \xrightarrow{\mathcal{L}}
+\begin{cases}
+0, & n\ \mathrm{even} \\
+\sum_{k=-\infty}^{(n-1)/2}x[k], & n\ \mathrm{odd}
+\end{cases}
+\end{equation*}
+and the zero-input response
+\begin{equation*}
+y_{0}[n] =
+\begin{cases}
+n/2 , & n\ \mathrm{even} \\
+(n-1)/2, & n\ \mathrm{odd}
+\end{cases}
+\end{equation*}
+
+*Problem 1.47c-3*
+
+Not incrementally linear system. because for \(x[0] \geq 0\) there is one
+zero-input response \(+3\), for \(x[0] < 0\), there is one zero-input response
+\(-3\). So the overall system cannot choose one zero-input response.
+
+*Problem 1.47c-4*
+
+The overall system can be expressed as
+
+\begin{equation*}
+y(t) = x(t) + t\frac{dx(t)}{t}
+\end{equation*}
+
+The system is linear itself and of course is incrementally linear with zero-input
+reponse zero.
+
+
+*Problem 1.47c-5*
+
+The overall system can be expressed as:
+\begin{eqnarray*}
+y[n]&=& (x[n] + \cos(\pi n))^{2} - (x^{2}[n]) \\
+&=& 2x[n]\cos(\pi n) + \cos^{2}(\pi n)
+\end{eqnarray*}
+
+Therefore, the system is incrementally linear with the linear part:
+\begin{equation*}
+x[n] \xrightarrow{\mathcal{L}} 2x[n]\cos(\pi n)
+\end{equation*}
+
+and the zero-input response
+\begin{equation*}
+y_{0}[n] = \cos^{2}(\pi n)
+\end{equation*}
+
+:END:
+# d
+:sub-problem:
+*Problem 1.47d*
+
+First, let's proof that if \(\mathcal{S}\) is time invariant we can conclude
+that \(\mathcal{L}\) is a time-invariant system and \(y_{0}[n]\) is constant
+
+For the linear part we have:
+\begin{equation*}
+x[n] \xrightarrow{\mathcal{L}} L[n]
+\end{equation*}
+And the zero-input part.
+\begin{equation*}
+y[n] = L[n] + y_{0}[n]
+\end{equation*}
+
+Suppose \(\mathcal{S}\) is time invariant, let \(x_{1}[n]\) and arbitrary input signal.
+
+\begin{equation*}
+y_{1}[n] = x_{1}[n] + y_{0}[n]
+\end{equation*}
+
+and let \(x_{2}[n]\) be \(x_{1}[n-n_{0}]\), where \(n_{0}\) is an arbitrary integer So
+\begin{equation*}
+y_{2}[n] = x_{2}[n] + y_{0}[n] = x_{1}[n-n_{0}] + y_{0}[n]
+\end{equation*}
+
+we also have \(y_{1}[n-n_{0}] = x_{1}[n-n_{0}] + y_{0}[n-n_{0}]\) and \(y_{2}[n]
+= y_{1}[n-n_{0}]\), so we have \(y_{0}[n] = y_{0}[n-n_{0}]\). Since \(n_{0}\) is
+an arbitrary integer, so \(y_{0}[n]\) must be an constant.
+
+Also \(y_{2}[n] = y_{1}[n-n_{0}]\) also implies that \(L_{1}(n-n_{0}) =
+L_{2}[n]\) which means that the linear part is time invariant.
+
+Next, let's proof that if \(\mathcal{L}\) is a time-invariant system and
+\(y_{0}[n]\) is constant then \(\mathcal{S}\) is time invariant. This is easy to
+reach when we write \(\mathcal{S}\) as linear part plus and the zero-input
+consponse:
+
+For the linear part we have:
+\begin{equation*}
+x[n] \xrightarrow{\mathcal{L}} L[n]
+\end{equation*}
+And the zero-input part.
+\begin{equation*}
+y[n] = L[n] + y_{0}[n]
+\end{equation*}
+
+\(\mathcal{L}\) is time-invariant means that \(L[n]\) will experience the same
+time shifting as \(x[n]\) will be. \(y_{0}[n]\) is constant means that
+\(y_{0}[n]\) will not change as time shifts. So \(\mathcal{S}\) is time-invariant.
+
+:END:
+
 
 
 * Projects    :project:
