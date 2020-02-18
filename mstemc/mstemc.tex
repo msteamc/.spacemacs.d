@@ -3,109 +3,34 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows,decorations.pathmorphing,,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.misc,mindmap,calendar,shadows,mindmap,calendar,graphdrawing,trees,shapes.misc,quotes,angles}
 \definecolor{mycolor}{RGB}{139,0,0}
+\usetheme{CambridgeUS}
 \author{Eason}
 \date{\today}
-\title{Problem 1.21}
+\title{A title}
+\definecolor{links}{HTML}{8c1515}
+\hypersetup{colorlinks=,linkcolor=,urlcolor=links}
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{items}[default]
+\setbeamercolor*{local structure}{fg=darkred}
+\setbeamercolor{section in toc}{fg=darkred}
+\setlength{\parskip}{\smallskipamount}
+\institute[INST]{Institute\\\url{http://www.institute.edu}}
+\titlegraphic{\includegraphics[height=1.5cm]{~/Dropbox/mstemc_hugo/static/img/icon-32.png}}
 \hypersetup{
  pdfauthor={Eason},
- pdftitle={Problem 1.21},
+ pdftitle={A title},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={Emacs 26.3 (Org mode 9.2.6)},
  pdflang={English}}
 \begin{document}
 
+\framesubtitle{A subtitle}
 
-
-
-\begin{prob}[]{prob:1-21}
-A continuout-time signal \(x(t)\) is shown below. Sketch and label carefully
-each of the following signals:
-\begin{equation*}
-\begin{array}{ll}
-\mathbf{(a)}: x(t-1) & \mathbf{(b)}: x(2-t) \\
-\mathbf{(c)}: x(2t + 1) & \mathbf{(d)}: x(4-\frac{t}{2}) \\
-\mathbf{(e)}: [x(t) + x(-t)] u(t) & \mathbf{(f)}: x(t)\delta(t +\frac{3}{2}) - \delta(t-\frac{3}{2})
-\end{array}
-\end{equation*}
-\begin{center}
-\includegraphics[width=0.5\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21-0.pdf}
-\end{center}
-\label{prob:1-21}
-\end{prob}
-
-
-
-Before we figure all the sub-problem out. Let's review how \(a\) and \(b\)
-affect \(x(at+b)\) . we know that:
-
-\begin{enumerate}
-\item when \(|a| < 1\), \(x(t)\) will be linearly stretched;
-\item when \(|a|>1\), \(x(t)\) will be linearly compressed;
-\item when \(a < 0\), \(x(t)\) will be reversed;
-\item when \(b\neq 0\) , \(x(t)\) will be shifted in time.
-\item when \(a>0, b>0\), \(x(t)\) will be shifted left.
-\item when \(a>0,b<0\), \(x(t)\) will be shifted right.
-\item when \(a<0,b>0\), \(x(t)\) will be reversed first then shifted right.
-\item when \(a<0,b<0\), \(x(t)\) will be reversed first, then shifted left.
-\end{enumerate}
-
-\textbf{Problem 1.21a}
-
-Based on the conclusion given above, we know that \(x(t-1)\) can be obtained by right
-shifting \(x(t)\) with step \(1\). So the result can be visualized as follows.
-
-
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21a.pdf}
-\end{center}
-
-\textbf{Problem 1.21b}
-
-For \(x(2-t)\), we re-write it as \(x(-(t-2))\) which can be obtained by first
-reversing \(x(t)\) then right shifting it with step \(2\). The result can be
-shown as follows
-
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProblem1-21b.pdf}
-\end{center}
-
-\textbf{Problem 1.21c}
-
-\(x(2t + 1)\) can be re-written as \(x(2(t+\frac{1}{2}))\) which means that
-\(x(2t+1)\) can be obtained by first linearly compressing \(x(t)\) with factor 2
-then left shifting compressed signal by \(\frac{1}{2}\).
-
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21c.pdf}
-\end{center}
-
-\textbf{Problem 1.21d}
-
-\(x(4-\frac{t}{2})\) can be re-written as \(x( -\frac{1}{2}( t - 8 ) )\) which
-means that \(x(4-\frac{t}{2})\)  can be obtained by first linearly stretching
-\(x(t)\) by factor \(2\) then right shifting it with step \(8\).
-
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21d.pdf}
-\end{center}
-
-\textbf{Problem 1.21e}
-
-At first glance, \(\big[x(t) + x(-t)\big] u(t)\) is \(0\) if \(t<0\) .
-
-If \(t > 0\), we have to figure out \(x( -t )\). After obtaining \(x(-t)\), we
-add the right part of \(x(t)\) and left part of \(x(-t)\) then we have \([x(t) +
-x(-t)]u(t)\)
-
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProblem1-21e.pdf}
-\end{center}
-
-\(x(t)\delta(t +\frac{3}{2}) - \delta(t-\frac{3}{2})\) only have two points with
-non-negative values: \(t=\frac{3}{2}\) and \(t=-\frac{3}{2}\).
-
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/Users/chaolongzhang/Dropbox/mstemc_hugo/static/img/tikz/figProb1-21f.pdf}
-\end{center}
+\begin{itemize}
+\item Bullet 1
+\item Bullet 2
+\item Bullet 3
+\end{itemize}
 \end{document}
