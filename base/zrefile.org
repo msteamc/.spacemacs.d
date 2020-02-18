@@ -182,6 +182,7 @@ CLOCK: [2020-02-02 Sun 06:56]--[2020-02-02 Sun 06:57] =>  0:01
  Added:<2020-02-10 Mon 10:08>
 * TODO html footer
  Added:<2020-02-10 Mon 10:12>
+<<<<<<< HEAD
 * TODO org to beamer and reveal.js
  Added:<2020-02-12 Wed 07:55>
 * TODO [#A] 深入理解浏览器
@@ -190,3 +191,33 @@ CLOCK: [2020-02-02 Sun 06:56]--[2020-02-02 Sun 06:57] =>  0:01
 浏览器的工作原理，可能涉及到计算机网络，html css js
 * TODO 更新manim
 [2020-02-16 Sun 05:59]
+=======
+
+1. tensor
+2. abstract algebra and complex analysis. topology, algebraic geometry.
+   topology, algebraic geometry
+3. z-transform and the laplace transform
+4. information theory
+5. manifolds
+6. ordinary deferential equations.
+7. Stochastic processes and applications to ML/AI and Finance
+8. homomorphic encryption
+9. Elliptic curves cryptography
+10. traveling salesman or number partition problem
+11. Measure theory
+12. permutations
+13. encryption/cryptography
+14. set theory and trigonometry
+15. essense of statistics
+16. math for quantum computing
+17. math for data science
+18. millennium prize problems
+19. concepts in galois theory
+20. basic data structure/algorithms such sorting/searching/balanced binary
+    trees/heaps/hash tables/linear programming
+21. outer algebra as an extension of the linear algebra
+22. Feigenbaum constant/Chaos theory
+23. Matrix analysis Toplietz matrix
+24. line and surface integrals(Green's and Stokes theorem)
+25. Geometric Algebra
+>>>>>>> 5ea57a261e2083f454bc5df6871b4fa7da0ceea1
