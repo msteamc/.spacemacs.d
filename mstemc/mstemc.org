@@ -136,12 +136,6 @@ CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
 
 #+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems2.org"
 
-*** Reference
-
-:bibli:
- bibliography:~/Dropbox/research_library/zcl.bib
- bibliographystyle:unsrt
-:end:
 
 ** TODO Signals and Systems Chapter 1 Problems Part 3 (1.32-1.47) :SignalsAndSystems:
    :PROPERTIES:
