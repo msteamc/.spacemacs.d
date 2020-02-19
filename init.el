@@ -22,6 +22,7 @@ values."
      javascript
      rust
      octave
+     pdf-tools
      ;; rust
      markdown
      html
@@ -363,6 +364,7 @@ layers configuration. You are free to put any user code."
   (setq pyim-page-tooltip 'popup)
   ;; 选词框显示5个候选词
   (setq pyim-page-length 6)
+  (linum-mode -1)
   (setenv "LANG" "en_US.UTF-8")
   (evil-set-initial-state 'sdcv-mode 'emacs)
 
