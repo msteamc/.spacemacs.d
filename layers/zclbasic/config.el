@@ -37,6 +37,7 @@
     (setenv "PATH" (mapconcat 'identity mypaths ";") )
     (setq exec-path (append mypaths (list "." exec-directory)))))
 
+
 ;; ido
 (setq ido-use-filename-at-point 'guess)
 (setq ido-create-new-buffer 'always)
@@ -51,3 +52,4 @@
           (lambda ()
             (define-key dired-mode-map (kbd "i")
               (lambda () (interactive) (find-alternate-file "..")))))
+;; stop cursor blinking bug when typing Chinese/Japanese on OS X

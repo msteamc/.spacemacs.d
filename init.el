@@ -67,7 +67,13 @@ values."
              bibtex-completion-pdf-field "File"
              bibtex-completion-pdf-extension '(".pdf" ".djvu")
              )
-     org
+     (org :variables
+          ;; Turn off all org auto indentation completely
+          org-startup-indented nil
+          ;; Turn off manual indentation completely,
+          ;; AKA when you suddenly press TAB or =
+          org-adapt-indentation nil
+          )
      chinese
      zclorgbasic
      zclorggtd
@@ -367,6 +373,8 @@ layers configuration. You are free to put any user code."
   (linum-mode -1)
   (setenv "LANG" "en_US.UTF-8")
   (evil-set-initial-state 'sdcv-mode 'emacs)
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize))
 
   )
 ;; Do not write anything past this comment. This is where Emacs will
@@ -385,11 +393,11 @@ layers configuration. You are free to put any user code."
  '(org-preview-latex-image-directory "/Users/chaolongzhang/Documents/ltximg/")
  '(package-selected-packages
    (quote
-    (ox-reveal dired-git-info ox-hugo org-journal gnu-elpa-keyring-update flyspell-popup powerthesaurus yaml-mode web-beautify livid-mode skewer-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode sdcv xr anaconda-mode lsp-ui cquery company-lsp lsp-mode stickyfunc-enhance srefactor pyim-basedict pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib realgud powerline spinner alert log4e gntp markdown-mode hydra dash-functional parent-mode xcscope haml-mode gitignore-mode fringe-helper git-gutter+ git-gutter flyspell-correct seq pkg-info epl flx magit-popup ghub let-alist iedit anzu goto-chg undo-tree highlight web-completion-data pos-tip bind-map bind-key packed f s memoize auto-complete popup htmlize pandoc-mode ox-pandoc ht wc-mode all-the-icons key-chord tablist parsebib biblio biblio-core org-plus-contrib ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toml-mode toc-org tagedit spaceline smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-mode rainbow-identifiers racer pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el org-present org-pomodoro org-mobile-sync org-bullets open-junk-file neotree move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative link-hint less-css-mode jdee ibuffer-projectile hungry-delete highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-pydoc helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-flx helm-descbinds helm-css-scss helm-cscope helm-company helm-c-yasnippet helm-ag google-translate gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy flyspell-correct-helm flycheck-rust flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-search-highlight-persist evil-numbers evil-mc evil-lisp-state evil-indent-plus evil-iedit-state evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z esh-help emmet-mode elisp-slime-nav disaster diminish cython-mode company-web company-quickhelp company-c-headers company-auctex company-anaconda column-enforce-mode color-identifiers-mode cmake-mode clean-aindent-mode cargo bracketed-paste auto-highlight-symbol auto-dictionary auctex-latexmk aggressive-indent adaptive-wrap ace-jump-helm-line ac-ispell)))
+    (org-clock-convenience ox-reveal dired-git-info ox-hugo org-journal gnu-elpa-keyring-update flyspell-popup powerthesaurus yaml-mode web-beautify livid-mode skewer-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode sdcv xr anaconda-mode lsp-ui cquery company-lsp lsp-mode stickyfunc-enhance srefactor pyim-basedict pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib realgud powerline spinner alert log4e gntp markdown-mode hydra dash-functional parent-mode xcscope haml-mode gitignore-mode fringe-helper git-gutter+ git-gutter flyspell-correct seq pkg-info epl flx magit-popup ghub let-alist iedit anzu goto-chg undo-tree highlight web-completion-data pos-tip bind-map bind-key packed f s memoize auto-complete popup htmlize pandoc-mode ox-pandoc ht wc-mode all-the-icons key-chord tablist parsebib biblio biblio-core org-plus-contrib ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toml-mode toc-org tagedit spaceline smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-mode rainbow-identifiers racer pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el org-present org-pomodoro org-mobile-sync org-bullets open-junk-file neotree move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative link-hint less-css-mode jdee ibuffer-projectile hungry-delete highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-pydoc helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-flx helm-descbinds helm-css-scss helm-cscope helm-company helm-c-yasnippet helm-ag google-translate gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy flyspell-correct-helm flycheck-rust flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-search-highlight-persist evil-numbers evil-mc evil-lisp-state evil-indent-plus evil-iedit-state evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z esh-help emmet-mode elisp-slime-nav disaster diminish cython-mode company-web company-quickhelp company-c-headers company-auctex company-anaconda column-enforce-mode color-identifiers-mode cmake-mode clean-aindent-mode cargo bracketed-paste auto-highlight-symbol auto-dictionary auctex-latexmk aggressive-indent adaptive-wrap ace-jump-helm-line ac-ispell)))
  '(pyim-dicts
    (quote
     ((:name "bigdict" :file "~/Dropbox/Tools/pyim-bigdict.pyim"))))
- '(python-shell-interpreter "ipython3" t)
+ '(python-shell-interpreter "/Users/chaolongzhang/anaconda3/bin/ipython3" t)
  '(realgud-safe-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

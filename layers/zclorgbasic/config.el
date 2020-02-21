@@ -55,6 +55,10 @@
   (define-key org-mode-map (kbd "C-c t") 'org-toggle-blocks)
   (setq org-startup-indented t
         org-hide-leading-stars nil)
-
   (setq org-startup-indented nil)
+  ;; (defun zcl/turn-off-org-indent-mode()
+  ;;   (org-indent-mode -1)
+  ;;   )
+  ;; (add-hook 'post-command-hook 'zcl/turn-off-org-indent-mode)
+
   )
