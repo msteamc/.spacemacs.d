@@ -385,7 +385,7 @@ layers configuration. You are free to put any user code."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(gud-pdb-command-name "python3 -m pdb")
- '(org-babel-python-command "python3.6")
+ '(org-babel-python-command "python")
  '(org-format-latex-options
    (quote
     (:foreground default :background default :scale 2.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
@@ -397,7 +397,7 @@ layers configuration. You are free to put any user code."
  '(pyim-dicts
    (quote
     ((:name "bigdict" :file "~/Dropbox/Tools/pyim-bigdict.pyim"))))
- '(python-shell-interpreter "/Users/chaolongzhang/anaconda3/bin/ipython3" t)
+ '(python-shell-interpreter "/Users/chaolongzhang/anaconda3/bin/ipython3")
  '(realgud-safe-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

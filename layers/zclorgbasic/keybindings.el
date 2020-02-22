@@ -87,6 +87,7 @@
 (spacemacs/set-leader-keys "ot" 'bh/org-todo)
 (spacemacs/set-leader-keys "ov" 'visible-mode)
 (spacemacs/set-leader-keys "ow" 'bh/widen)
+(spacemacs/set-leader-keys "oz" 'org-indent-mode)
 (define-key org-mode-map (kbd "C-i") 'nil)
 (spacemacs/set-leader-keys-for-major-mode 'org-agenda-mode
   ":" 'org-agenda-set-tags
