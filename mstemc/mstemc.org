@@ -136,7 +136,6 @@ CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
 
 #+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems2.org"
 
-
 ** TODO Signals and Systems Chapter 1 Problems Part 3 (1.32-1.47) :SignalsAndSystems:
    :PROPERTIES:
    :EXPORT_FILE_NAME: index
@@ -165,6 +164,319 @@ CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
 {{{titlepage(figProb1-47d)}}}
 
 #+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems3.org"
+
+
+** TODO Working with Python code in Emacs Org
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:LATEX_TITLE: Working with Python code in Emacs Org
+:EXPORT_HUGO_SECTION: post
+:EXPORT_HUGO_BUNDLE: working-with-python-code-in-emacs-org
+:EXPORT_DESCRIPTION: In this post, I will show you how to work with Python code in Emacs Org
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("project-solution-manual-of-signals-and-systems-by-oppenheim")
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "github") (icon_pack . "fab")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "file-pdf") (icon_pack . "fas")  (name . "Docs")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "slideshare") (icon_pack . "fas")  (name . "Slides")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "twitter") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "facebook") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "reddit") (icon_pack . "fab")  (name . "Listen")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "instagram") (icon_pack . "fab")  (name . "Inst")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weibo") (icon_pack . "fab")  (name . "Weibo")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weixin") (icon_pack . "fab")  (name . "Weixin")  (url . "/course/example/" ) )
+:END:
+:LOGBOOK:
+CLOCK: [2020-02-21 Fri 20:33]--[2020-02-21 Fri 20:34] =>  0:01
+:END:
+<2020-02-21 Fri 20:33>
+
+# blank lines not OK in indented blocks, and don't use return()
+# Source block is passed directly to interactive python;
+# value is value of _ at end.
+#+begin_src python :session
+def foo(x):
+  if x>0:
+    return x+1
+  else:
+    return x-1
+
+foo(1)
+#+end_src
+
+# blank lines OK in indented blocks, and use return()
+# Entire source block will get indented and used as the body of main()
+#+begin_src python
+def foo(x):
+  if x>0:
+    return x+1
+
+  else:
+    return x-1
+
+return foo(5)
+#+end_src
+
+#+RESULTS:
+6
+
+#+begin_src python :results output
+
+#+end_src
+*** E39: dic
+[2020-02-22 Sat 21:36]
+
+
+#+begin_src python :results output
+states = {
+    'Oregon':'OR',
+    'Florida':'FL',
+    'California':'CA',
+    'New York':'NY',
+    'Michigan':'MI'
+}
+
+# create a basic set of states and some cities in them
+cities = {
+    'CA': 'San Francisco',
+    'MI': 'Detroit',
+    'FL': 'Jacksonville'
+}
+
+# add some more cities
+cities['NY'] = 'New York'
+cities['OR'] = 'Portland'
+
+# print out some cities
+print('-'*10)
+
+print("NY State has:", cities['NY'])
+print("OR State has:", cities['OR'])
+
+# print some states
+print('-'*10)
+print("Michigan's abbreviation is: ", states['Michigan'])
+print("Florida's abbreviation is: ", states['Florida'])
+
+# do it by using the state then cities dict
+print('-'*10)
+print("Michigan has: ", cities[states['Michigan']])
+print("Florida has: ", cities[states['Florida']])
+
+# print every state a bbreviation
+print('-'*10)
+for state,abbrev in list(cities.items()):
+    print(f"{state} state is abbreviated {abbrev}")
+
+# print every city in state
+print('-'*10)
+for abbrev, city in list(states.items()):
+    print(f"{abbrev} has the city {city}")
+
+# now do both at the same time
+print('-'*10)
+for state,abbrev in list(states.items()):
+    print(f"{state} state is abbreviated {abbrev}")
+    print(f"and has city {cities[abbrev]}")
+
+print('-'*10)
+# safely get a abbreviation by state that might not be there
+state = states.get('Texas')
+
+if not state:
+    print("Sorry, no Texas")
+
+# get a  city with a default value
+city = cities.get('TX', 'Does Not Exist')
+print(f"The city for the state 'TX' is :{city}")
+#+end_src
+
+#+RESULTS:
+----------
+NY State has: New York
+OR State has: Portland
+----------
+Michigan's abbreviation is:  MI
+Florida's abbreviation is:  FL
+----------
+Michigan has:  Detroit
+Florida has:  Jacksonville
+----------
+CA state is abbreviated San Francisco
+MI state is abbreviated Detroit
+FL state is abbreviated Jacksonville
+NY state is abbreviated New York
+OR state is abbreviated Portland
+----------
+Oregon has the city OR
+Florida has the city FL
+California has the city CA
+New York has the city NY
+Michigan has the city MI
+----------
+Oregon state is abbreviated OR
+and has city Portland
+Florida state is abbreviated FL
+and has city Jacksonville
+California state is abbreviated CA
+and has city San Francisco
+New York state is abbreviated NY
+and has city New York
+Michigan state is abbreviated MI
+and has city Detroit
+----------
+Sorry, no Texas
+The city for the state 'TX' is :Does Not Exist
+*** E40: class
+[2020-02-23 Sun 09:42]
+
+#+begin_src python :results output
+class Song(object):
+    def __init__(self,lyrics):
+        self.lyrics = lyrics
+
+
+    def sing_me_a_song(self):
+        for line in self.lyrics:
+            print(line)
+happy_bday = Song(["Happy birthday to you",
+                   "I don't want to get sued",
+                   "So I'll stop right these"])
+bulls_on_parade = Song(["They rally around tha family",
+                        "With pockets full of shells"])
+
+happy_bday.sing_me_a_song()
+bulls_on_parade.sing_me_a_song()
+#+end_src
+
+#+RESULTS:
+Happy birthday to you
+I don't want to get sued
+So I'll stop right these
+They rally around tha family
+With pockets full os shells
+*** E41: learning to speak object-oriented
+[2020-02-23 Sun 09:46]
+*** E44a
+[2020-02-23 Sun 11:26]
+
+
+#+begin_src python :results output
+class Parent(object):
+
+    def implicit(self):
+        print("Parent implicit()")
+
+class Child(Parent):
+    pass
+
+dad = Parent()
+son = Child()
+
+dad.implicit()
+son.implicit()
+#+end_src
+
+#+RESULTS:
+Parent implicit()
+Parent implicit()
+
+*** E44b
+[2020-02-23 Sun 11:28]
+
+#+begin_src python :results output
+class Parent(object):
+
+    def override(self):
+        print("Parent override()")
+
+class Child(Parent):
+
+    def  override(self):
+        print("Child override()")
+
+
+dad = Parent()
+son = Child()
+
+dad.override()
+son.override()
+#+end_src
+
+#+RESULTS:
+Parent override()
+Child override()
+*** E44c
+[2020-02-23 Sun 11:32]
+
+#+begin_src python :results output
+class Parent(object):
+
+    def altered(self):
+        print("Parent altered()")
+
+
+class Child(Parent):
+
+    def altered(self):
+        print("CHILD, Before Parent altered()")
+        super(Child,self).altered()
+        print("CHILD, After Parent altered()")
+
+
+dad = Parent()
+son = Child()
+
+dad.altered()
+son.altered()
+#+end_src
+
+#+RESULTS:
+Parent altered()
+CHILD, Before Parent altered()
+Parent altered()
+CHILD, After Parent altered()
+*** E443
+[2020-02-23 Sun 13:45]
+
+#+begin_src python :results output
+class Other(object):
+
+    def override(self):
+        print("OTHER override()")
+    def implicit(self):
+        print("OTHER implicit()")
+    def altered(self):
+        print("OTHER altered()")
+
+class Child(object):
+
+    def __init__(self):
+        self.other = Other()
+
+    def implicit(self):
+        self.other.implicit()
+    def override(self):
+        print("CHILD override()")
+
+    def altered(self):
+        print("CHILD, BEFORE  OTHER  altered()")
+        self.other.altered()
+        print("CHILD, AFTER OTHER altered()")
+
+son = Child()
+
+son.implicit()
+son.override()
+son.altered()
+#+end_src
+
+#+RESULTS:
+OTHER implicit()
+CHILD override()
+CHILD, BEFORE  OTHER  altered()
+OTHER altered()
+CHILD, AFTER OTHER altered()
 
 
 * Projects    :project:
