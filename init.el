@@ -91,7 +91,9 @@ values."
      (syntax-checking :variables
                       syntax-checking-enable-by-default nil)
      version-control
-     python;
+     (python :variables
+             python-enable-yapf-format-on-save t
+             python-sort-imports-on-save t)
      ;;java
      ;;markdown
      ;; zcldiary
