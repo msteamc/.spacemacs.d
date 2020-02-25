@@ -93,6 +93,8 @@ values."
      version-control
      (python :variables
              python-enable-yapf-format-on-save t
+             python-test-runner '(pytest nose)
+             python-fill-column 80
              python-sort-imports-on-save t)
      ;;java
      ;;markdown
@@ -378,6 +380,7 @@ layers configuration. You are free to put any user code."
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize))
   (add-hook 'pdf-view-mode-hook (lambda() (global-linum-mode -1)))
+
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
