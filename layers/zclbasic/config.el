@@ -53,3 +53,36 @@
             (define-key dired-mode-map (kbd "i")
               (lambda () (interactive) (find-alternate-file "..")))))
 ;; stop cursor blinking bug when typing Chinese/Japanese on OS X
+  (defface font-lock-method-call-face
+    '((t . (:foreground "orangered" :bold t)))
+    "Face to display method calls in.")
+
+(setq-default dotspacemacs-lines-numbers '(:relative nil
+                                                     :disabled-for-modes dired-mode
+                                                     doc-view-mode
+                                                     markdown-mode
+                                                     emacs-lisp-mode
+                                                     org-mode
+                                                     pdf-view-mode
+                                                     text-mode
+                                                     :size-limit-kb 1000))
+(setq-default dotspacemacs-lines-numbers '(:relative t
+                                                     :enabled-for-modes c-mode
+                                                     c++-mode
+                                                     :size-limit-kb (* dotspacemacs-large-file-size 1000)))
+(spacemacs/add-to-hooks 'clang-format-buffer-smart-on-save
+                        '(c-mode-hook c++-mode-hook  ))
+
+
+;; use color-rg
+(add-to-list 'load-path "/usrdata/z00293449/Emacs/color-rg-master")
+(require 'color-rg)
+(push '("*color-rg" . emacs) evil-buffer-regexps)
+(spacemacs/set-leader-keys
+  "ri" 'color-rg-search-symbol
+  "rI" 'color-rg-search-input
+  "rp" 'color-rg-search-symbol-in-project
+  "rP" 'color-rg-search-input-in-project
+  "rf" 'color-rg-search-symbol-in-current-file
+  "rF" 'color-rg-search-input-in-current-file
+  )
