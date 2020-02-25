@@ -75,7 +75,7 @@
 
 
 ;; use color-rg
-(add-to-list 'load-path "/usrdata/z00293449/Emacs/color-rg-master")
+(add-to-list 'load-path "~/.spacemacs.d/local/color-rg-master")
 (require 'color-rg)
 (push '("*color-rg" . emacs) evil-buffer-regexps)
 (spacemacs/set-leader-keys
