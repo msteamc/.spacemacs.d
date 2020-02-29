@@ -75,9 +75,9 @@
 
 
 ;; use color-rg
-(add-to-list 'load-path "~/.spacemacs.d/local/color-rg-master")
-(require 'color-rg)
-(push '("*color-rg" . emacs) evil-buffer-regexps)
+;;(add-to-list 'load-path "~/.spacemacs.d/local/color-rg-master")
+;;(require 'color-rg)
+;;(push '("*color-rg" . emacs) evil-buffer-regexps)
 (spacemacs/set-leader-keys
   "ri" 'color-rg-search-symbol
   "rI" 'color-rg-search-input
