@@ -10,7 +10,7 @@
       :defer t
       :init
       ))
-(defun zclorg/init-ox-hugo()
+(defun zclorg/post-init-ox-hugo()
   (use-package ox-hugo
     :defer t
     :init

@@ -22,7 +22,7 @@ values."
      javascript
      rust
      octave
-     pdf-tools
+     pdf
      ;; rust
      markdown
      html
@@ -58,7 +58,6 @@ values."
             electric-pair-mode 1)
 
      ;;ycmd
-
      latex
      (bibtex :variables
              org-ref-default-bibliography '("~/Dropbox/research_library/zcl.bib")
@@ -70,6 +69,7 @@ values."
      (org :variables
           ;; Turn off all org auto indentation completely
           org-startup-indented nil
+          org-enable-hugo-support t
           ;; Turn off manual indentation completely,
           ;; AKA when you suddenly press TAB or =
           org-adapt-indentation nil
@@ -106,7 +106,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(cdlatex monokai-theme ox-hugo solarized-theme org-mobile-sync  wc-mode sdcv powerthesaurus all-the-icons ox-reveal)
+   dotspacemacs-additional-packages '(cdlatex monokai-theme ox-hugo solarized-theme wc-mode sdcv powerthesaurus all-the-icons )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(orgit org-projectile org-bullets)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -311,7 +311,7 @@ in `dotspacemacs/user-config'."
   ;;       '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
   ;;         ("org-cn"   . "https://elpa.zilongshanren.com/org/")
   ;;         ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
-  ;; (setq configuration-layer--elpa-archives
+  ;; (setq configuration-layer-elpa-archives
   ;;       '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
   ;;         ("org-cn"   . "http://elpa.emacs-china.org/org/")
   ;;         ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
@@ -377,9 +377,6 @@ layers configuration. You are free to put any user code."
   (linum-mode -1)
   (setenv "LANG" "en_US.UTF-8")
   (evil-set-initial-state 'sdcv-mode 'emacs)
-  (when (memq window-system '(mac ns x))
-    (exec-path-from-shell-initialize))
-  (add-hook 'pdf-view-mode-hook (lambda() (global-linum-mode -1)))
 
   )
 ;; Do not write anything past this comment. This is where Emacs will
@@ -430,3 +427,55 @@ layers configuration. You are free to put any user code."
  '(org-tag ((t (:foreground "light sea green" :weight bold))))
  '(region ((t (:inherit highlight :background "lawn green" :foreground "black"))))
  '(sp-show-pair-match-face ((t (:background "#272822" :foreground "dim gray" :inverse-video t :weight normal)))))
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(gud-pdb-command-name "python3 -m pdb")
+ '(org-babel-python-command "python")
+ '(org-format-latex-options
+   (quote
+    (:foreground default :background default :scale 2.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
+                 ("begin" "$1" "$" "$$" "\\(" "\\["))))
+ '(org-preview-latex-image-directory "/Users/chaolongzhang/Documents/ltximg/")
+ '(package-selected-packages
+   (quote
+    (org-clock-convenience ox-reveal dired-git-info ox-hugo org-journal gnu-elpa-keyring-update flyspell-popup powerthesaurus yaml-mode web-beautify livid-mode skewer-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode sdcv xr anaconda-mode lsp-ui cquery company-lsp lsp-mode stickyfunc-enhance srefactor pyim-basedict pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib realgud powerline spinner alert log4e gntp markdown-mode hydra dash-functional parent-mode xcscope haml-mode gitignore-mode fringe-helper git-gutter+ git-gutter flyspell-correct seq pkg-info epl flx magit-popup ghub let-alist iedit anzu goto-chg undo-tree highlight web-completion-data pos-tip bind-map bind-key packed f s memoize auto-complete popup htmlize pandoc-mode ox-pandoc ht wc-mode all-the-icons key-chord tablist parsebib biblio biblio-core org-plus-contrib ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toml-mode toc-org tagedit spaceline smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-mode rainbow-identifiers racer pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el org-present org-pomodoro org-mobile-sync org-bullets open-junk-file neotree move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative link-hint less-css-mode jdee ibuffer-projectile hungry-delete highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-pydoc helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-flx helm-descbinds helm-css-scss helm-cscope helm-company helm-c-yasnippet helm-ag google-translate gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy flyspell-correct-helm flycheck-rust flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-search-highlight-persist evil-numbers evil-mc evil-lisp-state evil-indent-plus evil-iedit-state evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z esh-help emmet-mode elisp-slime-nav disaster diminish cython-mode company-web company-quickhelp company-c-headers company-auctex company-anaconda column-enforce-mode color-identifiers-mode cmake-mode clean-aindent-mode cargo bracketed-paste auto-highlight-symbol auto-dictionary auctex-latexmk aggressive-indent adaptive-wrap ace-jump-helm-line ac-ispell)))
+ '(pdf-view-incompatible-modes
+   (quote
+    (linum-mode linum-relative-mode helm-linum-relative-mode nlinum-mode nlinum-hl-mode nlinum-relative-mode yalinum-mode global-linum-mode)))
+ '(pyim-dicts
+   (quote
+    ((:name "bigdict" :file "~/Dropbox/Tools/pyim-bigdict.pyim"))))
+ '(python-shell-interpreter "/Users/chaolongzhang/anaconda3/bin/ipython3" t)
+ '(realgud-safe-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((((class color) (min-colors 257)) (:foreground "#F8F8F2" :background "#272822")) (((class color) (min-colors 89)) (:foreground "#F5F5F5" :background "#1B1E1C"))))
+ '(bold ((t (:foreground "khaki" :weight bold))))
+ '(evil-search-highlight-persist-highlight-face ((t (:background "aquamarine" :foreground "black"))))
+ '(flyspell-incorrect ((t (:inherit nil :foreground "red" :underline (:color "#F92672" :style wave)))))
+ '(font-lock-comment-face ((t (:foreground "cornflower blue"))))
+ '(helm-selection-line ((t (:background "forest green" :foreground "cyan" :underline nil))))
+ '(markdown-code-face ((t nil)))
+ '(markdown-inline-code-face ((t (:inherit (markdown-code-face font-lock-constant-face)))))
+ '(org-agenda-clocking ((t (:inherit secondary-selection :background "yellow"))))
+ '(org-agenda-structure ((t (:background "#3C3D37" :foreground "spring green" :inverse-video nil :box (:line-width 2 :color "#272822") :underline nil :slant normal :weight bold :height 1.1))))
+ '(org-code ((t (:foreground "spring green"))))
+ '(org-level-1 ((t (:inherit default :foreground "red" :height 1.4))))
+ '(org-level-2 ((t (:inherit default :foreground "orange" :height 1.3))))
+ '(org-level-3 ((t (:inherit default :foreground "light sea green" :height 1.2))))
+ '(org-level-4 ((t (:inherit default :foreground "green" :height 1.1))))
+ '(org-tag ((t (:foreground "light sea green" :weight bold))))
+ '(region ((t (:inherit highlight :background "lawn green" :foreground "black"))))
+ '(sp-show-pair-match-face ((t (:background "#272822" :foreground "dim gray" :inverse-video t :weight normal)))))
+)
