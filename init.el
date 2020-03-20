@@ -405,7 +405,7 @@ layers configuration. You are free to put any user code."
  '(pyim-dicts
    (quote
     ((:name "bigdict" :file "~/Dropbox/Tools/pyim-bigdict.pyim"))))
- '(python-shell-interpreter "/Users/chaolongzhang/anaconda3/bin/ipython3")
+ '(python-shell-interpreter "/Users/chaolongzhang/anaconda3/bin/ipython3" t)
  '(realgud-safe-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
