@@ -58,6 +58,7 @@ values."
             electric-pair-mode 1)
 
      ;;ycmd
+     helm
      latex
      (bibtex :variables
              org-ref-default-bibliography '("~/Dropbox/research_library/zcl.bib")
@@ -311,10 +312,10 @@ in `dotspacemacs/user-config'."
   ;;       '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
   ;;         ("org-cn"   . "https://elpa.zilongshanren.com/org/")
   ;;         ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
-  ;; (setq configuration-layer-elpa-archives
-  ;;       '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
-  ;;         ("org-cn"   . "http://elpa.emacs-china.org/org/")
-  ;;         ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+  (setq configuration-layer-elpa-archives
+        '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+          ("org-cn"   . "http://elpa.emacs-china.org/org/")
+          ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
   ;; https://github.com/syl20bnr/spacemacs/issues/2705
   ;; (setq tramp-mode nil)
   (setq tramp-ssh-controlmaster-options
@@ -330,7 +331,7 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (global-linum-mode t)
+  (global-linum-mode -1)
   (setq-default dotspacemacs-line-numbers 'relative)
   (setq-default dospacemacs-line-numbers t)
   (setq-default evil-escape-key-sequence "df")
