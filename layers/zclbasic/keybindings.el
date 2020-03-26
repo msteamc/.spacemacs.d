@@ -1,6 +1,10 @@
 (global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
 (global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
 
+(define-key pyim-mode-map "." 'pyim-page-next-page)
+(define-key pyim-mode-map "," 'pyim-page-previous-page)
+
+
 (global-set-key [f9] 'undo)
 
 (global-set-key "\C-c\;" 'comment-or-uncomment-region)
