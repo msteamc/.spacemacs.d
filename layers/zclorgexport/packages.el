@@ -4,7 +4,7 @@
        ox-hugo
               ))
 
-(defun zclorgexport/init-ox-hugo()
+(defun zclorgexport/post-init-ox-hugo()
   (use-package ox-hugo
     :ensure t
     :after ox

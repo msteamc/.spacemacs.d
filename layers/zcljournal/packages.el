@@ -62,7 +62,7 @@
   (define-key calendar-mode-map "Jy" 'org-journal-search-calendar-year)
   )
 
-(defun zcljournal/init-org-journal ()
+(defun zcljournal/post-init-org-journal ()
   (use-package org-journal
     :defer t
     :init
