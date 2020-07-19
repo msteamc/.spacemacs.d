@@ -159,3 +159,15 @@
   "e" 'end-of-defun
   "o" 'helm-gtags-pop-stack
   )
+(spacemacs/set-leader-keys
+  "ajj" 'org-journal-new-entry
+  "ajj" 'org-journal-new-entry
+  "ajV" 'org-journal-display-entry
+  "ajs" 'org-journal-search
+  "ajS" 'search-all-journals
+  "ajn" 'org-journal-next-entry
+  "ajp" 'org-journal-previous-entry
+  "ajw" 'org-journal-search-calendar-week
+  "ajm" 'org-journal-search-calendar-month
+  "ajy" 'org-journal-search-calendar-year
+  )

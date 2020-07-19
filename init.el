@@ -106,7 +106,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(cdlatex monokai-theme ox-hugo solarized-theme wc-mode sdcv powerthesaurus all-the-icons exec-path-from-shell)
+   dotspacemacs-additional-packages '(cdlatex monokai-theme ox-hugo solarized-theme wc-mode sdcv powerthesaurus all-the-icons exec-path-from-shell org-journal)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(orgit org-projectile org-bullets)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -453,7 +453,7 @@ This function is called at the very end of Spacemacs initialization."
  '(pyim-dicts
    (quote
     ((:name "bigdict" :file "~/Dropbox/Tools/pyim-bigdict.pyim"))))
- '(python-shell-interpreter "/Users/chaolongzhang/anaconda3/bin/ipython3" t)
+ '(python-shell-interpreter "/Users/chaolongzhang/anaconda3/bin/ipython3")
  '(realgud-safe-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
