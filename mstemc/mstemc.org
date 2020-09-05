@@ -1,4 +1,5 @@
 #+title: make STEAM clear
+#+HUGO_BASE_DIR: ../../mstemc_hugo/
 #+setupfile: ~/Dropbox/zorg/org-templates/enpost.org
 
 * Videos                                :video:
@@ -158,12 +159,42 @@ CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
    :END:
  <2020-02-09 Sun 10:24>
 
-{{{titlepage(figProb1-21-0)}}}
-
-
 {{{titlepage(figProb1-47d)}}}
 
-#+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems3.org"
+#+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems3.org" :lines "2-"
+
+    #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47a.pdf"
+    #+begin_src latex -n -r :results output :exports none
+    \begin{tikzpicture}
+    [system/.style={mycolor,very thick,draw},
+    arrow/.style={-Stealth,mycolor,very thick},
+    ]
+    \definecolor{mycolor}{RGB}{139,0,0}
+
+    \node (0) at (0,0) {$x[n]$};
+    \node[shape=circle,system] (oplus) [right=of 0] {$+$};
+    \node[system,minimum size = 1cm] (system1) [right=of oplus] {S};
+    \node[shape=circle,system,] (oplus2) [right=of system1] {$+$};
+    \node (x1n) [below=of oplus] {$x_{1}[n]a$};
+    \node (y1n) [below=of oplus2] {$y_{1}[n]$};
+    \node (yn) [right=of oplus2] {$y[n]$};
+    \node (a) [below=of system1] {(a)};
+    \draw[arrow] (0) -- (oplus.west) node[near end,above] {$+$};
+    \draw[arrow] (oplus.east) -- (system1.west);
+    \draw[arrow] (system1.east) -- (oplus2.west) node[near end,above] {$+$};
+    \draw[arrow] (oplus2.east) -- (yn) ;
+    \draw[arrow] (x1n.north) -- (oplus.south) node[near end,right] {$+$};
+    \draw[arrow] (y1n.north) -- (oplus2.south) node[near end,right] {$-$};
+    \end{tikzpicture}
+    #+end_src
+
+    #+RESULTS:
+    [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47a.pdf]]
+
+    #+NAME: figProb1-47a
+    #+ATTR_HTML:  :width 80% :align center
+    #+ATTR_LATEX: :width 0.8\textwidth :align center
+    {{{if-latex(figProb1-47a.pdf,figProb1-47a.png)}}}
 
 
 ** TODO Working with Python code in Emacs Org
@@ -204,9 +235,12 @@ def foo(x):
 foo(1)
 #+end_src
 
+#+RESULTS:
+2
+
 # blank lines OK in indented blocks, and use return()
 # Entire source block will get indented and used as the body of main()
-#+begin_src python
+#+begin_src python :results value replace
 def foo(x):
   if x>0:
     return x+1
@@ -220,9 +254,6 @@ return foo(5)
 #+RESULTS:
 6
 
-#+begin_src python :results output
-
-#+end_src
 *** E39: dic
 [2020-02-22 Sat 21:36]
 

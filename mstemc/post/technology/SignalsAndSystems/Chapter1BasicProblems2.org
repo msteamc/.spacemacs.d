@@ -45,8 +45,6 @@ each of the following signals:
 :end:
 #+end_prob
 
-
-
 Before we figure all the sub-problem out. Let's review how \(a\) and \(b\)
 affect \(x(at+b)\) . we know that:
 

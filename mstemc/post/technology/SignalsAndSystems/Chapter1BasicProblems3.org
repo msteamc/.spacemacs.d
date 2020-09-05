@@ -1,4 +1,4 @@
-
+#+setupfile: ~/Dropbox/zorg/org-templates/enpost.org
 
 *** Problem 1.32
     [2020-02-09 Sun 10:43]
@@ -1973,7 +1973,6 @@ So the output can be sketched as:
     #+end_src
 
     #+RESULTS:
-    [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47a.pdf]]
 
     #+NAME: figProb1-47a
     #+ATTR_HTML:  :width 80% :align center
