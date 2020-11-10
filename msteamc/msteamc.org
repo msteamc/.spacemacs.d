@@ -43,6 +43,29 @@ CLOCK: [2020-02-01 Sat 11:54]--[2020-02-01 Sat 11:55] =>  0:01
 <2020-02-01 Sat 11:54>
 
 
+** TODO a video on 1027
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:LATEX_TITLE: a video on 1027
+:EXPORT_HUGO_SECTION: publication
+:EXPORT_HUGO_BUNDLE: a-video-on-1027
+:EXPORT_DESCRIPTION: and this is the summary of this post. I want to make it long long long long long longlong long longlong long longlong long longlong long longlong long longlong long longlong long longlong long longlong long longlong long longlong long longlong long longlong long longlong long long
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("project-my-workflow-of-creating-a-video")
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "github") (icon_pack . "fab")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "file-pdf") (icon_pack . "fas")  (name . "Docs")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "slideshare") (icon_pack . "fas")  (name . "Slides")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "twitter") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "facebook") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "reddit") (icon_pack . "fab")  (name . "Listen")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "instagram") (icon_pack . "fab")  (name . "Inst")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weibo") (icon_pack . "fab")  (name . "Weibo")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weixin") (icon_pack . "fab")  (name . "Weixin")  (url . "/course/example/" ) )
+:END:
+<2020-10-27 Tue 22:42>
+
+this is a video made on 10-27
 * Posts
 [2019-10-05 Sat 16:52]
 
@@ -162,39 +185,6 @@ CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
 {{{titlepage(figProb1-47d)}}}
 
 #+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems3.org" :lines "2-"
-
-    #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47a.pdf"
-    #+begin_src latex -n -r :results output :exports none
-    \begin{tikzpicture}
-    [system/.style={mycolor,very thick,draw},
-    arrow/.style={-Stealth,mycolor,very thick},
-    ]
-    \definecolor{mycolor}{RGB}{139,0,0}
-
-    \node (0) at (0,0) {$x[n]$};
-    \node[shape=circle,system] (oplus) [right=of 0] {$+$};
-    \node[system,minimum size = 1cm] (system1) [right=of oplus] {S};
-    \node[shape=circle,system,] (oplus2) [right=of system1] {$+$};
-    \node (x1n) [below=of oplus] {$x_{1}[n]a$};
-    \node (y1n) [below=of oplus2] {$y_{1}[n]$};
-    \node (yn) [right=of oplus2] {$y[n]$};
-    \node (a) [below=of system1] {(a)};
-    \draw[arrow] (0) -- (oplus.west) node[near end,above] {$+$};
-    \draw[arrow] (oplus.east) -- (system1.west);
-    \draw[arrow] (system1.east) -- (oplus2.west) node[near end,above] {$+$};
-    \draw[arrow] (oplus2.east) -- (yn) ;
-    \draw[arrow] (x1n.north) -- (oplus.south) node[near end,right] {$+$};
-    \draw[arrow] (y1n.north) -- (oplus2.south) node[near end,right] {$-$};
-    \end{tikzpicture}
-    #+end_src
-
-    #+RESULTS:
-    [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47a.pdf]]
-
-    #+NAME: figProb1-47a
-    #+ATTR_HTML:  :width 80% :align center
-    #+ATTR_LATEX: :width 0.8\textwidth :align center
-    {{{if-latex(figProb1-47a.pdf,figProb1-47a.png)}}}
 
 
 ** TODO Working with Python code in Emacs Org
@@ -358,6 +348,7 @@ and has city Detroit
 ----------
 Sorry, no Texas
 The city for the state 'TX' is :Does Not Exist
+
 *** E40: class
 [2020-02-23 Sun 09:42]
 
@@ -381,11 +372,7 @@ bulls_on_parade.sing_me_a_song()
 #+end_src
 
 #+RESULTS:
-Happy birthday to you
-I don't want to get sued
-So I'll stop right these
-They rally around tha family
-With pockets full os shells
+
 *** E41: learning to speak object-oriented
 [2020-02-23 Sun 09:46]
 *** E44a
@@ -510,6 +497,32 @@ OTHER altered()
 CHILD, AFTER OTHER altered()
 
 
+** TODO this is a test during a long time later
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:LATEX_TITLE: this is a test during a long time later
+:EXPORT_HUGO_SECTION: post
+:EXPORT_HUGO_BUNDLE: this-is-a-test-during-a-long-time-later
+:EXPORT_DESCRIPTION: summary of this post
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :projects '("a" "b")
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "github") (icon_pack . "fab")  (name . "Source")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "file-pdf") (icon_pack . "fas")  (name . "Docs")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "slideshare") (icon_pack . "fas")  (name . "Slides")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "twitter") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "facebook") (icon_pack . "fab")  (name . "Follow")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "reddit") (icon_pack . "fab")  (name . "Listen")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "youtube") (icon_pack . "fab")  (name . "Watch it")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "instagram") (icon_pack . "fab")  (name . "Inst")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weibo") (icon_pack . "fab")  (name . "Weibo")  (url . "/course/example/" ) )
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :[links] '( (icon . "weixin") (icon_pack . "fab")  (name . "Weixin")  (url . "/course/example/" ) )
+:END:
+:LOGBOOK:
+CLOCK: [2020-09-14 Mon 22:13]--[2020-09-14 Mon 22:14] =>  0:01
+:END:
+<2020-09-14 Mon 22:13>
+
+this is a test during a long time later. I have to make a decision.
 * Projects    :project:
 [2019-10-05 Sat 16:53]
 

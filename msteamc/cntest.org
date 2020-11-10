@@ -1,0 +1,11 @@
+#+title: make STEAM clear
+#+HUGO_BASE_DIR: ../../mstemc_hugo/
+#+setupfile: ~/Dropbox/zorg/org-templates/cnpost.org
+
+* 这个是中文的标题
+
+这个是中文
+
+* 中文
+** 二级标题
+This is another chinese

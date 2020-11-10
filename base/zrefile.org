@@ -29,11 +29,6 @@ CLOCK: [2019-12-14 Sat 22:13]--[2019-12-14 Sat 22:16] =>  0:03
 a beautiful theorem environment package
 
 [[https://ctan.org/pkg/mdframed?lang=en][CTAN: Package mdframed]]
-* TODO external link links to my own course
-:LOGBOOK:
-CLOCK: [2020-01-29 Wed 06:58]--[2020-01-29 Wed 06:59] =>  0:01
-:END:
- Added:<2020-01-29 Wed 06:58>
 * DONE drop down menu
 CLOSED: [2020-01-29 Wed 07:14]
 :LOGBOOK:

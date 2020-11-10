@@ -1946,7 +1946,7 @@ So the output can be sketched as:
 
 
     #+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47a.pdf"
-    #+begin_src latex -n -r :results raw :exports none
+    #+begin_src latex -n -r :results file link :exports none
     \begin{tikzpicture}
     [system/.style={mycolor,very thick,draw},
     arrow/.style={-Stealth,mycolor,very thick},
@@ -1973,6 +1973,7 @@ So the output can be sketched as:
     #+end_src
 
     #+RESULTS:
+    [[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProb1-47a.pdf]]
 
     #+NAME: figProb1-47a
     #+ATTR_HTML:  :width 80% :align center
