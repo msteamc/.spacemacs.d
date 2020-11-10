@@ -526,6 +526,7 @@ See `org-capture-templates' for more information."
                    ,(concat ":EXPORT_HUGO_SECTION: " "project")
                    ,(concat ":EXPORT_HUGO_BUNDLE: " "project-" fname)
                    ,(concat ":EXPORT_DESCRIPTION: "  "summary of this project")
+                   ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER: :image '((caption . \"caption\") (focal_point . "")  (preview_only . \"true\"))")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"youtube\") (icon_pack . \"fab\")  (name . \"Watch it\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"instagram\") (icon_pack . \"fab\")  (name . \"Inst\")  (url . \"/course/example/\" ) )")
                    ,(concat ":EXPORT_HUGO_CUSTOM_FRONT_MATTER+: " ":[links] " "'( (icon . \"weibo\") (icon_pack . \"fab\")  (name . \"Weibo\")  (url . \"/course/example/\" ) )")
