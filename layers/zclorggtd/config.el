@@ -14,14 +14,14 @@
                                "~/Dropbox/zorg/base/zrefile.org"
                                "~/Dropbox/zorg/base/zdiary.org"
                                "~/Dropbox/zorg/base/ztimelog.org"
-                               "~/Dropbox/zorg/mstemc/mstemc.org"
+                               "~/Dropbox/zorg/msteamc/msteamc.org"
                                ))
 
   (setq org-refile-targets (quote (
             ("~/Dropbox/zorg/base/zwork.org" :maxlevel . 6)
             ("~/Dropbox/zorg/base/zlife.org" :maxlevel . 6)
-            ("~/Dropbox/zorg/mstemc/mstemc.org" :maxlevel . 6)
-            ("~/Dropbox/zorg/mstemc/docs.org" :maxlevel . 6)
+            ("~/Dropbox/zorg/msteamc/msteamc.org" :maxlevel . 6)
+            ("~/Dropbox/zorg/msteamc/docs.org" :maxlevel . 6)
             )))
 
   (setq org-agenda-use-tag-inheritance t)
@@ -50,31 +50,31 @@
            :clock-in t :clock-resume t)
           ;;("h" "Hugo post")
           ("v" "Hugo:Video"
-           entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Videos")
+           entry (file+olp "~/Dropbox/zorg/msteamc/msteamc.org" "Videos")
            (function org-hugo-new-subtree-video-capture-template)
            :clock-in t :clock-resume t)
           ("b" "Hugo:Post"
-           entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Posts")
+           entry (file+olp "~/Dropbox/zorg/msteamc/msteamc.org" "Posts")
            (function org-hugo-new-subtree-post-capture-template)
            :clock-in t :clock-resume t)
           ("p" "Hugo:Project"
-           entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Projects")
+           entry (file+olp "~/Dropbox/zorg/msteamc/msteamc.org" "Projects")
            (function org-hugo-new-subtree-project-capture-template)
            :clock-in t :clock-resume t)
           ("c" "Hugo:Course"
-           entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Courses")
+           entry (file+olp "~/Dropbox/zorg/msteamc/msteamc.org" "Courses")
            (function org-hugo-new-subtree-course-capture-template)
            :clock-in t :clock-resume t)
           ("d" "Hugo:Docs"
-           entry (file+olp "~/Dropbox/zorg/mstemc/docs.org" "Docs")
+           entry (file+olp "~/Dropbox/zorg/msteamc/docs.org" "Docs")
            (function org-hugo-new-subtree-doc-capture-template)
            :clock-in t :clock-resume t)
           ("i" "Hugo:Docs index"
-           entry (file+olp "~/Dropbox/zorg/mstemc/docs.org" "Docs")
+           entry (file+olp "~/Dropbox/zorg/msteamc/docs.org" "Docs")
            (function org-hugo-new-subtree-doc-index-capture-template)
            :clock-in t :clock-resume t)
           ("m" "Org:Beamer"
-           entry (file+olp "~/Dropbox/zorg/mstemc/mstemc.org" "Beamer")
+           entry (file+olp "~/Dropbox/zorg/msteamc/msteamc.org" "Beamer")
            (function org-new-subtree-beamer-capture-template)
            :clock-in t :clock-resume t)
 
