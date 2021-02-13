@@ -53,7 +53,7 @@
 (define-key evil-normal-state-map "\'" 'save-buffer)
 (define-key evil-normal-state-map "’" 'save-buffer)
 (define-key evil-normal-state-map "‘" 'save-buffer)
-(define-key evil-normal-state-map (kbd "RET") 'save-buffer)
+;; (define-key evil-normal-state-map (kbd "RET") 'save-buffer)
 
 (spacemacs/set-leader-keys "fn" 'find-file)
 (spacemacs/set-leader-keys "fp" 'ffap)
