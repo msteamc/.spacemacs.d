@@ -17,15 +17,15 @@ values."
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
-   '(rust
+   '(
      yaml
-     javascript
+     ;; javascript
      ;; rust
-     octave
+     ;; octave
      pdf
      ;; rust
-     markdown
-     html
+     ;; markdown
+     ;; html
      ;; ----------------------------------------------------------------
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
@@ -41,10 +41,10 @@ values."
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-snippets-in-popup t)
      ;;better-defaults
-     emacs-lisp
-     git
-     (gtags :variables
-            gtags-enable-by-default nil)
+     ;; emacs-lisp
+     ;; git
+     ;; (gtags :variables
+     ;;        gtags-enable-by-default nil)
      (colors :variables
              colors-enable-rainbow-identifiers t
              colors-enable-nyan-cat-progress-bar nil)
@@ -56,7 +56,6 @@ values."
             c-c++-enable-clang-support t
             electric-pair-mode 1)
 
-     ;;ycmd
      lsp
      helm
      latex
@@ -72,14 +71,11 @@ values."
           org-startup-indented nil
           org-enable-hugo-support t
           org-enable-org-journal-support t
+          ;; org-enable-roam-support t
           ;; Turn off manual indentation completely,
           ;; AKA when you suddenly press TAB or =
           org-adapt-indentation nil
           )
-     zclorgbasic
-     zclorggtd
-     zclorgexport
-     zcljournal
      (spell-checking :variables
                      spell-checking-enable-by-default nil
                      enable-flyspell-auto-completion t
@@ -95,11 +91,13 @@ values."
              python-backend 'lsp
              python-fill-column 80
              python-sort-imports-on-save nil)
-     ;;java
-     ;;markdown
+     ;;ycmd
+     zclorgbasic
+     ;; zclorggtd
+     zclorgexport
+     zcljournal
      ;; zcldiary
      zclbasic
-     ;;zclirony
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -107,11 +105,12 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(cdlatex monokai-theme ox-hugo solarized-theme wc-mode sdcv powerthesaurus all-the-icons exec-path-from-shell org-journal)
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(orgit org-projectile org-bullets)
+   dotspacemacs-excluded-packages '(orgit org-projectile org-bullets font-lock+ cpp-auto-include evil-magit)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
-   dotspacemacs-delete-orphan-packages t))
+   dotspacemacs-delete-orphan-packages t)
+  )
 
 (defun dotspacemacs/init ()
   "Initialization function.
@@ -323,7 +322,9 @@ in `dotspacemacs/user-config'."
   ;; (setq socks-server '("Default server" "127.0.0.1" 1080 5))
   (setq evil-shift-round nil)
   (setq byte-compile-warnings '(not obsolete))
-  )
+  (setenv "all_proxy" "")
+  (setenv "LANG" "en_US.UTF-8")
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -354,30 +355,9 @@ layers configuration. You are free to put any user code."
     (setq yas-snippet-dirs (remq 'yas-installed-snippets-dir yas-snippet-dirs)))
   (spacemacs/toggle-mode-line-minor-modes-off)
   (setq projectile-enable-caching t)
-  ;;(server-start)
-  ;; Chinese config
-  ;; (global-set-key (kbd "C-\\") 'toggle-input-method)
-  ;; (define-key evil-insert-state-map (kbd "M-\\") 'pyim-convert-code-at-point)
-  ;; (setq-default pyim-english-input-switch-functions
-  ;;               '(pyim-probe-dynamic-english
-  ;;                 pyim-probe-isearch-mode
-  ;;                 pyim-probe-program-mode
-  ;;                 pyim-probe-org-structure-template))
-
-  ;; (setq-default pyim-punctuation-half-width-functions
-  ;;               '(pyim-probe-punctuation-line-beginning
-  ;;                 pyim-probe-punctuation-after-punctuation))
-  ;; 开启拼音搜索功能
-  ;; (pyim-isearch-mode 1)
-  ;; 使用 pupup-el 来绘制选词框
-  ;; (setq pyim-page-tooltip 'popup)
-  ;; 选词框显示5个候选词
-  ;; (setq pyim-page-length 6)
   (linum-mode -1)
-  (setenv "LANG" "en_US.UTF-8")
   (evil-set-initial-state 'sdcv-mode 'emacs)
-  (setq helm-show-completion-display-function #'helm-show-completion-default-display-function)
-  )
+  (setq helm-show-completion-display-function #'helm-show-completion-default-display-function))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (defun dotspacemacs/emacs-custom-settings ()
@@ -406,7 +386,6 @@ This function is called at the very end of Spacemacs initialization."
  '(pyim-dicts
    (quote
     ((:name "bigdict" :file "~/Dropbox/Tools/pyim-bigdict.pyim"))))
- ;; '(python-shell-interpreter "python3" t)
  '(realgud-safe-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
