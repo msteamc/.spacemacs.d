@@ -35,7 +35,9 @@
   ;;           '(lambda ()
   ;;              (delete '("\\.pdf\\'" . default) org-file-apps)
   ;;              (add-to-list 'org-file-apps '("\\.pdf\\'" . "qpdfview %s"))))
-
+  ;; open pdf using emacs instead of the default apps
+  (delete '("\\.pdf\\'" . default) org-file-apps)
+  (add-to-list 'org-file-apps '("\\.pdf\\'" . emacs))
   ;;(org-cycle-hide-drawers 'all)
   (setq org-hide-macro-markers t)
   ;; Replace org-set-tags with org-set-tags-command in keybinding

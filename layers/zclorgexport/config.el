@@ -155,11 +155,10 @@
    (gnuplot . t)))
 
 
-(setq org-image-actual-width 800)
-
 (add-to-list 'image-type-file-name-regexps '("\\.pdf\\'" . imagemagick))
 (add-to-list 'image-file-name-extensions "pdf")
-
+(setq imagemagick-types-inhibit (remove 'PDF imagemagick-types-inhibit))
+(setq org-image-actual-width 800)
 
 ;; customize the title command
 (setq org-latex-title-command "")
