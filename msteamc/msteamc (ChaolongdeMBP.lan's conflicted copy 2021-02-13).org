@@ -42,37 +42,13 @@ CLOCK: [2020-02-01 Sat 11:54]--[2020-02-01 Sat 11:55] =>  0:01
 :END:
 <2020-02-01 Sat 11:54>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac
-convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed
-ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis
-sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet,
-gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum,
-sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis
-vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac
-convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed
-ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis
-sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet,
-gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum,
-sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis
-vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac
-convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed
-ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis
-sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet,
-gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum,
-sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis
-vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac
-convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed
-ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis
-sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet,
-gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum,
-sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis
-vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
 
 ** TODO a video on 1027
 :PROPERTIES:
@@ -164,59 +140,6 @@ CLOCK: [2019-12-07 Sat 07:46]--[2019-12-07 Sat 07:48] =>  0:02
 
 #+include: "./post/tool/export-markdown-and-latex-using-emacs-org.org"
 
-
-#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProbzzzzzzzz.pdf"
-#+begin_src latex -n -r :results file :exports none
-\begin{tikzpicture}[thin]
-\draw (-1.5,0) -- (1.9,0);
-\draw (0,-1.5) -- (0,1.5);
-\filldraw[fill = green!20, draw = green!50!black] (0,0) circle[radius = 1cm];
-\draw[help lines,very thin,step=.5cm,color=gray] (-1.5,-1.5) grid (1.5,1.5);
-\draw (0,0) rectangle (.5,.5);
-\draw (0,0) rectangle (-0.5,-0.5);
-% relative coordinate
-\draw[blue, very thick] (30:1) ++ (0,-0.5) --(0,0);
-% name a path without drawing it
-\path[name path = upward line] (1,0) -- (1,1);    (ref:path)
-\path[name path = sloped line] (0,0) -- (30:1.5cm);
-% use intersection of two path
-\draw[name intersections={of = upward line and sloped line, by=x}]
-     [very thick, orange] (1,0) -- (x);            (ref:intersections)
-% use arrow
-\draw[<->>] (0,0) -- (145:1);                      (ref:arrow1)
-\draw[<-{Triangle[fill=red]}] (0,0) -- (30:1);     (ref:arrow2)
-% use scope
-\begin{scope}[very thick]                          (ref:scope1)
-\draw (-0.4,0.4) -- (0.4,0.4);
-\draw (-0.4,-0.4) -- (0.4,-0.4);
-\end{scope}                                      (ref:scope2)
-% use foreach
-\foreach \x in {-1cm,-0.5cm,1cm}                 (ref:foreach1)
-    \draw[red] (\x,-3pt) -- (\x,3pt);
-\foreach \y in {-1cm,-0.5cm,1cm}
-    \draw[red](-3pt,\y) -- (3pt,\y);             (ref:foreach2)
-% using node
-\draw (0,0)+(0.2,-0.2) node {\tiny $(0,0)$ };    (ref:node1)
-\end{tikzpicture}
-#+end_src
-
-#+RESULTS:
-[[file:~/Dropbox/mstemc_hugo/static/img/tikz/figProbzzzzzzzz.pdf]]
-
-#+ATTR_HTML:  :width 80% :align center
-#+ATTR_LATEX: :width 0.8\textwidth :align center
-{{{if-latex(figProbzzzzzzzz.pdf,figProbzzzzzzzz.png)}}}
-
-Aliquam erat volutpat. Nunc eleifend leo vitae magna. In id erat non orci
-commodo lobortis. Proin neque massa, cursus ut, gravida ut, lobortis eget,
-lacus. Sed diam. Praesent fermentum tempor tellus. Nullam tempus. Mauris ac
-felis vel velit tristique imperdiet. Donec at pede. Etiam vel neque nec dui
-dignissim bibendum. Vivamus id enim. Phasellus neque orci, porta a, aliquet
-quis, semper a, massa. Phasellus purus. Pellentesque tristique imperdiet tortor.
-Nam euismod tellus id erat.
-
-
-
 ** TODO Drawing Graphs Using TikZ in Emacs Org  :Emacs:Org:TikZ:LaTeX:
 :PROPERTIES:
 :EXPORT_FILE_NAME: index
@@ -291,6 +214,33 @@ CLOCK: [2020-02-01 Sat 16:02]--[2020-02-01 Sat 16:03] =>  0:01
 {{{titlepage(figProb1-21-0)}}}
 
 #+include: "./post/technology/SignalsAndSystems/Chapter1BasicProblems2.org"
+
+
+#+header: :file  "~/Dropbox/mstemc_hugo/static/img/tikz/figProb2-23.pdf"
+#+begin_src latex -n -r :results raw :exports none
+\begin{tikzpicture}
+\definecolor{mycolor}{RGB}{139,0,0};
+\draw[] (-2.5,0) -- (2.5,0) node[below]{$t$};
+\draw[] (0,-2.5) -- (0,2.5) node[above]{\color{mycolor}$x(t)$};
+\draw[,very thick, mycolor] (-2,0) -- (-2,-1) -- (-1,0) -- (-1,1) -- (0,1) -- (0,2) -- (1,2) -- (1,1) -- (2,0);
+
+\node [below=0.1cm,] at(-2,0) {$-2$};
+\node [below=0.1cm,] at (-1,0) {$-1$};
+\node [right] at (0,1) {$1$};
+\node [below=0.1cm, ] at (0,0) {$0$};
+\node [left] at (0,2) {$2$};
+\node [below=0.1cm,] at (1,0) {$1$};
+\node [below=0.1cm,] at (2,0) {$2$};
+\node [right] at (0,-1) {$-1$};
+\end{tikzpicture}
+#+end_src
+
+#+RESULTS:
+
+
+#+ATTR_HTML:  :width 80% :align center
+#+ATTR_LATEX: :width 0.8\textwidth :align center
+{{{if-latex(figProb2-23.pdf,figProb2-23.png)}}}
 
 ** TODO Signals and Systems Chapter 1 Problems Part 3 (1.32-1.47) :SignalsAndSystems:
    :PROPERTIES:
@@ -655,6 +605,7 @@ CLOCK: [2020-09-14 Mon 22:13]--[2020-09-14 Mon 22:14] =>  0:01
 <2020-09-14 Mon 22:13>
 
 this is a test during a long time later. I have to make a decision.
+
 ** TODO an example post on 20201110
 :PROPERTIES:
 :EXPORT_FILE_NAME: index

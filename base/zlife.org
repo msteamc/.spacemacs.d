@@ -47,6 +47,11 @@
 
 * PASSWORD
   [2016-12-09 Fri 20:09]
+** gmail
+makesteamclear@gmail.com zhu+MSC
+makestemclear@gmail.com zhu+msc
+chaolongworld@gmail.com chaolongruixiao
+gongyuehan@gmail.com Gongyuehan1988
 
 * service
 [2019-11-09 Sat 18:46]
@@ -77,3 +82,8 @@ zcl.space godaddy 115549572 zhu+zcl pin:0623
 
 ** youtube
 [2019-11-09 Sat 18:47]
+* 群晖
+** 5000端口转发失效
+
+应该删除 外部访问-> 路由器配置 中的5000，5001， 80， 443 端口的转发，然后在路由
+器的配置中设置这个转发。只用设置一次就可以了。
