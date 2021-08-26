@@ -86,3 +86,23 @@
     "rf" 'color-rg-search-symbol-in-current-file
     "rF" 'color-rg-search-input-in-current-file
     ))
+;;set  font
+(defvar emacs-english-font "Monaco"
+  "The font name of English.")
+
+(defvar emacs-cjk-font "Hiragino Sans GB W3"
+  "The font name for CJK.")
+(defvar emacs-font-size-pair '(15 . 18)
+  "Default font size pair for (english . chinese)")
+
+(defvar emacs-font-size-pair-list
+  '(( 5 .  6) (10 . 12)
+    (13 . 16) (15 . 18) (17 . 20)
+    (19 . 22) (20 . 24) (21 . 26)
+    (24 . 28) (26 . 32) (28 . 34)
+    (30 . 36) (34 . 40) (36 . 44))
+  "This list is used to store matching (englis . chinese) font-size.")
+;; Setup font size based on emacs-font-size-pair
+(set-font emacs-english-font emacs-cjk-font emacs-font-size-pair)
+(global-set-key (kbd "C-=") 'increase-emacs-font-size)
+(global-set-key (kbd "C--") 'decrease-emacs-font-size)
