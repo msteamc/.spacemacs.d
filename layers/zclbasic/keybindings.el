@@ -150,6 +150,9 @@
 (spacemacs/set-leader-keys-for-major-mode 'c-mode
   "f" 'c-mark-function
   "i" 'helm-gtags-dwim
+  "c" 'compile
+  "d" 'gud-gdb
+  "q" 'shell-command
   "a" 'beginning-of-defun
   "e" 'end-of-defun
   "o" 'helm-gtags-pop-stack

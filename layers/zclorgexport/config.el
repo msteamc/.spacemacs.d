@@ -12,8 +12,10 @@
         '(("\\.docx\\'" . default)
           ("\\.mm\\'" . default)
           ("\\.x?html?\\'" . default)
-          ("\\.pdf\\'" . default)
+          ("\\.pdf\\'" . emacs)
           (auto-mode . emacs)))
+  ;; set the org latex preview directory
+  (setq org-preview-latex-image-directory "~/temp/ltximg/")
 ;;;;;;;;;;;;;;;;;;;;;;;;org export latex;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;need to add #+LaTeX_CLASS at the beginning
   (setq org-list-allow-alphabetical t)
@@ -152,6 +154,8 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((latex . t)
+   (python . t)
+   (ipython . t)
    (gnuplot . t)))
 
 
@@ -163,7 +167,8 @@
 ;; customize the title command
 (setq org-latex-title-command "")
 (setq org-latex-toc-command "")
-(setq org-imagemagick-display-command "convert -density 600  \"%s\" -transparent white   -thumbnail \"%sx%s>\" \"%s\"")
+;; (setq org-imagemagick-display-command "convert -density 600  \"%s\" -transparent white   -thumbnail \"%sx%s>\" \"%s\"")
+(setq org-imagemagick-display-command "convert -density 600  \"%s\" -transparent white \"%sx%s>\" \"%s\"")
 (defun org-display-inline-images (&optional include-linked refresh beg end)
   "Display inline images.
 Normally only links without a description part are inlined, because this

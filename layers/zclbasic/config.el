@@ -106,3 +106,7 @@
 (set-font emacs-english-font emacs-cjk-font emacs-font-size-pair)
 (global-set-key (kbd "C-=") 'increase-emacs-font-size)
 (global-set-key (kbd "C--") 'decrease-emacs-font-size)
+;; escape and save
+(add-hook 'evil-insert-state-exit-hook
+          (lambda ()
+            (call-interactively #'save-buffer)))

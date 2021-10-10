@@ -63,4 +63,10 @@
   ;;   )
   ;; (add-hook 'post-command-hook 'zcl/turn-off-org-indent-mode)
 
+  ;; setup for python
+  (setq org-confirm-babel-evaluate nil)
+  ;; display/update images in the buffer after I evaluate
+  (add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
+  ;; to use the python lexer for ipython blocks
+  ;; (add-to-list 'org-latex-minted-langs '(ipython "python"))
   )

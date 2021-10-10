@@ -2391,7 +2391,9 @@ INFO is a plist used as a communication channel."
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . nil)
-   (python . t)))
+   (python . t)
+   (ipython . t)
+   ))
 (setq org-confirm-babel-evaluate nil
       org-src-fontify-natively t
       org-src-tab-acts-natively t)

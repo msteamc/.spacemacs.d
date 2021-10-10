@@ -43,8 +43,11 @@ This function should only modify configuration layer settings."
      ;; chinese
      emacs-lisp
      git
-     helm
+     (helm :variagles
+           history-delete-duplicates t
+           )
      lsp
+     dap
      pdf
      ;; markdown
      multiple-cursors
@@ -65,7 +68,11 @@ This function should only modify configuration layer settings."
      ;; semantic
      (c-c++ :variables
             c-c++-enable-clang-support t
-            electric-pair-mode 1)
+            electric-pair-mode 1
+            c-c++-enable-clang-format-on-save t
+            c-c++-enable-auto-newline t
+            c-c++-dap-adapters '(dap-gdb-lldb dap-lldb)
+            )
 
      latex
      (bibtex :variables
@@ -122,7 +129,7 @@ This function should only modify configuration layer settings."
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
 
-   dotspacemacs-additional-packages '(cdlatex monokai-theme ox-hugo solarized-theme wc-mode sdcv powerthesaurus all-the-icons exec-path-from-shell org-journal websocket)
+   dotspacemacs-additional-packages '(cdlatex monokai-theme ox-hugo solarized-theme wc-mode sdcv powerthesaurus all-the-icons exec-path-from-shell org-journal websocket realgud-lldb realgud fill-column-indicator)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(orgit org-projectile org-bullets font-lock+ cpp-auto-include evil-magit org-superstar)
    ;; A list of packages that cannot be updated.
@@ -615,6 +622,9 @@ before packages are loaded."
   (setq projectile-enable-caching t)
   (linum-mode -1)
   (evil-set-initial-state 'sdcv-mode 'emacs)
+  ;; delete duplicate items in helm command history, it works
+  (delete-dups extended-command-history)
+  (setq history-delete-duplicates t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -630,16 +640,20 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
+ '(gdb-many-windows t)
+ '(lsp-ui-sideline-enable nil)
+ '(lsp-vetur-format-options-tab-size 4)
  '(org-file-apps
    (quote
     (("\\.docx\\'" . default)
      ("\\.mm\\'" . default)
      ("\\.x?html?\\'" . default)
      ("\\.pdf\\'" . emacs)
+     ("\\.png\\'" . emacs)
      (auto-mode . emacs))))
  '(package-selected-packages
    (quote
-    (websocket web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode prettier-js impatient-mode simple-httpd helm-css-scss haml-mode emmet-mode counsel-css counsel swiper company-web web-completion-data add-node-modules-path yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode winum which-key wc-mode vterm volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toc-org terminal-here symon symbol-overlay string-inflection ssh-agency sphinx-doc spaceline-all-the-icons solarized-theme smeargle shell-pop sdcv restart-emacs rainbow-mode rainbow-identifiers rainbow-delimiters pytest pyenv-mode py-isort powerthesaurus popwin poetry pippel pipenv pip-requirements pcre2el password-generator paradox ox-hugo overseer org-superstar org-roam org-rich-yank org-ref org-present org-pomodoro org-mime org-journal org-download org-clock-convenience org-cliplink org-brain open-junk-file nameless multi-term move-text monokai-theme matlab-mode magit-svn magit-section magit-gitflow macrostep lsp-ui lsp-python-ms lsp-pyright lsp-origami lsp-latex lorem-ipsum live-py-mode link-hint indent-guide importmagic ibuffer-projectile hybrid-mode hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ fuzzy forge flyspell-popup flyspell-correct-helm flycheck-ycmd flycheck-rtags flycheck-pos-tip flycheck-package flycheck-elsa flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emr elisp-slime-nav editorconfig dumb-jump dotenv-mode disaster dired-quick-sort dired-git-info diminish devdocs define-word dap-mode cython-mode company-ycmd company-statistics company-rtags company-reftex company-quickhelp company-math company-c-headers company-auctex company-anaconda column-enforce-mode color-identifiers-mode clean-aindent-mode centered-cursor-mode cdlatex ccls browse-at-remote blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell))))
+    (ob-ipython ein polymode anaphora realgud-lldb websocket web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode prettier-js impatient-mode simple-httpd helm-css-scss haml-mode emmet-mode counsel-css counsel swiper company-web web-completion-data add-node-modules-path yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode winum which-key wc-mode vterm volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toc-org terminal-here symon symbol-overlay string-inflection ssh-agency sphinx-doc spaceline-all-the-icons solarized-theme smeargle shell-pop sdcv restart-emacs rainbow-mode rainbow-identifiers rainbow-delimiters pytest pyenv-mode py-isort powerthesaurus popwin poetry pippel pipenv pip-requirements pcre2el password-generator paradox ox-hugo overseer org-superstar org-roam org-rich-yank org-ref org-present org-pomodoro org-mime org-journal org-download org-clock-convenience org-cliplink org-brain open-junk-file nameless multi-term move-text monokai-theme matlab-mode magit-svn magit-section magit-gitflow macrostep lsp-ui lsp-python-ms lsp-pyright lsp-origami lsp-latex lorem-ipsum live-py-mode link-hint indent-guide importmagic ibuffer-projectile hybrid-mode hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ fuzzy forge flyspell-popup flyspell-correct-helm flycheck-ycmd flycheck-rtags flycheck-pos-tip flycheck-package flycheck-elsa flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emr elisp-slime-nav editorconfig dumb-jump dotenv-mode disaster dired-quick-sort dired-git-info diminish devdocs define-word dap-mode cython-mode company-ycmd company-statistics company-rtags company-reftex company-quickhelp company-math company-c-headers company-auctex company-anaconda column-enforce-mode color-identifiers-mode clean-aindent-mode centered-cursor-mode cdlatex ccls browse-at-remote blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

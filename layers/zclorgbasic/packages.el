@@ -2,6 +2,7 @@
       '(
         (org )
         htmlize
+        ob-ipython
         cdlatex
               ))
 
@@ -10,6 +11,12 @@
       :defer t
       :init
       ))
+
+(defun zclorgbasic/init-ob-ipython()
+  (use-package ob-ipython
+    :defer t
+    :init
+    ))
 
 (defun zclorgbasic/post-init-org()
   (use-package org

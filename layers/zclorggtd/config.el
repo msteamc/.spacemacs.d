@@ -537,11 +537,6 @@
 
   (setq org-table-use-standard-references (quote from))
 
-  (setq org-file-apps (quote ((auto-mode . emacs)
-                              ("\\.mm\\'" . system)
-                              ("\\.x?html?\\'" . system)
-                              ("\\.pdf\\'" . system))))
-
   ;; Overwrite the current window with the agenda
   (setq org-agenda-window-setup 'current-window)
 
