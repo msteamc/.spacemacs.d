@@ -625,7 +625,10 @@ before packages are loaded."
   ;; delete duplicate items in helm command history, it works
   (delete-dups extended-command-history)
   (setq history-delete-duplicates t)
+  (setq gdb-many-windows t)
+  (setq gdb-show-threads-by-default t)
   )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

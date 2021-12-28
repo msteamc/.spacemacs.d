@@ -11,7 +11,7 @@
 
 (setq zclbasic-packages
       '(
-        matlab-mode
+        ;; matlab-mode
         highlight-symbol
         dired-git-info
        ;; company-jedi
@@ -19,13 +19,12 @@
         ;;cygwin-mount
                 ))
 
-
-(defun zclbasic/init-matlab-mode()
-  (use-package matlab-mode
-    :defer t
-    :init
-    (progn
-      )))
+;; (defun zclbasic/init-matlab-mode()
+;;   (use-package matlab-mode
+;;     :defer t
+;;     :init
+;;     (progn
+;;       )))
 (defun zclbasic/init-dired-git-info()
   (use-package dired-git-info
     :ensure t

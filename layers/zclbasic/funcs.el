@@ -183,6 +183,7 @@ Version 2015-07-30"
 	            (regexp-quote sym))))
 	      regexp-history)
   (call-interactively 'occur))
+
 ;; auto clang-format before save cc-mode releated files
 (defun clang-format-buffer-smart ()
   "Reformat buffer if .clang-format exists in the projectile root."

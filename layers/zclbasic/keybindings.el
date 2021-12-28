@@ -54,7 +54,6 @@
 (define-key evil-normal-state-map "m" 'spacemacs/toggle-maximize-buffer)
 (define-key evil-normal-state-map "M" 'spacemacs/toggle-frame-fullscreen)
 (define-key evil-normal-state-map "q" 'kill-current-buffer)
-;; (define-key evil-normal-state-map "’" 'save-buffer)
 ;; (define-key evil-normal-state-map "‘" 'save-buffer)
 (define-key evil-normal-state-map (kbd "RET") 'save-buffer)
 
